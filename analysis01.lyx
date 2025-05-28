@@ -1,0 +1,455 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Notes and Exercises in Analysis
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+May 2025
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17-1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $D[f]:X\rightarrow L^{p}(a,b):=[f']$
+\end_inset
+
+ is not continuous.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Imitating Schröder's Example 17.3.2.) Consider 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lim_{k\rightarrow\infty}\left\Vert x^{k}\right\Vert _{p}=\lim_{k\rightarrow\infty}\left(\int_{a}^{b}x^{kp}\ d\lambda\right)^{\frac{1}{p}}=\lim_{k\rightarrow\infty}\left(\left.\frac{1}{kp+1}x^{kp+1}\right|_{x=a}^{b}\right)^{\frac{1}{p}}=\lim_{k\rightarrow\infty}\left(\frac{1}{kp+1}\left(b^{kp+1}-a^{kp+1}\right)\right)^{\frac{1}{p}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But 
+\begin_inset Formula 
+\[
+\lim_{k\rightarrow\infty}\left\Vert kx^{k-1}\right\Vert =\lim_{k\rightarrow\infty}\left(\int_{a}^{b}\left(kx^{k-1}\right)^{p}\ d\lambda\right)^{\frac{1}{p}}=\lim_{k\rightarrow\infty}\left(\int_{a}^{b}k^{p}x^{p(k-1)}\ d\lambda\right)^{\frac{1}{p}}=\lim_{k\rightarrow\infty}\left(\left.\frac{k^{p}}{p(k-1)+1}x^{p(k-1)+1}\right|_{x=a}^{b}\right)^{\frac{1}{p}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\lim_{k\rightarrow\infty}\left(\frac{k^{p}}{p(k-1)+1}\left(b^{p(k-1)+1}-a^{p(k-1)+1}\right)\right)^{\frac{1}{p}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The idea here should be that the sequential characterization of continuity
+ would imply that the limit of the derivatives equals the derivative of
+ the limits (with 
+\begin_inset Formula $x^{k}$
+\end_inset
+
+ being an example of a sequence of functions for which that's not true),
+ but it's not obvious to me how to take these limits.
+ Eyeballing it, it looks like they both diverge?—now 
+\begin_inset Formula $\frac{1}{kp+1}$
+\end_inset
+
+ goes to zero linearly, but 
+\begin_inset Formula $b^{kp+1}-a^{kp+1}$
+\end_inset
+
+ should blow up exponentially (like how 
+\begin_inset Formula $3^{k}-2^{k}$
+\end_inset
+
+ should still be exponential), and same dealie with the other limit but
+ with a smaller exponent?
+\end_layout
+
+\begin_layout Standard
+Claude Sonnet 4 is arguing that 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+special
+\begin_inset Quotes erd
+\end_inset
+
+ (if 
+\begin_inset Formula $a<b<1$
+\end_inset
+
+, both limits go to zero, but if 
+\begin_inset Formula $b>1$
+\end_inset
+
+, the exponential dominates both limits), but that you can transform 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ to 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ChatGPT o3 elaborates on the method—let's force ourselves to follow along.
+ 
+\end_layout
+
+\begin_layout Standard
+We define 
+\begin_inset Formula $\phi(t):[0,1]\rightarrow[a,b]:=a+(b-a)t$
+\end_inset
+
+ with inverse 
+\begin_inset Formula $t=\text{\ensuremath{\frac{x-a}{b-a}}}$
+\end_inset
+
+.
+ Then we can define 
+\begin_inset Formula $g(t):=f(\phi(t))=f(a+(b-a)t)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The norm is the same 
+\begin_inset Formula $\left\Vert g\right\Vert _{\infty}=\sup_{t\in[0,1]}|g(t)|=\sup_{x\in[a,b]}|f(x)|=\left\Vert f\right\Vert _{\infty}$
+\end_inset
+
+, because remapping the domain doesn't change the max (sup) of the range.
+\end_layout
+
+\begin_layout Standard
+The derivative gets rescaled by a constant: chain rule says 
+\begin_inset Formula $g'(t)=f'(\phi(t))\cdot\phi(t)=(b-a)f'(\phi(t))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There's a change-of-variables factor: 
+\begin_inset Formula $x=a+(b-a)t$
+\end_inset
+
+ implies 
+\begin_inset Formula $dx=(b-a)\ dt$
+\end_inset
+
+ implies 
+\begin_inset Formula $dt=\frac{1}{b-a}dx$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $\left\Vert g'\right\Vert _{p}^{p}=\int_{0}^{1}|(b-a)f'(\phi(t))|^{p}\ dt=\int_{a}^{b}|(b-a)|^{p}|f'(x)|^{p}\ \frac{1}{b-a}\ dx=(b-a)^{p-1}\int_{a}^{b}|f'(x)|^{p}\ dx=(b-a)^{p-1}\left\Vert f'\right\Vert _{p}^{p}$
+\end_inset
+
+, so 
+\begin_inset Formula $\left\Vert g'\right\Vert _{p}=(b-a)^{\frac{p-1}{p}}\left\Vert f'\right\Vert _{p}$
+\end_inset
+
+.
+ So our original 
+\begin_inset Formula $f$
+\end_inset
+
+ on 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ has the same continuity properties as 
+\begin_inset Formula $g$
+\end_inset
+
+ on 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17-2
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For normed spaces 
+\begin_inset Formula $X,Y$
+\end_inset
+
+, if 
+\begin_inset Formula $L:X\rightarrow Y$
+\end_inset
+
+ is discontinuous at the origin, then it is discontinuous at every 
+\begin_inset Formula $x_{0}\in X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $L$
+\end_inset
+
+ being discontinuous at the origin means that there exists an 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $\delta$
+\end_inset
+
+ there exists an 
+\begin_inset Formula $x(\delta)$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left\Vert x(\delta)-0\right\Vert =\left\Vert x(\delta)\right\Vert <\delta$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\Vert L[x(\delta)]\right\Vert \ge\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Take that 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Again, for all 
+\begin_inset Formula $\delta$
+\end_inset
+
+, we have that 
+\begin_inset Formula $x(\delta)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\left\Vert L[x(\delta)-x_{0}]\right\Vert =\left\Vert L[x(\delta)]-L[x_{0}]\right\Vert \ge|\left\Vert L[x(\delta)]\right\Vert -\left\Vert L[x_{0}]\right\Vert |\ge|\varepsilon-\left\Vert L[x_{0}]\right\Vert |$
+\end_inset
+
+ ...
+ 
+\end_layout
+
+\begin_layout Standard
+This should be such an easy exercise! (Do a translation to show how discontinuit
+y at the origin implies discontinuity at an arbitrary point.) Why don't I
+ see it?! Am I retarded?
+\end_layout
+
+\begin_layout Standard
+Claude Sonnet 4 points out the specific way in which I'm retarded: 
+\begin_inset Formula $\left\Vert L[x_{0}+x(\delta)-x_{0}]\right\Vert =\left\Vert \cancel{L[x_{0}]}+L[x(\delta)]\cancel{-L[x_{0}]}\right\Vert =\left\Vert L[x(\delta)]\right\Vert \ge\varepsilon$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17-4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\inf\left\{ c\ge0:\left(\forall x\in X:\left\Vert L[x]\right\Vert \le c\left\Vert x\right\Vert \right)\right\} =\sup\left\{ \left\Vert L[x]\right\Vert :x\in\overline{B_{1}}(0)\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There exists an 
+\begin_inset Formula $x\in\overline{B_{1}}(0)$
+\end_inset
+
+ such that 
+\begin_inset Formula $x\ge\sup\left\{ \left\Vert L[x]\right\Vert :x\in\overline{B_{1}}(0)\right\} -\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+There exists a 
+\begin_inset Formula $c\ge0$
+\end_inset
+
+ such that
+\end_layout
+
+\end_body
+\end_document
