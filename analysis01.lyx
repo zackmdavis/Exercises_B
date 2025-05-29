@@ -82,7 +82,7 @@
 \begin_body
 
 \begin_layout Title
-Notes and Exercises in Analysis
+Exercises in Analysis
 \end_layout
 
 \begin_layout Author
@@ -403,7 +403,7 @@ Claude Sonnet 4 points out the specific way in which I'm retarded:
 \begin_layout Standard
 
 \series bold
-17-4
+17-5
 \series default
 .
  
@@ -411,11 +411,24 @@ Claude Sonnet 4 points out the specific way in which I'm retarded:
 Proposition
 \emph default
 .
- 
-\begin_inset Formula $\inf\left\{ c\ge0:\left(\forall x\in X:\left\Vert L[x]\right\Vert \le c\left\Vert x\right\Vert \right)\right\} =\sup\left\{ \left\Vert L[x]\right\Vert :x\in\overline{B_{1}}(0)\right\} $
+ For normed space 
+\begin_inset Formula $X$
 \end_inset
 
+ and Banach space 
+\begin_inset Formula $Y$
+\end_inset
 
+, let 
+\begin_inset Formula $\{L_{k}:X\rightarrow Y\}$
+\end_inset
+
+ be a Cauchy sequence of linear operators.
+ Then 
+\begin_inset Formula $L[x]:=\lim_{k\rightarrow\infty}L_{k}[x]$
+\end_inset
+
+ is linear, too.
 \end_layout
 
 \begin_layout Standard
@@ -424,31 +437,305 @@ Proposition
 Proof
 \emph default
 .
- Fix 
-\begin_inset Formula $\varepsilon$
+ From the linearity of the individual 
+\begin_inset Formula $L_{k}$
+\end_inset
+
+ and the limit laws.
+\end_layout
+
+\begin_layout Standard
+(Additivity.) 
+\begin_inset Formula $L[x+y]=\lim_{k\rightarrow\infty}L_{k}[x+y]=\lim_{k\rightarrow\infty}L_{k}[x]+L_{k}[y]=\lim_{k\rightarrow\infty}L_{k}[x]+\lim_{k\rightarrow\infty}L_{k}[y]=L[x]+L[y]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Homogeneity.) 
+\begin_inset Formula $L[ax]=\lim_{k\rightarrow\infty}L_{k}[ax]=\lim_{k\rightarrow\infty}aL_{k}[x]=a\lim_{k\rightarrow\infty}L_{k}[x]=aL[x]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Too easy? Claude Sonnet 4 points out that we need to show that the limit
+ exists.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17-7
+\series default
+.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ be vector spaces, and 
+\begin_inset Formula $\mathcal{B}$
+\end_inset
+
+ a base of 
+\begin_inset Formula $X$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-There exists an 
-\begin_inset Formula $x\in\overline{B_{1}}(0)$
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Let 
+\begin_inset Formula $L,M:X\rightarrow Y$
+\end_inset
+
+ be linear.
+ If for all 
+\begin_inset Formula $b\in\mathcal{B}$
+\end_inset
+
+, 
+\begin_inset Formula $L(b)=M(b)$
+\end_inset
+
+, then 
+\begin_inset Formula $L=M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ An arbitrary 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ can be expressed in coördinates 
+\begin_inset Formula $\sum_{j}x_{j}b_{j}$
+\end_inset
+
+, so 
+\begin_inset Formula $L(x)=\sum_{j}x_{j}L(b_{j})=\sum_{j}x_{j}M(b_{j})=M(x)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $f:\mathcal{B}\rightarrow Y$
+\end_inset
+
+ is a function defined on 
+\begin_inset Formula $\mathcal{B}$
+\end_inset
+
+, then there is a unique linear function 
+\begin_inset Formula $L_{f}:X\rightarrow Y$
 \end_inset
 
  such that 
-\begin_inset Formula $x\ge\sup\left\{ \left\Vert L[x]\right\Vert :x\in\overline{B_{1}}(0)\right\} -\varepsilon$
+\begin_inset Formula $L_{f}|_{\mathcal{B}}=f$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-There exists a 
-\begin_inset Formula $c\ge0$
+
+\emph on
+Proof
+\emph default
+.
+ The unique function is 
+\begin_inset Formula $L_{f}(\sum_{j}x_{j}b_{j})=\sum_{j}x_{j}f(b_{j})$
 \end_inset
 
- such that
+.
+ Suppose that there were some other linear 
+\begin_inset Formula $M_{f}$
+\end_inset
+
+ such that 
+\begin_inset Formula $M_{f}|_{\mathcal{B}}=f$
+\end_inset
+
+.
+ Linearity requires that 
+\begin_inset Formula $M_{f}(\sum_{j}x_{j}b_{j})=\sum_{j}M_{f}(x_{j}b_{j})=\sum_{j}x_{j}M_{f}(b_{j})$
+\end_inset
+
+, which must be 
+\begin_inset Formula $\sum_{j}x_{j}f(b_{j})$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $M_{f}=L_{f}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17-8
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $\frac{1}{p}+\frac{1}{q}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\{a_{k}\}_{k=1}^{\infty}\in l^{q}$
+\end_inset
+
+, the function 
+\begin_inset Formula $S_{\{a_{k}\}}(\{x_{k}\}):=\sum_{k=1}^{\infty}a_{k}x_{k}$
+\end_inset
+
+ is a continuous linear operator from 
+\begin_inset Formula $l^{p}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ So we're taking the 
+\begin_inset Quotes eld
+\end_inset
+
+dot product
+\begin_inset Quotes erd
+\end_inset
+
+ of a 
+\begin_inset Formula $p$
+\end_inset
+
+-power-summable sequence by a fixed 
+\begin_inset Formula $q$
+\end_inset
+
+-power-summable sequence.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+My first thoughts
+\emph default
+.
+ Let 
+\begin_inset Formula $\left\Vert \{x_{k}\}\right\Vert _{p}\le1$
+\end_inset
+
+.
+ That means 
+\begin_inset Formula $\sum_{k=1}^{\infty}|x_{k}|^{p}\le1$
+\end_inset
+
+.
+ Then for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $|x_{k}|^{p}\le1$
+\end_inset
+
+, and thus 
+\begin_inset Formula $|x_{k}|\le1$
+\end_inset
+
+.
+ Then ...
+ ugh! I wanted to go from 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\sum_{k}a_{k}$
+\end_inset
+
+ converges, therefore multiplying each term by a number 
+\begin_inset Formula $\le1$
+\end_inset
+
+ also converges
+\begin_inset Quotes erd
+\end_inset
+
+, but we only know that 
+\begin_inset Formula $\sum_{k=1}^{\infty}|a_{k}|^{q}$
+\end_inset
+
+ converges, not 
+\begin_inset Formula $\sum_{k}a_{k}$
+\end_inset
+
+.
+ Claude Sonnet 4 is saying I need Hölder's inequality.
 \end_layout
 
 \end_body
