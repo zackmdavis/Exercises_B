@@ -738,5 +738,81 @@ My first thoughts
  Claude Sonnet 4 is saying I need Hölder's inequality.
 \end_layout
 
+\begin_layout Standard
+Hölder's inequality states that 
+\begin_inset Formula $\left\Vert fg\right\Vert _{1}\le\left\Vert f\right\Vert _{p}\left\Vert g\right\Vert _{q}$
+\end_inset
+
+.
+ ...
+ I'm not seeing it.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17-9
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If a linear function is continuous somewhere, then it's continuous anywhere.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ In 17-2, we transferred discontinuity at the origin to discontinuity everywhere
+; this should be similar.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $L$
+\end_inset
+
+ being continuous at arbitrary 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ means that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $\left\Vert x-x_{0}\right\Vert <\delta$
+\end_inset
+
+ implies 
+\begin_inset Formula $\left\Vert L[x]-L[x_{0}]\right\Vert <\varepsilon$
+\end_inset
+
+.
+ 
+\end_layout
+
 \end_body
 \end_document

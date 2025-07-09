@@ -1,0 +1,529 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Cantor's Leaky Tent
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Some definitions
+\emph default
+.
+ Let 
+\begin_inset Formula $C$
+\end_inset
+
+ be the standard Cantor set.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $p:=(\frac{1}{2},\frac{1}{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be the cone over 
+\begin_inset Formula $C$
+\end_inset
+
+ with vertex 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $L(c)$
+\end_inset
+
+ be the line segment joining 
+\begin_inset Formula $p$
+\end_inset
+
+ to 
+\begin_inset Formula $c\in C$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $X:=\bigcup_{c\in C}L(c)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $E\subset C$
+\end_inset
+
+ be the part of the Cantor set consisting of endpoints of deleted intervals.
+ 
+\begin_inset Formula $E$
+\end_inset
+
+ is countable.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $F\subset C$
+\end_inset
+
+ be the rest of the Cantor set.
+ 
+\begin_inset Formula $F$
+\end_inset
+
+ is uncountable.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X_{E}$
+\end_inset
+
+ be the cone over 
+\begin_inset Formula $E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X_{F}$
+\end_inset
+
+ be the cone over 
+\begin_inset Formula $F$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $Y_{E}:=\{(x,y)\in X_{E}:y\in\mathbb{Q}\}$
+\end_inset
+
+, the subset of points with rational 
+\begin_inset Formula $y$
+\end_inset
+
+-coordinates in the cone over Cantor-endpoints.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $Y_{F}:=\{(x,y)\in X_{F}:y\notin\mathbb{Q}\}$
+\end_inset
+
+, the subset of points with irrational 
+\begin_inset Formula $y$
+\end_inset
+
+-coordination in the cone over other Cantorpoints.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $Y:=Y_{E}\sqcup Y_{F}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Theorem
+\series default
+\emph default
+.
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ is connected.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+Proof
+\series default
+\emph default
+.
+ Suppose for a contradiction that 
+\begin_inset Formula $Y=A\sqcup B$
+\end_inset
+
+ for open 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Without loss of generality, suppose 
+\begin_inset Formula $p\in A$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Strategy
+\emph default
+.
+ We're going to find a dense 
+\begin_inset Formula $S\subset F\subset C$
+\end_inset
+
+ such that 
+\begin_inset Formula $X_{S}\backslash\{(x,y):y=0\}\subset A$
+\end_inset
+
+.
+ That will imply that 
+\begin_inset Formula $\overline{A}=Y$
+\end_inset
+
+.
+ Why? Well, for 
+\begin_inset Formula $(x,y)\in Y$
+\end_inset
+
+, 
+\begin_inset Formula $(x,y)\in L(c)$
+\end_inset
+
+ for some 
+\begin_inset Formula $c$
+\end_inset
+
+, the density of 
+\begin_inset Formula $S$
+\end_inset
+
+ in 
+\begin_inset Formula $C$
+\end_inset
+
+ implies that there exists 
+\begin_inset Formula $\{s_{k}\}_{k=1}^{\infty}\subset S$
+\end_inset
+
+ such that 
+\begin_inset Formula $s_{k}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ Then a sequence 
+\begin_inset Formula $(x_{k},y_{k})$
+\end_inset
+
+ such that 
+\begin_inset Formula $(x_{k},y_{k})\in L(s_{k})$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{k}\in[y-\frac{1}{k},y+\frac{1}{k}]$
+\end_inset
+
+ and 
+\begin_inset Formula $y_{k}\notin\mathbb{Q}$
+\end_inset
+
+, consists of points in 
+\begin_inset Formula $A$
+\end_inset
+
+ that converge to 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+, so 
+\begin_inset Formula $(x,y)\in\overline{A}$
+\end_inset
+
+, so 
+\begin_inset Formula $Y\subseteq\overline{A}$
+\end_inset
+
+, so 
+\begin_inset Formula $B=\emptyset$
+\end_inset
+
+, so 
+\begin_inset Formula $Y=\overline{A}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Another definition
+\emph default
+.
+ Let 
+\begin_inset Formula $l(c):=\sup B\cap L(c)$
+\end_inset
+
+ if 
+\begin_inset Formula $B\cap L(c)\ne\varnothing$
+\end_inset
+
+, else 
+\begin_inset Formula $l(c):=c$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then if 
+\begin_inset Formula $l(c)\ne c$
+\end_inset
+
+, then 
+\begin_inset Formula $l(c)\notin Y$
+\end_inset
+
+, because if it were, it would be a limit point of both 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ It's a limit point of 
+\begin_inset Formula $B$
+\end_inset
+
+ because it's the supremum of a subset of 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ It's a limit point of 
+\begin_inset Formula $A$
+\end_inset
+
+ because all points in 
+\begin_inset Formula $L(c)$
+\end_inset
+
+ above 
+\begin_inset Formula $l(c)$
+\end_inset
+
+ are in 
+\begin_inset Formula $A$
+\end_inset
+
+, and we can find points above that are abitrarily close.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Moreover, we can only have 
+\begin_inset Formula $l(c)=c\in Y$
+\end_inset
+
+ if 
+\begin_inset Formula $c\in Y_{E}$
+\end_inset
+
+ (and 
+\begin_inset Formula $c\in E$
+\end_inset
+
+), because 0 is rational.
+ For 
+\begin_inset Formula $c\in F$
+\end_inset
+
+, 
+\begin_inset Formula $l(c)\notin Y$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+More definitions
+\emph default
+.
+ Let 
+\begin_inset Formula $S:=\{c\in F:l(c)=c\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\{r_{i}\}_{i=1}^{\infty}$
+\end_inset
+
+ be an enumeration of 
+\begin_inset Formula $\mathbb{Q}\cap(0,\frac{1}{2}]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $H_{i}:=\{(x,r_{i}):l(c)=(x,r_{i})\ \text{for some }c\in F\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $T_{i}:=\{c\in C:L(c)\cap\overline{H_{i}}\}$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
