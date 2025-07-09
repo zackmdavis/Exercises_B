@@ -167,7 +167,7 @@ bc+ad=0
 
  to Cartesian.
  Visualizing the unit circle dealie, it should be 
-\begin_inset Formula $\frac{a}{\sqrt{a^{2}+b^{2}}}-\frac{b}{\sqrt{a^{2}+b^{2}}}$
+\begin_inset Formula $\underbrace{\frac{a}{\sqrt{a^{2}+b^{2}}}}_{c}\underbrace{-\frac{b}{\sqrt{a^{2}+b^{2}}}}_{d}i$
 \end_inset
 
 .
@@ -202,10 +202,174 @@ Proposition
 \begin_layout Standard
 
 \emph on
+Commentary
+\emph default
+.
+ One of those 
+\begin_inset Quotes eld
+\end_inset
+
+so trivial, what do they even want us to do?
+\begin_inset Quotes erd
+\end_inset
+
+ exercises.
+ I think the idea here is that 
+\begin_inset Formula $-v$
+\end_inset
+
+ just means the additive inverse of 
+\begin_inset Formula $v$
+\end_inset
+
+; we're not supposed to be thinking about how 
+\begin_inset Formula $-1\cdot-1=1$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
 .
  
+\begin_inset Formula $-(-v)+-v=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $-(-v)=v$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $a\in\mathbb{F}$
+\end_inset
+
+ and 
+\begin_inset Formula $v\in V$
+\end_inset
+
+, if 
+\begin_inset Formula $av=0$
+\end_inset
+
+, then 
+\begin_inset Formula $a=0$
+\end_inset
+
+ or 
+\begin_inset Formula $v=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ More 
+\begin_inset Quotes eld
+\end_inset
+
+obvious, but the game is that we have to do it from the axioms.
+\begin_inset Quotes erd
+\end_inset
+
+ A helpful margin note on p.
+ 12 points out that the only part of the definition of a vector space that
+ connect scalar multiplication and the additive identity is the distributive
+ property.
+\end_layout
+
+\begin_layout Standard
+I was struggling on how to proceede here (either directly or taking the
+ contrapositive): a hint from Claude asks what property 
+\begin_inset Formula $a\ne0$
+\end_inset
+
+ has in a field that it wouldn't in a ring, and then I see it.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $av=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Consider the case 
+\begin_inset Formula $a\ne0$
+\end_inset
+
+.
+ Then we can divide by 
+\begin_inset Formula $a$
+\end_inset
+
+, so 
+\begin_inset Formula $av=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $\frac{a}{a}v=\frac{0}{a}$
+\end_inset
+
+ implies 
+\begin_inset Formula $1v=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $v=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now consider the case 
+\begin_inset Formula $a=0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $0v=0$
+\end_inset
+
+
 \end_layout
 
 \end_body
