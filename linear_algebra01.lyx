@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-July 2025
+July–August 2025
 \end_layout
 
 \begin_layout Abstract
@@ -171,6 +171,37 @@ bc+ad=0
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\frac{-1+\sqrt{3}i}{2}$
+\end_inset
+
+ is a cube root of 1.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\left(\frac{-1+\sqrt{3}i}{2}\right)^{3}=\frac{-1+\sqrt{3}i}{2}\cdot\frac{-1+\sqrt{3}i}{2}\cdot\frac{-1+\sqrt{3}i}{2}=\frac{\left(1-2\sqrt{3}i-3\right)\left(-1+\sqrt{3}i\right)}{8}=\frac{\left(-2-2\sqrt{3}i\right)\left(-1+\sqrt{3}i\right)}{8}=\frac{2+\cancel{2\sqrt{3}i-2\sqrt{3}i}+6}{8}=\frac{8}{8}=1\ \checkmark$
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -304,13 +335,14 @@ obvious, but the game is that we have to do it from the axioms.
 
  A helpful margin note on p.
  12 points out that the only part of the definition of a vector space that
- connect scalar multiplication and the additive identity is the distributive
+ connects scalar multiplication and the additive identity is the distributive
  property.
 \end_layout
 
 \begin_layout Standard
-I was struggling on how to proceede here (either directly or taking the
- contrapositive): a hint from Claude asks what property 
+I was struggling on how to proceed here (either directly or taking the contrapos
+itive).
+ A hint from Claude asks what property 
 \begin_inset Formula $a\ne0$
 \end_inset
 
@@ -356,7 +388,23 @@ Consider the case
 \begin_inset Formula $v=0$
 \end_inset
 
-.
+, so 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $a=0$
+\end_inset
+
+ or 
+\begin_inset Formula $v=0$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ is true because the second disjunct is true.
 \end_layout
 
 \begin_layout Standard
@@ -366,10 +414,364 @@ Now consider the case
 
 .
  Then 
-\begin_inset Formula $0v=0$
+\begin_inset Quotes eld
 \end_inset
 
 
+\begin_inset Formula $a=0$
+\end_inset
+
+ or 
+\begin_inset Formula $v=0$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ is true because the first disjunct is true.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists a nonempty subset of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ that is closed under addition and taking additive inverses but is not a
+ subspace of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ It didn't initially seem to me like this should exist.
+ My intuitive example for a linear-algebraically 
+\begin_inset Quotes eld
+\end_inset
+
+nice
+\begin_inset Quotes erd
+\end_inset
+
+ subset that isn't a linear subspace is an affine subspace that doesn't
+ contain zero, but closure under addition and inverses says that if 
+\begin_inset Formula $v\in U$
+\end_inset
+
+, then 
+\begin_inset Formula $v+(-v)=0\in U$
+\end_inset
+
+.
+ How else could something so 
+\begin_inset Quotes eld
+\end_inset
+
+nice
+\begin_inset Quotes erd
+\end_inset
+
+ (closure under addition and inverses) fail to be a subspace?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\mathbb{Q}^{2}$
+\end_inset
+
+ is not a subspace of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+, because it's not closed under scalar multiplication by elements of 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists a nonempty subset 
+\begin_inset Formula $U$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ such that 
+\begin_inset Formula $U$
+\end_inset
+
+ is closed under scalar multiplication but is not a subspace of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider the union of two unequal subspaces: say 
+\begin_inset Formula $X:=\{\left[\begin{array}{c}
+a\\
+0
+\end{array}\right]:a\in\mathbb{R}\}$
+\end_inset
+
+ and 
+\begin_inset Formula $Y:=\{\left[\begin{array}{c}
+0\\
+a
+\end{array}\right]:a\in\mathbb{R}\}$
+\end_inset
+
+.
+ For any 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ or 
+\begin_inset Formula $y\in Y$
+\end_inset
+
+ and any 
+\begin_inset Formula $c\in\mathbb{R}$
+\end_inset
+
+, 
+\begin_inset Formula $cx\in X$
+\end_inset
+
+ and 
+\begin_inset Formula $cy\in Y$
+\end_inset
+
+, but 
+\begin_inset Formula $X\cup Y$
+\end_inset
+
+ is not a subspace because it's not closed under addition.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+8
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ The intersection of subspaces is a subspace.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose that 
+\begin_inset Formula $V_{i}$
+\end_inset
+
+ are subspaces of 
+\begin_inset Formula $V$
+\end_inset
+
+ where 
+\begin_inset Formula $i\in I$
+\end_inset
+
+ is just an index into some index set; you know what I mean.
+\end_layout
+
+\begin_layout Standard
+(Additive identity.) For all 
+\begin_inset Formula $i\in I$
+\end_inset
+
+, 
+\begin_inset Formula $0\in V_{i}$
+\end_inset
+
+ (because each 
+\begin_inset Formula $V_{i}$
+\end_inset
+
+ is a subspace), so 
+\begin_inset Formula $0\in\bigcap_{i}V_{i}$
+\end_inset
+
+, too.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Additive closure.) If 
+\begin_inset Formula $u,v\in\bigcap_{i}V_{i}$
+\end_inset
+
+, then for all 
+\begin_inset Formula $i\in I$
+\end_inset
+
+, 
+\begin_inset Formula $u,v\in V_{i}$
+\end_inset
+
+, so for all 
+\begin_inset Formula $i\in I$
+\end_inset
+
+, 
+\begin_inset Formula $u+v\in V_{i}$
+\end_inset
+
+, so 
+\begin_inset Formula $u+v\in\bigcap_{i}V_{i}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Scalar multiplication closure.) If for all 
+\begin_inset Formula $i\in I$
+\end_inset
+
+, 
+\begin_inset Formula $v\in V_{i}$
+\end_inset
+
+, then for call 
+\begin_inset Formula $c\in\mathbb{F}$
+\end_inset
+
+, 
+\begin_inset Formula $cv\in V_{i}$
+\end_inset
+
+, so 
+\begin_inset Formula $cv\in\bigcap_{i}V_{i}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+9
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+ are subspaces of 
+\begin_inset Formula $V$
+\end_inset
+
+, then 
+\begin_inset Formula $U_{1}\cup U_{2}$
+\end_inset
+
+ is a subspace iff 
+\begin_inset Formula $U_{1}\subseteq U_{2}$
+\end_inset
+
+ or 
+\begin_inset Formula $U_{2}\subseteq U_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
 \end_layout
 
 \end_body
