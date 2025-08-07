@@ -769,9 +769,517 @@ Theorem
 \begin_layout Standard
 
 \emph on
+Commentary
+\emph default
+.
+ The 
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+ direction is easy.
+ In the 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ direction, what is the intuitive reason that non-nested subspaces aren't
+ a subspace? Imagine two lines through the origin: the sum of a non-origin
+ vector from each line isn't on either line, so we don't have additive closure.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
 .
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose without loss of generality that 
+\begin_inset Formula $U_{1}\subseteq U_{2}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $U_{1}\cup U_{2}$
+\end_inset
+
+ is a subspace because 
+\begin_inset Formula $U_{1}\cup U_{2}=U_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+ is a subspace.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Taking the contrapositive, we want to show that if 
+\begin_inset Formula $U_{1}\not\subseteq U_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{2}\not\subseteq U_{1}$
+\end_inset
+
+, then 
+\begin_inset Formula $U_{1}\cup U_{2}$
+\end_inset
+
+ is not a subspace.
+ Let 
+\begin_inset Formula $x\in U_{1}\backslash U_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $y\in U_{2}\backslash U_{1}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $x+y\notin U_{1}\cup U_{2}$
+\end_inset
+
+, but 
+\begin_inset Formula $x\in U_{1}\cup U_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $y\in U_{1}\cup U_{2}$
+\end_inset
+
+, so 
+\begin_inset Formula $U_{1}\cup U_{2}$
+\end_inset
+
+ is not closed under addition.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The sum of a subspace with itself is that subspace: 
+\begin_inset Formula $U+U=U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $U+U:=\{u_{1}+u_{2}:u_{1},u_{2}\in U\}$
+\end_inset
+
+ by definition.
+ Any 
+\begin_inset Formula $u\in U$
+\end_inset
+
+ can be expressed as 
+\begin_inset Formula $u+0$
+\end_inset
+
+—effectively taking 
+\begin_inset Formula $u_{2}:=0$
+\end_inset
+
+ in the set-builder definition.
+ But taking 
+\begin_inset Formula $u_{2}\ne0$
+\end_inset
+
+ doesn't add any new points, because vector spaces are closed under addition.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+11
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Addition of subspaces is commutative: 
+\begin_inset Formula $U_{1}+U_{2}=U_{2}+U_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof.
+
+\emph default
+ From the commutativity of addition: 
+\begin_inset Formula $U_{1}+U_{2}:=\{u_{1}+u_{2}:u_{1}\in U_{1},u_{2}\in U_{2}\}=\{u_{2}+u_{1}:u_{1}\in U_{1},u_{2}\in U_{2}\}=U_{2}+U_{1}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ Addition of subspaces is associative: 
+\begin_inset Formula $(U_{1}+U_{2})+U_{3}=U_{1}+(U_{2}+U_{3})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ From the associativity of addition: 
+\begin_inset Formula $(U_{1}+U_{2})+U_{3}:=\{u_{12}+u_{3}:u_{12}\in\{u_{1}+u_{2}:u_{1}\in U_{1},u_{2}\in U_{2}\},u_{3}\in U_{3}\}=\{(u_{1}+u_{2})+u_{3}:u_{1}\in U_{1},u_{2}\in U_{2},u_{3}\in U_{3}\}$
+\end_inset
+
+ 
+\begin_inset Formula $=\{u_{1}+(u_{2}+u_{3}):u_{1}\in U_{1},u_{2}\in U_{2},u_{3}\in U_{3}\}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The trivial subspace is an additive identity for subspace addition.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $0+U:=\{0+u:u\in U\}=\{u:u\in U\}=U$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ Only the trivial subspace has an additive inverse.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose not.
+ Then there exists a nontrivial subspace 
+\begin_inset Formula $U$
+\end_inset
+
+ such that there exists a nontrivial subspace 
+\begin_inset Formula $-U$
+\end_inset
+
+ such that 
+\begin_inset Formula $U+(-U)=0$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $U+(-U):=\{u_{+}+u_{-}:u_{+}\in U,u_{-}\in-U\}$
+\end_inset
+
+.
+ Zero belongs to every subspace, so 
+\begin_inset Formula $\{u_{+}+0:u_{+}\in U\}\subseteq U+(-U)$
+\end_inset
+
+, so 
+\begin_inset Formula $U\subseteq U+(-U)$
+\end_inset
+
+, so 
+\begin_inset Formula $U\subseteq0$
+\end_inset
+
+, so 
+\begin_inset Formula $U=0$
+\end_inset
+
+, but 
+\begin_inset Formula $U$
+\end_inset
+
+ was supposed to be nontrivial.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+13
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $W$
+\end_inset
+
+ are subspace of 
+\begin_inset Formula $V$
+\end_inset
+
+ such that 
+\begin_inset Formula $U_{1}+W=U_{2}+W$
+\end_inset
+
+, it is 
+\emph on
+not
+\emph default
+ the case that we must have 
+\begin_inset Formula $U_{1}=U_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $W=V$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $U_{1}+W=U_{2}+W=W=V$
+\end_inset
+
+ no matter what 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+ are.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14
+\series default
+.
+ 
+\begin_inset Formula $\{az^{2}+bz^{5}:a,b\in\mathbb{F}\}\oplus\{\sum_{j\in\mathbb{N}\backslash\{2,5\}}a_{j}z^{j}:a_{j}\in\mathbb{F}\}=\mathcal{P}(\mathbb{F})$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+15
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $W$
+\end_inset
+
+ are subspace of 
+\begin_inset Formula $V$
+\end_inset
+
+ such that 
+\begin_inset Formula $V=U_{1}\oplus W$
+\end_inset
+
+ and 
+\begin_inset Formula $V=U_{2}\oplus W$
+\end_inset
+
+, then 
+\begin_inset Formula $U_{1}=U_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+ 
+\emph on
+attempt
+\emph default
+.
+ By the definition of a direct sum, 
+\begin_inset Formula $V=U_{1}\oplus W$
+\end_inset
+
+ means that an element of 
+\begin_inset Formula $V$
+\end_inset
+
+ can be written 
+\emph on
+uniquely
+\emph default
+ as a sum of elements from 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $W$
+\end_inset
+
+, and similarly for 
+\begin_inset Formula $U_{2}\oplus W$
+\end_inset
+
+.
+ Consider an arbitrary 
+\begin_inset Formula $v\in V$
+\end_inset
+
+.
+ Then there exists a unique 
+\begin_inset Formula $u_{1}\in U_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $u_{2}\in U_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{1},w_{2}\in W$
+\end_inset
+
+ such that 
+\begin_inset Formula $v=u_{1}+w_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $v=u_{2}+w_{2}$
+\end_inset
+
+.
+ If we knew that 
+\begin_inset Formula $w_{1}=w_{2}$
+\end_inset
+
+, we would quickly be done, but do we know that?
 \end_layout
 
 \end_body
