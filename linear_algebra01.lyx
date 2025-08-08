@@ -99,12 +99,36 @@ Exercises from
 \emph on
 Linear Algebra Done Right
 \emph default
- by Sheldon Axler (2nd ed'n).
+ by Sheldon Axler.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\F}{\mathbb{F}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\C}{\mathbb{C}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
 Ch.
- 1
+ 1 (2nd ed'n)
 \end_layout
 
 \begin_layout Standard
@@ -430,6 +454,111 @@ Now consider the case
 \end_inset
 
  is true because the first disjunct is true.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $x_{1}+2x_{2}+3x_{3}=0$
+\end_inset
+
+ defines a subspace: it's a plane passing through the origin.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $x_{1}+2x_{2}+3x_{3}=4$
+\end_inset
+
+ does not define a subspace, because it doesn't include the origin 
+\begin_inset Formula $\left[\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right]=\left[\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+: 
+\begin_inset Formula $0+2\cdot0+3\cdot0=0\ne4$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $x_{1}x_{2}x_{3}=0$
+\end_inset
+
+ does not define a subspace because it's not closed under addition: 
+\begin_inset Formula $\left[\begin{array}{c}
+1\\
+1\\
+0
+\end{array}\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+ both satsify the equation, but their sum 
+\begin_inset Formula $\left[\begin{array}{c}
+1\\
+1\\
+1
+\end{array}\right]$
+\end_inset
+
+ does not.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\begin_inset Formula $x_{1}=5x_{3}$
+\end_inset
+
+ defines a subspace; reärranging to 
+\begin_inset Formula $x_{1}-5x_{3}=0$
+\end_inset
+
+ clarifies that this, too, is a plane through the origin.
 \begin_inset Newline newline
 \end_inset
 
@@ -1127,7 +1256,7 @@ not
 \begin_layout Standard
 
 \emph on
-Proof
+Example
 \emph default
 .
  Suppose 
@@ -1206,7 +1335,7 @@ Proposition
 \begin_inset Formula $V=U_{2}\oplus W$
 \end_inset
 
-, then 
+, then it is not necessarily the case that 
 \begin_inset Formula $U_{1}=U_{2}$
 \end_inset
 
@@ -1217,13 +1346,20 @@ Proposition
 \begin_layout Standard
 
 \emph on
-Proof
-\emph default
- 
-\emph on
-attempt
+Commentary
 \emph default
 .
+ This was given as a 
+\begin_inset Quotes eld
+\end_inset
+
+prove or find a counterexample
+\begin_inset Quotes erd
+\end_inset
+
+ exercise in the text, and I expected it to be true in disanalogy to exercise
+ 13; I imagined that the pedagogical intent of these two exercises was to
+ contrast the sum and direct sum.
  By the definition of a direct sum, 
 \begin_inset Formula $V=U_{1}\oplus W$
 \end_inset
@@ -1280,6 +1416,69 @@ uniquely
 \end_inset
 
 , we would quickly be done, but do we know that?
+\end_layout
+
+\begin_layout Standard
+Prompting Claude Opus 4.1 for a hint, it suggests constructing a simple counterex
+ample in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+, which is a sign that I should have been more open-minded about both branches
+ of 
+\begin_inset Quotes eld
+\end_inset
+
+proof or counterexample
+\begin_inset Quotes erd
+\end_inset
+
+ and shouldn't have psychologized so hard about the pedagogical intent of
+ the exercise.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Example
+\emph default
+.
+ Let 
+\begin_inset Formula $W:=\left\{ \left[\begin{array}{c}
+a\\
+0
+\end{array}\right]:a\in\mathbb{R}\right\} $
+\end_inset
+
+, let 
+\begin_inset Formula $U_{1}:=\left\{ \left[\begin{array}{c}
+0\\
+a
+\end{array}\right]:a\in\mathbb{R}\right\} $
+\end_inset
+
+ , and let 
+\begin_inset Formula $U_{2}:=\left\{ \left[\begin{array}{c}
+a\\
+a
+\end{array}\right]:a\in\mathbb{R}\right\} $
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mathbb{R}^{2}=W\oplus U_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\R^{2}=W\oplus U_{2}$
+\end_inset
+
+, but 
+\begin_inset Formula $U_{1}\ne U_{2}$
+\end_inset
+
+.
+ 
 \end_layout
 
 \end_body
