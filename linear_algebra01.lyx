@@ -128,7 +128,7 @@ Linear Algebra Done Right
 
 \begin_layout Subsection*
 Ch.
- 1 (2nd ed'n)
+ 1 Exercises (2nd ed'n)
 \end_layout
 
 \begin_layout Standard
@@ -1478,7 +1478,361 @@ a
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Subsection*
+Exercises 2A (4th ed'n)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ We want a list of four distinct vectors in 
+\begin_inset Formula $\F^{3}$
+\end_inset
+
+ whose span equals 
+\begin_inset Formula $\{(x,y,z)\in\F^{3}:x+y+z=0\}$
+\end_inset
+
+.
+ How about 
+\begin_inset Formula $\left[\begin{array}{c}
+1\\
+-1\\
+0
+\end{array}\right]$
+\end_inset
+
+,
+\begin_inset Formula $\left[\begin{array}{c}
+1\\
+0\\
+-1
+\end{array}\right]$
+\end_inset
+
+,
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+1\\
+-1
+\end{array}\right]$
+\end_inset
+
+, and 
+\begin_inset Formula $\left[\begin{array}{c}
+10\\
+-5\\
+-5
+\end{array}\right]$
+\end_inset
+
+?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
  
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $\{v_{i}\}_{i=1}^{4}$
+\end_inset
+
+ spans 
+\begin_inset Formula $V$
+\end_inset
+
+, then 
+\begin_inset Formula $\{v_{1}-v_{2},v_{2}-v_{3},v_{3}-v_{4},v_{4}\}$
+\end_inset
+
+ also spans 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $\{v_{i}\}_{i=1}^{4}$
+\end_inset
+
+ spans 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Then an arbitrary 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ can be written as 
+\begin_inset Formula $\sum_{i=1}^{4}a_{i}v_{i}$
+\end_inset
+
+ for some 
+\begin_inset Formula $\{a_{i}\}_{i=1}^{4}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\{v_{1}-v_{2},v_{2}-v_{3},v_{3}-v_{4},v_{4}\}$
+\end_inset
+
+ spans 
+\begin_inset Formula $V$
+\end_inset
+
+, then 
+\begin_inset Formula $v$
+\end_inset
+
+ can be written as 
+\begin_inset Formula $b_{1}(v_{1}-v_{2})+b_{2}(v_{2}-v_{3})+b_{3}(v_{3}-v_{4})+b_{4}v_{4}$
+\end_inset
+
+ for some 
+\begin_inset Formula $\{b_{i}\}_{i=1}^{4}$
+\end_inset
+
+.
+ That's 
+\begin_inset Formula $b_{1}v_{1}\underbrace{-b_{1}v_{2}+b_{2}v_{2}}\underbrace{-b_{2}v_{3}+b_{3}v_{3}}\underbrace{-b_{3}v_{4}+b_{4}v_{4}}$
+\end_inset
+
+, so we get 
+\begin_inset Formula $\begin{cases}
+a_{1}=b_{1}\\
+a_{2}=b_{2}-b_{1}\\
+a_{3}=b_{3}-b_{2}\\
+a_{4}=b_{4}-b_{3}
+\end{cases}.$
+\end_inset
+
+ Then we substitute the first equation into the second to get 
+\begin_inset Formula $a_{2}=b_{2}-a_{1}$
+\end_inset
+
+ and thus 
+\begin_inset Formula $b_{2}=a_{1}+a_{2}$
+\end_inset
+
+.
+ And so on: 
+\begin_inset Formula $a_{3}=b_{3}-(a_{1}+a_{2})$
+\end_inset
+
+ implies 
+\begin_inset Formula $b_{3}=\sum_{i=1}^{3}a_{i}$
+\end_inset
+
+, and 
+\begin_inset Formula $a_{4}=b_{4}-\sum_{i=1}^{3}a_{i}$
+\end_inset
+
+ implies 
+\begin_inset Formula $b_{4}=\sum_{i=1}^{4}a_{i}$
+\end_inset
+
+.
+ But this explicit formula for each 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ in terms of the 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ amounts to a way to take the coordinates of an arbitrary vector with respect
+ to 
+\begin_inset Formula $\{v_{i}\}_{i=1}^{4}$
+\end_inset
+
+ and produce coordinates with respect to 
+\begin_inset Formula $\{v_{1}-v_{2},v_{2}-v_{3},v_{3}-v_{4},v_{4}\}$
+\end_inset
+
+, so the latter set also spans 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ A list of vectors of length one is linearly independent iff the vector
+ is not 0.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose that 
+\begin_inset Formula $v\ne0$
+\end_inset
+
+.
+ Then if 
+\begin_inset Formula $av=0$
+\end_inset
+
+, we must have 
+\begin_inset Formula $a=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose that 
+\begin_inset Formula $av=0$
+\end_inset
+
+ implies that 
+\begin_inset Formula $a=0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $v\ne0$
+\end_inset
+
+, because if 
+\begin_inset Formula $v=0$
+\end_inset
+
+, then you could have 
+\begin_inset Formula $a\ne0$
+\end_inset
+
+ for which 
+\begin_inset Formula $av=0$
+\end_inset
+
+ (indeed, any 
+\begin_inset Formula $a$
+\end_inset
+
+ would do).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ A list of vectors of length two is linearly independent iff neither of
+ the vectors is a scalar multiple of the other.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose that neither vector is a scalar multiple of the other.
+ Then if 
+\begin_inset Formula $a_{1}v_{1}+a_{2}v_{2}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $a_{1}v_{1}=-a_{2}v_{2}$
+\end_inset
+
+.
+ If it is not the case that 
+\begin_inset Formula $a_{1}=a_{2}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $v_{1}=\frac{-a_{2}}{a_{1}}v_{2}$
+\end_inset
+
+.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose that 
+\begin_inset Formula $a_{1}v_{1}+a_{2}v_{2}=0$
+\end_inset
+
+ implies that 
+\begin_inset Formula $a_{1}=a_{2}=0$
+\end_inset
+
+.
+ [...]
 \end_layout
 
 \end_body
