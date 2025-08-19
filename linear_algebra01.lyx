@@ -1810,11 +1810,35 @@ Proof
 \begin_inset Formula $a_{1}=a_{2}=0$
 \end_inset
 
-, then 
+ (
+\emph on
+i.e
+\emph default
+., 
+\begin_inset Formula $v_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{2}$
+\end_inset
+
+ are linearly dependent), then 
 \begin_inset Formula $v_{1}=\frac{-a_{2}}{a_{1}}v_{2}$
 \end_inset
 
-.
+ (
+\emph on
+i.e.
+\emph default
+, 
+\begin_inset Formula $v_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{2}$
+\end_inset
+
+ are scalar multiples of the other).
  Contradiction!
 \end_layout
 
@@ -1823,16 +1847,585 @@ Proof
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
-) Suppose that 
-\begin_inset Formula $a_{1}v_{1}+a_{2}v_{2}=0$
-\end_inset
-
- implies that 
-\begin_inset Formula $a_{1}=a_{2}=0$
+) Suppose by way of contraposition that one of the vectors is a scalar multiple
+ of the other: without loss of generality, 
+\begin_inset Formula $v_{2}=cv_{1}$
 \end_inset
 
 .
- [...]
+ Then 
+\begin_inset Formula $a_{1}v_{1}+a_{2}v_{2}=0$
+\end_inset
+
+ amounts to 
+\begin_inset Formula $a_{1}v_{1}+a_{2}cv_{1}=(a_{1}+ca_{2})v_{1}=0$
+\end_inset
+
+, which is only 
+\begin_inset Formula $0$
+\end_inset
+
+ if 
+\begin_inset Formula $a_{1}+ca_{2}=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $\C$
+\end_inset
+
+ as a vector space over 
+\begin_inset Formula $\R$
+\end_inset
+
+, 
+\begin_inset Formula $\{1+i,1-i\}$
+\end_inset
+
+ is linearly independent.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ If 
+\begin_inset Formula $a_{1}(1+i)+a_{2}(1-i)=0$
+\end_inset
+
+, then 
+\begin_inset Formula $a_{1}+a_{2}+(a_{1}-a_{2})i=0$
+\end_inset
+
+, then 
+\begin_inset Formula $a_{1}+a_{2}=a_{2}-a_{1}$
+\end_inset
+
+, then 
+\begin_inset Formula $2a_{1}=0$
+\end_inset
+
+, and we get 
+\begin_inset Formula $a_{2}=0$
+\end_inset
+
+ as well.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $\C$
+\end_inset
+
+ as a vector space over 
+\begin_inset Formula $\C$
+\end_inset
+
+, 
+\begin_inset Formula $\{1+i,1-i\}$
+\end_inset
+
+ is linearly dependent.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ I mean, 
+\begin_inset Formula $\C$
+\end_inset
+
+ over 
+\begin_inset Formula $\C$
+\end_inset
+
+ is one-dimensional, so a set of two has to be dependent.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We need constants 
+\begin_inset Formula $k_{1}(1+i)+k_{2}(1-i)=0$
+\end_inset
+
+ such that it's not the case that 
+\begin_inset Formula $k_{1}=k_{2}=0$
+\end_inset
+
+.
+ Without loss of generality, we can let 
+\begin_inset Formula $k_{2}=1$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $k(1+i)+(1-i)=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $k(1+i)=-1+i$
+\end_inset
+
+ implies 
+\begin_inset Formula $k=\frac{-1+i}{1+i}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $\{v_{j}\}_{j}$
+\end_inset
+
+ is linearly independent and 
+\begin_inset Formula $\lambda\ne0\in\F$
+\end_inset
+
+, then 
+\begin_inset Formula $\{\lambda v_{j}\}_{j}$
+\end_inset
+
+ is linearly independent.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $\sum_{j}a_{j}\lambda v_{j}=0$
+\end_inset
+
+ for some arbitrary 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\lambda\sum_{j}a_{j}v_{j}=0$
+\end_inset
+
+ by distribution and 
+\begin_inset Formula $\sum_{j}a_{j}v_{j}=0$
+\end_inset
+
+ from dividing by 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ But then because 
+\begin_inset Formula $\{v_{j}\}_{j}$
+\end_inset
+
+ are linearly independent, for all 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $a_{j}=0$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $\{\lambda v_{j}\}_{j}$
+\end_inset
+
+ is linearly independent.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+11
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ It is not the case that if 
+\begin_inset Formula $(v_{j})$
+\end_inset
+
+ and 
+\begin_inset Formula $(w_{j})$
+\end_inset
+
+ are linearly independent, then 
+\begin_inset Formula $(v_{j}+w_{j})$
+\end_inset
+
+ is linearly independent.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Counterexample
+\emph default
+.
+ Consider 
+\begin_inset Formula $w_{j}=-v_{j}$
+\end_inset
+
+.
+ Then for all 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $v_{j}+w_{j}=v_{j}-v_{j}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Maybe this is a good illustration for why to be pedantic about the difference
+ between a linearly independent 
+\emph on
+list vs.
+ 
+\emph default
+a 
+\emph on
+set
+\emph default
+.
+ (The book is talking about lists and omitting the outer parentheses; I've
+ been using sets.) The set 
+\begin_inset Formula $\{0\}$
+\end_inset
+
+ is linearly independent, but the list 
+\begin_inset Formula $(0,0,0,0,...)$
+\end_inset
+
+ is not.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+12
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Suppose 
+\begin_inset Formula $\{v_{j}\}_{j=1}^{m}$
+\end_inset
+
+ is linearly independent in 
+\begin_inset Formula $V$
+\end_inset
+
+ and 
+\begin_inset Formula $w\in V$
+\end_inset
+
+.
+ Then if 
+\begin_inset Formula $\{v_{j}+w\}_{j=1}^{m}$
+\end_inset
+
+ is dependent, then 
+\begin_inset Formula $w\in\mathrm{span}(v_{j})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ If if 
+\begin_inset Formula $\{v_{j}+w\}_{j=1}^{m}$
+\end_inset
+
+ is dependent, then there exist 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ not all 0 such that 
+\begin_inset Formula $\sum_{j}a_{j}(v_{j}+w)=\sum_{j}a_{j}v_{j}+a_{j}w=\sum_{j}a_{j}v_{j}+\sum_{j}a_{j}w=0$
+\end_inset
+
+.
+ But because 
+\begin_inset Formula $\{v_{j}\}$
+\end_inset
+
+ are linearly independent and the 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ aren't all 0, then 
+\begin_inset Formula $\sum_{j}a_{j}v_{j}$
+\end_inset
+
+ isn't 0, so we must have 
+\begin_inset Formula $\sum_{j}a_{j}w=-\sum_{j}a_{j}v_{j}$
+\end_inset
+
+.
+ That is, if we define 
+\begin_inset Formula $c:=-\sum_{j}a_{j}$
+\end_inset
+
+, then 
+\begin_inset Formula $cw=\sum_{j}a_{j}v_{j}$
+\end_inset
+
+, so 
+\begin_inset Formula $w=\sum_{j}\frac{a_{j}}{c}v_{j}$
+\end_inset
+
+, so 
+\begin_inset Formula $w$
+\end_inset
+
+ is in the span of 
+\begin_inset Formula $v_{j}$
+\end_inset
+
+, as desired.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+15
+\series default
+.
+ There does not exist a list of six polynomials that is independent in 
+\begin_inset Formula $\mathcal{P}_{4}(\F)$
+\end_inset
+
+ because 
+\begin_inset Formula $\mathcal{P}_{4}(\F)$
+\end_inset
+
+ is five-dimensional.
+ (The dimension caps the size of linearly independent sets.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+16
+\series default
+.
+ No list of four polynomials spans 
+\begin_inset Formula $\mathcal{P}_{4}(\F)$
+\end_inset
+
+ because it's five-dimensional.
+ (Spanning sets need to be at least as dimensional as the space.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+17
+\series default
+.
+ 
+\begin_inset Formula $V$
+\end_inset
+
+ is infinite-dimensional iff there exists a sequence 
+\begin_inset Formula $v_{j}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\{v_{k}\}_{k=1}^{m}$
+\end_inset
+
+ is linearly independent for every positive integer 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose by way of contraposition that 
+\begin_inset Formula $V$
+\end_inset
+
+ is finite-dimensional.
+ Then there does not exist a linearly independent set of size greater than
+ 
+\begin_inset Formula $\dim(V)$
+\end_inset
+
+, so there's certainly not a linearly independent set of size 
+\begin_inset Formula $m$
+\end_inset
+
+ for every 
+\begin_inset Formula $m\in\mathbb{N}^{+}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose by way of contraposition that there does not exist a linearly
+ independent set of size 
+\begin_inset Formula $m$
+\end_inset
+
+ for every 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $m_{0}$
+\end_inset
+
+ be the largest integer for which there is a linearly independent set in
+ 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ There exists a set of size 
+\begin_inset Formula $m_{0}$
+\end_inset
+
+ that spans 
+\begin_inset Formula $V$
+\end_inset
+
+ (because if there weren't, then we could adjoin a vector in 
+\begin_inset Formula $V$
+\end_inset
+
+ that's not in our size-
+\begin_inset Formula $m_{0}$
+\end_inset
+
+ spanning set to get a linearly independent set of size 
+\begin_inset Formula $m_{0}+1$
+\end_inset
+
+).
+ So 
+\begin_inset Formula $V$
+\end_inset
+
+ is 
+\begin_inset Formula $m_{0}$
+\end_inset
+
+-dimensional.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_body
