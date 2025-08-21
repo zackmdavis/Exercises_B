@@ -2590,7 +2590,110 @@ Proof
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
-) [TODO]
+) (Additivity.) On the one hand, 
+\begin_inset Formula $T(x,y,z)+T(x',y',z')=(2x-4y+3z+b,6x+cxyz)+(2x'-4y'+3z'+b,6x'+cx'y'z')=(2(x+x')-4(y+y')+3(z+z')+2b,6(x+x'))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Whereas 
+\begin_inset Formula $T(x+x',y+y',z+z')=(2(x+x')-4(y+y')+3(z+z')+b,6(x+x')+c(x+x')(y+y')(z+z'))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then we have 
+\begin_inset Formula $\cancel{2(x+x')-4(y+y')+3(z+z')}=\cancel{2(x+x')-4(y+y')+3(z+z')}+b$
+\end_inset
+
+ implying 
+\begin_inset Formula $b=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\cancel{6(x+x'))}=\cancel{6(x+x')}+c(x+x')(y+y')(z+z'))$
+\end_inset
+
+ implying 
+\begin_inset Formula $c=0$
+\end_inset
+
+ (as the only way to satisfy the equation over any choice of 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $x'$
+\end_inset
+
+, 
+\emph on
+&c
+\emph default
+.) 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Homogeneity.) 
+\begin_inset Formula $T(\lambda x,\lambda y,\lambda z)=(2\lambda x-4\lambda y+3\lambda z+b,6\lambda x+c\lambda^{3}xyz)$
+\end_inset
+
+ whereas 
+\begin_inset Formula $\lambda T(x,y,z)=\lambda(2x-4y+3z+b,6x+cxyz)=(2\lambda x-4\lambda y+3\lambda z+b\lambda,6\lambda x+c\lambda xyz)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\cancel{2\lambda x-4\lambda y+3\lambda z+}b=\cancel{2\lambda x-4\lambda y+3\lambda z+}b\lambda$
+\end_inset
+
+ implies 
+\begin_inset Formula $b=b\lambda$
+\end_inset
+
+, which itself implies either 
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+ or 
+\begin_inset Formula $b=0$
+\end_inset
+
+, but it's supposed to work for arbitrary 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ Separately but with a similar flavor, 
+\begin_inset Formula $\cancel{6\lambda x+}c\lambda^{3}xyz=\cancel{6\lambda x+}c\lambda xyz$
+\end_inset
+
+ which is to say 
+\begin_inset Formula $c\lambda^{3}\cancel{xyz}=c\lambda\cancel{xyz}$
+\end_inset
+
+ implies 
+\begin_inset Formula $\lambda=1$
+\end_inset
+
+ or 
+\begin_inset Formula $c=0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -2598,6 +2701,245 @@ Proof
 \end_layout
 
 \begin_layout Standard
+
+\series bold
+4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Suppose 
+\begin_inset Formula $T\in\mathcal{L}(V,W)$
+\end_inset
+
+ and 
+\begin_inset Formula $\{v_{k}\}_{k=1}^{m}$
+\end_inset
+
+ is such that 
+\begin_inset Formula $\{Tv_{k}\}_{k=1}^{m}$
+\end_inset
+
+ is linearly independent in 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\{v_{k}\}_{k=1}^{m}$
+\end_inset
+
+ is linearly independent.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Linear independence of 
+\begin_inset Formula $\{Tv_{k}\}_{k=1}^{m}$
+\end_inset
+
+ means that 
+\begin_inset Formula $\sum_{k}c_{k}Tv_{k}=0$
+\end_inset
+
+ implies that 
+\begin_inset Formula $\forall k\ c_{k}=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose for a contradiction that 
+\begin_inset Formula $\{v_{k}\}_{k=1}^{m}$
+\end_inset
+
+ were not linearly independent.
+ Then there would exist not-all-zero 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sum_{k}c_{k}v_{k}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $T(0)=0$
+\end_inset
+
+, we also have 
+\begin_inset Formula $T(\sum_{k}c_{k}v_{k})=\sum_{k}T(c_{k}v_{k})=\sum_{k}c_{k}Tv_{k}=0$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+5
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\mathcal{L}(V,W)$
+\end_inset
+
+ is a vector space.
+\end_layout
+
+\begin_layout Standard
+(Commutativity.) 
+\begin_inset Formula $(S+T)v=Sv+Tv=Tv+Sv=(T+S)v\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Associativity.) 
+\begin_inset Formula $((R+S)+T)v=(R+S)v+Tv=Rv+Sv+Tv=Rv+(S+T)v=(R+(S+T))v\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Additive identity.) 
+\begin_inset Formula $(T+0)v=Tv+0v=Tv+0=Tv\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Additive inverse.) 
+\begin_inset Formula $(T-T)v=Tv-Tv=0\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Multiplicative identity.) 
+\begin_inset Formula $1\cdot Tv=Tv\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Distributivity.) 
+\begin_inset Formula $\lambda(S+T)v=\lambda\cdot(Sv+Tv)=\lambda Sv+\lambda Tv=(\lambda S+\lambda T)v\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $(\lambda_{1}+\lambda_{2})Tv=\lambda_{1}Tv+\lambda_{2}Tv=(\lambda_{1}T+\lambda_{2}T)v\ \checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+7
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $\dim V=1$
+\end_inset
+
+ and 
+\begin_inset Formula $T\in\mathcal{L}(V)$
+\end_inset
+
+, then there exists 
+\begin_inset Formula $\lambda\in\F$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $v$
+\end_inset
+
+, 
+\begin_inset Formula $Tv=\lambda v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The one-dimensionality means we have a basis of length 1, 
+\begin_inset Formula $\{u_{k}\}_{k=1}^{1}$
+\end_inset
+
+.
+ Arbitrary 
+\begin_inset Formula $v$
+\end_inset
+
+ can be expressed in terms of coordinates of the basis, 
+\begin_inset Formula $v=\sum_{k}c_{k}u_{k}=c_{1}u_{1}$
+\end_inset
+
+.
+ So can 
+\begin_inset Formula $Tv=d_{1}u_{1}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\lambda:=\frac{d_{1}}{c_{1}}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\lambda v=\frac{d_{1}}{\cancel{c_{1}}}\cancel{c_{1}}u_{1}=d_{1}u_{1}=Tv$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
 
 \end_layout
 
