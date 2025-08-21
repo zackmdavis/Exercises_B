@@ -2428,5 +2428,178 @@ Proof
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+20
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Suppose that 
+\begin_inset Formula $\{p_{k}\}_{k=0}^{m}$
+\end_inset
+
+ are polynomials in 
+\begin_inset Formula $\mathcal{P}_{m}(\F)$
+\end_inset
+
+ such that 
+\begin_inset Formula $p_{k}(2)=0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\{p_{k}\}_{k=0}^{m}$
+\end_inset
+
+ is not linearly independent in 
+\begin_inset Formula $\mathcal{P}_{m}(\F)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+First attempt
+\emph default
+.
+ Suppose they were.
+ Then 
+\begin_inset Formula $\sum_{k=0}^{m}a_{k}p_{k}=0$
+\end_inset
+
+ would imply that for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $a_{k}=0$
+\end_inset
+
+.
+ But if not all the 
+\begin_inset Formula $a_{k}$
+\end_inset
+
+ are zero, we still have 
+\begin_inset Formula $\sum_{k=0}^{m}a_{k}p_{k}(2)=0$
+\end_inset
+
+.
+ Contradiction?! But I don't think that actually works, because the sum
+ 
+\emph on
+of the evaluations at 2
+\emph default
+ being zero doesn't mean the sum is the zero polynomial.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Second attempt
+\emph default
+.
+ If 
+\begin_inset Formula $p_{k}(2)=0$
+\end_inset
+
+, then we know that each of the 
+\begin_inset Formula $p_{k}$
+\end_inset
+
+ has a factor of 
+\begin_inset Formula $x-2$
+\end_inset
+
+.
+ Does that help? 
+\begin_inset Formula $\sum_{k}a_{k}q_{k}(x)(x-2)=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $(x-2)\sum_{k}a_{k}q_{k}(x)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+...?
+\end_layout
+
+\begin_layout Subsection*
+Exercises 3A
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $T(x,y,z):=(2x-4y+3z+b,6x+cxyz)$
+\end_inset
+
+ is linear iff 
+\begin_inset Formula $b=c=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) (Additivity.) 
+\begin_inset Formula $T(x,y,z)+T(x',y',z')=(2x-4y+3z,6x)+(2x'-4y'+3z',6x')=(2x-4y+3z+2x'-4y'+3z',6x+6x')=(2(x+x')-4(y+y')+3(z+z'),6(x+x'))=T(x+x',y+y',z+z')\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Homogeneity.) 
+\begin_inset Formula $T(\lambda x,\lambda y,\lambda z)=(2\lambda x-4\lambda y+3\lambda z,6\lambda x)=(\lambda(2x-4y+3z),\lambda(6x))=\lambda(2x-4y+3z,6x)=\lambda T(x,y,z)\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) [TODO]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
 \end_body
 \end_document
