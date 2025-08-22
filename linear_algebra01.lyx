@@ -2943,5 +2943,442 @@ Proof
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+10
+\series default
+.
+ 
+\emph on
+Question
+\emph default
+.
+ If 
+\begin_inset Formula $q\in\mathcal{P}(\R)$
+\end_inset
+
+ and 
+\begin_inset Formula $T(p):\mathcal{P}(\R)\rightarrow\mathcal{P}(\R):=q\circ p$
+\end_inset
+
+, then 
+\begin_inset Formula $T$
+\end_inset
+
+ is linear?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ This is a prove-or-counterexample prompt, where we've been told in Example
+ 3.3 that the other composition order 
+\begin_inset Formula $T(p):=p\circ q$
+\end_inset
+
+ is linear.
+ My intuition is that it should work in the other direction, too; it's not
+ obvious to me why it should matter which of the polynomials being composed
+ is the 
+\begin_inset Quotes eld
+\end_inset
+
+argument.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $q:=\sum_{k=0}^{n_{q}}q_{k}x^{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $p:=\sum_{k=0}^{n_{p}}p_{k}x^{k}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $q\circ p=\sum_{k=0}^{n_{q}}q_{k}\left(\sum_{j=0}^{n_{p}}p_{j}x^{j}\right)^{k}$
+\end_inset
+
+, which is ugly to expand.
+ The result is obviously a polynomial, but what would make it linear? Do
+ we need to do the ugly expansion to check additivity and homogeneity?
+\end_layout
+
+\begin_layout Standard
+(Additivity.) 
+\begin_inset Formula $T(r)+T(s)=\sum_{k=0}^{n_{q}}q_{k}\left(\sum_{j=0}^{n_{r}}r_{j}x^{j}\right)^{k}+\sum_{k=0}^{n_{q}}q_{k}\left(\sum_{j=0}^{n_{s}}s_{j}x^{j}\right)^{k}=\sum_{k=0}^{n_{q}}q_{k}\left(\left(\sum_{j=0}^{n_{r}}r_{j}x^{j}\right)^{k}+\left(\sum_{j=0}^{n_{s}}s_{j}x^{j}\right)^{k}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $T(r+s)=\sum_{k=0}^{n_{q}}q_{k}\left(\sum_{j=0}^{n_{r}}(r_{j}+s_{j})x^{j}\right)^{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I am now thinking that my intuition was wrong.
+ Those aren't going to be the same, because the 
+\begin_inset Formula $k$
+\end_inset
+
+th power doesn't distribute over a sum.
+ But it is surprising that it reportedly works in the other direction ...?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+11
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $T\in\mathcal{L}(V)$
+\end_inset
+
+ is a scalar multiple of the identity iff 
+\begin_inset Formula $ST=TS$
+\end_inset
+
+ for every 
+\begin_inset Formula $S\in\mathcal{L}(V)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ The 
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+ direction is the hard one.
+ Can we do something with the intuition that, since 
+\begin_inset Formula $S$
+\end_inset
+
+ can send the basis vectors absolutely anywhere, that puts a lot of constraint
+ on what 
+\begin_inset Formula $T$
+\end_inset
+
+ could be?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Let 
+\begin_inset Formula $T:=cI$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $ST=S(cI)$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $S(cI)[v]=S\circ cI[v]=S[cv]=cS[v]$
+\end_inset
+
+.
+ On the other hand, 
+\begin_inset Formula $TS=(cI)S$
+\end_inset
+
+, so we have 
+\begin_inset Formula $(cI)S[v]=cI\circ S[v]=cS[v]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) 
+\begin_inset Formula $S\circ T[v]=T\circ S[v]$
+\end_inset
+
+.
+ Expand 
+\begin_inset Formula $v$
+\end_inset
+
+ in terms of a basis, 
+\begin_inset Formula $v:=\sum_{k}v_{k}u_{k}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $T[v]=\sum_{k}v_{k}T[u_{k}]$
+\end_inset
+
+ and 
+\begin_inset Formula $S\circ T[v]=S\left(\sum_{k}v_{k}T[u_{k}]\right)=\sum_{k}S[v_{k}T[u_{k}]]=\sum_{k}v_{k}S[T[u_{k}]]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Likewise 
+\begin_inset Formula $T\circ S[v]=T\left(\sum_{k}v_{k}S[u_{k}]\right)=\sum_{k}T[v_{k}S[u_{k}]]=\sum_{k}v_{k}T[S[u_{k}]]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $S[T[u_{k}]]=T[S[u_{k}]]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Reducing the statement about operators to a statement about all basis vectors
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+nice
+\begin_inset Quotes erd
+\end_inset
+
+, I guess (it's trivial), but we're still missing the key step ...?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+13
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Every linear map on a subspace of a finite-dimensional vector space 
+\begin_inset Formula $V$
+\end_inset
+
+ can be extended to a linear map on 
+\begin_inset Formula $V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ I think Hahn-Banach is the infinite-dimensional analogue of this?—or there's
+ another part to it about the norm not increasing.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Attempt
+\emph default
+.
+ Let 
+\begin_inset Formula $U$
+\end_inset
+
+ be a subspace of 
+\begin_inset Formula $V$
+\end_inset
+
+, and 
+\begin_inset Formula $W$
+\end_inset
+
+ be some other vector space.
+ Consider 
+\begin_inset Formula $T\in\mathcal{L}(U,W)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ can be expressed in terms of its effects on a basis for 
+\begin_inset Formula $U$
+\end_inset
+
+: 
+\begin_inset Formula $T[u]:=\sum_{k}t_{k}u_{k}$
+\end_inset
+
+ for basis 
+\begin_inset Formula $\{u_{k}\}_{k=1}^{\dim U}$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $U$
+\end_inset
+
+ is a subspace of 
+\begin_inset Formula $V$
+\end_inset
+
+, we can extend 
+\begin_inset Formula $\{u_{k}\}_{k=1}^{\dim U}$
+\end_inset
+
+ with additional vectors 
+\begin_inset Formula $\{u_{k}\}_{k=\dim U+1}^{\dim V}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\{u_{k}\}_{k=1}^{\dim V}$
+\end_inset
+
+ is a basis of 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Then define 
+\begin_inset Formula $T':=\sum_{k=1}^{\dim V}t_{k}u_{k}$
+\end_inset
+
+ (where the 
+\begin_inset Formula $\{t_{k}\}_{k=1}^{\dim U}$
+\end_inset
+
+ are as they were for 
+\begin_inset Formula $T$
+\end_inset
+
+, but 
+\begin_inset Formula $\{t_{k}\}_{k=\dim U+1}^{\dim V}$
+\end_inset
+
+ can be anything): then 
+\begin_inset Formula $T'\in\mathcal{L}(V,W)$
+\end_inset
+
+ and 
+\begin_inset Formula $T'$
+\end_inset
+
+ extends 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ I don't think I'm keeping good track of my types here.
+ If the codomain of 
+\begin_inset Formula $T$
+\end_inset
+
+ is 
+\begin_inset Formula $W$
+\end_inset
+
+, then it doesn't make sense to define 
+\begin_inset Formula $T[u]:=\sum_{k}t_{k}u_{k}$
+\end_inset
+
+ with 
+\begin_inset Formula $\{u_{k}\}$
+\end_inset
+
+ being a basis of 
+\begin_inset Formula $U$
+\end_inset
+
+, because then the result would be in 
+\begin_inset Formula $U$
+\end_inset
+
+, not 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ On reflection, I think the 
+\begin_inset Quotes eld
+\end_inset
+
+spirit
+\begin_inset Quotes erd
+\end_inset
+
+ of the proof is correct, but I should be talking about 
+\begin_inset Formula $T[u]:=\sum_{k}T[u_{k}]$
+\end_inset
+
+?
+\end_layout
+
 \end_body
 \end_document
