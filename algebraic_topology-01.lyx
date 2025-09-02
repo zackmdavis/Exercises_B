@@ -285,7 +285,7 @@ Because
 
 \begin_layout Standard
 Let 
-\begin_inset Formula $M:=\max_{s\in[0,1]}||g_{0}(s)||+||g_{1}(s)||$
+\begin_inset Formula $M:=\max_{s\in[0,1]}\left(||g_{0}(s)||+||g_{1}(s)||\right)$
 \end_inset
 
 .
@@ -355,7 +355,7 @@ Suppose that
 \begin_layout Standard
 \begin_inset Formula 
 \[
-=\left\Vert 1-t\right\Vert \left\Vert g_{0}(s)-g_{0}(s')\right\Vert +\left\Vert g_{0}(s')\right\Vert \left\Vert \cancel{1}-t\cancel{-1}+t'\right\Vert +\left\Vert t\right\Vert \left\Vert g_{1}(s)-g_{1}(s')\right\Vert +\left\Vert g_{1}('s)\right\Vert \left\Vert t-t'\right\Vert 
+=\left\Vert 1-t\right\Vert \left\Vert g_{0}(s)-g_{0}(s')\right\Vert +\left\Vert g_{0}(s')\right\Vert \left\Vert \cancel{1}-t\cancel{-1}+t'\right\Vert +\left\Vert t\right\Vert \left\Vert g_{1}(s)-g_{1}(s')\right\Vert +\left\Vert g_{1}(s')\right\Vert \left\Vert t-t'\right\Vert 
 \]
 
 \end_inset
@@ -366,7 +366,7 @@ Suppose that
 \begin_layout Standard
 \begin_inset Formula 
 \[
-<\left\Vert 1-t\right\Vert \frac{\varepsilon}{4}+\left\Vert t\right\Vert \frac{\varepsilon}{4}+\left\Vert t'-t\right\Vert \left(\left\Vert g_{0}(s')\right\Vert +\left\Vert g_{1}('s)\right\Vert \right)\le\frac{\varepsilon}{2}+||(s,t)-(s',t')||M\le\frac{\varepsilon}{2}+\frac{\varepsilon}{2\cancel{M}}\cancel{M}=\varepsilon
+<\left\Vert 1-t\right\Vert \frac{\varepsilon}{4}+\left\Vert t\right\Vert \frac{\varepsilon}{4}+\left\Vert t'-t\right\Vert \left(\left\Vert g_{0}(s')\right\Vert +\left\Vert g_{1}(s')\right\Vert \right)\le\frac{\varepsilon}{2}+||(s,t)-(s',t')||M\le\frac{\varepsilon}{2}+\frac{\varepsilon}{2\cancel{M}}\cancel{M}=\varepsilon
 \]
 
 \end_inset
@@ -393,49 +393,10 @@ quod erat demonstrandum
 
 
 \series bold
-III.2.2
+III.3.1
 \series default
 .
  
-\emph on
-Proposition
-\emph default
-.
- Let 
-\begin_inset Formula $X$
-\end_inset
-
- be path-connected and let 
-\begin_inset Formula $b\in X$
-\end_inset
-
-.
- Then every path in 
-\begin_inset Formula $X$
-\end_inset
-
- is homotopic with endpoints fixed to a path passing through 
-\begin_inset Formula $b$
-\end_inset
-
-.
-\begin_inset Newline newline
-\end_inset
-
-
-\emph on
-Commentary
-\emph default
-.
- The path-connectedness means we have a path to 
-\begin_inset Formula $b$
-\end_inset
-
-, and it also means we have a path from every point on the path to 
-\begin_inset Formula $b$
-\end_inset
-
- to a point on the arbtirary path? This needs to be made more precise.
 \end_layout
 
 \end_body

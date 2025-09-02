@@ -2006,7 +2006,6 @@ Proof
 \end_inset
 
 .
- 
 \begin_inset Newline newline
 \end_inset
 
@@ -2157,7 +2156,7 @@ set
 \emph default
 .
  (The book is talking about lists and omitting the outer parentheses; I've
- been using sets.) The set 
+ been using sets.) The motivating thought there was that the set 
 \begin_inset Formula $\{0\}$
 \end_inset
 
@@ -2165,7 +2164,17 @@ set
 \begin_inset Formula $(0,0,0,0,...)$
 \end_inset
 
- is not.
+ is not ...
+ but Gemini Pro 2.5 is pointing out that that's wrong; 
+\begin_inset Formula $\{0\}$
+\end_inset
+
+ is actually dependent.
+ (
+\begin_inset Formula $\{\}$
+\end_inset
+
+ would be vacuously independent.)
 \begin_inset Newline newline
 \end_inset
 
@@ -2905,9 +2914,15 @@ Proposition
 \begin_layout Standard
 
 \emph on
+\begin_inset Quotes eld
+\end_inset
+
 Proof
 \emph default
 .
+\begin_inset Quotes erd
+\end_inset
+
  The one-dimensionality means we have a basis of length 1, 
 \begin_inset Formula $\{u_{k}\}_{k=1}^{1}$
 \end_inset
@@ -2937,6 +2952,40 @@ Proof
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ Gemini 2.5 Pro points out that this doesn't work because 
+\begin_inset Formula $\lambda:=\frac{d_{1}}{c_{1}}$
+\end_inset
+
+ depends on the coordinates of 
+\begin_inset Formula $v$
+\end_inset
+
+; we need a 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ that works for 
+\emph on
+any
+\emph default
+ 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ (And 
+\begin_inset Formula $v$
+\end_inset
+
+ being arbitrary does not exonerate us.) 
 \begin_inset Newline newline
 \end_inset
 
