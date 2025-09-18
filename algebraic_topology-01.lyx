@@ -799,7 +799,11 @@ b
 \end_inset
 
 .
- [TODO: the parametrization is so annoying]
+ [
+\series bold
+TODO
+\series default
+: the parametrization is so annoying]
 \begin_inset Newline newline
 \end_inset
 
@@ -807,25 +811,228 @@ b
 \end_layout
 
 \begin_layout Standard
-[...]
+
+\series bold
+HW2#1
+\series default
+.
+ Let 
+\begin_inset Formula $\varphi:X\rightarrow Y$
+\end_inset
+
+ be a continuous map between topological spaces, and 
+\begin_inset Formula $x\in X$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\varphi_{*}([f]):\pi_{1}(X,x)\rightarrow\pi_{1}(Y,\varphi(x))=[\varphi\circ f]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\varphi_{*}$
+\end_inset
+
+ is well-defined: if 
+\begin_inset Formula $[f]=[g]$
+\end_inset
+
+, then 
+\begin_inset Formula $[\varphi\circ f]=[\varphi\circ g]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Theorem
+Commentary
 \emph default
 .
- The fundamental group of the 
-\begin_inset Formula $n$
+ I'm not quite sure how to begin.
+ Presumably it's not OK to say 
+\begin_inset Quotes eld
 \end_inset
 
--torus 
-\begin_inset Formula $\prod_{i=1}^{n}S^{1}$
+just apply 
+\begin_inset Formula $\varphi$
 \end_inset
 
- is 
-\begin_inset Formula $\prod_{i=1}^{n}\mathbb{Z}$
+ inside the brackets on both sides of 
+\begin_inset Formula $[f]=[g]$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+: we want to understand what how equivalence classes interact with maps
+ such that 
+\begin_inset Quotes eld
+\end_inset
+
+compose inside the brackets
+\begin_inset Quotes erd
+\end_inset
+
+ is allowed.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ can be deformed into 
+\begin_inset Formula $g$
+\end_inset
+
+, then why can 
+\begin_inset Formula $\varphi\circ f$
+\end_inset
+
+ be deformed into 
+\begin_inset Formula $\varphi\circ g$
+\end_inset
+
+? Gemini 2.5 Pro hints that we should work with a homotopy 
+\begin_inset Formula $H$
+\end_inset
+
+ between 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+—I shouldn't have stooped to ask.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $H(s,t)$
+\end_inset
+
+ be a homotopy between 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+: that is, 
+\begin_inset Formula $H(0,t)=x$
+\end_inset
+
+, 
+\begin_inset Formula $H(1,t)=x$
+\end_inset
+
+, 
+\begin_inset Formula $H(s,0)=f(s)$
+\end_inset
+
+, and 
+\begin_inset Formula $H(s,1)=g(s)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now consider 
+\begin_inset Formula $\varphi\circ H$
+\end_inset
+
+.
+ That's continuous as the composition of continuous functions.
+ We have 
+\begin_inset Formula $\varphi\circ H(0,t)=\varphi(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $\varphi\circ H(1,t)=\varphi(x)$
+\end_inset
+
+.
+ But we also have 
+\begin_inset Formula $\varphi\circ H(s,0)=\varphi\circ f(s)$
+\end_inset
+
+ and 
+\begin_inset Formula $\varphi\circ H(s,1)=\varphi\circ g(s)$
+\end_inset
+
+.
+ But those are exactly the conditions we need for 
+\begin_inset Formula $\varphi\circ H$
+\end_inset
+
+ to be a homotopy betwen 
+\begin_inset Formula $\varphi\circ f$
+\end_inset
+
+ and 
+\begin_inset Formula $\varphi\circ g$
+\end_inset
+
+, so 
+\begin_inset Formula $[\varphi\circ f]=[\varphi\circ g]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\varphi_{*}$
+\end_inset
+
+ is a group homomorphism.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ We need to show that 
+\begin_inset Formula $\varphi_{*}([f]*[g])=\varphi_{*}([f])*\varphi_{*}([g])$
 \end_inset
 
 .
@@ -836,6 +1043,465 @@ Theorem
 \emph on
 Proof
 \emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW2#2
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW2#3
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be simply-connected, 
+\begin_inset Formula $x,y\in X$
+\end_inset
+
+, and let 
+\begin_inset Formula $f:[0,1]\rightarrow X$
+\end_inset
+
+, and 
+\begin_inset Formula $g:[0,1]\rightarrow X$
+\end_inset
+
+ be paths from 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $f$
+\end_inset
+
+ is path-homotopic to 
+\begin_inset Formula $g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+: we can use the straight-line homotopy, which will work because simple
+ connectivity implies path connectivity]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW2#4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+complement-of-wedge
+\begin_inset Quotes erd
+\end_inset
+
+ shape 
+\begin_inset Formula $r\le1$
+\end_inset
+
+, 
+\begin_inset Formula $\theta\in[0,\frac{3}{2}\pi]$
+\end_inset
+
+ is simply connected but not convex.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ It's obviously simply connected, but to prove that, it would seem we have
+ to compute the fundamental group.
+ Gemini 2.5 Pro hints that we can invoke star-shapedness.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Non-convexity.) It doesn't contain the straight line between 
+\begin_inset Formula $(1,0)$
+\end_inset
+
+ and 
+\begin_inset Formula $(0,-1)$
+\end_inset
+
+, which suffices to show it's not convex.
+ 
+\end_layout
+
+\begin_layout Standard
+(Simply connected.) [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW3#1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $p(x):\mathbb{R}\rightarrow S^{1}=(\cos2\pi x,\sin2\pi x)$
+\end_inset
+
+ is a covering map.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ The prompt says to find a collection of open sets that cover 
+\begin_inset Formula $S^{1}$
+\end_inset
+
+ and show that each is evenly covered.
+ At first, that didn't seem right: why some specific open cover, don't we
+ need 
+\emph on
+every
+\emph default
+ point to be evenly covered? But a specific open cover suffices: every point
+ has one of the pieces of the cover as a neighborhood.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $U_{1}:=\{p(x):x\in(-\frac{1}{4},\frac{1}{4})\}$
+\end_inset
+
+, 
+\begin_inset Formula $U_{2}:=\{p(x):x\in(0,\frac{1}{2})\}$
+\end_inset
+
+, 
+\begin_inset Formula $U_{3}:=\{p(x):x\in(\frac{1}{2},-\frac{1}{2})\}$
+\end_inset
+
+,
+\begin_inset Formula $U_{4}:=\{p(x):x\in(\frac{1}{2},1)\}$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: finish inverse-trig argument]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW3#2
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For covering map 
+\begin_inset Formula $p:E\rightarrow B$
+\end_inset
+
+, let 
+\begin_inset Formula $B_{k}:=\{b\in B:p^{-1}(b)\ \mathrm{has\ exactly}\ k\ \mathrm{elements}\}$
+\end_inset
+
+.
+ For each 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+ is open in B.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+ is closed.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+ 
+\series bold
+d
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW3#3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Let 
+\begin_inset Formula $p:E\rightarrow B$
+\end_inset
+
+ be a covering map, and let 
+\begin_inset Formula $b\in B$
+\end_inset
+
+.
+ The subspace topology on 
+\begin_inset Formula $p^{-1}(b)$
+\end_inset
+
+ is the discrete topology.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Munkres §53 mentions this argument inline.
+ Gemini 2.5 Pro points out the key property is that each slice is locally
+ homeomorphic to 
+\begin_inset Formula $U$
+\end_inset
+
+, so for a given preimage slice, only one point maps to 
+\begin_inset Formula $b$
+\end_inset
+
+ (because it's a bijection).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By even covering, the point 
+\begin_inset Formula $b$
+\end_inset
+
+ has a neighborhood 
+\begin_inset Formula $U$
+\end_inset
+
+ whose inverse image comes in open slices, each of which intersects 
+\begin_inset Formula $p^{-1}(b)$
+\end_inset
+
+ in a single point.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW3#4
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+] 
+\series bold
+a
+\series default
+.
+ 
+\series bold
+b
+\series default
+.
+ 
+\series bold
+c
+\series default
 .
  
 \end_layout
