@@ -3429,5 +3429,119 @@ spirit
 ?
 \end_layout
 
+\begin_layout Subsection*
+Exercises 5A
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+21.a
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\lambda\ne0$
+\end_inset
+
+ is an eigenvalue of 
+\begin_inset Formula $T$
+\end_inset
+
+ iff 
+\begin_inset Formula $\frac{1}{\lambda}$
+\end_inset
+
+ is an eigenvalue of 
+\begin_inset Formula $T^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) If 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is an eigenvalue of 
+\begin_inset Formula $T$
+\end_inset
+
+, then there exists 
+\begin_inset Formula $v$
+\end_inset
+
+ such that 
+\begin_inset Formula $Tv=\lambda v$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $T^{-1}Tv=T^{-1}\lambda v$
+\end_inset
+
+ implies 
+\begin_inset Formula $v=T^{-1}\lambda v$
+\end_inset
+
+ implies 
+\begin_inset Formula $T^{-1}v=\frac{1}{\lambda}v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) It's just the same algebra in the other direction.
+ If 
+\begin_inset Formula $\frac{1}{\lambda}$
+\end_inset
+
+ is an eigenvalue of 
+\begin_inset Formula $T^{-1}$
+\end_inset
+
+, then there exists 
+\begin_inset Formula $v$
+\end_inset
+
+ such that 
+\begin_inset Formula $T^{-1}v=\frac{1}{\lambda}v$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $TT^{-1}v=T\frac{1}{\lambda}v$
+\end_inset
+
+ implies 
+\begin_inset Formula $v=T\frac{1}{\lambda}v$
+\end_inset
+
+ implies 
+\begin_inset Formula $Tv=\lambda v$
+\end_inset
+
+.
+\end_layout
+
 \end_body
 \end_document
