@@ -91,16 +91,30 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-August 2025
+August–September 2025
 \end_layout
 
 \begin_layout Abstract
-Exercises from Theodore W.
+Exercises from crashing Prof.
+ Emily Clader's 
+\begin_inset Quotes eld
+\end_inset
+
+Advanced Topics in Mathematics: Algebraic Topology
+\begin_inset Quotes erd
+\end_inset
+
+ at San Francisco State University.
+ Other books on hand: Theodore W.
  Gamelin and Robert Everist Greene's 
 \emph on
-Introduction to Topology
+Introduction to Topology 
 \emph default
-.
+(Dover Books paperbook) and James Munkres's 
+\emph on
+Topology 
+\emph default
+(borrowed from the SFSU library).
 \end_layout
 
 \begin_layout Standard
@@ -393,8 +407,435 @@ quod erat demonstrandum
 
 
 \series bold
-III.3.1
+HW1#1
 \series default
+.
+ The gluing lemma.
+ We have 
+\begin_inset Formula $A,B\subseteq X$
+\end_inset
+
+ such that 
+\begin_inset Formula $X=A\cup B$
+\end_inset
+
+, 
+\begin_inset Formula $Y$
+\end_inset
+
+ another topological space, 
+\begin_inset Formula $f:A\rightarrow Y$
+\end_inset
+
+ and 
+\begin_inset Formula $g:B\rightarrow Y$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(x)=g(x)$
+\end_inset
+
+ where 
+\begin_inset Formula $x\in A\cap B$
+\end_inset
+
+, and continuous 
+\begin_inset Formula $h=\begin{cases}
+f(x) & x\in A\\
+g(x) & x\in B
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $h^{-1}(C)=f^{-1}(C)\cup g^{-1}(C)$
+\end_inset
+
+ for 
+\begin_inset Formula $C\subseteq Y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Seems pretty trivial?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $h^{-1}(C)=\left\{ x\in X:h(x)\in C\right\} =\left\{ x\in A:f(x)\in C\right\} \cup\left\{ x\in B:g(x)\in C\right\} =f^{-1}(C)\cup g^{-1}(C)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ If 
+\begin_inset Formula $C$
+\end_inset
+
+ is closed, then 
+\begin_inset Formula $f^{-1}(C)$
+\end_inset
+
+ is closed, because the inverse image under a continuous function of an
+ open set is open, which by taking complements implies that the inverse
+ image of a closed set is closed.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Preimages of closed sets are closed under 
+\begin_inset Formula $h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $h^{-1}(C)=f^{-1}(C)\cup g^{-1}(C)$
+\end_inset
+
+ by part a.
+ Both disjuncts are closed by part b.
+ The finite union of closed sets is closed.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW1#2
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Path homotopy is an equivalence relation.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Reflexive.) A path 
+\begin_inset Formula $f(s):[0,1]\rightarrow X$
+\end_inset
+
+ is path-homotopic to itself with the trivial homotopy 
+\begin_inset Formula $H(s,t):[0,1]\times[0,1]\rightarrow X=f(s)$
+\end_inset
+
+.
+ Just ignore the second argument.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Symmetric.) If 
+\begin_inset Formula $f$
+\end_inset
+
+ is path-homotopic to 
+\begin_inset Formula $g$
+\end_inset
+
+ under 
+\begin_inset Formula $H(s,t)$
+\end_inset
+
+, just do the homotopy in the other direction 
+\begin_inset Formula $H(s,1-t)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Transitive.) If 
+\begin_inset Formula $f$
+\end_inset
+
+ is path-homotopic to 
+\begin_inset Formula $g$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ to 
+\begin_inset Formula $h$
+\end_inset
+
+, then you can just stitch the homotopies together: go from 
+\begin_inset Formula $f$
+\end_inset
+
+ to 
+\begin_inset Formula $g$
+\end_inset
+
+ at double speed, then 
+\begin_inset Formula $g$
+\end_inset
+
+ to 
+\begin_inset Formula $h$
+\end_inset
+
+ at double speed.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW1#3
+\series default
+.
+ We are asked: why use the equivalence relation of path homotopy rather
+ than (full) homotopy when defining the path product.
+ Uh, kind of a weird question? If you want to compose paths, you want the
+ second path to start where the first ends.
+ Right? How could it be otherwise?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW1#4
+\series default
+.
+ Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be a path from 
+\begin_inset Formula $x$
+\end_inset
+
+ to 
+\begin_inset Formula $y$
+\end_inset
+
+, 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ be a path from 
+\begin_inset Formula $y$
+\end_inset
+
+ to 
+\begin_inset Formula $x$
+\end_inset
+
+, and 
+\begin_inset Formula $e_{x}$
+\end_inset
+
+ be the constant path at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ We want a path homotopy between 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $e_{x}*f$
+\end_inset
+
+.
+ This is annoying because we have to figure out how to normalize the parameter.
+ Or maybe it's just piecewise?
+\end_layout
+
+\begin_layout Standard
+You have to traverse 
+\begin_inset Formula $1-t$
+\end_inset
+
+ distance in unit time, which means going at speed 
+\begin_inset Formula $\frac{1}{1-t}$
+\end_inset
+
+, but we want the 
+\begin_inset Quotes eld
+\end_inset
+
+inner
+\begin_inset Quotes erd
+\end_inset
+
+ parameter to be 0 at the time we start that 
+\begin_inset Quotes eld
+\end_inset
+
+leg
+\begin_inset Quotes erd
+\end_inset
+
+, so I think it's
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(s,t):=\begin{cases}
+x & s<t\\
+f\left(\frac{1}{1-t}s-\frac{t}{1-t}\right) & s\ge t
+\end{cases}
+\]
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ We want a path homotopy between 
+\begin_inset Formula $f*\overline{f}$
+\end_inset
+
+ and 
+\begin_inset Formula $e_{x}$
+\end_inset
+
+.
+ [TODO: the parametrization is so annoying]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[...]
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ The fundamental group of the 
+\begin_inset Formula $n$
+\end_inset
+
+-torus 
+\begin_inset Formula $\prod_{i=1}^{n}S^{1}$
+\end_inset
+
+ is 
+\begin_inset Formula $\prod_{i=1}^{n}\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
 .
  
 \end_layout
