@@ -95,7 +95,7 @@ August–September 2025
 \end_layout
 
 \begin_layout Abstract
-Exercises from crashing Prof.
+Exercises mostly from crashing Prof.
  Emily Clader's 
 \begin_inset Quotes eld
 \end_inset
@@ -743,45 +743,109 @@ a
 \end_layout
 
 \begin_layout Standard
-You have to traverse 
-\begin_inset Formula $1-t$
+(An earlier attempt here was insane clown garbage and has been deleted.)
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $t=0$
 \end_inset
 
- distance in unit time, which means going at speed 
-\begin_inset Formula $\frac{1}{1-t}$
+, we want 
+\begin_inset Formula $f$
 \end_inset
 
-, but we want the 
-\begin_inset Quotes eld
+.
+ When 
+\begin_inset Formula $t=1$
 \end_inset
 
-inner
-\begin_inset Quotes erd
+, we want to do the constant path 
+\begin_inset Formula $e_{x}$
 \end_inset
 
- parameter to be 0 at the time we start that 
-\begin_inset Quotes eld
+ for half the time, then do 
+\begin_inset Formula $f$
 \end_inset
 
-leg
-\begin_inset Quotes erd
+ at double speed.
+ For intermediate 
+\begin_inset Formula $t$
 \end_inset
 
-, so I think it's
+, we want to do the constant path 
+\begin_inset Formula $e_{x}$
+\end_inset
+
+ for 
+\begin_inset Formula $\frac{t}{2}$
+\end_inset
+
+ of the time, and then do 
+\begin_inset Formula $f$
+\end_inset
+
+ in time 
+\begin_inset Formula $1-\frac{t}{2}$
+\end_inset
+
+.
+ From Gemini Pro 2.5 tutoring, the key formula is that when we map 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ to 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+, the new parametrization is 
+\begin_inset Formula $\frac{s-a}{b-a}$
+\end_inset
+
+ (the numerator shifting to the new start time, the denominator normalizing
+ to the new length).
+ Here, we're mapping 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ to 
+\begin_inset Formula $[\frac{t}{2},1]$
+\end_inset
+
+, so 
+\begin_inset Formula $a:=\frac{t}{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $b:=1$
+\end_inset
+
+.
+ (Gemini Pro 2.5 caught an error in an earlier attempt: I wrote 
+\begin_inset Formula $b:=1-\frac{t}{2}$
+\end_inset
+
+, mixing up the duration and the endpoint.) So the new parametrization should
+ be 
+\begin_inset Formula $\frac{s-\frac{t}{2}}{1-\frac{t}{2}}$
+\end_inset
+
+.
+ So we should have
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
 H(s,t):=\begin{cases}
-x & s<t\\
-f\left(\frac{1}{1-t}s-\frac{t}{1-t}\right) & s\ge t
+x & s<\frac{t}{2}\\
+f\left(\frac{s-\frac{t}{2}}{1-\frac{t}{2}}\right) & s\ge\frac{t}{2}
 \end{cases}
 \]
 
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -799,12 +863,206 @@ b
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-: the parametrization is so annoying]
-\begin_inset Newline newline
+ At 
+\begin_inset Formula $t=0$
+\end_inset
+
+, we have 
+\begin_inset Formula $\begin{cases}
+f(s) & s<\frac{1}{2}\\
+f(1-s) & s\ge\frac{1}{2}
+\end{cases}$
+\end_inset
+
+.
+ (Uh, modulo speed normalization.) At 
+\begin_inset Formula $t=1$
+\end_inset
+
+, we want the constant path at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ The obvious strategy is to continuously 
+\begin_inset Quotes eld
+\end_inset
+
+pull back
+\begin_inset Quotes erd
+\end_inset
+
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+turnaround point
+\begin_inset Quotes erd
+\end_inset
+
+ at 
+\begin_inset Formula $f(1)$
+\end_inset
+
+.
+ If we think of that as mapping 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ onto 
+\begin_inset Formula $[0,1-t]$
+\end_inset
+
+, that suggests a parametrization of 
+\begin_inset Formula $\frac{s}{1-t}$
+\end_inset
+
+, yielding 
+\begin_inset Formula $H(s,t):=\begin{cases}
+f(\frac{s}{1-t}) & s<\frac{1}{2}\\
+f(1-\frac{s}{1-t}) & s\ge\frac{1}{2}
+\end{cases}$
+\end_inset
+
+.
+ We check the endpoints: 
+\begin_inset Formula $H(s,0)$
+\end_inset
+
+ confirms.
+ But 
+\begin_inset Formula $H(s,1)$
+\end_inset
+
+ is a division by zero.
+ We were wrong: mapping 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ onto 
+\begin_inset Formula $[0,1-t]$
+\end_inset
+
+ just does the whole route successively faster (and goes discontinuous at
+ 
+\begin_inset Quotes eld
+\end_inset
+
+lightspeed
+\begin_inset Quotes erd
+\end_inset
+
+); it doesn't pull back the turnaround point.
+ For example, you could think that at 
+\begin_inset Formula $t:=\frac{3}{4}$
+\end_inset
+
+, we want to only go out to 
+\begin_inset Formula $f(\frac{3}{4})$
+\end_inset
+
+—except 
+\begin_inset Formula $t$
+\end_inset
+
+ goes in the other direction (
+\begin_inset Formula $t=0$
+\end_inset
+
+ is the full route, 
+\begin_inset Formula $t=1$
+\end_inset
+
+ is the constant path).
+ So the next guess is that we actually want 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(s,t):=\begin{cases}
+f(s(1-t)) & s<\frac{1}{2}\\
+f(1-s(1-t)) & s\ge\frac{1}{2}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But this still has a discontinuity: 
+\begin_inset Formula $t=1$
+\end_inset
+
+ implies the second branch goes to 
+\begin_inset Formula $f(1)$
+\end_inset
+
+, and we still haven't done speed normalization.
+\end_layout
+
+\begin_layout Standard
+At this point we turn to Gemini 2.5 Pro again.
+ It explains that the outward leg is 
+\begin_inset Formula $2s(1-t)$
+\end_inset
+
+ (going out to 
+\begin_inset Formula $1-t$
+\end_inset
+
+ at double speed) and the inward leg is going to come from the linear function
+ that maps 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ (second leg start time) to 
+\begin_inset Formula $1-t$
+\end_inset
+
+ (second leg start displacement) and 
+\begin_inset Formula $1$
+\end_inset
+
+ (second leg end time) to zero (finish line).
+ That's a slope of 
+\begin_inset Formula $-\frac{1-t}{\frac{1}{2}}=2t-2$
+\end_inset
+
+.
+ We need to find the intercept; we know 
+\begin_inset Formula $(1,0)$
+\end_inset
+
+ is on the line (we've returned to the starting point at time 0).
+ So we have 
+\begin_inset Formula $0=(2t-2)(1)+b$
+\end_inset
+
+ implies 
+\begin_inset Formula $b=2-2t$
+\end_inset
+
+.
+ So the inbound leg is 
+\begin_inset Formula $(2t-2)s+2-2t$
+\end_inset
+
+.
+ So our homotopy is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(s,t):=\begin{cases}
+f(2s(1-t)) & s<\frac{1}{2}\\
+f((2t-2)s+2-2t) & s\ge\frac{1}{2}
+\end{cases}
+\]
+
 \end_inset
 
 
