@@ -1066,6 +1066,10 @@ f((2t-2)s+2-2t) & s\ge\frac{1}{2}
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1294,6 +1298,40 @@ Commentary
 \end_inset
 
 .
+ What does that entail? I tried writing out what I thought was a proof (supposin
+g we have a homotopy 
+\begin_inset Formula $F$
+\end_inset
+
+ between two members of 
+\begin_inset Formula $[f]$
+\end_inset
+
+, 
+\begin_inset Formula $G$
+\end_inset
+
+ between members of 
+\begin_inset Formula $[g]$
+\end_inset
+
+, and getting the same result from doing 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ and the each-at-double-speed operation on the inside/outside), but Claude
+ Opus 4.1 and Gemini 2.5 Pro aren't buying it.
+ What am I misunderstanding?
+\end_layout
+
+\begin_layout Standard
+The each-at-double-speed path product is defined on specific paths, and
+ the product of equivalence classes is the equivalence class of product
+ of representatives: 
+\begin_inset Formula $[f]*[g]=[f*g]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1302,28 +1340,28 @@ Commentary
 Proof
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-]
-\begin_inset Newline newline
+ We have 
+\begin_inset Formula $\varphi_{*}([f]*[g])=\varphi_{*}([f*g])=[\varphi\circ(f*g)]=\varphi\circ\begin{cases}
+f(2s) & s\le\frac{1}{2}\\
+g(2s-1) & s>\frac{1}{2}
+\end{cases}=\begin{cases}
+\varphi\circ f(2s) & s\le\frac{1}{2}\\
+\varphi\circ g(2s-1) & s>\frac{1}{2}
+\end{cases}$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
+But 
+\begin_inset Formula $\varphi_{*}([f])*\varphi_{*}([g])=[\varphi\circ f]*[\varphi\circ g]=[(\varphi\circ f)*(\varphi\circ g)]=\begin{cases}
+\varphi\circ f(2s) & s\le\frac{1}{2}\\
+\varphi\circ g(2s-1) & s>\frac{1}{2}
+\end{cases}$
+\end_inset
 
-\series bold
-c
-\series default
 .
- [
-\series bold
-TODO
-\series default
-]
 \begin_inset Newline newline
 \end_inset
 
@@ -1336,11 +1374,370 @@ TODO
 HW2#2
 \series default
 .
- [
+ 
+\emph on
+Theorem
+\emph default
+.
+ Fundamental groups of the same space but different basepoint are isomorphic.
+ 
+\end_layout
+
+\begin_layout Standard
+
 \series bold
-TODO
+a
 \series default
-]
+.
+ Let 
+\begin_inset Formula $x_{0},x_{1}\in X$
+\end_inset
+
+, and 
+\begin_inset Formula $\hat{\alpha}([f]):\pi_{1}(X,x_{0})\to\pi_{1}(X,x_{1})=[\overline{\alpha}*f*\alpha]$
+\end_inset
+
+.
+ We want to show that 
+\begin_inset Formula $\hat{\alpha}$
+\end_inset
+
+ is well-defined: if 
+\begin_inset Formula $[f]=[g]$
+\end_inset
+
+, then 
+\begin_inset Formula $\hat{\alpha}([f])=\hat{\alpha}([g])$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We have 
+\begin_inset Formula $\hat{\alpha}([f])=[\overline{\alpha}*f*\alpha]$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\alpha}([g])=[\overline{\alpha}*g*\alpha]$
+\end_inset
+
+.
+ Not being sure what operations we're formally 
+\begin_inset Quotes eld
+\end_inset
+
+allowed to do inside the brackets
+\begin_inset Quotes erd
+\end_inset
+
+, should not be a blocker.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\overline{\alpha}*(f*\alpha)(s)=\begin{cases}
+\overline{\alpha}(2s) & s\in[0,\frac{1}{2}]\\
+(f*\alpha)(2s-1) & s\in[\frac{1}{2},1]
+\end{cases}$
+\end_inset
+
+ but 
+\begin_inset Formula $f*\alpha(s)=\begin{cases}
+f(2s) & s\in[0,\frac{1}{2}]\\
+\alpha(2s-1) & s\in[\frac{1}{2},1]
+\end{cases},$
+\end_inset
+
+so 
+\begin_inset Formula $\overline{\alpha}*(f*\alpha)(s)=\begin{cases}
+\overline{\alpha}(2s) & s\in[0,\frac{1}{2}]\\
+f(4s-2) & s\in[\frac{1}{2},\frac{3}{4}]\\
+\alpha(4s-3) & s\in[\frac{3}{4},1]
+\end{cases}$
+\end_inset
+
+ (where we've simplified 
+\begin_inset Formula $2(2s-1)=4s-2$
+\end_inset
+
+ and 
+\begin_inset Formula $2(2s-1)-1=4s-3$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+I notice that the path-concat operation itself (as opposed to the equivalence
+ classes) is not associative (becuase in 
+\begin_inset Formula $a*(b*c)$
+\end_inset
+
+, 
+\begin_inset Formula $a$
+\end_inset
+
+ takes half the time, but in 
+\begin_inset Formula $(a*b)*c$
+\end_inset
+
+, 
+\begin_inset Formula $a$
+\end_inset
+
+ takes a quarter of the time), even though the equivalence classes are.
+\end_layout
+
+\begin_layout Standard
+The same calculation without loss of generality also gives us 
+\begin_inset Formula $\overline{\alpha}*(g*\alpha)(s)=\begin{cases}
+\overline{\alpha}(2s) & s\in[0,\frac{1}{2}]\\
+g(4s-2) & s\in[\frac{1}{2},\frac{3}{4}]\\
+\alpha(4s-3) & s\in[\frac{3}{4},1]
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Suppose we have a homotopy 
+\begin_inset Formula $H(s,t)$
+\end_inset
+
+ such that 
+\begin_inset Formula $H(s,0)=f$
+\end_inset
+
+ and 
+\begin_inset Formula $H(s,1)=g$
+\end_inset
+
+ (and 
+\begin_inset Formula $H(0,t)=x_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $H(1,t)=x_{1}$
+\end_inset
+
+).
+ Then it would stand to reason that 
+\begin_inset Formula $\begin{cases}
+\overline{\alpha}(2s) & s\in[0,\frac{1}{2}]\\
+H(4s-2,t) & s\in[\frac{1}{2},\frac{3}{4}]\\
+\alpha(4s-3) & s\in[\frac{3}{4},1]
+\end{cases}$
+\end_inset
+
+ would be a homotopy between 
+\begin_inset Formula $\overline{\alpha}*(f*\alpha)$
+\end_inset
+
+ and 
+\begin_inset Formula $\overline{\alpha}*(g*\alpha)$
+\end_inset
+
+, so we indeed have 
+\begin_inset Formula $\hat{\alpha}([f])=\hat{\alpha}([g])$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Gemini and Claude are saying we didn't need to do all that work.
+ There's a shorter
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof.
+
+\emph default
+ 
+\begin_inset Formula $[f]=[g]$
+\end_inset
+
+ implies 
+\begin_inset Formula $[\overline{\alpha}]*[f]=[\overline{\alpha}]*[g]$
+\end_inset
+
+ and 
+\begin_inset Formula $[\overline{\alpha}]*[f]*[\alpha]=[\overline{\alpha}]*[g]*[\alpha]$
+\end_inset
+
+ by group operations.
+ But by the definition of the operation, 
+\begin_inset Formula $[\overline{\alpha}]*[f]*[\alpha]=[\overline{\alpha}*f]*[\alpha]=[\overline{\alpha}*f*\alpha]$
+\end_inset
+
+ (and the same applies without loss of generality for 
+\begin_inset Formula $[\overline{\alpha}]*[g]*[\alpha]$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $[\overline{\alpha}*f*\alpha]=[\overline{\alpha}*g*\alpha]$
+\end_inset
+
+, which is 
+\begin_inset Formula $\hat{\alpha}([f])=\hat{\alpha}([g])$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\hat{\alpha}$
+\end_inset
+
+ is a group homomorphism.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We need to show that 
+\begin_inset Formula $\hat{\alpha}([f*g])=\hat{\alpha}([f])*\hat{\alpha}([g])$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $\hat{\alpha}([f*g])=[\overline{\alpha}*f*g*\alpha]$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\alpha}([f])*\hat{\alpha}([g])=[\overline{\alpha}*f*\alpha]*[\overline{\alpha}*g*\alpha]=[\overline{\alpha}*f*\cancel{\alpha*\overline{\alpha}}*g*\alpha]=[\overline{\alpha}*f*g*\alpha]\ \checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\hat{\alpha}$
+\end_inset
+
+ is a bijection.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Injectivity.) We need to show that if 
+\begin_inset Formula $\hat{\alpha}([f])=\hat{\alpha}([g])$
+\end_inset
+
+, then 
+\begin_inset Formula $[f]=[g]$
+\end_inset
+
+.
+ Suppose 
+\begin_inset Formula $[\overline{\alpha}*f*\alpha]=[\overline{\alpha}*g*\alpha]$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\cancel{[\overline{\alpha}]}*[f]*\cancel{[\alpha]}=\cancel{[\overline{\alpha}]}*[f]*\cancel{[\alpha]}$
+\end_inset
+
+ implies 
+\begin_inset Formula $[f]=[g]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Surjectivity.) We need to show that for all 
+\begin_inset Formula $f'\in\pi_{1}(X,x_{1})$
+\end_inset
+
+, there exists 
+\begin_inset Formula $f\in\pi_{1}(X,x_{0})$
+\end_inset
+
+ such that 
+\begin_inset Formula $\hat{\alpha}([f])=[f']$
+\end_inset
+
+.
+ Consider arbitrary 
+\begin_inset Formula $[f'].$
+\end_inset
+
+ Then let 
+\begin_inset Formula $f:=\alpha*f'*\overline{\alpha}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\hat{\alpha}([f])=[\overline{\alpha}*f*\alpha]=[\cancel{\overline{\alpha}*\alpha}*f'*\cancel{\overline{\alpha}*\alpha}]=[f']$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -1397,15 +1794,42 @@ Theorem
 \begin_layout Standard
 
 \emph on
+Comment
+\emph default
+.
+ This is Lemma 52.3 in Munkres.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-: we can use the straight-line homotopy, which will work because simple
- connectivity implies path connectivity]
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Simply connected
+\begin_inset Quotes erd
+\end_inset
+
+ means that the fundamental group is trivial.
+ We notice that 
+\begin_inset Formula $f*\overline{g}$
+\end_inset
+
+ is a loop, and path-homotopic to the constant loop at 
+\begin_inset Formula $x$
+\end_inset
+
+.
+ 
+\begin_inset Formula $[g]=[f*\overline{g}]*[g]=[f*\cancel{\overline{g}*g}]=[f]$
+\end_inset
+
+.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -1451,6 +1875,26 @@ Comment
  It's obviously simply connected, but to prove that, it would seem we have
  to compute the fundamental group.
  Gemini 2.5 Pro hints that we can invoke star-shapedness.
+ Munkres calls this property 
+\begin_inset Quotes eld
+\end_inset
+
+star-convexity
+\begin_inset Quotes erd
+\end_inset
+
+, which is a clue that our proof for convex sets might generalize.
+ Since every point on in a ray segment from the center to a point on the
+ loop, is itself inside the loop (that's what star-shapedness means), we
+ can 
+\begin_inset Quotes eld
+\end_inset
+
+tighten the loop
+\begin_inset Quotes erd
+\end_inset
+
+ that way.
 \end_layout
 
 \begin_layout Standard
@@ -1469,14 +1913,65 @@ Proof
 
 , which suffices to show it's not convex.
  
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-(Simply connected.) [
-\series bold
-TODO
-\series default
-]
+(Simply connected.) Let 
+\begin_inset Formula $f(s)$
+\end_inset
+
+ be a loop based at the origin inside the complement-of-wedge shape with
+ 
+\begin_inset Formula $f(0)=f(1)=(0,0)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $H(s,t)=(1-t)f(s)$
+\end_inset
+
+ is a homotopy between 
+\begin_inset Formula $f$
+\end_inset
+
+ and the constant path at 
+\begin_inset Formula $0$
+\end_inset
+
+: we see that 
+\begin_inset Formula $H(s,0)=(1-0)f(s)=f(s)$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+, 
+\begin_inset Formula $H(s,1)=(1-1)f(s)=0\ \checkmark$
+\end_inset
+
+, 
+\begin_inset Formula $H(0,t)=(1-t)f(0)=0\ \checkmark$
+\end_inset
+
+, and 
+\begin_inset Formula $H(1,t)=(1-t)f(1)=0\ \checkmark$
+\end_inset
+
+, and 
+\begin_inset Formula $H(s,t)$
+\end_inset
+
+ belongs to the complement-of-wedge by star-shapedness 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -1522,6 +2017,16 @@ every
 \end_layout
 
 \begin_layout Standard
+I'm using four because that was the argument suggested in Munkres §53, but
+ Gemini 2.5 Pro confirms we can use two (each the circle with a point removed,
+ the preimages being translates of 
+\begin_inset Formula $\mathbb{R}\backslash\mathbb{Z}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
 
 \emph on
 Proof
@@ -1536,7 +2041,7 @@ Proof
 \end_inset
 
 , 
-\begin_inset Formula $U_{3}:=\{p(x):x\in(\frac{1}{2},-\frac{1}{2})\}$
+\begin_inset Formula $U_{3}:=\{p(x):x\in(\frac{1}{4},\frac{3}{4})\}$
 \end_inset
 
 ,
@@ -1544,11 +2049,46 @@ Proof
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-: finish inverse-trig argument]
+\end_layout
+
+\begin_layout Standard
+Then we have 
+\begin_inset Formula $p^{-1}(U_{1})=\bigcup_{n\in\mathbb{Z}}\{(n-\frac{1}{4},n+\frac{1}{4})\}$
+\end_inset
+
+, 
+\begin_inset Formula $p^{-1}(U_{2})=\bigcup_{n\in\mathbb{Z}}\{(n,n+\frac{1}{2})\}$
+\end_inset
+
+, 
+\begin_inset Formula $p^{-1}(U_{3})=\bigcup_{n\in\mathbb{Z}}\{(n+\frac{1}{4},n+\frac{3}{4})\}$
+\end_inset
+
+, 
+\begin_inset Formula $p^{-1}(U_{4})=\bigcup_{n\in\mathbb{Z}}\{(n+\frac{1}{2},n+1)\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Every point in 
+\begin_inset Formula $S^{1}$
+\end_inset
+
+ has at least one of the 
+\begin_inset Formula $U_{i}$
+\end_inset
+
+ as an open neighbhorhood, and the inverse image of every 
+\begin_inset Formula $U_{i}$
+\end_inset
+
+ is the union of disjoint open sets such that the restriction of 
+\begin_inset Formula $p$
+\end_inset
+
+ to that set is a homeomorphism onto the neighborhood.
 \begin_inset Newline newline
 \end_inset
 
@@ -1597,11 +2137,44 @@ Proposition
 Proof
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-]
+ If 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+ is the empty set, then it's open.
+ Suppose it's not empty.
+ Let 
+\begin_inset Formula $b\in B_{k}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $p^{-1}(b)$
+\end_inset
+
+ has exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ elements.
+ By even covering, 
+\begin_inset Formula $b$
+\end_inset
+
+ has an open neighborhood 
+\begin_inset Formula $U$
+\end_inset
+
+ such that 
+\begin_inset Formula $p^{-1}(U)$
+\end_inset
+
+ is the union of disjoint open sets each homeomorphic to 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -1641,11 +2214,32 @@ TODO
 c
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $B$
+\end_inset
+
+ is connected and some fiber of 
+\begin_inset Formula $p$
+\end_inset
+
+ has size 
+\begin_inset Formula $k$
+\end_inset
+
+, then every fiber of 
+\begin_inset Formula $p$
+\end_inset
+
+ has size 
+\begin_inset Formula $k$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
