@@ -2282,6 +2282,113 @@ Proof
 \begin_layout Standard
 
 \series bold
+13
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Suppose 
+\begin_inset Formula $\{v_{j}\}_{j=1}^{m}$
+\end_inset
+
+ is linearly independent in 
+\begin_inset Formula $V$
+\end_inset
+
+ and 
+\begin_inset Formula $w\in V$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\{v_{j}\}_{j=1}^{m}\cup w$
+\end_inset
+
+ is linearly independent iff 
+\begin_inset Formula $w\notin\mathrm{span}(v_{j})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $\{v_{j}\}_{j=1}^{m}\cup w$
+\end_inset
+
+ were linearly independent: 
+\emph on
+i.e
+\emph default
+., if 
+\begin_inset Formula $a_{0}w+\sum_{j=1}^{m}a_{j}v_{j}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $\{a_{j}\}_{j=0}^{m}=\{0\}$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+ ...]
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose that 
+\begin_inset Formula $w\notin\mathrm{span}(v_{j})$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $\{v_{j}\}_{j=1}^{m}$
+\end_inset
+
+ are linearly independent, so if 
+\begin_inset Formula $\sum_{j=1}^{m}a_{j}v_{j}=0$
+\end_inset
+
+, then all the 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ are zero.
+ If 
+\begin_inset Formula $a_{0}w+\sum_{j=1}^{m}a_{j}v_{j}=0$
+\end_inset
+
+, [
+\series bold
+TODO
+\series default
+ ...]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 15
 \series default
 .
@@ -2541,6 +2648,543 @@ Second attempt
 
 \begin_layout Standard
 ...?
+\end_layout
+
+\begin_layout Subsection*
+Exercises 2B
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\begin_inset Formula $U$
+\end_inset
+
+ is the subspace of 
+\begin_inset Formula $\R^{5}$
+\end_inset
+
+ defined by 
+\begin_inset Formula $x_{1}=3x_{5}$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{3}=7x_{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ We want to find a basis for 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ The equations are equivalent to 
+\begin_inset Formula $x_{1}-3x_{5}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $x_{3}-7x_{4}=0$
+\end_inset
+
+.
+ So we can see by inspection that 
+\begin_inset Formula $\left[\begin{array}{c}
+3\\
+0\\
+0\\
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+ and 
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0\\
+7\\
+1\\
+0
+\end{array}\right]$
+\end_inset
+
+ are in the subspace.
+ We can see by inspection that they're linearly independent from each other
+ (they don't involve the same standard-basis coördinates).
+ Do they span the subspace? Probably, but why do I believe that? [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+b
+\series default
+.
+ We want to extend the basis to a basis of 
+\begin_inset Formula $\R^{5}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+ is obviously in.
+ [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ [will follow triviallly from part b]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+8
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $\{v_{1},v_{2},v_{3},v_{4}\}$
+\end_inset
+
+ is a basis of 
+\begin_inset Formula $V$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{1},u_{2}\in U\subseteq V$
+\end_inset
+
+ and 
+\begin_inset Formula $u_{3},u_{4}\notin U$
+\end_inset
+
+, then 
+\begin_inset Formula $\{v_{1},v_{2}\}$
+\end_inset
+
+ is a basis of 
+\begin_inset Formula $U$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Subspaces are closed under scalar multiplication.
+ So if 
+\begin_inset Formula $u_{3}\notin U$
+\end_inset
+
+, then for all 
+\begin_inset Formula $a_{3}\in\F$
+\end_inset
+
+, 
+\begin_inset Formula $a_{3}v_{3}\notin U$
+\end_inset
+
+.
+ (Because if 
+\begin_inset Formula $a_{3}v_{3}\in U$
+\end_inset
+
+, then so would 
+\begin_inset Formula $\cancel{\frac{1}{a_{3}}a_{3}}v_{3}=v_{3}$
+\end_inset
+
+.) Similarly for 
+\begin_inset Formula $v_{4}$
+\end_inset
+
+.
+ Subspaces are closed under addition, so if 
+\begin_inset Formula $u\in U$
+\end_inset
+
+, then 
+\begin_inset Formula $u+a_{3}v_{3}\notin U$
+\end_inset
+
+.
+ (Because if it were, then so would 
+\begin_inset Formula $\cancel{u-u}+a_{3}v_{3}=a_{3}v_{3}$
+\end_inset
+
+.) Similarly for 
+\begin_inset Formula $v_{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $U$
+\end_inset
+
+ is a subspace of 
+\begin_inset Formula $V$
+\end_inset
+
+, every 
+\begin_inset Formula $v\in V$
+\end_inset
+
+ can be written as 
+\begin_inset Formula $v=a_{1}v_{1}+a_{2}v_{2}+a_{3}v_{3}+a_{4}v_{4}$
+\end_inset
+
+.
+ But we know from the above that 
+\begin_inset Formula $a_{3}v_{3}+a_{4}v_{4}$
+\end_inset
+
+ cannot appear in members of 
+\begin_inset Formula $U$
+\end_inset
+
+.
+ So every 
+\begin_inset Formula $v$
+\end_inset
+
+ can be written as 
+\begin_inset Formula $v=a_{1}v_{1}+a_{2}v_{2}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\{v_{1},v_{2}\}$
+\end_inset
+
+ is a basis.
+\end_layout
+
+\begin_layout Subsection*
+Exercises 2C
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The subspaces of 
+\begin_inset Formula $\R^{2}$
+\end_inset
+
+ are precisely 
+\begin_inset Formula $\{0\}$
+\end_inset
+
+, all lines containing the origin, and 
+\begin_inset Formula $\R^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By Axler's 2.39, 
+\begin_inset Formula $\R^{2}$
+\end_inset
+
+ is the only two-dimensional subspace of the two-dimensional 
+\begin_inset Formula $\R^{2}$
+\end_inset
+
+.
+ One-dimensional subspaces are spanned by a single vector, which amount
+ to the lines containing the origin.
+ 
+\begin_inset Formula $\{0\}$
+\end_inset
+
+ is the zero-dimensional subspace.
+ That's all the integers there are to be subspaces of that dimensionality.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+9
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Suppose 
+\begin_inset Formula $\{p_{j}\}_{j=0}^{m}\subset\mathcal{P}(\F)$
+\end_inset
+
+ are such that 
+\begin_inset Formula $p_{j}$
+\end_inset
+
+ has degree 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\{p_{j}\}_{j=1}^{m}$
+\end_inset
+
+ are a basis of 
+\begin_inset Formula $\mathcal{P}_{m}(\F)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\mathcal{P}_{m}(\F)$
+\end_inset
+
+ is 
+\begin_inset Formula $m+1$
+\end_inset
+
+ dimensional, so any spanning, linearly independent set of members of 
+\begin_inset Formula $\mathcal{P}_{m}(\F)$
+\end_inset
+
+ will do.
+\end_layout
+
+\begin_layout Standard
+(Linear independence.) We know that the 
+\begin_inset Formula $\{p_{j}\}_{j=1}^{m}$
+\end_inset
+
+ are linearly independent, because 
+\begin_inset Formula $p_{j+1}$
+\end_inset
+
+ is linearly independent of 
+\begin_inset Formula $\{p_{k}\}_{k=0}^{j}$
+\end_inset
+
+ due to its higher degree.
+ (Inductively: if 
+\begin_inset Formula $\sum_{k=0}^{j+1}a_{k}p_{k}=0$
+\end_inset
+
+ where 
+\begin_inset Formula $\{p_{k}\}_{k=0}^{j}$
+\end_inset
+
+ is linearly independent, we know that 
+\begin_inset Formula $a_{j+1}$
+\end_inset
+
+ is zero because if it weren't, we would have a nonzero degree-
+\begin_inset Formula $j+1$
+\end_inset
+
+ term on the right side, leaving us with 
+\begin_inset Formula $\sum_{k=0}^{j}a_{k}p_{k}=0$
+\end_inset
+
+, which implies the 
+\begin_inset Formula $\{a_{k}\}$
+\end_inset
+
+ are zero by the linear independence of 
+\begin_inset Formula $\{p_{k}\}_{k=0}^{j}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+(Spanning.) We can also get spanning inductively.
+\end_layout
+
+\begin_layout Standard
+(Spanning—base.)
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ is a constant and spans 
+\begin_inset Formula $\F$
+\end_inset
+
+ (as 
+\begin_inset Formula $f\in\F$
+\end_inset
+
+ is just 
+\begin_inset Formula $\frac{f}{p_{0}}p_{0}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+(Spanning—induction.) Suppose 
+\begin_inset Formula $\{p_{k}\}_{k=0}^{j}$
+\end_inset
+
+ is spanning.
+ We can get a monomial degree-
+\begin_inset Formula $j+1$
+\end_inset
+
+ term by subtracting the degree-
+\begin_inset Formula $j$
+\end_inset
+
+-or-less terms from 
+\begin_inset Formula $p_{j+1}$
+\end_inset
+
+ (which we can do, because all degree-
+\begin_inset Formula $j$
+\end_inset
+
+-or-less polynomials are spanned by 
+\begin_inset Formula $\{p_{k}\}_{k=0}^{j}$
+\end_inset
+
+) and dividing by the coëfficient.
+ Then 
+\begin_inset Formula $\{x^{j+1}\}\cup\{p_{k}\}_{k=0}^{j}$
+\end_inset
+
+ is spanning the degree-
+\begin_inset Formula $j+1$
+\end_inset
+
+ polynomials.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+14
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $V$
+\end_inset
+
+ is ten-dimensional and 
+\begin_inset Formula $V_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $V_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $V_{3}$
+\end_inset
+
+ are subspaces with 
+\begin_inset Formula $\dim V_{1}=\dim V_{2}=\dim V_{3}=7$
+\end_inset
+
+, then 
+\begin_inset Formula $V_{1}\cap V_{2}\cap V_{3}\ne\{0\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By the dimension of a sum, 
+\begin_inset Formula $\dim V_{1}+V_{2}=\dim V_{1}+\dim V_{2}-\dim(V_{1}\cap V_{2})=14-\dim(V_{1}\cap V_{2})$
+\end_inset
+
+.
+ [
+\series bold
+TODO 
+\series default
+it's obvious, but we have to finish articulating it]
 \end_layout
 
 \begin_layout Subsection*
