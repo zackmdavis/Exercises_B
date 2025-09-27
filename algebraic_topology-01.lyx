@@ -190,7 +190,7 @@ Proof
 \end_inset
 
  can indeed be taken to be 
-\begin_inset Formula $F$
+\begin_inset Formula $X$
 \end_inset
 
 , because the fact that 
@@ -2141,40 +2141,147 @@ Proof
 \begin_inset Formula $B_{k}$
 \end_inset
 
- is the empty set, then it's open.
- Suppose it's not empty.
- Let 
+ is the empty set, then it's open, so suppose it's not empty.
+\end_layout
+
+\begin_layout Standard
+Suppose for a contradiction that 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+ is not open.
+ Then there exists a point 
 \begin_inset Formula $b\in B_{k}$
 \end_inset
 
-.
- So 
-\begin_inset Formula $p^{-1}(b)$
-\end_inset
-
- has exactly 
-\begin_inset Formula $k$
-\end_inset
-
- elements.
- By even covering, 
+ such that there does not exist a neighborhood of 
 \begin_inset Formula $b$
 \end_inset
 
- has an open neighborhood 
+ contained in 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+: i.e., there are points arbitrarily close to 
+\begin_inset Formula $b$
+\end_inset
+
+ that don't have exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ preimage points.
+\end_layout
+
+\begin_layout Standard
+By even covering, there exists a neighborhood 
 \begin_inset Formula $U$
+\end_inset
+
+ of 
+\begin_inset Formula $b$
 \end_inset
 
  such that 
 \begin_inset Formula $p^{-1}(U)$
 \end_inset
 
- is the union of disjoint open sets each homeomorphic to 
+ is a disjoint union of sets that are locally homeomorphic to 
 \begin_inset Formula $U$
 \end_inset
 
 .
- 
+\end_layout
+
+\begin_layout Standard
+Suppose for a contradiction that the number of slices in 
+\begin_inset Formula $p^{-1}(U)$
+\end_inset
+
+ is more or less than 
+\begin_inset Formula $k$
+\end_inset
+
+, not exactly 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If more, then we have more than 
+\begin_inset Formula $k$
+\end_inset
+
+ slices that are homeomorphic to 
+\begin_inset Formula $U$
+\end_inset
+
+, which contains 
+\begin_inset Formula $b$
+\end_inset
+
+, so 
+\begin_inset Formula $b$
+\end_inset
+
+ (having a preimage in each slice) would have more than 
+\begin_inset Formula $k$
+\end_inset
+
+ preimages, despite our assumption that 
+\begin_inset Formula $b$
+\end_inset
+
+ has exactly 
+\begin_inset Formula $k$
+\end_inset
+
+ preimages.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+If less, then 
+\begin_inset Formula $b$
+\end_inset
+
+ would need to have other preimages not in 
+\begin_inset Formula $p^{-1}(U)$
+\end_inset
+
+, but that doesn't make sense: a preimage of 
+\begin_inset Formula $U$
+\end_inset
+
+ contains the preimages of all the point in 
+\begin_inset Formula $U$
+\end_inset
+
+, including 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+Thus, the neighborhood 
+\begin_inset Formula $U$
+\end_inset
+
+ of 
+\begin_inset Formula $b$
+\end_inset
+
+ is contained in 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+, despite our assumption that no such neighborhood exists.
+ Contradiction!
 \begin_inset Newline newline
 \end_inset
 
@@ -2197,15 +2304,27 @@ Proposition
 \end_inset
 
  is closed.
- [
-\series bold
-TODO
-\series default
-]
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+ is closed iff its complement is open, but the complement 
+\begin_inset Formula $B_{k}^{\complement}=\bigcup_{j\in\mathbb{N},j\ne k}B_{j}$
+\end_inset
+
+ is a union of open sets, which is open.
 \begin_inset Newline newline
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -2240,19 +2359,73 @@ Theorem
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The only open and closed nontrivial subset of a connected set is the set
+ itself, but we've shown above that 
+\begin_inset Formula $B_{k}$
+\end_inset
+
+ is open and closed.
 \begin_inset Newline newline
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+
 \series bold
 d
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ Cooking up an arbitrary concrete counterexample for the disconnected-
+\begin_inset Formula $B$
+\end_inset
+
+ case is easy: let 
+\begin_inset Formula $B_{1}:=[0,1]$
+\end_inset
+
+ and 
+\begin_inset Formula $B_{2}:=[2,3]$
+\end_inset
+
+ and 
+\begin_inset Formula $B:=B_{1}\cup B_{2}$
+\end_inset
+
+ and then say 
+\begin_inset Formula $p$
+\end_inset
+
+ maps 
+\begin_inset Formula $[4,5]$
+\end_inset
+
+ onto 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ and maps both 
+\begin_inset Formula $[6,7]$
+\end_inset
+
+ and 
+\begin_inset Formula $[8,9]$
+\end_inset
+
+ onto 
+\begin_inset Formula $[2,3]$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -2333,16 +2506,7 @@ Proof
 \begin_layout Standard
 
 \series bold
-HW3#4
-\series default
-.
- [
-\series bold
-TODO
-\series default
-] 
-\series bold
-a
+HW4#1
 \series default
 .
  
@@ -2350,12 +2514,315 @@ a
 b
 \series default
 .
- 
+ Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be the path in 
+\begin_inset Formula $S^{1}\times S^{1}$
+\end_inset
+
+ given by 
+\begin_inset Formula $f(s):=\left((\cos2\pi s,\sin2\pi s),(\cos4\pi s,\sin4\pi s)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The lift of 
+\begin_inset Formula $f$
+\end_inset
+
+ starting at 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ would be the line from 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ to 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+.
+ (We're going around the second circle 
+\begin_inset Quotes eld
+\end_inset
+
+twice as fast
+\begin_inset Quotes erd
+\end_inset
+
+—twice during the 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ parameter domain—so the preimage in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ goes twice as far.)
+\end_layout
+
+\begin_layout Standard
+Asked to propose another lift, I nominated the line from 
+\begin_inset Formula $(\frac{1}{2}$
+\end_inset
+
+,
+\begin_inset Formula $\frac{1}{2})$
+\end_inset
+
+ to 
+\begin_inset Formula $(\frac{3}{2}$
+\end_inset
+
+,
+\begin_inset Formula $\frac{5}{2})$
+\end_inset
+
+, thinking that I could start mapping the circle from 
+\begin_inset Formula $\pi$
+\end_inset
+
+ radians, 
+\begin_inset Formula $(-1,0)$
+\end_inset
+
+: but that's not the same path as 
+\begin_inset Formula $f$
+\end_inset
+
+; that would be a different path on the image (
+\begin_inset Formula $B$
+\end_inset
+
+) torus.
+ Gemini Pro 2.5 explains that lifts of 
+\begin_inset Formula $f$
+\end_inset
+
+ take the form 
+\begin_inset Formula $\{(m+s,n+2s):m,n\in\mathbb{Z}\}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \series bold
-c
+HW4#2
 \series default
 .
  
+\emph on
+Theorem
+\emph default
+.
+ Let 
+\begin_inset Formula $p:E\to B$
+\end_inset
+
+ be a covering map.
+ If 
+\begin_inset Formula $E$
+\end_inset
+
+ is path-connected and 
+\begin_inset Formula $B$
+\end_inset
+
+ is simply-connected, then 
+\begin_inset Formula $p$
+\end_inset
+
+ is a homeomorphism.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Somehow these two conditions must imply that 
+\begin_inset Formula $p$
+\end_inset
+
+ has only one preimage sheet.
+ This is Munkres's Theorem 54.4.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+; it's something to do with maps from the fundamental group; ideally I can
+ reconstruct it rather than slavishly copying Munkres]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW4#3
+\series default
+.
+ A 
+\emph on
+retraction
+\emph default
+ of 
+\begin_inset Formula $X$
+\end_inset
+
+ onto 
+\begin_inset Formula $A$
+\end_inset
+
+ is a continuous map 
+\begin_inset Formula $r:X\to A$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $a\in A$
+\end_inset
+
+, 
+\begin_inset Formula $r(a)=a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Example
+\emph default
+.
+ A retraction of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ onto the unit ball normalizes all vectors of magnitude greater than 1.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $r$
+\end_inset
+
+ is a retraction of 
+\begin_inset Formula $X$
+\end_inset
+
+ onto 
+\begin_inset Formula $A$
+\end_inset
+
+, then for any 
+\begin_inset Formula $a\in A$
+\end_inset
+
+, the homomorphism 
+\begin_inset Formula $r_{*}:\pi_{1}(X,a)\to\pi_{1}(A,a)$
+\end_inset
+
+ is surjective.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ I started out reasoning by contradiction: suppose not.
+ Then there would exist a homotopy equivalence class in 
+\begin_inset Formula $\pi_{1}(A,a)$
+\end_inset
+
+, call it 
+\begin_inset Formula $[g]$
+\end_inset
+
+, for which there does not exist 
+\begin_inset Formula $f\in\pi_{1}(X,a)$
+\end_inset
+
+ such that 
+\begin_inset Formula $r_{*}([f])=[r\circ f]=[g]$
+\end_inset
+
+.
+ But then I remember that 
+\begin_inset Formula $A\subset X$
+\end_inset
+
+ suggests a more direct proof.
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ has to get mapped to itself, and if 
+\begin_inset Formula $[g]\ne[r\circ g]$
+\end_inset
+
+, then it's not.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $[f]\in\pi_{1}(A,a)$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: write it]
 \end_layout
 
 \end_body
