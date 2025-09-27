@@ -118,6 +118,30 @@ Topology
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Z}{\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\C}{\mathbb{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \emph on
 Theorem
@@ -2818,11 +2842,238 @@ Proof
 \end_inset
 
 .
- [
+ We know that 
+\begin_inset Formula $r|_{A}$
+\end_inset
+
+ is the identity on 
+\begin_inset Formula $A$
+\end_inset
+
+, so 
+\begin_inset Formula $r_{*}([f])=[r\circ f]=[f]$
+\end_inset
+
+.
+ Every member of 
+\begin_inset Formula $\pi_{1}(A,a)$
+\end_inset
+
+ is mapped to itself, therefore every member of 
+\begin_inset Formula $\pi_{1}(A,a)$
+\end_inset
+
+ is mapped to by something.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Corollary
+\emph default
+.
+ There is no retraction of 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ onto 
+\begin_inset Formula $S^{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\pi_{1}(\mathbb{R}^{2})=0$
+\end_inset
+
+, which has one element, but 
+\begin_inset Formula $\pi_{1}(S^{1})=\mathbb{Z}$
+\end_inset
+
+, which has countably infinitely many.
+ The domain is too small for the range to possibly be surjective.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW4#4
+\series default
+.
+ Let 
+\begin_inset Formula $p:S^{1}\to S^{1}=z^{2}$
+\end_inset
+
+ (construing the circle as the unit circle in the complex plane).
+ Then 
+\begin_inset Formula $p_{*}:\pi_{1}(S^{1})\to\pi_{1}(S^{1})$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+can be viewed as
+\begin_inset Quotes erd
+\end_inset
+
+ a homomorphism 
+\begin_inset Formula $h(z):\Z\to\Z:2z$
+\end_inset
+
+, because multiplying complex numbers adds their arguments, so squaring
+ doubles the argument.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ What's the smart way to say 
+\begin_inset Quotes eld
+\end_inset
+
+can be viewed as
+\begin_inset Quotes erd
+\end_inset
+
+? 
+\begin_inset Quotes eld
+\end_inset
+
+Isomorphic to a homomorphism
+\begin_inset Quotes erd
+\end_inset
+
+ feels clunky (stacking morphisms on top of morphisms), but I'd expect it
+ to be correct: why shouldn't a homomorphism be isomorphic to something
+ like any other mathematical object can?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW5#1
+\series default
+.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be the cylinder in 
+\begin_inset Formula $\{(x,y,z)):x^{2}+y^{2}=1\}\subset\R^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $A$
+\end_inset
+
+ be the unit circle, 
+\begin_inset Formula $i:A\to X$
+\end_inset
+
+ be the inclusion (identity with expanded codomain) map, and 
+\begin_inset Formula $r:X\to A$
+\end_inset
+
+ be the retraction of the cylinder onto the circle.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ We're looking for a homotopy relative to 
+\begin_inset Formula $(1,0,0)$
+\end_inset
+
+ between 
+\begin_inset Formula $\mathrm{id}:X\to X$
+\end_inset
+
+ and 
+\begin_inset Formula $i\circ r:X\to X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ I feel like I don't understand the motivation here.
+ 
+\begin_inset Formula $i\circ r$
+\end_inset
+
+ is retracting, then fixing up the codomain.
+ If I want a homotopy between the cylinder identity and the retraction-with-full
+-codomain, I can presumably use the 
+\begin_inset Formula $t$
+\end_inset
+
+ parameter to shrink the height of the cylinder.
+ That would be relative to all of 
+\begin_inset Formula $S^{1}$
+\end_inset
+
+, not just 
+\begin_inset Formula $(1,0,0)$
+\end_inset
+
+.
+ Is it relative to 
+\begin_inset Formula $(1,0,0)$
+\end_inset
+
+ just because we need a basepoint to work with fundamental groups?
+\end_layout
+
+\begin_layout Standard
+[
 \series bold
 TODO
 \series default
-: write it]
+: now for some retarded reason I'm having trouble mapping 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ onto 
+\begin_inset Formula $[\infty,0]$
+\end_inset
+
+, so retarded]
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_body
