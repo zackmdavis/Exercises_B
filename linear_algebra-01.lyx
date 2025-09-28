@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-July–August 2025
+July–September 2025
 \end_layout
 
 \begin_layout Abstract
@@ -2341,11 +2341,31 @@ i.e
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
- ...]
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose for a contradiction that 
+\begin_inset Formula $w\in\mathrm{span}(v_{j})$
+\end_inset
+
+.
+ Then there would exist some 
+\begin_inset Formula $b_{j}$
+\end_inset
+
+ not all zero such that 
+\begin_inset Formula $w=\sum b_{j}v_{j}$
+\end_inset
+
+, which implies 
+\begin_inset Formula $w-\sum_{j}b_{j}v_{j}=0$
+\end_inset
+
+.
+ But we just said that such an equation would imply all the coëfficients
+ were zero.
+ Contradiction!
 \end_layout
 
 \begin_layout Standard
@@ -2371,15 +2391,81 @@ TODO
 \end_inset
 
  are zero.
- If 
+ 
+\end_layout
+
+\begin_layout Standard
+We want to show that 
+\begin_inset Formula $\{v_{j}\}_{j=1}^{m}\cup w$
+\end_inset
+
+ are linearly independent, which would mean that if 
 \begin_inset Formula $a_{0}w+\sum_{j=1}^{m}a_{j}v_{j}=0$
 \end_inset
 
-, [
-\series bold
-TODO
-\series default
- ...]
+, then all the 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ (including 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+) are zero.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $a_{0}w+\sum_{j=1}^{m}a_{j}v_{j}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $\sum_{j=1}^{m}a_{j}v_{j}=-a_{0}w$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $a_{0}\ne0$
+\end_inset
+
+, then 
+\begin_inset Formula $\sum_{j=1}^{m}-\frac{a_{j}}{a_{0}}v_{j}=w$
+\end_inset
+
+ and 
+\begin_inset Formula $w\in\mathrm{span}(v_{j})$
+\end_inset
+
+, which we know isn't the case, so we must have 
+\begin_inset Formula $a_{0}=0$
+\end_inset
+
+.
+ But if 
+\begin_inset Formula $a_{0}=0$
+\end_inset
+
+, then 
+\begin_inset Formula $a_{0}w+\sum_{j=1}^{m}a_{j}v_{j}=0$
+\end_inset
+
+ reduces to 
+\begin_inset Formula $\sum_{j=1}^{m}a_{j}v_{j}=0$
+\end_inset
+
+, which we know from linear independence implies 
+\begin_inset Formula $\{a_{j}\}_{j=1}^{m}=\{0\}$
+\end_inset
+
+, so 
+\begin_inset Formula $\{a_{j}\}_{j=0}^{m}=\{0\}$
+\end_inset
+
+ and we have linear independence of 
+\begin_inset Formula $\{v_{j}\}_{j=1}^{m}\cup w$
+\end_inset
+
+ .
 \begin_inset Newline newline
 \end_inset
 
@@ -2722,11 +2808,7 @@ a
  are in the subspace.
  We can see by inspection that they're linearly independent from each other
  (they don't involve the same standard-basis coördinates).
- Do they span the subspace? Probably, but why do I believe that? [
-\series bold
-TODO
-\series default
-]
+ They span the subspace because—they just do, okay?!
 \end_layout
 
 \begin_layout Quote
@@ -2751,11 +2833,238 @@ b
 \end_inset
 
  is obviously in.
- [
-\series bold
-TODO
-\series default
-]
+ We're going to need two more basis vectors.
+ Axler 2.30 states that every spanning list contains a basis.
+ So to be methodological about it, we can consider 
+\begin_inset Formula $\left\{ \left[\begin{array}{c}
+3\\
+0\\
+0\\
+0\\
+1
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+7\\
+1\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0\\
+0
+\end{array}\right],\left[\begin{array}{c}
+1\\
+0\\
+0\\
+0\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+1\\
+0\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+0\\
+1\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+0\\
+0\\
+1
+\end{array}\right]\right\} $
+\end_inset
+
+ and then detect and remove two redundant vectors, by checking if each vector
+ is in the span of those that came before it.
+ 
+\begin_inset Formula $\left[\begin{array}{c}
+1\\
+0\\
+0\\
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+ is not in the span of 
+\begin_inset Formula $\left\{ \left[\begin{array}{c}
+3\\
+0\\
+0\\
+0\\
+1
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+7\\
+1\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0\\
+0
+\end{array}\right]\right\} $
+\end_inset
+
+, because the nonzero first coördinate can only have come from 
+\begin_inset Formula $\left[\begin{array}{c}
+3\\
+0\\
+0\\
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+, and none of the preceding vectors have a component that could zero out
+ the last coordinate.
+ Similar reasoning says that 
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0\\
+1\\
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+ is independent of 
+\begin_inset Formula $\left\{ \left[\begin{array}{c}
+3\\
+0\\
+0\\
+0\\
+1
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+7\\
+1\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0\\
+0
+\end{array}\right],\left[\begin{array}{c}
+1\\
+0\\
+0\\
+0\\
+0
+\end{array}\right]\right\} $
+\end_inset
+
+, because the third coordinate could only have been contributed by 
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0\\
+7\\
+1\\
+0
+\end{array}\right]$
+\end_inset
+
+, but nothing else in the ascendant basis has a component to cancel out
+ the fourth coordinate.
+ So our basis is 
+\begin_inset Formula $\left\{ \left[\begin{array}{c}
+3\\
+0\\
+0\\
+0\\
+1
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+7\\
+1\\
+0
+\end{array}\right],\left[\begin{array}{c}
+1\\
+0\\
+0\\
+0\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+1\\
+0\\
+0
+\end{array}\right]\right\} $
+\end_inset
+
+.
+ We're correct to throw out 
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0\\
+0\\
+1\\
+0
+\end{array}\right]$
+\end_inset
+
+ because it's 
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0\\
+7\\
+1\\
+0
+\end{array}\right]-7\left[\begin{array}{c}
+0\\
+0\\
+1\\
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+, and we're correct to throw out 
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0\\
+0\\
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+ because it's 
+\begin_inset Formula $\left[\begin{array}{c}
+3\\
+0\\
+0\\
+0\\
+1
+\end{array}\right]-3\left[\begin{array}{c}
+1\\
+0\\
+0\\
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2764,7 +3073,41 @@ TODO
 c
 \series default
 .
- [will follow triviallly from part b]
+ 
+\begin_inset Formula $\R^{5}=\text{\ensuremath{\mathrm{span}\left(\left[\begin{array}{c}
+3\\
+0\\
+0\\
+0\\
+1
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+7\\
+1\\
+0
+\end{array}\right]\right)\oplus\mathrm{span}\left(\left[\begin{array}{c}
+1\\
+0\\
+0\\
+0\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+1\\
+0\\
+0\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+1\\
+0\\
+0
+\end{array}\right]\right)}}$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -4071,6 +4414,450 @@ spirit
 \end_inset
 
 ?
+\end_layout
+
+\begin_layout Subsection*
+Exercises 3E
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ Let the 
+\emph on
+graph
+\emph default
+ of 
+\begin_inset Formula $T$
+\end_inset
+
+ be 
+\begin_inset Formula $\{(v,Tv)\in V\times W:v\in V\}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $T$
+\end_inset
+
+ is a linear map iff the graph of 
+\begin_inset Formula $T$
+\end_inset
+
+ is a linear subspace of 
+\begin_inset Formula $V\times W$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $T$
+\end_inset
+
+ is a linear map.
+\end_layout
+
+\begin_layout Standard
+(Additive identity.) 
+\begin_inset Formula $(0,T0)=(0,0)\in\mathrm{graph}\ T\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Additive closure.) If 
+\begin_inset Formula $(v_{1},Tv_{1}),(v_{2},Tv_{2})\in\mathrm{graph}\ T$
+\end_inset
+
+, then 
+\begin_inset Formula $(v_{1}+v_{2},Tv_{1}+Tv_{2})=(v_{1}+v_{2},T(v_{1}+v_{2}))\in\mathrm{graph}\ T\ \checkmark$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+(Scalar multiplication closure.) If 
+\begin_inset Formula $(v,Tv)\in\mathrm{graph}\ T$
+\end_inset
+
+, then 
+\begin_inset Formula $(cv,cTv)\in\mathrm{graph}\ T\ \checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose the graph 
+\begin_inset Formula $\{(v,Tv)\in V\times W:v\in V\}$
+\end_inset
+
+ is a subspace of 
+\begin_inset Formula $V\times W$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Additivity.) We need to show that 
+\begin_inset Formula $Tv_{1}+Tv_{2}=T(v_{1}+v_{2})$
+\end_inset
+
+.
+ From additive closure of the graph being a subspace, we know that if 
+\begin_inset Formula $(v_{1},Tv_{1}),(v_{2},Tv_{2})\in\mathrm{graph\ }T$
+\end_inset
+
+, then 
+\begin_inset Formula $(v_{1}+v_{2},Tv_{1}+Tv_{2})\in\mathrm{graph\ }T$
+\end_inset
+
+.
+ But from the fact that the members of the graph take the form 
+\begin_inset Formula $(v,Tv)$
+\end_inset
+
+, we know that the element of the graph with first component 
+\begin_inset Formula $v_{1}+v_{2}$
+\end_inset
+
+ must have second component 
+\begin_inset Formula $T(v_{1}+v_{2})$
+\end_inset
+
+.
+ Thus, 
+\begin_inset Formula $T(v_{1}+v_{2})=Tv_{1}+Tv_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Homogeneity.) Similarly as for additivity.
+ We need to show that 
+\begin_inset Formula $T(cv)=cTv$
+\end_inset
+
+.
+ From scalar multiplication closure of the graph being a subspace, we know
+ that if 
+\begin_inset Formula $(v,Tv)\in\mathrm{graph}\ T$
+\end_inset
+
+, then 
+\begin_inset Formula $(cv,cTv)\in\mathrm{graph}\ T$
+\end_inset
+
+.
+ But from the fact that member of the graph take the form 
+\begin_inset Formula $(v,Tv)$
+\end_inset
+
+, we know that the element of the graph with first component 
+\begin_inset Formula $cv$
+\end_inset
+
+ must have second component 
+\begin_inset Formula $T(cv)$
+\end_inset
+
+.
+ Thus, 
+\begin_inset Formula $T(cv)=cTv$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $\prod V_{k}$
+\end_inset
+
+ is finite-dimensional, then for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $V_{k}$
+\end_inset
+
+ is finite-dimensional.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Axler's 3.92 states that the dimensionality of a product is the sum of the
+ dimensions.
+ If any of the summands were not finite, then the sum would not be finite.
+ But the sum is finite.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+6
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Let 
+\begin_inset Formula $v,x\in V$
+\end_inset
+
+, and let 
+\begin_inset Formula $U,W$
+\end_inset
+
+ be subspaces of 
+\begin_inset Formula $V$
+\end_inset
+
+, such that 
+\begin_inset Formula $v+U=x+W$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $U=W$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We have 
+\begin_inset Formula $\{v+u:u\in U\}=\{x+w:w\in W\}$
+\end_inset
+
+.
+ Fix some particular 
+\begin_inset Formula $u_{0}\in U$
+\end_inset
+
+.
+ Then there exists 
+\begin_inset Formula $w_{0}\in W$
+\end_inset
+
+ such that 
+\begin_inset Formula $v+u_{0}=x+w_{0}$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $w_{0}=v-x+u_{0}$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: um, not sure how to solve this]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Exercises 3F
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ A linear functional is surjective or the zero map.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ be a linear functional.
+ If 
+\begin_inset Formula $\varphi=0$
+\end_inset
+
+, there's nothing else to say, so suppose it isn't.
+ Then there exists some 
+\begin_inset Formula $v$
+\end_inset
+
+ for which 
+\begin_inset Formula $\varphi(v)\ne0$
+\end_inset
+
+.
+ To show that 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ is surjective, we need to show that for any 
+\begin_inset Formula $c\in\F$
+\end_inset
+
+, there exists 
+\begin_inset Formula $w\in V$
+\end_inset
+
+ such that 
+\begin_inset Formula $\varphi(w)=c$
+\end_inset
+
+.
+ Consider 
+\begin_inset Formula $w:=\frac{c}{\varphi(v)}v$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\varphi(w)=\varphi(\frac{c}{\varphi(v)}v)=\frac{c}{\cancel{\varphi(v)}}\cancel{\varphi(v)}=c$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Suppose 
+\begin_inset Formula $V$
+\end_inset
+
+ is finite-dimensional and 
+\begin_inset Formula $v\ne0\in V$
+\end_inset
+
+.
+ There exists 
+\begin_inset Formula $\varphi\in V'$
+\end_inset
+
+ such that 
+\begin_inset Formula $\varphi(v)=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $\{v_{k}\}$
+\end_inset
+
+ be a basis for 
+\begin_inset Formula $V$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $v=\sum_{k}a_{k}v_{k}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\varphi(\sum_{k}b_{k}v_{k})=\frac{\sum_{k}b_{k}}{\sum_{k}a_{k}}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
