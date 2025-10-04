@@ -3076,5 +3076,272 @@ TODO
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+§58#1
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $A$
+\end_inset
+
+ is a deformation retract of 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ is a deformation retract of 
+\begin_inset Formula $A$
+\end_inset
+
+, then 
+\begin_inset Formula $B$
+\end_inset
+
+ is a deformation retract of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $H_{1}:X\times[0,1]\to X$
+\end_inset
+
+ be such that for all 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}(x,0)=x$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{1}(x,1)\in A$
+\end_inset
+
+, and for all 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ and for all 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $H_{1}(a,t)=a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ is a homotopy between the identity on 
+\begin_inset Formula $X$
+\end_inset
+
+, and the composition of the inclusion map of 
+\begin_inset Formula $A$
+\end_inset
+
+ in 
+\begin_inset Formula $X$
+\end_inset
+
+ with a retraction of 
+\begin_inset Formula $X$
+\end_inset
+
+ onto 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ It exists because we know that 
+\begin_inset Formula $A$
+\end_inset
+
+ is a deformation retract of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Similarly, let 
+\begin_inset Formula $H_{2}:A\times[0,1]\to A$
+\end_inset
+
+ be such that for all 
+\begin_inset Formula $a\in A$
+\end_inset
+
+, 
+\begin_inset Formula $H_{2}(a,0)=a$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{2}(a,1)\in B$
+\end_inset
+
+, and for all 
+\begin_inset Formula $b\in B$
+\end_inset
+
+ and for all 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $H_{2}(b,t)=b$
+\end_inset
+
+.
+ It exists because we know that 
+\begin_inset Formula $B$
+\end_inset
+
+ is a deformation retract of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The elementary 
+\begin_inset Quotes eld
+\end_inset
+
+one at double-speed, then the other
+\begin_inset Quotes erd
+\end_inset
+
+ technique should give us a homotopy between the identity on 
+\begin_inset Formula $X$
+\end_inset
+
+, and the composition of the inclusion map of 
+\begin_inset Formula $B$
+\end_inset
+
+ in 
+\begin_inset Formula $X$
+\end_inset
+
+ with a retraction of 
+\begin_inset Formula $X$
+\end_inset
+
+ onto 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ We now confirm this.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $H(x,t):=\begin{cases}
+H_{1}(x,2t) & t\le\frac{1}{2}\\
+H_{2}(H_{1}(x,1),2t-1) & t>\frac{1}{2}
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\forall x\ H(x,0)=x$
+\end_inset
+
+) 
+\begin_inset Formula $H(x,0)=H_{1}(x,0)=x$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\forall x\ H(x,1)\in B$
+\end_inset
+
+) 
+\begin_inset Formula $H(x,1)=H_{2}(x,1)$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\forall b\in B\,\forall t\ H(b,t)=b$
+\end_inset
+
+) [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Writing out the proof demands attention to detail which is not demanded
+ by 
+\begin_inset Quotes eld
+\end_inset
+
+yeah, the double-speed trick, I get it
+\begin_inset Quotes erd
+\end_inset
+
+: the nested call to 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ in the 
+\begin_inset Formula $t>\frac{1}{2}$
+\end_inset
+
+ case was not 
+\end_layout
+
 \end_body
 \end_document
