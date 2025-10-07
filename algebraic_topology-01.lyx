@@ -3351,6 +3351,36 @@ TODO
 \begin_layout Standard
 
 \series bold
+HW5#2
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW5#3
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 HW5#4
 \series default
 .
@@ -4602,6 +4632,893 @@ But
 
 .
  ...?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§69#1
+\series default
+.
+ Consider the symmetric group with three elements 
+\begin_inset Formula $S_{3}$
+\end_inset
+
+.
+ A transposition generates a subgroup of order 2.
+ The elements 
+\begin_inset Formula $(1\ 2)$
+\end_inset
+
+ and 
+\begin_inset Formula $(2\ 3)$
+\end_inset
+
+ generate the group, but the free product 
+\begin_inset Formula $(1\ 2)*(2\ 3)\ne S_{3}$
+\end_inset
+
+.
+ Both 
+\begin_inset Formula $(1\ 2)(2\ 3)(1\ 2)$
+\end_inset
+
+ and 
+\begin_inset Formula $(2\ 3)(1\ 2)(2\ 3)$
+\end_inset
+
+ are reduced words, but both collapse to 
+\begin_inset Formula $(1\ 3)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§69#2
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The free product of nontrivial groups is not abelian.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The free product of groups 
+\begin_inset Formula $G_{\alpha}$
+\end_inset
+
+ is defined as a group 
+\begin_inset Formula $G$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $g\in G$
+\end_inset
+
+, there is only one reduced word in the groups 
+\begin_inset Formula $G_{\alpha}$
+\end_inset
+
+ that represents 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ Suppose 
+\begin_inset Formula $g$
+\end_inset
+
+ were abelian.
+ Then 
+\begin_inset Formula $g_{1}g_{2}=g_{2}g_{1}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $g_{1}g_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{2}g_{1}$
+\end_inset
+
+ are different words; we just said every element in the free product only
+ has one reduced word.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ In the free product of two nontrivial groups, a reduced word of even length
+ at least two does not have finite order.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $(ab)^{n}=\underbrace{abab...ab}_{n\ \mathrm{times}}$
+\end_inset
+
+.
+ For every value of 
+\begin_inset Formula $n$
+\end_inset
+
+, we get a word of length 
+\begin_inset Formula $2n$
+\end_inset
+
+ which does not reduce further: 
+\begin_inset Formula $(ab)^{n}\ne1$
+\end_inset
+
+ for 
+\begin_inset Formula $n>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ In the free product of two nontrivial groups, a reduced word of odd length
+ at least three is conjugate to an element of shorter length.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Without loss of generality, consider 
+\begin_inset Formula $aba$
+\end_inset
+
+.
+ Then conjugate by 
+\begin_inset Formula $a$
+\end_inset
+
+: 
+\begin_inset Formula $aab\cancel{aa^{-1}}=a^{2}b$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The only elements of a free product of two nontrivial groups that have
+ finite order are the elements of the component groups that have finite
+ order and their conjugates.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ What makes this subtle is 
+\begin_inset Quotes eld
+\end_inset
+
+proving the negative
+\begin_inset Quotes erd
+\end_inset
+
+ about non-conjugates.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider the free product 
+\begin_inset Formula $A*B$
+\end_inset
+
+.
+ Without loss of generality, if 
+\begin_inset Formula $a\in A$
+\end_inset
+
+ has finite order and 
+\begin_inset Formula $b\in B$
+\end_inset
+
+, the conjugate 
+\begin_inset Formula $bab^{-1}$
+\end_inset
+
+ has order 
+\begin_inset Formula $|a|$
+\end_inset
+
+, because 
+\begin_inset Formula $(bab^{-1})^{|a|}=\underbrace{ba\cancel{b^{-1}b}ab^{-1}...ba\cancel{b^{-1}b}ab^{-1}}_{|a|\ \mathrm{times}}=b\cancel{a^{|a|}}b^{-1}=\cancel{bb^{-1}}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Suppose for a contradiction that 
+\begin_inset Formula $c\in A*B$
+\end_inset
+
+ is not a conjugate of an element of one of the component groups with finite
+ order.
+ In order for 
+\begin_inset Formula $c^{n}=1$
+\end_inset
+
+ for some 
+\begin_inset Formula $n>0$
+\end_inset
+
+, we need all the 
+\begin_inset Quotes eld
+\end_inset
+
+letters
+\begin_inset Quotes erd
+\end_inset
+
+ in the reduced word to cancel.
+\end_layout
+
+\begin_layout Standard
+[
+\series bold
+TODO
+\series default
+: is this going to be an ugly case breakdown? If the length is 3 or more,
+ I can analyze what happens with the first and last letter, which are adjacent
+ in the 
+\begin_inset Formula $c^{n}$
+\end_inset
+
+, and then separately pin down the length-1 and 2 case?]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§69#3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $G=G_{1}*G_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $c\in G$
+\end_inset
+
+, 
+\begin_inset Formula $cG_{1}c^{-1}\cap G_{2}=\{1\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ If 
+\begin_inset Formula $c\in G_{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $x\in G_{1}$
+\end_inset
+
+, either 
+\begin_inset Formula $cxc^{-1}$
+\end_inset
+
+ doesn't reduce (adjacent elements from different component groups), or
+ is 
+\begin_inset Formula $1$
+\end_inset
+
+ if 
+\begin_inset Formula $x$
+\end_inset
+
+ is 
+\begin_inset Formula $1$
+\end_inset
+
+ (because 
+\begin_inset Formula $c1c^{-1}=cc^{-1}=1$
+\end_inset
+
+), or is in 
+\begin_inset Formula $G_{1}$
+\end_inset
+
+ if 
+\begin_inset Formula $c$
+\end_inset
+
+ is 
+\begin_inset Formula $1$
+\end_inset
+
+ (because 
+\begin_inset Formula $1x1^{-1}=x$
+\end_inset
+
+).
+ If 
+\begin_inset Formula $c\in G_{1}$
+\end_inset
+
+, then 
+\begin_inset Formula $cxc^{-1}$
+\end_inset
+
+ is an element of 
+\begin_inset Formula $G_{1}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW6#1
+\series default
+.
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are deformation retracts of the same space 
+\begin_inset Formula $X$
+\end_inset
+
+, then 
+\begin_inset Formula $A$
+\end_inset
+
+ is homotopy equivalent to 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ If 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are deformation retracts of the same space 
+\begin_inset Formula $X$
+\end_inset
+
+, then 
+\begin_inset Formula $A$
+\end_inset
+
+ is homotopy equivalent to 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ is homotopy equivalent to 
+\begin_inset Formula $X$
+\end_inset
+
+ (from HW5#4).
+ But homotopy equivalence is an equivalence relation (§58#3).
+ By transitivity, if 
+\begin_inset Formula $A\simeq X$
+\end_inset
+
+ and 
+\begin_inset Formula $X\simeq B$
+\end_inset
+
+, then 
+\begin_inset Formula $A\simeq B$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW6#3
+\series default
+.
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ is contractible (homotopy equivalent to a single point) iff the identity
+ map 
+\begin_inset Formula $\mathrm{id}:X\to X$
+\end_inset
+
+ is homotopic to a constant map.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) If 
+\begin_inset Formula $X$
+\end_inset
+
+ is homotopy equivalent to a single point 
+\begin_inset Formula $c$
+\end_inset
+
+, then there exist maps 
+\begin_inset Formula $f:X\to c$
+\end_inset
+
+ and 
+\begin_inset Formula $g:c\to X$
+\end_inset
+
+ such that 
+\begin_inset Formula $f\circ g\simeq\mathrm{id}_{c}$
+\end_inset
+
+ and 
+\begin_inset Formula $g\circ f\simeq\mathrm{id}_{X}$
+\end_inset
+
+.
+ But notice that 
+\begin_inset Formula $f:X\to c$
+\end_inset
+
+ must be constant, because there's only one point in the codomain.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is constant, then 
+\begin_inset Formula $g\circ f$
+\end_inset
+
+ is constant, but we know that 
+\begin_inset Formula $g\circ f$
+\end_inset
+
+ is homotopic to the identity, giving us our desired homotopy between the
+ identity and a constant map.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose we have a homotopy 
+\begin_inset Formula $H(x,t)$
+\end_inset
+
+ between the identity and a constant map: 
+\begin_inset Formula $H(x,0)=\mathrm{id}_{X}$
+\end_inset
+
+ and 
+\begin_inset Formula $H(x,1)=c$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $g:c\to X$
+\end_inset
+
+ be the inclusion map and 
+\begin_inset Formula $f:X\to c=c$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $g\circ f:X\to X=c$
+\end_inset
+
+ equals 
+\begin_inset Formula $H(x,1)$
+\end_inset
+
+ and is homotopic to 
+\begin_inset Formula $\mathrm{id}_{X}$
+\end_inset
+
+ via the homotopy 
+\begin_inset Formula $H$
+\end_inset
+
+.
+ Meanwhile, 
+\begin_inset Formula $f\circ g:c\to c$
+\end_inset
+
+ is trivially equal and therefore homotopic to 
+\begin_inset Formula $\mathrm{id}_{c}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ A topological space 
+\begin_inset Formula $X$
+\end_inset
+
+ is contractible iff for topological space 
+\begin_inset Formula $Y$
+\end_inset
+
+, any two continuous maps 
+\begin_inset Formula $f,g:Y\to X$
+\end_inset
+
+ are homotopic.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $X$
+\end_inset
+
+ is contractible: homotopy equivalent to a single point 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ Then if arbitrary 
+\begin_inset Formula $f,g:Y\to c$
+\end_inset
+
+ are homotopic, it will follow that 
+\begin_inset Formula $f,g:Y\to X$
+\end_inset
+
+ are homotopic, because homotopy equivalence is an equivalence relation.
+ But 
+\begin_inset Formula $f,g:Y\to c$
+\end_inset
+
+ are trivially homotopic, because there's only one map 
+\begin_inset Formula $Y\to c$
+\end_inset
+
+.
+ (Every element of 
+\begin_inset Formula $Y$
+\end_inset
+
+ gets mapped to 
+\begin_inset Formula $c$
+\end_inset
+
+, because 
+\begin_inset Formula $c$
+\end_inset
+
+ is the only point in the codomain.)
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose arbitrary 
+\begin_inset Formula $f,g:Y\to X$
+\end_inset
+
+ are homotopic.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW6#4
+\series default
+.
+ Let 
+\begin_inset Formula $A\subseteq X$
+\end_inset
+
+, 
+\begin_inset Formula $j:A\to X$
+\end_inset
+
+ be the inclusion map, 
+\begin_inset Formula $f:X\to A$
+\end_inset
+
+ be any continuous map, and suppose 
+\begin_inset Formula $j\circ f\simeq\mathrm{id}_{X}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is a retraction, then 
+\begin_inset Formula $j_{*}$
+\end_inset
+
+ is an isomorphism.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW7#1
+\series default
+.
+ Let 
+\begin_inset Formula $F_{2}:=\left\langle a,b\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $F_{3}:=\left\langle c,d,e\right\rangle $
+\end_inset
+
+ be free groups.
+ We consider the free product 
+\begin_inset Formula $G:=F_{2}*_{F_{3}}\{1\}$
+\end_inset
+
+ amalgamated over the homomorphisms 
+\begin_inset Formula $\varphi_{1}(c)=a^{4}$
+\end_inset
+
+, 
+\begin_inset Formula $\varphi_{1}(d)=b$
+\end_inset
+
+, 
+\begin_inset Formula $\varphi_{1}(e)=(ab)^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varphi_{2}=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ We want to list the elements of 
+\begin_inset Formula $G$
+\end_inset
+
+.
+ 
+\begin_inset Formula $F_{2}*\{1\}$
+\end_inset
+
+ with no amalgamation is just the free group on two generators.
+ [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
