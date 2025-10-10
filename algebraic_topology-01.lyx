@@ -3317,7 +3317,7 @@ Proposition
 \begin_layout Standard
 
 \emph on
-Proof
+Commentary
 \emph default
 .
  Um, 
@@ -3337,7 +3337,47 @@ homotopy
 \end_inset
 
 .
- What does that imply about their induced homomorphisms? [
+ What does that imply about their induced homomorphisms? Munkres Theorem
+ 58.7 says that if 
+\begin_inset Formula $f$
+\end_inset
+
+ is a homotopy equivalence, then 
+\begin_inset Formula $f_{*}$
+\end_inset
+
+ is an isomorphism, which sounds stronger than what we're being asked here,
+ but actually isn't.
+ (If bijective 
+\begin_inset Formula $f:A\to B$
+\end_inset
+
+ is an isomorphism, it doesn't follow that bijective 
+\begin_inset Formula $g:B\to A$
+\end_inset
+
+ equals 
+\begin_inset Formula $f^{-1}$
+\end_inset
+
+, because there could be more than one isomorphism between 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
 \series bold
 TODO
 \series default
@@ -3359,6 +3399,10 @@ HW5#2
 TODO
 \series default
 ]
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3367,11 +3411,80 @@ TODO
 HW5#3
 \series default
 .
- [
+ 
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $\pi_{1}(\{(x,y):x^{2}+y^{2}>1\})$
+\end_inset
+
+ is 
+\begin_inset Formula $\Z$
+\end_inset
+
+ because it can be deformation-retracted onto the circle with 
+\begin_inset Formula $p/\left\Vert p\right\Vert $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $\pi_{1}(S^{1}\cup\{(x,0):x>0\}$
+\end_inset
+
+ is 
+\begin_inset Formula $\Z$
+\end_inset
+
+ because it can be deformation-retracted onto 
+\begin_inset Formula $S^{1}$
+\end_inset
+
+ by 
+\begin_inset Quotes eld
+\end_inset
+
+pushing in
+\begin_inset Quotes erd
+\end_inset
+
+ the ray to 
+\begin_inset Formula $(1,0)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $\pi_{1}(\R^{2}\backslash(\R^{+}\times\{0\}))$
+\end_inset
+
+ is 
+\begin_inset Formula $\{1\}$
+\end_inset
+
+ because [
 \series bold
 TODO
 \series default
-]
+: uh, I'm sure there's a map between the plane and the slitted plane, but
+ I don't remember it] 
 \begin_inset Newline newline
 \end_inset
 
@@ -4930,17 +5043,105 @@ letters
 \end_layout
 
 \begin_layout Standard
-[
-\series bold
-TODO
-\series default
-: is this going to be an ugly case breakdown? If the length is 3 or more,
- I can analyze what happens with the first and last letter, which are adjacent
- in the 
-\begin_inset Formula $c^{n}$
+Let's break down to cases.
+\end_layout
+
+\begin_layout Standard
+(If 
+\begin_inset Formula $c$
 \end_inset
 
-, and then separately pin down the length-1 and 2 case?]
+ is length 
+\begin_inset Formula $1$
+\end_inset
+
+.) If 
+\begin_inset Formula $c$
+\end_inset
+
+ has finite order, then it's an element of finite order of one of the component
+ groups; if not, then not.
+\end_layout
+
+\begin_layout Standard
+(If 
+\begin_inset Formula $c$
+\end_inset
+
+ is length 
+\begin_inset Formula $2$
+\end_inset
+
+.) Length-two words with both letters from the same group like 
+\begin_inset Formula $a_{1}a_{2}$
+\end_inset
+
+ or 
+\begin_inset Formula $b_{1}b_{2}$
+\end_inset
+
+ reduce to a single group element.
+ Length-two words with a letter from each group don't have finite order:
+ 
+\begin_inset Formula $(ab)^{n}=abab...ababab$
+\end_inset
+
+: the end of one copy of 
+\begin_inset Formula $ab$
+\end_inset
+
+ doesn't cancel with the start of the next.
+\end_layout
+
+\begin_layout Standard
+(If 
+\begin_inset Formula $c$
+\end_inset
+
+ is length 
+\begin_inset Formula $\ge3$
+\end_inset
+
+.) In order to not be a conjugate, the first letter and last letter of 
+\begin_inset Formula $c$
+\end_inset
+
+ can't be inverses of each other.
+ If 
+\begin_inset Formula $c:=c_{1}xc_{k}$
+\end_inset
+
+, then 
+\begin_inset Formula $c^{2}=c_{1}xc_{k}c_{1}xc_{k}$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $c_{k}c_{1}$
+\end_inset
+
+ isn't going to cancel all the way down to 
+\begin_inset Formula $1$
+\end_inset
+
+, because 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+ aren't inverses.
+ (It could cancel down to a single non-identity letter if 
+\begin_inset Formula $c_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+ are in the same component group.) 
 \begin_inset Newline newline
 \end_inset
 
@@ -5367,12 +5568,60 @@ Proof
 \begin_inset Formula $f,g:Y\to X$
 \end_inset
 
- are homotopic.
+ are homotopic: we have a homotopy 
+\begin_inset Formula $H:Y\times[0,1]\to X$
+\end_inset
+
+ such that 
+\begin_inset Formula $H(y,0)=f(y)$
+\end_inset
+
+ and 
+\begin_inset Formula $H(y,1)=g(y)$
+\end_inset
+
+.
+ In particular, we can let 
+\begin_inset Formula $f$
+\end_inset
+
+ be surjective, and let 
+\begin_inset Formula $g$
+\end_inset
+
+ be constant.
  [
 \series bold
 TODO
 \series default
-]
+: I thought the surjective/constant sentence would be the stroke of genius
+ needed to complete the proof, but I still don't see how to make it work:
+ we would need a way to turn a map 
+\begin_inset Formula $Y\to X$
+\end_inset
+
+ into a map 
+\begin_inset Formula $X\to X$
+\end_inset
+
+ that's continuous with 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ You can't 
+\begin_inset Quotes eld
+\end_inset
+
+just use the image
+\begin_inset Quotes erd
+\end_inset
+
+ of the map from 
+\begin_inset Formula $Y$
+\end_inset
+
+.]
 \begin_inset Newline newline
 \end_inset
 
@@ -5479,19 +5728,19 @@ HW7#1
 \begin_inset Formula $G:=F_{2}*_{F_{3}}\{1\}$
 \end_inset
 
- amalgamated over the homomorphisms 
+ amalgamated over the homomorphism 
 \begin_inset Formula $\varphi_{1}(c)=a^{4}$
 \end_inset
 
 , 
-\begin_inset Formula $\varphi_{1}(d)=b$
+\begin_inset Formula $\varphi_{1}(d)=b^{2}$
 \end_inset
 
 , 
 \begin_inset Formula $\varphi_{1}(e)=(ab)^{2}$
 \end_inset
 
- and 
+, and 
 \begin_inset Formula $\varphi_{2}=1$
 \end_inset
 
@@ -5504,21 +5753,237 @@ HW7#1
 a
 \series default
 .
- We want to list the elements of 
-\begin_inset Formula $G$
-\end_inset
-
-.
  
 \begin_inset Formula $F_{2}*\{1\}$
 \end_inset
 
- with no amalgamation is just the free group on two generators.
+ with no amalgamation is just the free group on two generators: 
+\begin_inset Formula $\left\langle a,b:\varnothing\right\rangle $
+\end_inset
+
+.
+ (The 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\varnothing$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ is the absence of relations.) To amalgamate over the given homomorphisms
+ from 
+\begin_inset Formula $F_{3}$
+\end_inset
+
+ amounts to adding relations for all 
+\begin_inset Formula $f\in F_{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\varphi_{1}(f)=\varphi_{2}(f)$
+\end_inset
+
+.
+ So we have 
+\begin_inset Formula $\left\langle a,b:a^{4}=1,\ b^{2}=1,\ (ab)^{2}=1\right\rangle $
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ Dummit and Foote give a presentation of 
+\begin_inset Formula $D_{4}$
+\end_inset
+
+ as 
+\begin_inset Formula $\left\langle s,r:s^{2}=r^{4}=1,\ rs=sr^{-1}\right\rangle $
+\end_inset
+
+, which is the same thing in different symbols.
+ If 
+\begin_inset Formula $(rs)^{2}=1$
+\end_inset
+
+, then 
+\begin_inset Formula $rsrs=1$
+\end_inset
+
+ and 
+\begin_inset Formula $rs=s^{-1}r^{-1}$
+\end_inset
+
+, but 
+\begin_inset Formula $s^{2}=1$
+\end_inset
+
+ implies that 
+\begin_inset Formula $s=s^{-1}$
+\end_inset
+
+, so we have 
+\begin_inset Formula $rs=sr^{-1}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW7#2
+\series default
+.
+ Now we consider the free product 
+\begin_inset Formula $F_{2}*_{F_{3}}\{1\}$
+\end_inset
+
+ amalgamated over the homomorphism 
+\begin_inset Formula $\varphi_{1}(c)=a^{2}$
+\end_inset
+
+, 
+\begin_inset Formula $\varphi_{1}(d)=b^{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $\varphi_{1}(e)=aba^{-1}b^{-1}$
+\end_inset
+
+, and 
+\begin_inset Formula $\varphi_{2}=1$
+\end_inset
+
+.
+ That's 
+\begin_inset Formula $\left\langle a,b:a^{2}=b^{2}=1,\ aba^{-1}b^{-1}=1\right\rangle $
+\end_inset
+
+.
+ But 
+\begin_inset Formula $aba^{-1}b^{-1}=1$
+\end_inset
+
+ just amounts to a commutativity assertion 
+\begin_inset Formula $ab=ba$
+\end_inset
+
+.
+ So the elements of the group is 
+\begin_inset Formula $\{1,a,b,ab\}$
+\end_inset
+
+.
+ It's isomorphic to the Klein 4-group.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW7#4
+\series default
+.
+ 
+\series bold
+a
+\series default
+\emph on
+.
+ Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\pi_{1}(\R\mathbb{P}^{2})\simeq\Z/2\Z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ This is Munkres Corollary 60.4.
+ I'm finding this hard to visualize.
+ Loops that stay in the northern hemisphere can be collapsed to a point
+ no matter how many times they go around: that's 
+\begin_inset Formula $n0=0$
+\end_inset
+
+ and is fine.
+ But why is it the case that a north–south loop is different, but going
+ north–south twice is the same?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
  [
 \series bold
 TODO
 \series default
 ]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+: our mission is to apply SvK to 
+\begin_inset Formula $\R\mathbb{P}^{2}$
+\end_inset
+
+, but I'm not seeing how to do the decomposition.
+ The obvious choice is to imagine the north and south hemispheres glued
+ along the equator (which is a circle), but that's probably not the correct
+ gluing because it doesn't distinguish from the ordinary sphere, and also
+ 
+\begin_inset Formula $\{1\}*_{\Z}\{1\}$
+\end_inset
+
+ is 
+\begin_inset Formula $\{1\}$
+\end_inset
+
+ so we need one of the pieces to not be trivial.
+ Can the equator be its own piece? 
+\begin_inset Formula $\Z*_{\Z}\{1\}$
+\end_inset
+
+ ...]
 \end_layout
 
 \end_body
