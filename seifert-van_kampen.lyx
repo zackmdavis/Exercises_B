@@ -1,0 +1,433 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{tikz-cd}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Inclusion–Exclusion and Seifert–Van Kampen 
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+October 2025
+\end_layout
+
+\begin_layout Standard
+The size of a non-disjoint union of sets is computed using an 
+\emph on
+inclusion–exclusion principle
+\emph default
+: 
+\begin_inset Formula $|A\cup B|=|A|+|B|-|A\cap B|$
+\end_inset
+
+.
+ You can't just add the sizes of the sets, because that would be double-counting
+ the overlap 
+\begin_inset Formula $A\cap B$
+\end_inset
+
+.
+ You have to subtract the size of the intersection.
+\end_layout
+
+\begin_layout Standard
+The fundamental group of a non-disjoint union of path-connected topological
+ spaces (whose intersection is also path-connected) is computed using the
+ Seifert–Van Kampen theorem: 
+\begin_inset Formula $\pi_{1}(U)*_{\pi_{1}(U\cap V)}\pi_{1}(V)$
+\end_inset
+
+.
+ You can't just take the free product, because that would 
+\begin_inset Quotes eld
+\end_inset
+
+double-count
+\begin_inset Quotes erd
+\end_inset
+
+ the loops in the overlap 
+\begin_inset Formula $U\cap V$
+\end_inset
+
+.
+ You need to take the amalgamated free product.
+ 
+\end_layout
+
+\begin_layout Standard
+How far can we push this analogy? There is a generalized inclusion–exclusion
+ principle for 
+\begin_inset Formula $n$
+\end_inset
+
+-fold unions, proved by induction:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\bigcup_{i=1}^{n}A_{i}\right|=\sum_{j=1}^{n}(-1)^{j+1}\left(\sum_{S\in\mathcal{P}(\{A_{i}\}_{i=1}^{n});|S|=j}\left|\bigcap_{A_{s}\in S}A_{s}\right|\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Is there a generalized Sifert–van Kampen theorem for 
+\begin_inset Formula $n$
+\end_inset
+
+-fold unions?
+\end_layout
+
+\begin_layout Standard
+Let's start with 
+\begin_inset Formula $n:=3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For set unions, the 
+\begin_inset Formula $n:=3$
+\end_inset
+
+ inclusion–exclusion principle is 
+\begin_inset Formula $|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The way we derive that is with a single induction step, by applying the
+ 
+\begin_inset Formula $n:=2$
+\end_inset
+
+ inclusion exclusion principle to itself:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|(A\cup B)\cup C\right|=\underbrace{|A\cup B|}_{n:=2\,\mathrm{case}}+|C|-|(A\cup B)\cap C|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=|A|+|B|-|A\cap B|+|C|-|(A\cup B)\cap C|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=|A|+|B|+|C|-|A\cap B|-\underbrace{|(A\cap C)\cup(B\cap C)|}_{n:=2\,\mathrm{case}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=|A|+|B|+|C|-|A\cap B|-\left(|A\cap C|+|B\cap C|-|(A\cap C)\cap(B\cap C)|\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=|A|+|B|+|C|-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To understand if there's an 
+\begin_inset Formula $n:=3$
+\end_inset
+
+ Siefert–van Kampen principle, I'll need a more detailed understanding of
+ the analogy between 
+\begin_inset Quotes eld
+\end_inset
+
+subtracting the intersection
+\begin_inset Quotes erd
+\end_inset
+
+ and amalgamation.
+\end_layout
+
+\begin_layout Standard
+The free product 
+\begin_inset Formula $G_{1}*G_{2}$
+\end_inset
+
+ combines the generators of 
+\begin_inset Formula $G_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $G_{2}$
+\end_inset
+
+ with no relations.
+\end_layout
+
+\begin_layout Standard
+The fundamental group of joining two topological spaces at a point is the
+ free product of the fundamental groups.
+ If you go around one of the loops of a figure-eight, that doesn't commute
+ with going around the other loop.
+\end_layout
+
+\begin_layout Standard
+The amalgamated free product 
+\begin_inset Formula $G_{1}*_{H}G_{2}$
+\end_inset
+
+ over homomorphisms 
+\begin_inset Formula $\varphi_{1}:H\to G_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\varphi_{2}:H\to G_{2}$
+\end_inset
+
+ combines the generators of 
+\begin_inset Formula $G_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $G_{2}$
+\end_inset
+
+ and adds relations: for all 
+\begin_inset Formula $h\in H$
+\end_inset
+
+, we identify 
+\begin_inset Formula $\varphi_{1}(h)=\varphi_{2}(h)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the application of amalgamated free products in the SvK theorem, we specifica
+lly have 
+\begin_inset Formula $\pi_{1}(U)*_{\pi_{1}(U\cup V)}\pi_{1}(V)$
+\end_inset
+
+ with the inclusion homomorphisms.
+ A loop-equivalence-class from 
+\begin_inset Formula $\pi_{1}(U\cap V)$
+\end_inset
+
+ should be 
+\begin_inset Quotes eld
+\end_inset
+
+the same
+\begin_inset Quotes erd
+\end_inset
+
+ whether it appears in 
+\begin_inset Formula $\pi_{1}(U)$
+\end_inset
+
+ or 
+\begin_inset Formula $\pi_{1}(V)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pi_1(U 
+\backslash
+cap V) 
+\backslash
+arrow[r, "
+\backslash
+varphi_1"] 
+\backslash
+arrow[d, "
+\backslash
+varphi_2
+\begin_inset Quotes erd
+\end_inset
+
+'] & 
+\backslash
+pi_1(V) 
+\backslash
+arrow[d] 
+\backslash
+
+\backslash
+ 
+\backslash
+pi_1(U) 
+\backslash
+arrow[r] & 
+\backslash
+pi_1(U 
+\backslash
+cup V)
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
