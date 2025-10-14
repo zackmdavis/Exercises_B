@@ -2732,7 +2732,7 @@ Commentary
 .
  ...
  no, this isn't actually Theorem 54.4, which is talking about the consequences
- 
+ of 
 \begin_inset Formula $E$
 \end_inset
 
@@ -2875,6 +2875,63 @@ Commentary
 .
  I'm sure this is correct in some intuitive sense, but I don't think I've
  articulated it very rigorously.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ Gemini 2.5 Pro explains the standard argument.
+ A 
+\emph on
+path
+\emph default
+ between 
+\begin_inset Formula $e_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $e_{1}$
+\end_inset
+
+ (it doesn't have to be a loop) projects down to a loop in 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Because 
+\begin_inset Formula $B$
+\end_inset
+
+ is simply connected, the loop is homotopic to a constant path (like I said,
+ 
+\begin_inset Quotes eld
+\end_inset
+
+could be tightened to a point
+\begin_inset Quotes erd
+\end_inset
+
+).
+ The formal version of 
+\begin_inset Quotes eld
+\end_inset
+
+the preimage of a tiny loop at 
+\begin_inset Formula $p(e_{1})$
+\end_inset
+
+ couldn't contain 
+\begin_inset Formula $e_{0}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ has to do with the uniqueness of homotopy lifts.
 \begin_inset Newline newline
 \end_inset
 
@@ -3369,6 +3426,17 @@ homotopy
 \end_inset
 
 .)
+\end_layout
+
+\begin_layout Standard
+Socratic tutoring from Claude Sonnet 4.5 indicates that we need to understand
+ why maps that are homotopic relative to a basepoint yield the same induced
+ homomorphisms.
+ Then we can apply the functoriality of 
+\begin_inset Formula $"_{*}"$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard

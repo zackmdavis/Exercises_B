@@ -85,7 +85,11 @@
 \begin_body
 
 \begin_layout Title
-Inclusion–Exclusion and Seifert–Van Kampen 
+Seifert–Van Kampen for 
+\begin_inset Formula $n$
+\end_inset
+
+-fold Unions
 \end_layout
 
 \begin_layout Author
@@ -287,8 +291,9 @@ The free product
 \end_layout
 
 \begin_layout Standard
-The fundamental group of joining two topological spaces at a point is the
- free product of the fundamental groups.
+The fundamental group of joining two topological spaces at a point (or with
+ the intersection being contractible) is the free product of the fundamental
+ groups.
  If you go around one of the loops of a figure-eight, that doesn't commute
  with going around the other loop.
 \end_layout
@@ -328,7 +333,7 @@ The amalgamated free product
 \begin_layout Standard
 In the application of amalgamated free products in the SvK theorem, we specifica
 lly have 
-\begin_inset Formula $\pi_{1}(U)*_{\pi_{1}(U\cup V)}\pi_{1}(V)$
+\begin_inset Formula $\pi_{1}(U)*_{\pi_{1}(U\cap V)}\pi_{1}(V)$
 \end_inset
 
  with the inclusion homomorphisms.
@@ -375,39 +380,53 @@ begin{tikzcd}
 
 \begin_layout Plain Layout
 
-
+& 
 \backslash
 pi_1(U 
 \backslash
 cap V) 
 \backslash
-arrow[r, "
+arrow[dl, "
 \backslash
-varphi_1"] 
+varphi_1"'] 
 \backslash
-arrow[d, "
+arrow[dr, "
 \backslash
 varphi_2
 \begin_inset Quotes erd
 \end_inset
 
-'] & 
-\backslash
-pi_1(V) 
-\backslash
-arrow[d] 
+] & 
 \backslash
 
 \backslash
  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pi_1(V) 
+\backslash
+arrow[dr] & & 
 \backslash
 pi_1(U) 
 \backslash
-arrow[r] & 
+arrow[dl] 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
 \backslash
 pi_1(U 
 \backslash
-cup V)
+cup V) &
 \end_layout
 
 \begin_layout Plain Layout
@@ -427,6 +446,579 @@ end{center}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+For three spaces, the diagram becomes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+pi_1(U 
+\backslash
+cap V 
+\backslash
+cap W) 
+\backslash
+arrow[dl, "i_1"] 
+\backslash
+arrow[d, "i_2
+\begin_inset Quotes erd
+\end_inset
+
+'] 
+\backslash
+arrow[dr, "i_3
+\begin_inset Quotes erd
+\end_inset
+
+'] & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pi_1(U 
+\backslash
+cap V) 
+\backslash
+arrow[d, 
+\begin_inset Quotes eld
+\end_inset
+
+j_1
+\begin_inset Quotes erd
+\end_inset
+
+] 
+\backslash
+arrow[dr, 
+\begin_inset Quotes eld
+\end_inset
+
+j_2
+\begin_inset Quotes erd
+\end_inset
+
+] & 
+\backslash
+pi_1(U 
+\backslash
+cap W) 
+\backslash
+arrow[dl, 
+\begin_inset Quotes eld
+\end_inset
+
+j_3
+\begin_inset Quotes erd
+\end_inset
+
+] 
+\backslash
+arrow[dr, 
+\begin_inset Quotes eld
+\end_inset
+
+j_4
+\begin_inset Quotes erd
+\end_inset
+
+] & 
+\backslash
+pi_1(V 
+\backslash
+cap W) 
+\backslash
+arrow[dl, 
+\begin_inset Quotes eld
+\end_inset
+
+j_5
+\begin_inset Quotes erd
+\end_inset
+
+] 
+\backslash
+arrow[d, 
+\begin_inset Quotes eld
+\end_inset
+
+j_6
+\begin_inset Quotes erd
+\end_inset
+
+] 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+pi_1(U) 
+\backslash
+arrow[dr, 
+\begin_inset Quotes eld
+\end_inset
+
+k_1
+\begin_inset Quotes erd
+\end_inset
+
+] & 
+\backslash
+pi_1(V) 
+\backslash
+arrow[d, 
+\begin_inset Quotes eld
+\end_inset
+
+k_2
+\begin_inset Quotes erd
+\end_inset
+
+] & 
+\backslash
+pi_1(W) 
+\backslash
+arrow[dl, 
+\begin_inset Quotes eld
+\end_inset
+
+k_3
+\begin_inset Quotes erd
+\end_inset
+
+] 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& 
+\backslash
+pi_1(U 
+\backslash
+cup V 
+\backslash
+cup W) &
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+SvK tells us that 
+\begin_inset Formula $\pi_{1}(U\cup V)\simeq\pi_{1}(U)*_{\pi_{1}(U\cap V)}\pi_{1}(V)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So presumably 
+\begin_inset Formula 
+\[
+\pi_{1}(U\cup V\cup W)=\pi_{1}((U\cup V)\cup W)\simeq\pi_{1}(U\cup V)*_{\pi_{1}((U\cup V)\cap W)}\pi_{1}(W)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\simeq\pi_{1}(U)*_{\pi_{1}(U\cap V)}\pi_{1}(V)*_{\pi_{1}((U\cup V)\cap W)}\pi_{1}(W)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\simeq\pi_{1}(U)*_{\pi_{1}(U\cap V)}\pi_{1}(V)*_{\pi_{1}((U\cap W)\cup(V\cap W))}\pi_{1}(W)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But then we have to unpack what it means to amalgamate over 
+\begin_inset Formula $\pi_{1}((U\cap W)\cup(V\cap W))$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi_{1}((U\cap W)\cup(V\cap W))\simeq\pi_{1}(U\cap W)*_{\pi_{1}(U\cap V\cap W)}\pi_{1}(V\cap W)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And substitute that back to get:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi_{1}(U)*_{\pi_{1}(U\cap V)}\pi_{1}(V)*_{\pi_{1}(U\cap W)*_{\pi_{1}(U\cap V\cap W)}\pi_{1}(V\cap W)}\pi_{1}(W)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is unreadable, but hopefully correct.
+\end_layout
+
+\begin_layout Standard
+It doesn't seem like the order of which amalgamated free products are nested
+ within each other should matter, though: what matters is that we have all
+ the relations in the diagram.
+\end_layout
+
+\begin_layout Standard
+Suppose we have the presentations 
+\begin_inset Formula $\pi_{1}(U)=\left\langle S_{U}|R_{U}\right\rangle $
+\end_inset
+
+, 
+\begin_inset Formula $\pi_{1}(V)=\left\langle S_{V}|R_{V}\right\rangle $
+\end_inset
+
+, and 
+\begin_inset Formula $\pi_{1}(W)=\left\langle S_{W}|R_{W}\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For all 
+\begin_inset Formula $h_{uvw}\in\pi_{1}(U\cap V\cap W)$
+\end_inset
+
+, 
+\begin_inset Formula $i_{1}(h_{uvw})=i_{2}(h_{uvw})=i_{3}(h_{uvw})$
+\end_inset
+
+.
+ For all 
+\begin_inset Formula $h_{uv}\in\pi_{1}(U\cap V)$
+\end_inset
+
+, 
+\begin_inset Formula $j_{1}(h_{uv})=j_{2}(h_{uv})$
+\end_inset
+
+.
+ For all 
+\begin_inset Formula $h_{wv}\in\pi_{1}(U\cap V)$
+\end_inset
+
+, 
+\begin_inset Formula $j_{3}(h_{wv})=j_{4}(h_{wv})$
+\end_inset
+
+.
+ For all 
+\begin_inset Formula $h_{uw}\in\pi_{1}(U\cap V)$
+\end_inset
+
+, 
+\begin_inset Formula $j_{5}(h_{uw})=j_{6}(h_{uw})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Putting that all together, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\pi_{1}(U\cup V\cup W)\simeq\langle S_{U},S_{V},S_{W}|R_{U},R_{W},R_{W},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\forall h_{uvw}\in\pi_{1}(U\cap V\cap W)\ i_{1}(h_{uvw})=i_{2}(h_{uvw})=i_{3}(h_{uvw}),
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ \forall h_{uv}\in\pi_{1}(U\cap V)\ j_{1}(h_{uv})=j_{2}(h_{uv})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ \forall h_{wv}\in\pi_{1}(V\cap W)\ j_{3}(h_{wv})=j_{4}(h_{wv})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\ \forall h_{uw}\in\pi_{1}(U\cap W)j_{5}(h_{uw})=j_{6}(h_{uw})\rangle
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gemini 2.5 Pro claims that we don't actually need the triple-intersection
+ relations because they're implied by the pairwise relations by transitivity,
+ so this is actually simpler than the alternating sums of the inclusion–exclusio
+n principle.
+\end_layout
+
+\begin_layout Standard
+We need examples.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example 1
+\series default
+.
+ What about three annuluses, where 
+\begin_inset Formula $U$
+\end_inset
+
+ overlaps 
+\begin_inset Formula $V$
+\end_inset
+
+, and 
+\begin_inset Formula $V$
+\end_inset
+
+ overlaps 
+\begin_inset Formula $W$
+\end_inset
+
+? We can see that the union should just be a thicker annulus (or our proposed
+ generalization should compute the same result formally).
+ We have 
+\begin_inset Formula $\pi_{1}(U)\simeq\mathbb{Z}\simeq\left\langle u|\varnothing\right\rangle $
+\end_inset
+
+, 
+\begin_inset Formula $\pi_{1}(V)\simeq\mathbb{Z}\simeq\left\langle v|\varnothing\right\rangle $
+\end_inset
+
+, 
+\begin_inset Formula $\pi_{1}(W)\simeq\mathbb{Z}\simeq\left\langle w|\varnothing\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $\pi_{1}(U\cap V)$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi_{1}(V\cap W)$
+\end_inset
+
+ are also annuluses.
+ A loop in 
+\begin_inset Formula $\pi_{1}(U\cap V)$
+\end_inset
+
+ has to get mapped to the same element in 
+\begin_inset Formula $\pi_{1}(U)$
+\end_inset
+
+ and 
+\begin_inset Formula $\pi_{1}(V)$
+\end_inset
+
+, and similarly 
+\begin_inset Formula $V$
+\end_inset
+
+ and 
+\begin_inset Formula $W$
+\end_inset
+
+, so we end up with 
+\begin_inset Formula $\left\langle u,v,w|u=v,v=w\right\rangle \simeq\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example 2
+\series default
+.
+ Let's try gluing three punctured toruses together.
+ We know that a punctured torus is homotopy equivalent to a figure eight,
+ because the corners are identified as a point, and then the top and bottom
+ and left and right edges become the loops: 
+\begin_inset Formula $\pi_{1}(U)\simeq\mathbb{Z}*\mathbb{Z}\simeq\left\langle a,b|\varnothing\right\rangle $
+\end_inset
+
+, 
+\begin_inset Formula $\pi_{1}(V)\simeq\mathbb{Z}*\mathbb{Z}\simeq\left\langle c,d|\varnothing\right\rangle $
+\end_inset
+
+, 
+\begin_inset Formula $\pi_{1}(W)\simeq\mathbb{Z}*\mathbb{Z}\simeq\left\langle e,f|\varnothing\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+All three of the pairwise intersections are annuluses: 
+\begin_inset Formula $\pi_{1}(U\cap V)\simeq\mathbb{Z}$
+\end_inset
+
+, 
+\begin_inset Formula $\pi_{1}(U\cap W)\simeq\mathbb{Z}$
+\end_inset
+
+, 
+\begin_inset Formula $\pi_{1}(V\cap W)\simeq\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's think about the inclusion homomorphisms 
+\begin_inset Formula $j_{1}:\pi_{1}(U\cap V)\to\pi_{1}(U)$
+\end_inset
+
+ and 
+\begin_inset Formula $j_{2}:\pi_{1}(U\cap V)\to\pi_{1}(V)$
+\end_inset
+
+, for which we must add relations.
+ A loop in 
+\begin_inset Formula $U\cap V$
+\end_inset
+
+ corresponds to a boundary loop in 
+\begin_inset Formula $U$
+\end_inset
+
+ and 
+\begin_inset Formula $V$
+\end_inset
+
+, and those boundary loops have to be identified.
+ A boundary loop on the punctured torus is 
+\begin_inset Formula $aba^{-1}b^{-1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So our group ends up being 
+\begin_inset Formula $\left\langle a,b,c,d,e,f|aba^{-1}b^{-1}=cdc^{-1}d^{-1}=efe^{-1}f^{-1}\right\rangle $
+\end_inset
+
+?
 \end_layout
 
 \end_body
