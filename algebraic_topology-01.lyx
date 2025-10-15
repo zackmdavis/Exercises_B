@@ -142,6 +142,14 @@ Topology
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\id}[1]{\mathrm{id}_{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \emph on
 Theorem
@@ -3350,6 +3358,29 @@ z & \mathrm{else}
 \end_layout
 
 \begin_layout Standard
+Gemini Pro 2.5 points out that we could just linearly scale every point on
+ the cylinder.
+ I guess I found this counterintuitive because it doesn't 
+\begin_inset Quotes eld
+\end_inset
+
+converge uniformly
+\begin_inset Quotes erd
+\end_inset
+
+ (there are arbitrarily high points on the cylinder than require arbitrarily
+ tiny multipliers to get within 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ of 0), but pointwise convergence is fine here.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 b
@@ -3437,6 +3468,28 @@ Socratic tutoring from Claude Sonnet 4.5 indicates that we need to understand
 \end_inset
 
 .
+ That is, if we know that 
+\begin_inset Formula $\mathrm{id}_{X}\simeq i\circ r\ \mathrm{rel}\ (1,0,0)$
+\end_inset
+
+, we can infer that 
+\begin_inset Formula $(\mathrm{id}_{X})_{*}=(i\circ r)_{*}=i_{*}\circ r_{*}$
+\end_inset
+
+, and if 
+\begin_inset Formula $i_{*}\circ r_{*}=\mathrm{id}_{\pi_{1}(X,(1,0,0))}$
+\end_inset
+
+, it follows that 
+\begin_inset Formula $i_{*}=r_{*}^{-1}$
+\end_inset
+
+ ...
+ but now Sonnet 4.5 is complaining that that reasoning assumes 
+\begin_inset Formula $r_{*}^{-1}$
+\end_inset
+
+ exists (circular!).
 \end_layout
 
 \begin_layout Standard
@@ -3445,11 +3498,156 @@ Socratic tutoring from Claude Sonnet 4.5 indicates that we need to understand
 Proof
 \emph default
 .
- [
+ We know that 
+\begin_inset Formula $i\circ r\simeq\mathrm{id}_{X}\ \mathrm{rel}\,A$
+\end_inset
+
+ (from the homotopy in part a).
+ We also know that 
+\begin_inset Formula $r\circ i=\mathrm{id}_{A}$
+\end_inset
+
+ (because the inclusion 
+\begin_inset Formula $i:A\to X$
+\end_inset
+
+ just widens the codomain without changing anything, and the retraction
+ 
+\begin_inset Formula $r:X\to A$
+\end_inset
+
+ collapses it down).
+ Pick a basepoint 
+\begin_inset Formula $a\in A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Maps 
+\begin_inset Formula $f,g:X\to Y$
+\end_inset
+
+ that are homotopic relative to a basepoint 
+\begin_inset Formula $a$
+\end_inset
+
+ induce the same homomorphism 
+\begin_inset Formula $\pi_{1}(X,a)\to\pi_{1}(Y,a)$
+\end_inset
+
+: if 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is a loop in 
+\begin_inset Formula $X$
+\end_inset
+
+ based at 
+\begin_inset Formula $a$
+\end_inset
+
+ (and thus a member of an equivalence class in 
+\begin_inset Formula $\pi_{1}(X,a)$
+\end_inset
+
+), then 
+\begin_inset Formula $f\circ\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $g\circ\alpha$
+\end_inset
+
+ are loops based at 
+\begin_inset Formula $f(a)=g(a)$
+\end_inset
+
+ in 
+\begin_inset Formula $Y$
+\end_inset
+
+ with a homotopy between them, and thus belong to the same equivalence class
+ in 
+\begin_inset Formula $\pi_{1}(Y,a)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Thus 
+\begin_inset Formula $(i\circ r)_{*}=(\mathrm{id}_{X})_{*}$
+\end_inset
+
+ and thus 
+\begin_inset Formula $i_{*}\circ r_{*}=\mathrm{id}_{\pi_{1}(X,a)}$
+\end_inset
+
+.
+ Meanwhile, 
+\begin_inset Formula $(r\circ i)_{*}=(\mathrm{id}_{A})_{*}$
+\end_inset
+
+ implies 
+\begin_inset Formula $r_{*}\circ i_{*}=\mathrm{id}_{\pi_{1}(A,a)}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \series bold
-TODO
+c
 \series default
-]
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\pi_{1}(X,a)\simeq\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We know that 
+\begin_inset Formula $A$
+\end_inset
+
+ is a circle, so we know that 
+\begin_inset Formula $\pi_{1}(A,a)\simeq\Z$
+\end_inset
+
+, but 
+\begin_inset Formula $i_{*}$
+\end_inset
+
+ (from part b) is a bijection from 
+\begin_inset Formula $\pi_{1}(A,a)$
+\end_inset
+
+ to 
+\begin_inset Formula $\pi_{1}(X,a)$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -3462,11 +3660,92 @@ TODO
 HW5#2
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ Let 
+\begin_inset Formula $X:=D\times S^{1}=\{(x,y,z,w):x^{2}+y^{2}\le1\ \&\ w^{2}+z^{2}=1\}$
+\end_inset
+
+, the 
+\begin_inset Quotes eld
+\end_inset
+
+filled-in torus
+\begin_inset Quotes erd
+\end_inset
+
+, and let 
+\begin_inset Formula $A:=\{(0,0,z,w):w^{2}+z^{2}=1\}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\pi_{1}(X)\simeq\Z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider 
+\begin_inset Formula $r(x,y,z,w):X\to A=(0,0,z,w)$
+\end_inset
+
+, and the inclusion 
+\begin_inset Formula $i:A\to X$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $H(x,y,z,w,t):X\to X:=(tx,ty,z,w)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $H(x,y,z,w,1)=\mathrm{id}_{X}$
+\end_inset
+
+ and 
+\begin_inset Formula $H(x,y,z,w,0)=r$
+\end_inset
+
+, and 
+\begin_inset Formula $H(0,0,z,w,t)=(0,0,z,w)$
+\end_inset
+
+ so 
+\begin_inset Formula $H$
+\end_inset
+
+ is a homotopy relative to 
+\begin_inset Formula $A$
+\end_inset
+
+ between 
+\begin_inset Formula $\mathrm{id}_{X}$
+\end_inset
+
+ and 
+\begin_inset Formula $i\circ r$
+\end_inset
+
+, and 
+\begin_inset Formula $A$
+\end_inset
+
+ is a deformation retract of 
+\begin_inset Formula $X$
+\end_inset
+
+, so they have the same fundamental group.
+ But 
+\begin_inset Formula $A$
+\end_inset
+
+ is a circle.
 \begin_inset Newline newline
 \end_inset
 
@@ -3547,12 +3826,14 @@ c
 \begin_inset Formula $\{1\}$
 \end_inset
 
- because [
-\series bold
-TODO
-\series default
-: uh, I'm sure there's a map between the plane and the slitted plane, but
- I don't remember it] 
+ because—I was sure there was a map between the plane and the slitted plane,
+ but I didn't remember it.
+ Gemini 2.5 Pro points out that there's a map from the slitted plane to the
+ half plane (take 
+\begin_inset Formula $\sqrt{z}$
+\end_inset
+
+, which halves the argument), which is simply connected.
 \begin_inset Newline newline
 \end_inset
 
@@ -5632,7 +5913,12 @@ Proof
 \begin_inset Formula $\Leftarrow$
 \end_inset
 
-) Suppose arbitrary 
+)
+\emph on
+ Attempt
+\emph default
+.
+ Suppose arbitrary 
 \begin_inset Formula $f,g:Y\to X$
 \end_inset
 
@@ -5658,13 +5944,8 @@ Proof
 \end_inset
 
  be constant.
- [
-\series bold
-TODO
-\series default
-: I thought the surjective/constant sentence would be the stroke of genius
- needed to complete the proof, but I still don't see how to make it work:
- we would need a way to turn a map 
+ (This direction seemed promising to me, but I didn't see how to convert
+ it: we would need a way to turn a map 
 \begin_inset Formula $Y\to X$
 \end_inset
 
@@ -5676,8 +5957,7 @@ TODO
 \begin_inset Formula $t$
 \end_inset
 
-.
- You can't 
+; you can't 
 \begin_inset Quotes eld
 \end_inset
 
@@ -5689,7 +5969,40 @@ just use the image
 \begin_inset Formula $Y$
 \end_inset
 
-.]
+.)
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Hint
+\emph default
+.
+ Claude Sonnet 4.5 points out that 
+\begin_inset Formula $Y$
+\end_inset
+
+ can be any topological space, even a convenient one.
+ Kind of a spoiler.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof (continued)
+\emph default
+.
+ Let 
+\begin_inset Formula $Y:=X$
+\end_inset
+
+.
+ If any two continuous maps 
+\begin_inset Formula $f,g:X\to X$
+\end_inset
+
+ are homotopic, then in particular, that would include the identity and
+ a constant map.
 \begin_inset Newline newline
 \end_inset
 
@@ -5702,27 +6015,7 @@ just use the image
 HW6#4
 \series default
 .
- Let 
-\begin_inset Formula $A\subseteq X$
-\end_inset
-
-, 
-\begin_inset Formula $j:A\to X$
-\end_inset
-
- be the inclusion map, 
-\begin_inset Formula $f:X\to A$
-\end_inset
-
- be any continuous map, and suppose 
-\begin_inset Formula $j\circ f\simeq\mathrm{id}_{X}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-
+ 
 \series bold
 a
 \series default
@@ -5732,11 +6025,24 @@ a
 Proposition
 \emph default
 .
- If 
-\begin_inset Formula $f$
+ Let 
+\begin_inset Formula $A\subseteq X$
 \end_inset
 
- is a retraction, then 
+, and let 
+\begin_inset Formula $j:A\to X$
+\end_inset
+
+ be the inclusion map.
+ If 
+\begin_inset Formula $f:X\to A$
+\end_inset
+
+ is a retraction and 
+\begin_inset Formula $j\circ f\simeq\mathrm{id}_{X}$
+\end_inset
+
+, then 
 \begin_inset Formula $j_{*}$
 \end_inset
 
@@ -5746,14 +6052,245 @@ Proposition
 \begin_layout Standard
 
 \emph on
+Commentary
+\emph default
+.
+ 
+\begin_inset Formula $j_{*}:\pi_{1}(A)\to\pi_{1}(X)$
+\end_inset
+
+ is a homomorphism by definition, so to show that it's an isomorphism, we
+ merely need show that it's injective and surjective.
+\end_layout
+
+\begin_layout Standard
+Inclusion maps are always injective, right? For injectivity, we need to
+ show that if 
+\begin_inset Formula $[a]\ne[b]$
+\end_inset
+
+ in 
+\begin_inset Formula $\pi_{1}(A)$
+\end_inset
+
+, then 
+\begin_inset Formula $j_{*}([a])\ne j_{*}([b])$
+\end_inset
+
+ in 
+\begin_inset Formula $\pi_{1}(X)$
+\end_inset
+
+.
+ Suppose 
+\begin_inset Formula $[a]\ne[b]$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $j_{*}([a])=[j\circ a]$
+\end_inset
+
+ and 
+\begin_inset Formula $j_{*}([b])=[j\circ b]$
+\end_inset
+
+.
+ But the inclusion map 
+\begin_inset Formula $j$
+\end_inset
+
+ is just broadening the domain.
+ If loops 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ aren't homotopic in 
+\begin_inset Formula $A$
+\end_inset
+
+, then they're not going to be homotopic in 
+\begin_inset Formula $X$
+\end_inset
+
+, either ...
+ right? Actually, that's not obvious: if 
+\begin_inset Formula $A$
+\end_inset
+
+ is in two disconnected pieces, and 
+\begin_inset Formula $X\backslash A$
+\end_inset
+
+ fills in the gap and simply-connects the pieces, then 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ would become homotopic in 
+\begin_inset Formula $X$
+\end_inset
+
+—so it's not true that inclusion maps are always injective; we need to be
+ using the other conditions.
+\end_layout
+
+\begin_layout Standard
+For injectivity, a hint from Claude Sonnet 4.5 suggests starting with 
+\begin_inset Formula $j_{*}([\alpha])=j_{*}([\beta])$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $j_{*}([\alpha])=j_{*}([\beta])$
+\end_inset
+
+ for 
+\begin_inset Formula $\alpha,\beta\in A$
+\end_inset
+
+ implies 
+\begin_inset Formula $f_{*}\circ j_{*}([\alpha])=f_{*}\circ j_{*}([\beta])$
+\end_inset
+
+, which amounts to 
+\begin_inset Formula $[f\circ j\circ\alpha]=[f\circ j\circ\beta]$
+\end_inset
+
+, but that doesn't immediately help us: we already established that "it
+ just broadens the codomain, so it doesn't matter" is bogus reasoning, and
+ while 
+\begin_inset Formula $j\circ f$
+\end_inset
+
+ would cancel inside the brackets as homotopic to the identity, what we
+ have is 
+\begin_inset Formula $f\circ j$
+\end_inset
+
+.
+ Sonnet 4.5 in its tutor aspect asks me what a retraction is.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-]
+ (Injective.) 
+\begin_inset Formula $j_{*}([\alpha])=j_{*}([\beta])$
+\end_inset
+
+ implies 
+\begin_inset Formula $f_{*}\circ j_{*}([\alpha])=f_{*}\circ j_{*}([\beta])$
+\end_inset
+
+ implies 
+\begin_inset Formula $[f\circ j\circ\alpha]=[f\circ j\circ\beta]$
+\end_inset
+
+, but 
+\begin_inset Formula $f\circ j=\mathrm{id}_{A}$
+\end_inset
+
+, because for points in 
+\begin_inset Formula $A$
+\end_inset
+
+, 
+\begin_inset Formula $j$
+\end_inset
+
+ acts like the identity, and the retraction 
+\begin_inset Formula $f$
+\end_inset
+
+ also acts like the identity on 
+\begin_inset Formula $A$
+\end_inset
+
+, so we have 
+\begin_inset Formula $[\alpha]=[\beta]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Surjective.) We need to show that for all 
+\begin_inset Formula $[\gamma]\in\pi_{1}(X)$
+\end_inset
+
+, there exists 
+\begin_inset Formula $[\tau]\in\pi_{1}(A)$
+\end_inset
+
+ such that 
+\begin_inset Formula $j_{*}([\tau])=[\gamma]$
+\end_inset
+
+.
+ But as an inclusion map, 
+\begin_inset Formula $j$
+\end_inset
+
+ isn't even defined on 
+\begin_inset Formula $X\backslash A$
+\end_inset
+
+.
+ So what we're really saying here is that every loop in 
+\begin_inset Formula $X\backslash A$
+\end_inset
+
+ is homotopic to a loop in 
+\begin_inset Formula $A$
+\end_inset
+
+ alone.
+ Our 
+\begin_inset Formula $j\circ f\simeq\mathrm{id}_{X}$
+\end_inset
+
+ assertion should be buying us that somehow.
+ Applying the 
+\begin_inset Quotes eld
+\end_inset
+
+star functor
+\begin_inset Quotes erd
+\end_inset
+
+, we have 
+\begin_inset Formula $j_{*}\circ f_{*}=\mathrm{id}_{\pi_{1}(X)}$
+\end_inset
+
+.
+ That is, for all 
+\begin_inset Formula $[\gamma]\in X$
+\end_inset
+
+, 
+\begin_inset Formula $j_{*}(f_{*}([\gamma]))=[\gamma]$
+\end_inset
+
+, and therfore 
+\begin_inset Formula $f_{*}([\gamma])$
+\end_inset
+
+ is the 
+\begin_inset Formula $\tau$
+\end_inset
+
+ that fulfills our surjectivity criterion.
 \begin_inset Newline newline
 \end_inset
 
@@ -5763,14 +6300,214 @@ TODO
 \begin_layout Standard
 
 \series bold
-b
+III.8#2
 \series default
 .
- [
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $Y$
+\end_inset
+
+ is contractible, then 
+\begin_inset Formula $X\times Y$
+\end_inset
+
+ is homotopically equivalent to 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $Y$
+\end_inset
+
+ being contractible means that it's homotopy-equivalent to a single point,
+ which is to say that there's a homotopy between 
+\begin_inset Formula $\id Y$
+\end_inset
+
+ and 
+\begin_inset Formula $Y\to c$
+\end_inset
+
+: a continuous function 
+\begin_inset Formula $H(y,t)$
+\end_inset
+
+ such that 
+\begin_inset Formula $H(y,0)=y$
+\end_inset
+
+ and 
+\begin_inset Formula $H(y,1)=c$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We want to find a homotopy equivalence between 
+\begin_inset Formula $X\times Y$
+\end_inset
+
+ and 
+\begin_inset Formula $X$
+\end_inset
+
+, which is to say a continuous 
+\begin_inset Formula $f:X\times Y\to X$
+\end_inset
+
+ such that there exists continuous 
+\begin_inset Formula $g:X\to X\times Y$
+\end_inset
+
+ such that 
+\begin_inset Formula $f\circ g\simeq\id X$
+\end_inset
+
+ and 
+\begin_inset Formula $g\circ f\simeq\id{X\times Y}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $f(x,y)=x$
+\end_inset
+
+ and 
+\begin_inset Formula $g(x)=(x,c)$
+\end_inset
+
+.
+ We see that 
+\begin_inset Formula $f\circ g=f(g(x))=x$
+\end_inset
+
+, so 
+\begin_inset Formula $f\circ g=\id X$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $g\circ f=g(f(x,y))=(x,c)$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $G(x,y,t)=(x,H(y,t))$
+\end_inset
+
+ is a homotopy between 
+\begin_inset Formula $\id{X\times Y}$
+\end_inset
+
+ and 
+\begin_inset Formula $g\circ f$
+\end_inset
+
+, because 
+\begin_inset Formula $G(x,y,0)=(x,y)$
+\end_inset
+
+ and 
+\begin_inset Formula $G(x,y,1)=(x,c)$
+\end_inset
+
+, so 
+\begin_inset Formula $\id{X\times Y}\simeq g\circ f$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \series bold
-TODO
+III.8#5
 \series default
-]
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\R^{n+1}\backslash\{0\}$
+\end_inset
+
+ is homotopically equivalent to 
+\begin_inset Formula $S^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Consider 
+\begin_inset Formula $f(v):\R^{n+1}\backslash\{0\}\to S^{n}=\frac{v}{\left\Vert v\right\Vert }$
+\end_inset
+
+, and the inclusion map 
+\begin_inset Formula $i:S^{n}\to\R^{n+1}\backslash\{0\}$
+\end_inset
+
+.
+ We see that 
+\begin_inset Formula $f\circ i=\id{S^{n}}$
+\end_inset
+
+.
+ We also have 
+\begin_inset Formula $i\circ f\simeq\id{\R^{n+1}\backslash\{0\}}$
+\end_inset
+
+ via a homotopy that looks like 
+\begin_inset Formula $f$
+\end_inset
+
+ but which uses 
+\begin_inset Formula $t$
+\end_inset
+
+ to vary the 
+\begin_inset Quotes eld
+\end_inset
+
+scaling factor
+\begin_inset Quotes erd
+\end_inset
+
+ between 1 and 
+\begin_inset Formula $\frac{1}{\left\Vert v\right\Vert }$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -6013,7 +6750,7 @@ Proof
 \series bold
 TODO
 \series default
-]
+ using a covering space]
 \begin_inset Newline newline
 \end_inset
 
