@@ -6737,7 +6737,9 @@ Commentary
 
  and is fine.
  But why is it the case that a north–south loop is different, but going
- north–south twice is the same?
+ north–south twice is the same? Actually, it's easy: go north-to-south twice
+ along different arcs, which you can imagine forming a lens shape.
+ But the lens is just a loop which can be tightened.
 \end_layout
 
 \begin_layout Standard
@@ -6746,11 +6748,23 @@ Commentary
 Proof
 \emph default
 .
- [
-\series bold
-TODO
-\series default
- using a covering space]
+ Let 
+\begin_inset Formula $p:S^{2}\to\R\mathbb{P}^{2}$
+\end_inset
+
+ map the sphere to the northern hemisphere antipodally.
+ By Munkres 54.4, the path-connected codomain and simply connected domain
+ means that the lifting correspondence is a bijection.
+ So the two preimages of a neighborhood (in the north and south hemispheres
+ of 
+\begin_inset Formula $S^{2}$
+\end_inset
+
+) imply that 
+\begin_inset Formula $|\pi_{1}(\R\mathbb{P}^{2})|=2$
+\end_inset
+
+, and there's only the one group of order 2.
 \begin_inset Newline newline
 \end_inset
 
@@ -6763,32 +6777,282 @@ TODO
 b
 \series default
 .
+ 
+\emph on
+Commentary
+\emph default
+.
+ The argument that the fundamental group of the punctured torus is 
+\begin_inset Formula $\Z*\Z$
+\end_inset
+
+ (identify the corners; then the edges 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+ are the two loops of a figure-eight) seems like it shold generalize to
+ the projective plane; the 
+\begin_inset Quotes eld
+\end_inset
+
+mirrored
+\begin_inset Quotes erd
+\end_inset
+
+ edges having opposite orientations doesn't seem like it should change the
+ argument? But if that were true, then SvK would give the projective plane
+ the same fundamental group as the torus (the rest of the argument carrying
+ as well), 
+\begin_inset Formula $\Z\times\Z$
+\end_inset
+
+, which we know isn't true.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof (in the style of Seifert–van Kampen)
+\emph default
+.
  [
 \series bold
 TODO
 \series default
-: our mission is to apply SvK to 
-\begin_inset Formula $\R\mathbb{P}^{2}$
+: ...?]
+\begin_inset Newline newline
 \end_inset
 
-, but I'm not seeing how to do the decomposition.
- The obvious choice is to imagine the north and south hemispheres glued
- along the equator (which is a circle), but that's probably not the correct
- gluing because it doesn't distinguish from the ordinary sphere, and also
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§71#1
+\series default
+.
+ Let 
+\begin_inset Formula $X:=\bigcup_{k=1}^{n}S_{k}$
+\end_inset
+
+, where for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $S_{k}$
+\end_inset
+
+ is homeomorphic to 
+\begin_inset Formula $S^{1}$
+\end_inset
+
+, and there exists 
+\begin_inset Formula $p\in X$
+\end_inset
+
+ such that for 
+\begin_inset Formula $i\ne j$
+\end_inset
+
+, 
+\begin_inset Formula $S_{i}\cap S_{j}=\{p\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Recall that 
+\emph on
+Hausdorff
+\emph default
+ means that distinct points belong to distinct open sets.
+ Part c refers to a previous exercise about the line with two origins not
+ being Hausdorff, because the two origins are distinct points.
+\end_layout
+
+\begin_layout Standard
+...
+ I don't think I have enough context on non-Hausdorff spaces to make sense
+ of what this is asking.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
  
-\begin_inset Formula $\{1\}*_{\Z}\{1\}$
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $X$
 \end_inset
 
- is 
-\begin_inset Formula $\{1\}$
+ is Hausdorff iff each 
+\begin_inset Formula $S_{i}$
 \end_inset
 
- so we need one of the pieces to not be trivial.
- Can the equator be its own piece? 
-\begin_inset Formula $\Z*_{\Z}\{1\}$
+ is closed in 
+\begin_inset Formula $X$
 \end_inset
 
- ...]
+.
+ [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ is Hausdorff iff the topology of 
+\begin_inset Formula $X$
+\end_inset
+
+ is coherent with the subspaces 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ need not be Hausdorff.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§71#4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $X$
+\end_inset
+
+ is an infinite wedge of circles, then 
+\begin_inset Formula $X$
+\end_inset
+
+ is not first-countable.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Recall that 
+\begin_inset Formula $X$
+\end_inset
+
+ is first-countable if for every 
+\begin_inset Formula $x\in X$
+\end_inset
+
+, there exists a sequence of open neighborhoods of 
+\begin_inset Formula $x$
+\end_inset
+
+, 
+\begin_inset Formula $\{U_{k}\}_{k=1}^{\infty}$
+\end_inset
+
+, such that each neighborhood of 
+\begin_inset Formula $x$
+\end_inset
+
+ includes one of the 
+\begin_inset Formula $U_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For every circle 
+\begin_inset Formula $C_{\alpha}$
+\end_inset
+
+, any open neighborhood of 
+\begin_inset Formula $p$
+\end_inset
+
+ either intersects 
+\begin_inset Formula $C_{i}\backslash\{p\}$
+\end_inset
+
+, or it doesn't.
+ We can perform a Cantor diagonalization.
+ 
 \end_layout
 
 \end_body

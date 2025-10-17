@@ -1019,6 +1019,26 @@ So our group ends up being
 \end_inset
 
 ?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In retrospect, this excursion may not have been the best use of time.
+ Hatcher just states 
+\begin_inset Quotes eld
+\end_inset
+
+Van Kampen's Theorem
+\begin_inset Quotes erd
+\end_inset
+
+ (no love for Seifert) as being about the arbitrary union with path-connected
+ pairwise intersections.
+ Passing from a binary operation (like ...
+ addition!) to arbitrarily many args is not so dramatic?
 \end_layout
 
 \end_body
