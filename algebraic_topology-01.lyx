@@ -7030,6 +7030,28 @@ Commentary
 \end_inset
 
 .
+ Because the wedge isn't embedded anywhere in particular, I had gotten the
+ idea that an open arc of one of the circles could be an open neighborhood
+ of the wedgepoint, even though this wouldn't make sense in metric space
+ (analogously to how 
+\begin_inset Formula $[-1,1]$
+\end_inset
+
+ isn't open in 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+).
+ Then we could do a Cantor diagonalization on whether the neighborhoods
+ in the sequence intersect 
+\begin_inset Formula $C_{i}\backslash\{p\}$
+\end_inset
+
+ or not.
+ Gemini 2.5 Pro says my conception of an open set is wrong, but (despite
+ being told not to spoil the exercise) says that the diagonalization idea
+ can still work.
+ (And then I got the inclusion direction wrong when writing the proof.)
 \end_layout
 
 \begin_layout Standard
@@ -7038,21 +7060,45 @@ Commentary
 Proof
 \emph default
 .
- For every circle 
-\begin_inset Formula $C_{\alpha}$
+ Suppose for a contradiction that 
+\begin_inset Formula $X$
 \end_inset
 
-, any open neighborhood of 
+ is first-countable, as demonstrated by a sequence of open neighborhoods
+ 
+\begin_inset Formula $\{U_{k}\}_{k=1}^{\infty}$
+\end_inset
+
+ of the wedgepoint 
 \begin_inset Formula $p$
 \end_inset
 
- either intersects 
-\begin_inset Formula $C_{i}\backslash\{p\}$
+.
+ Every 
+\begin_inset Formula $U_{k}$
 \end_inset
 
-, or it doesn't.
- We can perform a Cantor diagonalization.
- 
+ includes an open arc from each 
+\begin_inset Formula $C_{i}.$
+\end_inset
+
+ Then we can do a Cantor diagonalization: if we define 
+\begin_inset Formula $V$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $\left(V\cap C_{k}\right)\subset\left(U_{k}\cap C_{k}\right)$
+\end_inset
+
+, then 
+\begin_inset Formula $U_{k}\not\subseteq V$
+\end_inset
+
+.
 \end_layout
 
 \end_body
