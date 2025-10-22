@@ -6814,163 +6814,75 @@ mirrored
 \end_layout
 
 \begin_layout Standard
+This was discussed at Prof.
+ Clader's office hours on 20 October.
+\end_layout
+
+\begin_layout Standard
 
 \emph on
 Proof (in the style of Seifert–van Kampen)
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-: ...?]
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-§71#1
-\series default
-.
  Let 
-\begin_inset Formula $X:=\bigcup_{k=1}^{n}S_{k}$
+\begin_inset Formula $U$
 \end_inset
 
-, where for all 
-\begin_inset Formula $k$
+ be an open 
+\begin_inset Quotes eld
 \end_inset
 
-, 
-\begin_inset Formula $S_{k}$
+cap
+\begin_inset Quotes erd
 \end_inset
 
- is homeomorphic to 
-\begin_inset Formula $S^{1}$
+ of the northern hemisphere with intersects 
+\begin_inset Formula $V$
 \end_inset
 
-, and there exists 
-\begin_inset Formula $p\in X$
+ (the bottom part of the hemisphere) in an annulus.
+ We have 
+\begin_inset Formula $\pi_{1}(U)\simeq\{1\}$
 \end_inset
 
- such that for 
-\begin_inset Formula $i\ne j$
-\end_inset
-
-, 
-\begin_inset Formula $S_{i}\cap S_{j}=\{p\}$
+ and 
+\begin_inset Formula $\pi_{1}(U\cap V)\simeq\Z$
 \end_inset
 
 .
-\end_layout
+ Then this is the tricky part: 
+\begin_inset Formula $\pi_{1}(V)\simeq\Z$
+\end_inset
 
-\begin_layout Standard
+ (it has the one hole in it left by 
+\begin_inset Formula $U$
+\end_inset
 
+'s absence), but what matters for the SvK computation is the homomorphism
+ from 
+\begin_inset Formula $\pi_{1}(U\cap V)$
+\end_inset
+
+ to 
+\begin_inset Formula $\pi_{1}(V)$
+\end_inset
+
+.
+ We can deformation-retract the punctured hemisphere to a circle with antipodal
+ points identified.
+ Going once around the annulus 
+\begin_inset Formula $U\cap V$
+\end_inset
+
+ amounts to going 
 \emph on
-Commentary
+twice
 \emph default
-.
- Recall that 
-\emph on
-Hausdorff
-\emph default
- means that distinct points belong to distinct open sets.
- Part c refers to a previous exercise about the line with two origins not
- being Hausdorff, because the two origins are distinct points.
-\end_layout
-
-\begin_layout Standard
-...
- I don't think I have enough context on non-Hausdorff spaces to make sense
- of what this is asking.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-a
-\series default
-.
- 
-\emph on
-Proposition
-\emph default
-.
- 
-\begin_inset Formula $X$
-\end_inset
-
- is Hausdorff iff each 
-\begin_inset Formula $S_{i}$
-\end_inset
-
- is closed in 
-\begin_inset Formula $X$
+ around the half-circle at the edge of 
+\begin_inset Formula $V$
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-]
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-b
-\series default
-.
- 
-\emph on
-Proposition
-\emph default
-.
- 
-\begin_inset Formula $X$
-\end_inset
-
- is Hausdorff iff the topology of 
-\begin_inset Formula $X$
-\end_inset
-
- is coherent with the subspaces 
-\begin_inset Formula $S_{i}$
-\end_inset
-
-.
- [
-\series bold
-TODO
-\series default
-]
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-c
-\series default
-.
- 
-\emph on
-Proposition
-\emph default
-.
- 
-\begin_inset Formula $X$
-\end_inset
-
- need not be Hausdorff.
- [
-\series bold
-TODO
-\series default
-]
 \begin_inset Newline newline
 \end_inset
 
@@ -7051,7 +6963,8 @@ Commentary
  Gemini 2.5 Pro says my conception of an open set is wrong, but (despite
  being told not to spoil the exercise) says that the diagonalization idea
  can still work.
- (And then I got the inclusion direction wrong when writing the proof.)
+ (And then I got the inclusion direction wrong when writing the proof the
+ first time, embarrassing.)
 \end_layout
 
 \begin_layout Standard
@@ -7064,7 +6977,7 @@ Proof
 \begin_inset Formula $X$
 \end_inset
 
- is first-countable, as demonstrated by a sequence of open neighborhoods
+ is first-countable, with a corresponding sequence of open neighborhoods
  
 \begin_inset Formula $\{U_{k}\}_{k=1}^{\infty}$
 \end_inset
