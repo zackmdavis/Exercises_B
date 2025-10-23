@@ -110,11 +110,15 @@ Advanced Topics in Mathematics: Algebraic Topology
 \emph on
 Introduction to Topology 
 \emph default
-(Dover Books paperbook) and James Munkres's 
+(Dover Books paperbook), James Munkres's 
 \emph on
 Topology 
 \emph default
-(borrowed from the SFSU library).
+(borrowed from the SFSU library), and James Munkres's 
+\emph on
+Elements of Algebraic Topology
+\emph default
+ (downloaded using SFSU library privileges).
 \end_layout
 
 \begin_layout Standard
@@ -3104,6 +3108,65 @@ Proof
 \end_inset
 
  is mapped to by something.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ This prompt was used on the second assessment.
+ Prof.
+ Clader contends that 
+\begin_inset Formula $[f]$
+\end_inset
+
+ isn't a valid input to 
+\begin_inset Formula $r_{*}$
+\end_inset
+
+, because 
+\begin_inset Formula $f$
+\end_inset
+
+ is a 
+\begin_inset Quotes eld
+\end_inset
+
+loop in 
+\begin_inset Formula $A$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+, not a 
+\begin_inset Quotes eld
+\end_inset
+
+loop in 
+\begin_inset Formula $X$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+: we need 
+\begin_inset Formula $i\circ f:[0,1]\to X$
+\end_inset
+
+ (for the inclusion 
+\begin_inset Formula $i:A\to X$
+\end_inset
+
+), not 
+\begin_inset Formula $f:[0,1]\to A$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -7012,6 +7075,843 @@ Proof
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+After the second assessment, Prof.
+ Clader's class is moving on from homotopy to homology (even as the books
+ make it clear that there's much more homotopy to do).
+ Gamelin & Greene and big Munkres (
+\emph on
+Topology
+\emph default
+) only cover homotopy theory.
+ I had a bad feeling looking at Hatcher.
+ My SFSU library privileges (still not revoked) let me download PDFs of
+ Munkres's specialized algebraic topology book (
+\emph on
+Elements of
+\emph default
+ ...) and a 2022 
+\emph on
+Introduction to
+\emph default
+ by Holger Kammeyer which takes a category-theoretic viewpoint.
+\end_layout
+
+\begin_layout Standard
+...
+ I'm liking the looks of little Munkres over Kammeyer.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§1#1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The barycentric coördinates of a point in a simplex are continuous functions
+ of the point.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ We need to show that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+, there exists a 
+\begin_inset Formula $\delta$
+\end_inset
+
+ such that 
+\begin_inset Formula $d(x,y)<\delta$
+\end_inset
+
+ implies 
+\begin_inset Formula $d(f_{j}(x),f_{j}(y))<\varepsilon$
+\end_inset
+
+.
+ Actually, the first 
+\begin_inset Formula $d$
+\end_inset
+
+ is in 
+\begin_inset Formula $\R^{n}$
+\end_inset
+
+ (where the metric is 
+\begin_inset Formula $\sqrt{\sum_{j}\left(y_{j}-x_{j}\right)^{2}}$
+\end_inset
+
+), and the second 
+\begin_inset Formula $d$
+\end_inset
+
+ is in 
+\begin_inset Formula $\R$
+\end_inset
+
+.
+ But we know that the distance along one dimension is less than or equal
+ to the total distance.
+ Except these are barycentric coordinates, not Euclidean! 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: this should be easy but embarrassingly somehow it's not coming to me right
+ now]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ A simplex is the union of all line segments joining 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+ to simplex points spanned by 
+\begin_inset Formula $\{a_{j}\}_{j=1}^{n}$
+\end_inset
+
+.
+ Two such line segments only intersect at 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ A simplex is a compact, convex set in 
+\begin_inset Formula $\R^{n}$
+\end_inset
+
+, which is the intersection of all convex sets in 
+\begin_inset Formula $\R^{n}$
+\end_inset
+
+ containing 
+\begin_inset Formula $\{a_{j}\}_{j=0}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Compact.) Compactness follows from being closed and bounded in 
+\begin_inset Formula $\R^{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Convex.) Let 
+\begin_inset Formula $x:=\sum_{j=0}^{n}x_{j}a_{j}$
+\end_inset
+
+ and let 
+\begin_inset Formula $y:=\sum_{j}y_{j}a_{j}$
+\end_inset
+
+ where 
+\begin_inset Formula $\sum_{j}x_{j}=1$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{j}y_{j}=1$
+\end_inset
+
+; that is, 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ are in the simplex.
+ The line segment between them is given by 
+\begin_inset Formula $tx+(1-t)y=\sum_{j=0}^{n}\left(tx_{j}+(1-t)y_{j}\right)a_{j}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\sum_{j=0}^{n}\left(tx_{j}+(1-t)y_{j}\right)=1$
+\end_inset
+
+, then 
+\begin_inset Formula $tx+(1-t)y$
+\end_inset
+
+ will also be in the simplex.
+ But 
+\begin_inset Formula $\sum_{j=0}^{n}\left(tx_{j}+(1-t)y_{j}\right)=\sum_{j=0}^{n}tx_{j}+\sum_{j=0}^{n}(1-t)y_{j}=t\sum_{j=0}^{n}x_{j}+(1-t)\sum_{j=0}^{n}y_{j}=t(1)+(1-t)(1)=1$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Intersection of such convex sets.) The nontrivial direction is to show that
+ if a point is in all convex sets containing 
+\begin_inset Formula $\{a_{j}\}_{j=0}^{n}$
+\end_inset
+
+, then it is in the simplex.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW9#1
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\{p_{k}\}_{k=0}^{n}$
+\end_inset
+
+ is affinely independent iff for all 
+\begin_inset Formula $\{\lambda_{k}\}_{k=0}^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{k}\lambda_{k}p_{k}=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{k}\lambda_{k}=0$
+\end_inset
+
+ imply that for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $\lambda_{k}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW9#2
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\series bold
+b
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW9#3
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ The boundary of a 3-simplex is homeomorphic to the 2-sphere.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ The boundary to two 2-simplices that meet at one vertex is homeomorphic
+ to the figure-eight.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ A triangular prism (without the 
+\begin_inset Quotes eld
+\end_inset
+
+end caps
+\begin_inset Quotes erd
+\end_inset
+
+, whose three sides can be formed from two 2-simplices) is homeomorphic
+ to the cylinder 
+\begin_inset Formula $S^{1}\times[0,1]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW9#4
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\partial_{1}\circ\partial_{2}:C_{2}(K)\to C_{0}(K)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Proof.
+ Suppose we have an oriented 2-simplex 
+\begin_inset Formula $[v_{0},v_{1},v_{2}]$
+\end_inset
+
+.
+ The boundary 
+\begin_inset Formula $\partial_{2}[v_{0},v_{1},v_{2}]$
+\end_inset
+
+ is 
+\begin_inset Formula $[v_{1},v_{2}]-[v_{0},v_{2}]+[v_{0},v_{1}]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For an oriented 1-simplex 
+\begin_inset Formula $[v_{0},v_{1}]$
+\end_inset
+
+, the boundary 
+\begin_inset Formula $\partial_{1}[v_{0},v_{1}]$
+\end_inset
+
+ is (by the same procedure, somewhat degeneratelly) 
+\begin_inset Formula $v_{1}-v_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $\partial_{1}\circ\partial_{2}[v_{0},v_{1},v_{2}]=\partial_{1}([v_{1},v_{2}]-[v_{0},v_{2}]+[v_{0},v_{1}])=v_{2}-v_{1}-v_{2}+v_{0}+v_{1}-v_{0}=\cancel{v_{2}-v_{2}}\cancel{-v_{1}+v_{1}}+\cancel{v_{0}-v_{0}}=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\partial_{2}\circ\partial_{3}:C_{3}(K)\to C_{1}(K)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\partial_{3}[v_{0},v_{1},v_{2},v_{3}]=[v_{1},v_{2},v_{3}]-[v_{0},v_{2},v_{3}]+[v_{0},v_{1},v_{3}]-[v_{0},v_{1},v_{2}]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\partial_{2}\circ\partial_{3}[v_{0},v_{1},v_{2},v_{3}]=\partial_{2}\left([v_{1},v_{2},v_{3}]-[v_{0},v_{2},v_{3}]+[v_{0},v_{1},v_{3}]-[v_{0},v_{1},v_{2}]\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Even just the 
+\begin_inset Formula $3\cdot4=12$
+\end_inset
+
+ terms here are annoying enough that I want to reach for Python.
+ (I don't expect it to be faster in absolute terms, just less demoralizing.)
+\end_layout
+
+\begin_layout LyX-Code
+class SignedSimplex:
+\end_layout
+
+\begin_layout LyX-Code
+    def __init__(self, vertices, positive=True):
+\end_layout
+
+\begin_layout LyX-Code
+        self.vertices = vertices
+\end_layout
+
+\begin_layout LyX-Code
+        self.positive = positive
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+    def n(self):
+\end_layout
+
+\begin_layout LyX-Code
+        return len(self.vertices) - 1
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+    def boundary(self):
+\end_layout
+
+\begin_layout LyX-Code
+        boundary_components = []
+\end_layout
+
+\begin_layout LyX-Code
+        positive = True
+\end_layout
+
+\begin_layout LyX-Code
+        for i in range(len(self.vertices)):
+\end_layout
+
+\begin_layout LyX-Code
+            boundary_components.append(
+\end_layout
+
+\begin_layout LyX-Code
+                SignedSimplex(self.vertices[:i] + self.vertices[i+1:], positive=po
+sitive)
+\end_layout
+
+\begin_layout LyX-Code
+            )
+\end_layout
+
+\begin_layout LyX-Code
+            positive = not positive
+\end_layout
+
+\begin_layout LyX-Code
+        return boundary_components
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def latex(simplices):
+\end_layout
+
+\begin_layout LyX-Code
+    out = ""
+\end_layout
+
+\begin_layout LyX-Code
+    for simplex in simplices:
+\end_layout
+
+\begin_layout LyX-Code
+        out += '+' if simplex.positive else '-'
+\end_layout
+
+\begin_layout LyX-Code
+        out += '['
+\end_layout
+
+\begin_layout LyX-Code
+        out += ', '.join(var for var in simplex.vertices)
+\end_layout
+
+\begin_layout LyX-Code
+        out += ']'
+\end_layout
+
+\begin_layout LyX-Code
+    return out
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+if __name__ == "__main__":
+\end_layout
+
+\begin_layout LyX-Code
+    σ = SignedSimplex(["v_{0}", "v_{1}", "v_{2}", "v_{3}"])
+\end_layout
+
+\begin_layout LyX-Code
+    out = ""
+\end_layout
+
+\begin_layout LyX-Code
+    for τ in σ.boundary():
+\end_layout
+
+\begin_layout LyX-Code
+        out += latex(τ.boundary())
+\end_layout
+
+\begin_layout LyX-Code
+    print(out) 
+\end_layout
+
+\begin_layout Standard
+That yields 
+\begin_inset Formula $\partial_{2}\circ\partial_{3}[v_{0},v_{1},v_{2},v_{3}]=[v_{2},v_{3}]-[v_{1},v_{3}]+[v_{1},v_{2}]+[v_{2},v_{3}]-[v_{0},v_{3}]+[v_{0},v_{2}]+[v_{1},v_{3}]-[v_{0},v_{3}]+[v_{0},v_{1}]+[v_{1},v_{2}]-[v_{0},v_{2}]+[v_{0},v_{1}]$
+\end_inset
+
+, which I thought was 
+\begin_inset Formula $v_{3}-v_{2}+v_{1}-v_{3}+v_{2}-v_{1}+v_{3}-v_{2}-v_{0}+v_{3}+v_{2}-v_{0}+v_{3}-v_{1}-v_{0}+v_{3}-v_{1}+v_{0}+v_{2}-v_{1}-v_{0}+v_{2}+v_{1}-v_{0}$
+\end_inset
+
+, except actually more Python is called for, because the 
+\begin_inset Formula $v_{3}$
+\end_inset
+
+s aren't canceling, which makes me think I made a mistake while excising
+ those brackets.
+\end_layout
+
+\begin_layout LyX-Code
+def one_simplex_latex(one_simplices):
+\end_layout
+
+\begin_layout LyX-Code
+    out = ""
+\end_layout
+
+\begin_layout LyX-Code
+    for one_simplex in one_simplices:
+\end_layout
+
+\begin_layout LyX-Code
+        out += "+{}-{}".format(one_simplex.vertices[1], one_simplex.vertices[0])
+\end_layout
+
+\begin_layout LyX-Code
+    return out 
+\end_layout
+
+\begin_layout Standard
+And we have 
+\begin_inset Formula $+v_{3}-v_{2}+v_{3}-v_{1}+v_{2}-v_{1}+v_{3}-v_{2}+v_{3}-v_{0}+v_{2}-v_{0}+v_{3}-v_{1}+v_{3}-v_{0}+v_{1}-v_{0}+v_{2}-v_{1}+v_{2}-v_{0}+v_{1}-v_{0}$
+\end_inset
+
+, which is (if all went well)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\underbrace{+v_{3}+v_{3}+v_{3}+v_{3}+v_{3}+v_{3}}+\underbrace{-v_{2}+v_{2}-v_{2}+v_{2}+v_{2}+v_{2}}\underbrace{-v_{1}-v_{1}-v_{1}+v_{1}-v_{1}+v_{1}}\underbrace{-v_{0}-v_{0}-v_{0}-v_{0}-v_{0}-v_{0}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+...
+ OK, I definitely have a bug in my code; I'm not propagating the signs through
+ correctly.
+ Correction—
+\end_layout
+
+\begin_layout LyX-Code
+def one_simplex_latex(one_simplices):
+\end_layout
+
+\begin_layout LyX-Code
+    out = ""
+\end_layout
+
+\begin_layout LyX-Code
+    for one_simplex in one_simplices:
+\end_layout
+
+\begin_layout LyX-Code
+        out += "+{}-{}".format(
+\end_layout
+
+\begin_layout LyX-Code
+            one_simplex.vertices[1 if one_simplex.positive else 0],
+\end_layout
+
+\begin_layout LyX-Code
+            one_simplex.vertices[0 if one_simplex.positive else 1]
+\end_layout
+
+\begin_layout LyX-Code
+        )
+\end_layout
+
+\begin_layout LyX-Code
+    return out 
+\end_layout
+
+\begin_layout Standard
+which yields 
+\begin_inset Formula $+v_{3}-v_{2}+v_{1}-v_{3}+v_{2}-v_{1}+v_{3}-v_{2}+v_{0}-v_{3}+v_{2}-v_{0}+v_{3}-v_{1}+v_{0}-v_{3}+v_{1}-v_{0}+v_{2}-v_{1}+v_{0}-v_{2}+v_{1}-v_{0}$
+\end_inset
+
+, which is
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\cancel{+v_{3}-v_{3}}\cancel{+v_{3}+v_{3}-v_{3}-v_{3}}\cancel{-v_{2}+v_{2}}\cancel{-v_{2}+v_{2}}\cancel{+v_{2}-v_{2}}\cancel{+v_{1}-v_{1}}\cancel{-v_{1}+v_{1}}\cancel{-v_{1}+v_{1}}\cancel{+v_{0}-v_{0}}\cancel{+v_{0}-v_{0}}\cancel{+v_{0}-v_{0}}=0$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\partial_{n-1}\circ\partial_{n}:C_{n}(K)\to C_{n-2}(K)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By induction.
+\end_layout
+
+\begin_layout Standard
+(Base.) The 
+\begin_inset Formula $n:=2$
+\end_inset
+
+ case 
+\begin_inset Formula $\partial_{1}\circ\partial_{2}:C_{2}(K)\to C_{0}(K)=0$
+\end_inset
+
+ is proven above.
+\end_layout
+
+\begin_layout Standard
+(Induction.) Suppose inductively that 
+\begin_inset Formula $\partial_{n-1}\circ\partial_{n}:C_{n}(K)\to C_{n-2}(K)=0$
+\end_inset
+
+.
+ We need to show that 
+\begin_inset Formula $\partial_{n}\circ\partial_{n+1}:C_{n+1}(K)\to C_{n-1}(K)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $c$
+\end_inset
+
+ be a member of 
+\begin_inset Formula $C_{n+1}(K)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\partial_{n+1}c$
+\end_inset
+
+ is an alternating sum of members of 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\partial_{n}\circ\partial_{n+1}c$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_body
