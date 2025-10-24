@@ -118,7 +118,7 @@ Topology
 \emph on
 Elements of Algebraic Topology
 \emph default
- (downloaded using SFSU library privileges).
+ (PDF downloaded using SFSU library privileges).
 \end_layout
 
 \begin_layout Standard
@@ -7408,15 +7408,75 @@ TODO
 HW9#2
 \series default
 .
- 
+ Let 
+\begin_inset Formula $P(\{p_{k}\}_{k=0}^{n},\{a_{k}\}_{k=1}^{n}):=\left\{ v\in\R^{n}:v=p_{0}+\sum_{k=1}^{n}a_{i}(p_{i}-p_{0})\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
 \series bold
 a
 \series default
 .
  
+\emph on
+Theorem
+\emph default
+.
+ The plane 
+\begin_inset Formula $P$
+\end_inset
+
+ doesn't depend on how the 
+\begin_inset Formula $\{p_{k}\}_{k}$
+\end_inset
+
+ are indexed.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+
 \series bold
 b
 \series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $w\notin P$
+\end_inset
+
+, then 
+\begin_inset Formula $\{w\}\cup\{p_{k}\}_{k=0}^{n}$
+\end_inset
+
+ are affinely independent.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
 .
  [
 \series bold
@@ -7912,6 +7972,633 @@ TODO
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2#2
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The star and closed star of a vertex are path-connected.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $p$
+\end_inset
+
+ be a point in a simplex 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ adjacent to vertex 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ We have a path from 
+\begin_inset Formula $p$
+\end_inset
+
+ to 
+\begin_inset Formula $v$
+\end_inset
+
+: start with the barycentric coordinates of 
+\begin_inset Formula $p$
+\end_inset
+
+, and continuously increase the 
+\begin_inset Quotes eld
+\end_inset
+
+weight
+\begin_inset Quotes erd
+\end_inset
+
+ corresponding to 
+\begin_inset Formula $v$
+\end_inset
+
+ and decrease all the others.
+ All of the points on the path except the endpoint are in 
+\begin_inset Formula $\mathrm{Int}\,\sigma$
+\end_inset
+
+, and the endpoint 
+\begin_inset Formula $v$
+\end_inset
+
+ is in the star of itself.
+ By the same construction in reverse, we have a path from 
+\begin_inset Formula $v$
+\end_inset
+
+ to any point 
+\begin_inset Formula $q$
+\end_inset
+
+ in another simplex 
+\begin_inset Formula $\tau$
+\end_inset
+
+ adjacent to 
+\begin_inset Formula $v$
+\end_inset
+
+.
+ The same strategy clearly works for the closed star.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2#3
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The collection of 1-simplices in 
+\begin_inset Formula $\R^{2}$
+\end_inset
+
+ having vertices 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ and 
+\begin_inset Formula $(1,\frac{1}{k})$
+\end_inset
+
+ is not locally compact.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Attempt
+\emph default
+.
+ Consider an neighborhood 
+\begin_inset Formula $U$
+\end_inset
+
+ of the origin.
+ It contains portions of the countably infinitely many line segments 
+\begin_inset Formula $\sigma_{k}$
+\end_inset
+
+ from 
+\begin_inset Formula $(1,\frac{1}{k})$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\bigcup_{k\in\mathbb{N}}\{U\cap\sigma_{k}\}$
+\end_inset
+
+ is an open cover without a finite subcover.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ Gemini 2.5 Pro isn't having it: 
+\emph on
+https://gemini.google.com/app/7488749c6d19c9a7
+\emph default
+ [
+\series bold
+TODO 
+\series default
+address, and part b]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $K$
+\end_inset
+
+ is not locally finite, then 
+\begin_inset Formula $|K|$
+\end_inset
+
+ is not locally compact.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $K$
+\end_inset
+
+ is not locally finite: there's a vertex that belongs to infinitely many
+ simplices 
+\begin_inset Formula $\sigma_{k}$
+\end_inset
+
+.
+ An open neighborhood 
+\begin_inset Formula $U$
+\end_inset
+
+ of the vertex contains part of each 
+\begin_inset Formula $\sigma_{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Recall that a subset 
+\begin_inset Formula $A\subseteq|K|$
+\end_inset
+
+ is closed iff 
+\begin_inset Formula $A\cap\sigma_{k}$
+\end_inset
+
+ is closed for each 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Our result will follow immediately if we can show that 
+\begin_inset Formula $U\cap\sigma_{k}$
+\end_inset
+
+ is open (because those will be the pieces of our open cover with no finite
+ subcover).
+\end_layout
+
+\begin_layout Standard
+We know that the topology of 
+\begin_inset Formula $|K|$
+\end_inset
+
+ is coherent with respect to the 
+\begin_inset Formula $\sigma_{k}$
+\end_inset
+
+, which the text notes is equivalent to 
+\begin_inset Formula $U$
+\end_inset
+
+ being open iff 
+\begin_inset Formula $U\cap\sigma_{k}$
+\end_inset
+
+ is open for each 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ But we know that 
+\begin_inset Formula $U$
+\end_inset
+
+ is open, because we defined it as an open neighborhood! So we're done.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2#4
+\series default
+.
+ The collection of 1-simplices in 
+\begin_inset Formula $\R^{2}$
+\end_inset
+
+ having vertices 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ and 
+\begin_inset Formula $(1,\frac{1}{k})$
+\end_inset
+
+ is not metrizable.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ We are given a hint to show that it's not first-countable.
+ We should be able to use the same diagonalization strategy that we used
+ above for §71#4 from the other Munkres book?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose for a contradiction that it is too metrizable, thus first-countable,
+ thus there exists a sequence of open neighborhoods 
+\begin_inset Formula $\{U_{k}\}_{k=1}^{\infty}$
+\end_inset
+
+ of the origin such that each neighborhood of the origin contains one of
+ the 
+\begin_inset Formula $U_{k}$
+\end_inset
+
+.
+ We can construct an open neighborhood 
+\begin_inset Formula $V$
+\end_inset
+
+ such that 
+\begin_inset Formula $(V\cap\sigma_{k})\subset(U_{k}\cap\sigma_{k})$
+\end_inset
+
+.
+ Then for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $U_{k}\not\subseteq V$
+\end_inset
+
+, because 
+\begin_inset Formula $V$
+\end_inset
+
+ is strictly smaller than 
+\begin_inset Formula $U_{1}$
+\end_inset
+
+ in 
+\begin_inset Formula $\sigma_{1}$
+\end_inset
+
+, smaller than 
+\begin_inset Formula $U_{2}$
+\end_inset
+
+ in 
+\begin_inset Formula $\sigma_{2}$
+\end_inset
+
+, 
+\emph on
+&c
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2#5
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Let 
+\begin_inset Formula $g:|K|\to|L|$
+\end_inset
+
+ map the vertices of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ onto the vertices of 
+\begin_inset Formula $\tau.$
+\end_inset
+
+ Then 
+\begin_inset Formula $g$
+\end_inset
+
+ maps some face of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ homeomorphically onto 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Recall that a face of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ is just a simplex spanned by a subset of the vertices of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ The preimage of the vertices of 
+\begin_inset Formula $\tau$
+\end_inset
+
+ is the vertices of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+ Presumably the reason this isn't trivial is the 
+\begin_inset Quotes eld
+\end_inset
+
+homeomorphically
+\begin_inset Quotes erd
+\end_inset
+
+ part.
+ The map 
+\begin_inset Formula $g$
+\end_inset
+
+ can non-injectively 
+\begin_inset Quotes eld
+\end_inset
+
+collapse
+\begin_inset Quotes erd
+\end_inset
+
+ multiple vertices of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ onto the same vertex of 
+\begin_inset Formula $\tau$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let the vertices of 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ be 
+\begin_inset Formula $\{v_{i}\}_{i=0}^{m}$
+\end_inset
+
+ and the vertices of 
+\begin_inset Formula $\tau$
+\end_inset
+
+ be 
+\begin_inset Formula $\{w_{j}\}_{j=0}^{n}$
+\end_inset
+
+.
+ We know that for all 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $w_{j}=f(v_{i})$
+\end_inset
+
+ for some 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Pick some subset of 
+\begin_inset Formula $\{v_{i}\}_{i=0}^{m}$
+\end_inset
+
+ such that the map from the subset of the vertices of 
+\begin_inset Formula $\tau$
+\end_inset
+
+ is injective.
+ Then 
+\begin_inset Formula $g$
+\end_inset
+
+ maps 
+\begin_inset Formula $x=\sum_{j=1}^{n}a_{j}v_{j}\mapsto g(x)=\sum_{j=1}^{n}b_{j}w_{j}$
+\end_inset
+
+.
+ There exists an invertible affine (thus continuous) map from an affine
+ combination of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors to an affine combination of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§2#7
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $|K|$
+\end_inset
+
+ is metrizable iff 
+\begin_inset Formula $K$
+\end_inset
+
+ is locally finite.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ A hint points out that 
+\begin_inset Formula $d(x,y):=\sup|t_{v}(x)-t_{v}(y)|$
+\end_inset
+
+ is a metric for each finite subcomplex of 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) §2#4 above (and §71#4 above that from big Munkres) generalizes to prove
+ the contrapositive, that if 
+\begin_inset Formula $K$
+\end_inset
+
+ is not locally finite, then 
+\begin_inset Formula $|K|$
+\end_inset
+
+ is not metrizable.
+ 
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) If we have a metric for each subcomplex (per the hint), then we just need
+ some canonical way to 
+\begin_inset Quotes eld
+\end_inset
+
+stitch them together.
+\begin_inset Quotes erd
+\end_inset
+
+ ...
+ [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
