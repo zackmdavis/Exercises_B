@@ -7391,7 +7391,45 @@ Theorem
 Proof
 \emph default
 .
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $\{p_{k}\}_{k=0}^{n}$
+\end_inset
+
+ are affinely independent: that is, that 
+\begin_inset Formula $\sum_{j=1}^{n}\lambda_{j}(p_{j}-p_{0})=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $\lambda_{j}=0$
+\end_inset
+
+.
+ Some algebra transforms that to 
+\begin_inset Formula $\sum_{j=1}^{n}\lambda_{j}p_{j}=\sum_{j=1}^{n}\lambda_{j}p_{0}$
+\end_inset
+
+ implies 
+\begin_inset Formula $\forall k\ \text{\ensuremath{\lambda_{k}=0}}$
+\end_inset
+
+.
  [
+\series bold
+TODO
+\series default
+: chain the implications, dummy] 
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) [
 \series bold
 TODO
 \series default
@@ -8598,7 +8636,111 @@ stitch them together.
 \series bold
 TODO
 \series default
-]
+: dicussed in office hours 27 October, if we can show that between any two
+ point, we only have a finite subcomplex, that would do it]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§5#1
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Let 
+\begin_inset Formula $K:=\{[v_{i},v_{i+1\:\mod n}]\}_{i=0}^{n}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $H_{1}(K)\simeq\Z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let's look at 
+\begin_inset Formula $n:=3$
+\end_inset
+
+.
+ We have the 1-simplices 
+\begin_inset Formula $[v_{0},v_{1}]$
+\end_inset
+
+, 
+\begin_inset Formula $[v_{1},v_{2}]$
+\end_inset
+
+, and 
+\begin_inset Formula $[v_{2},v_{0}]$
+\end_inset
+
+.
+ The homology group 
+\begin_inset Formula $H_{1}$
+\end_inset
+
+ is defined as 
+\begin_inset Formula $\ker\partial_{1}/\mathrm{im}\partial_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Let's compute 
+\begin_inset Formula $\ker\partial_{1}$
+\end_inset
+
+.
+ A generic element 
+\begin_inset Formula $k$
+\end_inset
+
+ of 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ is 
+\begin_inset Formula $a[v_{0},v_{1}]+b[v_{1},v_{2}]+c[v_{2},v_{0}]$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\partial_{1}(k)=a(v_{1}-v_{0})+b(v_{2}-v_{1})+c(v_{0}-v_{2})=(c-a)v_{0}+(a-b)v_{1}+(b-c)v_{2}$
+\end_inset
+
+.
+ So elements with 
+\begin_inset Formula $c-a=a-b=b-c=0$
+\end_inset
+
+ are in the kernel.
+\end_layout
+
+\begin_layout Standard
+What about 
+\begin_inset Formula $\mathrm{im}\partial_{2}$
+\end_inset
+
+? ...
+ ugh, this is so confusing; I need more and better examples.
 \end_layout
 
 \end_body
