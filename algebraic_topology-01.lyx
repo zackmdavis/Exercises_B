@@ -8645,58 +8645,113 @@ TODO
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-§5#1
-\series default
-.
- 
-\emph on
-Theorem
-\emph default
-.
- Let 
-\begin_inset Formula $K:=\{[v_{i},v_{i+1\:\mod n}]\}_{i=0}^{n}$
+Let 
+\begin_inset Formula $X$
 \end_inset
 
-.
+ be the 1-skeleton of a tetrahedron.
  
-\begin_inset Formula $H_{1}(K)\simeq\Z$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-
-\emph on
-Proof
-\emph default
-.
- Let's look at 
-\begin_inset Formula $n:=3$
-\end_inset
-
-.
- We have the 1-simplices 
-\begin_inset Formula $[v_{0},v_{1}]$
+We have four vertices: 
+\begin_inset Formula $v_{0}():\Delta^{0}\to X=(0,0,0)$
 \end_inset
 
 , 
-\begin_inset Formula $[v_{1},v_{2}]$
+\begin_inset Formula $v_{1}():\Delta^{0}\to X=(1,0,0)$
 \end_inset
 
-, and 
-\begin_inset Formula $[v_{2},v_{0}]$
+, 
+\begin_inset Formula $v_{2}():\Delta^{0}\to X=(0,1,0)$
+\end_inset
+
+, 
+\begin_inset Formula $v_{3}():\Delta^{0}\to X=(0,0,1)$
 \end_inset
 
 .
- The homology group 
-\begin_inset Formula $H_{1}$
+\end_layout
+
+\begin_layout Standard
+We have six edges: 
+\begin_inset Formula $e_{0}(t):\Delta^{1}\to X=(t,0,0)$
 \end_inset
 
- is defined as 
-\begin_inset Formula $\ker\partial_{1}/\mathrm{im}\partial_{2}$
+, 
+\begin_inset Formula $e_{1}(t):\Delta^{1}\to X=(0,t,0)$
+\end_inset
+
+, 
+\begin_inset Formula $e_{2}(t):\Delta^{1}\to X=(0,0,t)$
+\end_inset
+
+, 
+\begin_inset Formula $e_{3}(t):\Delta^{1}\to X=(1-t,t,0)$
+\end_inset
+
+, 
+\begin_inset Formula $e_{4}(t):\Delta^{1}\to X=(1-t,0,t)$
+\end_inset
+
+, 
+\begin_inset Formula $e_{5}(t):\Delta^{1}\to X=(0,1-t,t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Or perhaps rather we should be thinking in terms of 
+\begin_inset Formula $e_{0}:=[v_{0},v_{1}]$
+\end_inset
+
+, 
+\begin_inset Formula $e_{1}:=[v_{0},v_{2}]$
+\end_inset
+
+, 
+\begin_inset Formula $e_{2}:=[v_{0},v_{3}]$
+\end_inset
+
+, 
+\begin_inset Formula $e_{3}:=[v_{1},v_{2}]$
+\end_inset
+
+, 
+\begin_inset Formula $e_{4}:=[v_{1},v_{3}]$
+\end_inset
+
+, 
+\begin_inset Formula $e_{5}:=[v_{2},v_{3}]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+0\overbrace{\to}^{\partial_{2}^{\Delta}}\underbrace{C_{1}^{\Delta}(X)}_{\Z^{6}}\overbrace{\to}^{\partial_{1}^{\Delta}}\underbrace{C_{0}^{\Delta}(X)}_{\Z^{4}}\overbrace{\to}^{\partial_{0}^{\Delta}}0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then we can compute what 
+\begin_inset Formula $\partial_{1}^{\Delta}$
+\end_inset
+
+ does to an arbitrary element of 
+\begin_inset Formula $C_{1}^{\Delta}(X)$
+\end_inset
+
+.
+ The arbitrary element is 
+\begin_inset Formula $\sum_{j=0}^{5}n_{j}e_{j}$
 \end_inset
 
 .
@@ -8704,43 +8759,92 @@ Proof
 \end_layout
 
 \begin_layout Standard
-Let's compute 
-\begin_inset Formula $\ker\partial_{1}$
+Then 
+\begin_inset Formula $\partial_{1}^{\Delta}(\sum_{j=0}^{5}n_{j}e_{j})=n_{0}(v_{1}-v_{0})-n_{1}(v_{2}-v_{0})+n_{2}(v_{3}-v_{0})-n_{3}(v_{2}-v_{1})+n_{4}(v_{3}-v_{1})-n_{5}(v_{3}-v_{2})$
 \end_inset
 
 .
- A generic element 
-\begin_inset Formula $k$
-\end_inset
-
- of 
-\begin_inset Formula $C_{1}$
-\end_inset
-
- is 
-\begin_inset Formula $a[v_{0},v_{1}]+b[v_{1},v_{2}]+c[v_{2},v_{0}]$
-\end_inset
-
-.
- Then 
-\begin_inset Formula $\partial_{1}(k)=a(v_{1}-v_{0})+b(v_{2}-v_{1})+c(v_{0}-v_{2})=(c-a)v_{0}+(a-b)v_{1}+(b-c)v_{2}$
-\end_inset
-
-.
- So elements with 
-\begin_inset Formula $c-a=a-b=b-c=0$
-\end_inset
-
- are in the kernel.
 \end_layout
 
 \begin_layout Standard
-What about 
-\begin_inset Formula $\mathrm{im}\partial_{2}$
+\begin_inset Formula $=(n_{0}v_{1}-n_{0}v_{0})-(n_{1}v_{2}-n_{1}v_{0})+(n_{2}v_{3}-n_{2}v_{0})-(n_{3}v_{2}-n_{3}v_{1})+(n_{4}v_{3}-n_{4}v_{1})-(n_{5}v_{3}-n_{5}v_{2})$
 \end_inset
 
-? ...
- ugh, this is so confusing; I need more and better examples.
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=-n_{0}v_{0}+n_{1}v_{0}-n_{2}v_{0}+n_{0}v_{1}+n_{3}v_{1}-n_{4}v_{1}-n_{1}v_{2}-n_{3}v_{2}+n_{5}v_{2}+n_{2}v_{3}+n_{4}v_{3}-n_{5}v_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=(-n_{0}+n_{1}-n_{2})v_{0}+(n_{0}+n_{3}-n_{4})v_{1}+(-n_{1}-n_{3}+n_{5})v_{2}+(n_{2}+n_{4}-n_{5})v_{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We want to find 
+\begin_inset Formula $\ker\partial_{1}^{\Delta}$
+\end_inset
+
+, the things the boundary operator maps to zero.
+ That would be defined by the equations:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{cases}
+-n_{0}+n_{1}-n_{2}=0\\
+n_{0}+n_{3}-n_{4}=0\\
+-n_{1}-n_{3}+n_{5}=0\\
+n_{2}+n_{4}-n_{5}=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H_{1}:=\frac{\ker(\partial_{1}^{\Delta})}{\mathrm{im}(\partial_{2}^{\Delta})}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\ker(\partial_{1}^{\Delta})$
+\end_inset
+
+ is supposed to be isomorphic to some sort of group.
+ How do we get a group out of those equations?? I am very confused.
+\end_layout
+
+\begin_layout Standard
+Gemini 2.5 Pro spoils the problem (
+\begin_inset Formula $H_{1}\simeq\Z^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $H_{0}\simeq\Z$
+\end_inset
+
+) and is saying I got the sign rule wrong.
+ 
+\begin_inset Formula $\partial$
+\end_inset
+
+ is linear: the alternating signs are already baked in to the meaning of
+ 
+\begin_inset Formula $[v_{i},v_{i+1}]$
+\end_inset
+
+.
 \end_layout
 
 \end_body
