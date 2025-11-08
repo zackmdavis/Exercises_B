@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-August–October 2025
+August–November 2025
 \end_layout
 
 \begin_layout Abstract
@@ -8845,6 +8845,746 @@ Gemini 2.5 Pro spoils the problem (
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Recall that a 
+\begin_inset Formula $\Delta$
+\end_inset
+
+-complex is a collection of maps from standard 
+\begin_inset Formula $n$
+\end_inset
+
+-simplices to the space of interest: 
+\begin_inset Formula $\{\sigma_{\alpha}:\Delta^{\mathrm{dim}(\mathrm{im}(\sigma_{\alpha}))}\to X\}$
+\end_inset
+
+.
+ For a simplical complex, each simplex is uniquely determined by its vertices.
+ For a 
+\begin_inset Formula $\Delta$
+\end_inset
+
+-complex, that's not true: the simplices live in 
+\begin_inset Quotes eld
+\end_inset
+
+standard
+\begin_inset Quotes erd
+\end_inset
+
+ space, and are getting mapped onto our topological space of interest (which
+ lets us triangulate a torus or whatever with fewer triangles, since they
+ can share vertices in the image space).
+ 
+\end_layout
+
+\begin_layout Standard
+Our standard 1-simplex has vertices at 
+\begin_inset Formula $(1,0)$
+\end_inset
+
+ and 
+\begin_inset Formula $(0,1)$
+\end_inset
+
+; the 2-simplex at 
+\begin_inset Formula $(1,0,0)$
+\end_inset
+
+, 
+\begin_inset Formula $(0,1,0)$
+\end_inset
+
+, and 
+\begin_inset Formula $(0,0,1)$
+\end_inset
+
+, 
+\emph on
+&c
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW10#1
+\series default
+.
+ We define a 
+\begin_inset Formula $\Delta$
+\end_inset
+
+-complex on the torus, conceptualized as 
+\begin_inset Formula $[0,1]\times[0,1]$
+\end_inset
+
+ with the edges glued.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma^{0}:\Delta^{0}\to T=(0,0)\sim(1,0)\sim(0,1)\sim(1,1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{1}^{1}(1-t,t):\Delta^{1}\to T=(t,0)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{2}^{1}(1-t,t):\Delta^{1}\to T=(0,t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{3}^{1}(1-t,t):\Delta^{1}\to T=(1,t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{4}^{1}(1-t,t):\Delta^{1}\to T=(t,1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{5}^{1}(1-t,t):\Delta^{1}\to T=(t,t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{1}^{2}\left(\left[\begin{array}{c}
+x\\
+y\\
+z
+\end{array}\right]\right):\Delta^{2}\to T=\left[\begin{array}{ccc}
+0 & 1 & 1\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+x\\
+y\\
+z
+\end{array}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{2}^{2}\left(\left[\begin{array}{c}
+x\\
+y\\
+z
+\end{array}\right]\right):\Delta^{2}\to T=\left[\begin{array}{ccc}
+0 & 0 & 1\\
+0 & 1 & 1
+\end{array}\right]\left[\begin{array}{c}
+x\\
+y\\
+z
+\end{array}\right]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $H_{0}^{\Delta}(T)\simeq\Z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Attempt
+\emph default
+.
+ We need to compute 
+\begin_inset Formula $\frac{\ker\partial_{0}}{\mathrm{im}\partial_{1}}$
+\end_inset
+
+.
+ The boundary map 
+\begin_inset Formula $\partial_{0}$
+\end_inset
+
+ maps 
+\begin_inset Formula $0$
+\end_inset
+
+-chains to 
+\begin_inset Formula $0$
+\end_inset
+
+, so its kernel is the whole space, and the space is spanned by one generator
+ for the one point, so 
+\begin_inset Formula $\ker\partial_{0}\simeq\Z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The boundary map 
+\begin_inset Formula $\partial_{1}$
+\end_inset
+
+ maps 
+\begin_inset Formula $1$
+\end_inset
+
+-chains to 
+\begin_inset Formula $0$
+\end_inset
+
+-chains.
+ Given a formal linear combination 
+\begin_inset Formula $\sum_{j=1}^{5}a_{j}\sigma_{j}$
+\end_inset
+
+, then 
+\begin_inset Formula $\partial_{1}(\sum_{j=1}^{5}a_{j}\sigma_{j})=\sum_{j=1}^{5}a_{j}\partial_{1}\sigma_{j}$
+\end_inset
+
+.
+ So then we need to compute the boundary of our 
+\begin_inset Formula $\sigma_{j}$
+\end_inset
+
+? Despite uncertainty about what the boundary operator means in the world
+ of 
+\begin_inset Formula $\Delta$
+\end_inset
+
+-complexes (where our elements are maps rather than simplices-
+\emph on
+qua
+\emph default
+-vertex-collections), geometric intuition demands that 
+\begin_inset Formula $\partial_{1}\sigma_{1}=\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]-\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+, 
+\begin_inset Formula $\partial_{1}\sigma_{2}=\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]-\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+, 
+\begin_inset Formula $\partial_{1}\sigma_{3}=\left[\begin{array}{c}
+1\\
+1
+\end{array}\right]-\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]$
+\end_inset
+
+, 
+\begin_inset Formula $\partial_{1}\sigma_{4}=\left[\begin{array}{c}
+1\\
+1
+\end{array}\right]-\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+, and 
+\begin_inset Formula $\partial_{1}\sigma_{5}=\left[\begin{array}{c}
+1\\
+1
+\end{array}\right]-\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+.
+ I don't think we can actually subtract the vectors, though.
+ We're collecting the coëfficients.
+ We have 
+\begin_inset Formula $(-a_{1}-a_{2}-a_{5})\left[\begin{array}{c}
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+, 
+\begin_inset Formula $(a_{1}-a_{3})\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]$
+\end_inset
+
+, 
+\begin_inset Formula $(a_{2}-a_{4})\left[\begin{array}{c}
+0\\
+1
+\end{array}\right]$
+\end_inset
+
+, and 
+\begin_inset Formula $(a_{3}+a_{4}+a_{5})\left[\begin{array}{c}
+1\\
+1
+\end{array}\right]$
+\end_inset
+
+.
+ This can also be seen on a paper diagram with arrow-edges: a numbered arrow
+ edge contributes a positive (respectively) coëfficient to the vertex it's
+ pointing to (respectively away from).
+ But then what is the image of this map?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Correction
+\emph default
+.
+ Gemini 2.5 Pro and Claude Sonnet 4.5 point out that there's really only one
+ vertex, even if it gets multiple names in 
+\begin_inset Formula $[0,1]\times[0,1]$
+\end_inset
+
+.
+ The boundary of any 1-chain is zero, because all the 1-chains are closed
+ loops.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Denouement
+\emph default
+.
+ 
+\begin_inset Formula $\frac{\Z}{\{0\}}\simeq\Z$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $H_{1}^{\Delta}(T)\simeq\Z\oplus\Z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Attempt
+\emph default
+.
+ We need to compute 
+\begin_inset Formula $\frac{\ker\partial_{1}}{\mathrm{im}\partial_{2}}$
+\end_inset
+
+.
+ We've seen that 
+\begin_inset Formula $\mathrm{im}\partial_{1}\simeq\{0\}$
+\end_inset
+
+, so the rank–nullity theorem implies that 
+\begin_inset Formula $\ker\partial_{1}\simeq\Z^{5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The boundary map 
+\begin_inset Formula $\partial_{2}$
+\end_inset
+
+ maps 
+\begin_inset Formula $2$
+\end_inset
+
+-chains to 
+\begin_inset Formula $1$
+\end_inset
+
+-chains.
+ The generic 
+\begin_inset Formula $2$
+\end_inset
+
+-chain is 
+\begin_inset Formula $a_{1}\sigma_{1}^{2}+a_{2}\sigma_{2}^{2}$
+\end_inset
+
+.
+ Reasoning geometrically, one might think that its boundary is 
+\begin_inset Formula $a_{1}(\sigma_{2}^{1}+\sigma_{4}^{1}-\sigma_{5}^{1})+a_{2}(\sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1})=a_{2}\sigma_{1}^{1}+a_{1}\sigma_{2}^{1}+a_{2}\sigma_{3}^{1}+a_{1}\sigma_{4}^{1}-(a_{1}+a_{2})\sigma_{5}^{1}$
+\end_inset
+
+.
+ But (it being undignified to make the same mistake twice in a row) we should
+ bear in mind that 
+\begin_inset Formula $\sigma_{1}^{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{4}^{1}$
+\end_inset
+
+, and 
+\begin_inset Formula $\sigma_{2}^{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{3}^{1}$
+\end_inset
+
+, represent the same edge.
+ The torus doesn't have any holes in this dimension, so presumably (reasoning
+ backwards from what we know the answer 
+\begin_inset Quotes eld
+\end_inset
+
+should
+\begin_inset Quotes erd
+\end_inset
+
+ be) 
+\begin_inset Formula $\mathrm{im}\partial_{2}\simeq\ker\partial_{1}$
+\end_inset
+
+ ...
+\end_layout
+
+\begin_layout Standard
+Claude Sonnet 4.5 reminds us that 
+\begin_inset Formula $\partial_{2}(\sigma^{2})=\sigma^{2}\circ F_{0}-\sigma^{2}\circ F_{1}+\sigma^{2}\circ F_{2}$
+\end_inset
+
+, where 
+\begin_inset Formula $F_{i}$
+\end_inset
+
+ is the face map 
+\begin_inset Formula $\Delta^{i-1}\to\Delta^{i}$
+\end_inset
+
+.
+ Note that the domains match up: the composition 
+\begin_inset Formula $\Delta^{i-1}\to\Delta^{i}\to T$
+\end_inset
+
+ becomes a map 
+\begin_inset Formula $\Delta^{i-1}\to T$
+\end_inset
+
+, which is the type of an 
+\begin_inset Formula $i-1$
+\end_inset
+
+ chain.
+ The face maps are indexed from 
+\begin_inset Formula $0$
+\end_inset
+
+ because the 
+\begin_inset Formula $i$
+\end_inset
+
+th map is the one that 
+\begin_inset Quotes eld
+\end_inset
+
+omits the 
+\begin_inset Formula $i$
+\end_inset
+
+th vertex
+\begin_inset Quotes erd
+\end_inset
+
+ when, 
+\emph on
+e.g.
+\emph default
+, mapping 
+\begin_inset Formula $[s,t]$
+\end_inset
+
+ to 
+\begin_inset Formula $[0,s,t]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+That is, 
+\begin_inset Formula $F_{0}\left(\left[\begin{array}{c}
+1-t\\
+t
+\end{array}\right]\right):\Delta^{1}\to\Delta^{2}=\left[\begin{array}{c}
+0\\
+1-t\\
+t
+\end{array}\right]$
+\end_inset
+
+, 
+\begin_inset Formula $F_{1}\left(\left[\begin{array}{c}
+1-t\\
+t
+\end{array}\right]\right):\Delta^{1}\to\Delta^{2}=\left[\begin{array}{c}
+1-t\\
+0\\
+t
+\end{array}\right]$
+\end_inset
+
+, and 
+\begin_inset Formula $F_{2}\left(\left[\begin{array}{c}
+1-t\\
+t
+\end{array}\right]\right):\Delta^{1}\to\Delta^{2}=\left[\begin{array}{c}
+0\\
+1-t\\
+t
+\end{array}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's consider 
+\begin_inset Formula $\partial_{2}(\sigma_{1}^{2})=\sigma_{1}^{2}\circ F_{0}-\sigma_{1}^{2}\circ F_{1}+\sigma_{1}^{2}\circ F_{2}=\left[\begin{array}{ccc}
+0 & 1 & 1\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+0\\
+1-t\\
+t
+\end{array}\right]-\left[\begin{array}{ccc}
+0 & 1 & 1\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-t\\
+0\\
+t
+\end{array}\right]+\left[\begin{array}{ccc}
+0 & 1 & 1\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-t\\
+t\\
+0
+\end{array}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left[\begin{array}{c}
+1-t+t\\
+t
+\end{array}\right]-\left[\begin{array}{c}
+t\\
+t
+\end{array}\right]+\left[\begin{array}{c}
+t\\
+0
+\end{array}\right]$
+\end_inset
+
+.
+ But, we should be careful to note (under Claude Sonnet 4.5's watchful guidance),
+ this is a formal 
+\begin_inset Formula $1$
+\end_inset
+
+-chain.
+ We do 
+\emph on
+not 
+\emph default
+continue 
+\begin_inset Formula $\left[\begin{array}{c}
+1\cancel{-t+t-t+t}\\
+\cancel{t-t}+0
+\end{array}\right]=\left[\begin{array}{c}
+1\\
+0
+\end{array}\right]$
+\end_inset
+
+.
+ Rather, 
+\begin_inset Formula $\left[\begin{array}{c}
+1\\
+t
+\end{array}\right]=\sigma_{3}^{1}$
+\end_inset
+
+, 
+\begin_inset Formula $-\left[\begin{array}{c}
+t\\
+t
+\end{array}\right]=-\sigma_{5}^{1}$
+\end_inset
+
+, and 
+\begin_inset Formula $\left[\begin{array}{c}
+t\\
+0
+\end{array}\right]=\sigma_{1}^{1}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\partial_{2}(\sigma_{1}^{2})=\sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1}$
+\end_inset
+
+.
+ But that's exactly what I got from my geometric reasoning before.
+\end_layout
+
+\begin_layout Standard
+After more LLM tutoring, we understand that 
+\begin_inset Formula $\mathrm{im}\partial_{2}$
+\end_inset
+
+ is generated by 
+\begin_inset Formula $\sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{2}^{1}+\sigma_{4}^{1}-\sigma_{5}^{1}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $H_{1}^{\Delta}(T)\simeq\frac{\Z^{5}}{\left\langle \sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1},\ \sigma_{2}^{1}+\sigma_{4}^{1}-\sigma_{5}^{1}\right\rangle }$
+\end_inset
+
+.
+ Taking the quotient amounts to considering the generators to be relevantly
+ the same as the identity.
+ The system 
+\begin_inset Formula $\begin{cases}
+\sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1}=0\\
+\sigma_{2}^{1}+\sigma_{4}^{1}-\sigma_{5}^{1}=0
+\end{cases}$
+\end_inset
+
+ gives us 
+\begin_inset Formula $\sigma_{3}^{1}=\sigma_{5}^{1}-\sigma_{1}^{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{4}^{1}=\sigma_{5}^{1}-\sigma_{2}^{1}$
+\end_inset
+
+, so we can express everything in terms of the three generators 
+\begin_inset Formula $\sigma_{1}^{1}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{2}^{1}$
+\end_inset
+
+, and 
+\begin_inset Formula $\sigma_{5}^{1}$
+\end_inset
+
+, so we have 
+\begin_inset Formula $\frac{\Z^{5}}{\Z^{3}}\simeq\Z^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+[
+\series bold
+TODO
+\series default
+: This reasoning is not correct!! (The conclusion is rationalized.) Fix it!
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+https://gemini.google.com/app/130375f07346177c
+\emph default
+]
 \end_layout
 
 \end_body
