@@ -8919,7 +8919,7 @@ Our standard 1-simplex has vertices at
 \begin_layout Standard
 
 \series bold
-HW10#1
+HW10#2
 \series default
 .
  We define a 
@@ -8931,6 +8931,21 @@ HW10#1
 \end_inset
 
  with the edges glued.
+ We need to take identification of faces seriously.
+ (An earlier attempt at defining the relevant 
+\begin_inset Formula $\Delta$
+\end_inset
+
+-complex defined 
+\begin_inset Formula $\sigma_{1}^{1}$
+\end_inset
+
+ through 
+\begin_inset Formula $\sigma_{5}^{1}$
+\end_inset
+
+ and led to horrible, soul-corrupting confusion.
+ Thanks to Gemini 2.5 Pro and Claude Sonnet 4.5 for helping to right the ship.)
 \end_layout
 
 \begin_layout Standard
@@ -8943,7 +8958,7 @@ Let
 
 \begin_layout Standard
 Let 
-\begin_inset Formula $\sigma_{1}^{1}(1-t,t):\Delta^{1}\to T=(t,0)$
+\begin_inset Formula $\sigma_{1}^{1}(1-t,t):\Delta^{1}\to T=(t,0)=(t,1)$
 \end_inset
 
 .
@@ -8952,7 +8967,7 @@ Let
 
 \begin_layout Standard
 Let 
-\begin_inset Formula $\sigma_{2}^{1}(1-t,t):\Delta^{1}\to T=(0,t)$
+\begin_inset Formula $\sigma_{2}^{1}(1-t,t):\Delta^{1}\to T=(0,t)=(1,t)$
 \end_inset
 
 .
@@ -8960,23 +8975,7 @@ Let
 
 \begin_layout Standard
 Let 
-\begin_inset Formula $\sigma_{3}^{1}(1-t,t):\Delta^{1}\to T=(1,t)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $\sigma_{4}^{1}(1-t,t):\Delta^{1}\to T=(t,1)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $\sigma_{5}^{1}(1-t,t):\Delta^{1}\to T=(t,t)$
+\begin_inset Formula $\sigma_{3}^{1}(1-t,t):\Delta^{1}\to T=(t,t)$
 \end_inset
 
 .
@@ -9083,129 +9082,25 @@ The boundary map
 
 -chains.
  Given a formal linear combination 
-\begin_inset Formula $\sum_{j=1}^{5}a_{j}\sigma_{j}$
+\begin_inset Formula $\sum_{j=1}^{3}a_{j}\sigma_{j}^{1}$
 \end_inset
 
 , then 
-\begin_inset Formula $\partial_{1}(\sum_{j=1}^{5}a_{j}\sigma_{j})=\sum_{j=1}^{5}a_{j}\partial_{1}\sigma_{j}$
+\begin_inset Formula $\partial_{1}(\sum_{j=1}^{3}a_{j}\sigma_{j}^{1})=\sum_{j=1}^{3}a_{j}\partial_{1}\sigma_{j}^{1}$
 \end_inset
 
 .
  So then we need to compute the boundary of our 
-\begin_inset Formula $\sigma_{j}$
-\end_inset
-
-? Despite uncertainty about what the boundary operator means in the world
- of 
-\begin_inset Formula $\Delta$
-\end_inset
-
--complexes (where our elements are maps rather than simplices-
-\emph on
-qua
-\emph default
--vertex-collections), geometric intuition demands that 
-\begin_inset Formula $\partial_{1}\sigma_{1}=\left[\begin{array}{c}
-1\\
-0
-\end{array}\right]-\left[\begin{array}{c}
-0\\
-0
-\end{array}\right]$
-\end_inset
-
-, 
-\begin_inset Formula $\partial_{1}\sigma_{2}=\left[\begin{array}{c}
-0\\
-1
-\end{array}\right]-\left[\begin{array}{c}
-0\\
-0
-\end{array}\right]$
-\end_inset
-
-, 
-\begin_inset Formula $\partial_{1}\sigma_{3}=\left[\begin{array}{c}
-1\\
-1
-\end{array}\right]-\left[\begin{array}{c}
-1\\
-0
-\end{array}\right]$
-\end_inset
-
-, 
-\begin_inset Formula $\partial_{1}\sigma_{4}=\left[\begin{array}{c}
-1\\
-1
-\end{array}\right]-\left[\begin{array}{c}
-0\\
-1
-\end{array}\right]$
-\end_inset
-
-, and 
-\begin_inset Formula $\partial_{1}\sigma_{5}=\left[\begin{array}{c}
-1\\
-1
-\end{array}\right]-\left[\begin{array}{c}
-0\\
-0
-\end{array}\right]$
+\begin_inset Formula $\sigma_{j}^{1}$
 \end_inset
 
 .
- I don't think we can actually subtract the vectors, though.
- We're collecting the coëfficients.
- We have 
-\begin_inset Formula $(-a_{1}-a_{2}-a_{5})\left[\begin{array}{c}
-0\\
-0
-\end{array}\right]$
-\end_inset
-
-, 
-\begin_inset Formula $(a_{1}-a_{3})\left[\begin{array}{c}
-1\\
-0
-\end{array}\right]$
-\end_inset
-
-, 
-\begin_inset Formula $(a_{2}-a_{4})\left[\begin{array}{c}
-0\\
-1
-\end{array}\right]$
-\end_inset
-
-, and 
-\begin_inset Formula $(a_{3}+a_{4}+a_{5})\left[\begin{array}{c}
-1\\
-1
-\end{array}\right]$
+ But every edge is actually a loop based at the one vertex, so every boundary
+ is 
+\begin_inset Formula $\sigma^{0}-\sigma^{0}=0$
 \end_inset
 
 .
- This can also be seen on a paper diagram with arrow-edges: a numbered arrow
- edge contributes a positive (respectively) coëfficient to the vertex it's
- pointing to (respectively away from).
- But then what is the image of this map?
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Correction
-\emph default
-.
- Gemini 2.5 Pro and Claude Sonnet 4.5 point out that there's really only one
- vertex, even if it gets multiple names in 
-\begin_inset Formula $[0,1]\times[0,1]$
-\end_inset
-
-.
- The boundary of any 1-chain is zero, because all the 1-chains are closed
- loops.
 \end_layout
 
 \begin_layout Standard
@@ -9241,7 +9136,7 @@ Proposition
 \begin_layout Standard
 
 \emph on
-Attempt
+Proof
 \emph default
 .
  We need to compute 
@@ -9254,27 +9149,14 @@ Attempt
 \end_inset
 
 , so the rank–nullity theorem implies that 
-\begin_inset Formula $\ker\partial_{1}\simeq\Z^{5}$
+\begin_inset Formula $\ker\partial_{1}\simeq\Z^{3}$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-The boundary map 
-\begin_inset Formula $\partial_{2}$
-\end_inset
-
- maps 
-\begin_inset Formula $2$
-\end_inset
-
--chains to 
-\begin_inset Formula $1$
-\end_inset
-
--chains.
- The generic 
+The generic 
 \begin_inset Formula $2$
 \end_inset
 
@@ -9282,49 +9164,17 @@ The boundary map
 \begin_inset Formula $a_{1}\sigma_{1}^{2}+a_{2}\sigma_{2}^{2}$
 \end_inset
 
-.
- Reasoning geometrically, one might think that its boundary is 
-\begin_inset Formula $a_{1}(\sigma_{2}^{1}+\sigma_{4}^{1}-\sigma_{5}^{1})+a_{2}(\sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1})=a_{2}\sigma_{1}^{1}+a_{1}\sigma_{2}^{1}+a_{2}\sigma_{3}^{1}+a_{1}\sigma_{4}^{1}-(a_{1}+a_{2})\sigma_{5}^{1}$
+, and its boundary is 
+\begin_inset Formula $a_{1}\partial_{2}(\sigma_{1}^{2})+a_{2}\partial_{2}(\sigma_{2}^{2})$
 \end_inset
 
 .
- But (it being undignified to make the same mistake twice in a row) we should
- bear in mind that 
-\begin_inset Formula $\sigma_{1}^{1}$
-\end_inset
-
- and 
-\begin_inset Formula $\sigma_{4}^{1}$
-\end_inset
-
-, and 
-\begin_inset Formula $\sigma_{2}^{1}$
-\end_inset
-
- and 
-\begin_inset Formula $\sigma_{3}^{1}$
-\end_inset
-
-, represent the same edge.
- The torus doesn't have any holes in this dimension, so presumably (reasoning
- backwards from what we know the answer 
-\begin_inset Quotes eld
-\end_inset
-
-should
-\begin_inset Quotes erd
-\end_inset
-
- be) 
-\begin_inset Formula $\mathrm{im}\partial_{2}\simeq\ker\partial_{1}$
-\end_inset
-
- ...
+ 
 \end_layout
 
 \begin_layout Standard
-Claude Sonnet 4.5 reminds us that 
-\begin_inset Formula $\partial_{2}(\sigma^{2})=\sigma^{2}\circ F_{0}-\sigma^{2}\circ F_{1}+\sigma^{2}\circ F_{2}$
+Recall that 
+\begin_inset Formula $\partial_{2}(\sigma_{j}^{2})=\sigma_{j}^{2}\circ F_{0}-\sigma_{j}^{2}\circ F_{1}+\sigma_{j}^{2}\circ F_{2}$
 \end_inset
 
 , where 
@@ -9335,7 +9185,11 @@ Claude Sonnet 4.5 reminds us that
 \begin_inset Formula $\Delta^{i-1}\to\Delta^{i}$
 \end_inset
 
-.
+ (in this case 
+\begin_inset Formula $\Delta^{1}\to\Delta^{2}$
+\end_inset
+
+).
  Note that the domains match up: the composition 
 \begin_inset Formula $\Delta^{i-1}\to\Delta^{i}\to T$
 \end_inset
@@ -9385,7 +9239,7 @@ e.g.
 \end_layout
 
 \begin_layout Standard
-That is, 
+Concretely, the face maps are 
 \begin_inset Formula $F_{0}\left(\left[\begin{array}{c}
 1-t\\
 t
@@ -9422,7 +9276,7 @@ t
 \end_layout
 
 \begin_layout Standard
-Let's consider 
+We can compute 
 \begin_inset Formula $\partial_{2}(\sigma_{1}^{2})=\sigma_{1}^{2}\circ F_{0}-\sigma_{1}^{2}\circ F_{1}+\sigma_{1}^{2}\circ F_{2}=\left[\begin{array}{ccc}
 0 & 1 & 1\\
 0 & 0 & 1
@@ -9444,15 +9298,8 @@ t
 1-t\\
 t\\
 0
-\end{array}\right]$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $=\left[\begin{array}{c}
-1-t+t\\
+\end{array}\right]=\left[\begin{array}{c}
+1\cancel{-t+t}\\
 t
 \end{array}\right]-\left[\begin{array}{c}
 t\\
@@ -9460,131 +9307,577 @@ t
 \end{array}\right]+\left[\begin{array}{c}
 t\\
 0
-\end{array}\right]$
+\end{array}\right]=\sigma_{2}^{1}-\sigma_{3}^{1}+\sigma_{1}^{1}$
 \end_inset
 
 .
- But, we should be careful to note (under Claude Sonnet 4.5's watchful guidance),
- this is a formal 
-\begin_inset Formula $1$
-\end_inset
-
--chain.
- We do 
-\emph on
-not 
-\emph default
-continue 
-\begin_inset Formula $\left[\begin{array}{c}
-1\cancel{-t+t-t+t}\\
-\cancel{t-t}+0
-\end{array}\right]=\left[\begin{array}{c}
-1\\
-0
-\end{array}\right]$
-\end_inset
-
-.
- Rather, 
-\begin_inset Formula $\left[\begin{array}{c}
-1\\
-t
-\end{array}\right]=\sigma_{3}^{1}$
-\end_inset
-
-, 
-\begin_inset Formula $-\left[\begin{array}{c}
-t\\
-t
-\end{array}\right]=-\sigma_{5}^{1}$
-\end_inset
-
-, and 
-\begin_inset Formula $\left[\begin{array}{c}
-t\\
-0
-\end{array}\right]=\sigma_{1}^{1}$
-\end_inset
-
-.
- So 
-\begin_inset Formula $\partial_{2}(\sigma_{1}^{2})=\sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1}$
-\end_inset
-
-.
- But that's exactly what I got from my geometric reasoning before.
 \end_layout
 
 \begin_layout Standard
-After more LLM tutoring, we understand that 
+Likewise, 
+\begin_inset Formula $\partial_{2}(\sigma_{2}^{2})=\sigma_{2}^{2}\circ F_{0}-\sigma_{2}^{2}\circ F_{1}+\sigma_{2}^{2}\circ F_{2}=\left[\begin{array}{ccc}
+0 & 0 & 1\\
+0 & 1 & 1
+\end{array}\right]\left[\begin{array}{c}
+0\\
+1-t\\
+t
+\end{array}\right]-\left[\begin{array}{ccc}
+0 & 0 & 1\\
+0 & 1 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-t\\
+0\\
+t
+\end{array}\right]+\left[\begin{array}{ccc}
+0 & 0 & 1\\
+0 & 1 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-t\\
+t\\
+0
+\end{array}\right]=\left[\begin{array}{c}
+t\\
+1\cancel{-t+t}
+\end{array}\right]-\left[\begin{array}{c}
+t\\
+t
+\end{array}\right]+\left[\begin{array}{c}
+0\\
+t
+\end{array}\right]=\sigma_{1}^{1}-\sigma_{3}^{1}+\sigma_{2}^{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We see that 
 \begin_inset Formula $\mathrm{im}\partial_{2}$
 \end_inset
 
- is generated by 
-\begin_inset Formula $\sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1}$
+ has a single generator, 
+\begin_inset Formula $\sigma_{1}^{1}-\sigma_{3}^{1}+\sigma_{2}^{1}$
 \end_inset
 
- and 
-\begin_inset Formula $\sigma_{2}^{1}+\sigma_{4}^{1}-\sigma_{5}^{1}$
-\end_inset
-
-.
- So 
-\begin_inset Formula $H_{1}^{\Delta}(T)\simeq\frac{\Z^{5}}{\left\langle \sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1},\ \sigma_{2}^{1}+\sigma_{4}^{1}-\sigma_{5}^{1}\right\rangle }$
+, and conclude that 
+\begin_inset Formula $\frac{\ker\partial_{1}}{\mathrm{im}\partial_{2}}\simeq\frac{\Z\oplus\Z\oplus\Z}{\left\langle \sigma_{1}^{1}-\sigma_{3}^{1}+\sigma_{2}^{1}\right\rangle }\simeq\Z\oplus\Z$
 \end_inset
 
 .
- Taking the quotient amounts to considering the generators to be relevantly
- the same as the identity.
- The system 
-\begin_inset Formula $\begin{cases}
-\sigma_{1}^{1}+\sigma_{3}^{1}-\sigma_{5}^{1}=0\\
-\sigma_{2}^{1}+\sigma_{4}^{1}-\sigma_{5}^{1}=0
-\end{cases}$
+\begin_inset Newline newline
 \end_inset
 
- gives us 
-\begin_inset Formula $\sigma_{3}^{1}=\sigma_{5}^{1}-\sigma_{1}^{1}$
-\end_inset
 
- and 
-\begin_inset Formula $\sigma_{4}^{1}=\sigma_{5}^{1}-\sigma_{2}^{1}$
-\end_inset
-
-, so we can express everything in terms of the three generators 
-\begin_inset Formula $\sigma_{1}^{1}$
-\end_inset
-
-, 
-\begin_inset Formula $\sigma_{2}^{1}$
-\end_inset
-
-, and 
-\begin_inset Formula $\sigma_{5}^{1}$
-\end_inset
-
-, so we have 
-\begin_inset Formula $\frac{\Z^{5}}{\Z^{3}}\simeq\Z^{2}$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-[
-\series bold
-TODO
-\series default
-: This reasoning is not correct!! (The conclusion is rationalized.) Fix it!
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $H_{2}^{\Delta}(T)\simeq\Z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We need to compute 
+\begin_inset Formula $\frac{\ker\partial_{2}}{\mathrm{im}\partial_{3}}$
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Standard
+We've seen that 
+\begin_inset Formula $\mathrm{im}\partial_{2}\simeq\Z$
+\end_inset
+
+, and there are two 
+\begin_inset Formula $2$
+\end_inset
+
+-simplexes, so the rank–nullity theorem implies that 
+\begin_inset Formula $\ker\partial_{2}\simeq\Z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But there aren't any 
+\begin_inset Formula $3$
+\end_inset
+
+-simplexes in our space, so the image of 
+\begin_inset Formula $\partial_{3}$
+\end_inset
+
+ (which maps 
+\begin_inset Formula $3$
+\end_inset
+
+-chains to their boundaries) is zero.
+ 
+\begin_inset Formula $\frac{\ker\partial_{2}}{\mathrm{im}\partial_{3}}\simeq\frac{\Z}{\{0\}}\simeq\Z$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW10#3
+\series default
+.
+ We define a 
+\begin_inset Formula $\Delta$
+\end_inset
+
+-complex on the Klein bottle, conceptualized as 
+\begin_inset Formula $[0,1]\times[0,1]$
+\end_inset
+
+ with the edges glued with (crucially) one pair of edges in reversed orientation
+s.
+ (Both pairs reversed would be 
+\begin_inset Formula $\mathbb{RP}^{2}$
+\end_inset
+
+; I misremembered this and had to be corrected by Gemini 2.5 Pro.)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma^{0}:\Delta^{0}\to T=(0,0)\sim(1,0)\sim(0,1)\sim(1,1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{1}^{1}\left(\left[\begin{array}{c}
+1-t\\
+t
+\end{array}\right]\right):\Delta^{1}\to T=\left[\begin{array}{c}
+t\\
+0
+\end{array}\right]=\left[\begin{array}{c}
+1-t\\
+1
+\end{array}\right]$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{2}^{1}\left(\left[\begin{array}{c}
+1-t\\
+t
+\end{array}\right]\right):\Delta^{1}\to T=\left[\begin{array}{c}
+0\\
+t
+\end{array}\right]=\left[\begin{array}{c}
+1\\
+t
+\end{array}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{3}^{1}\left(\left[\begin{array}{c}
+1-t\\
+t
+\end{array}\right]\right):\Delta^{1}\to T=\left[\begin{array}{c}
+t\\
+t
+\end{array}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{1}^{2}\left(\left[\begin{array}{c}
+1-s-t\\
+s\\
+t
+\end{array}\right]\right):\Delta^{2}\to T=\left[\begin{array}{ccc}
+0 & 1 & 1\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-s-t\\
+s\\
+t
+\end{array}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\sigma_{2}^{2}\left(\left[\begin{array}{c}
+1-s-t\\
+s\\
+t
+\end{array}\right]\right):\Delta^{2}\to T=\left[\begin{array}{ccc}
+0 & 1 & 0\\
+0 & 1 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-s-t\\
+s\\
+t
+\end{array}\right]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \emph on
-https://gemini.google.com/app/130375f07346177c
+Proposition
 \emph default
-]
+.
+ 
+\begin_inset Formula $H_{0}^{\Delta}(K)\simeq\Z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We need to compute 
+\begin_inset Formula $\frac{\ker\partial_{0}}{\mathrm{im}\partial_{1}}$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $\ker\partial_{0}\simeq C_{0}^{\Delta}\simeq\Z$
+\end_inset
+
+ (one generator for the one vertex).
+ We know that 
+\begin_inset Formula $\mathrm{im}\partial_{1}\simeq\{0\}$
+\end_inset
+
+ (every edge is a loop based at the one vertext).
+ Thus 
+\begin_inset Formula $\frac{\ker\partial_{0}}{\mathrm{im}\partial_{1}}\simeq\frac{\Z}{\{0\}}\simeq\Z$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $H_{1}^{\Delta}(K)\simeq\Z\oplus\Z/2\Z$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We need to compute 
+\begin_inset Formula $\frac{\ker\partial_{1}}{\mathrm{im}\partial_{2}}$
+\end_inset
+
+.
+ We've seen that 
+\begin_inset Formula $\mathrm{im}\partial_{1}\simeq\{0\}$
+\end_inset
+
+, so the rank–nullity theorem implies that 
+\begin_inset Formula $\ker\partial_{1}\simeq\Z^{3}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Inspecting our diagram, we can guess that the generators of 
+\begin_inset Formula $\mathrm{im}\partial_{2}$
+\end_inset
+
+ are going to be 
+\begin_inset Formula $\sigma_{1}^{1}+\sigma_{2}^{1}-\sigma_{3}^{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{1}^{1}-\sigma_{2}^{1}+\sigma_{3}^{1}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+More formally, 
+\begin_inset Formula $\partial_{2}(\sigma_{1}^{2})=\sigma_{1}^{2}\circ F_{0}-\sigma_{1}^{2}\circ F_{1}+\sigma_{1}^{2}\circ F_{2}=\left[\begin{array}{ccc}
+0 & 1 & 1\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+0\\
+1-t\\
+t
+\end{array}\right]-\left[\begin{array}{ccc}
+0 & 1 & 1\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-t\\
+0\\
+t
+\end{array}\right]+\left[\begin{array}{ccc}
+0 & 1 & 1\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-t\\
+t\\
+0
+\end{array}\right]=\sigma_{2}^{1}-\sigma_{3}^{1}+\sigma_{1}^{1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But 
+\begin_inset Formula $\partial_{2}(\sigma_{2}^{2})=\sigma_{2}^{2}\circ F_{0}-\sigma_{2}^{2}\circ F_{1}+\sigma_{2}^{2}\circ F_{2}=\left[\begin{array}{ccc}
+0 & 1 & 0\\
+0 & 1 & 1
+\end{array}\right]\left[\begin{array}{c}
+0\\
+1-t\\
+t
+\end{array}\right]-\left[\begin{array}{ccc}
+0 & 1 & 0\\
+0 & 1 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-t\\
+0\\
+t
+\end{array}\right]+\left[\begin{array}{ccc}
+0 & 1 & 0\\
+0 & 1 & 1
+\end{array}\right]\left[\begin{array}{c}
+1-t\\
+t\\
+0
+\end{array}\right]=\left[\begin{array}{c}
+1-t\\
+1\cancel{-t+t}
+\end{array}\right]-\left[\begin{array}{c}
+0\\
+t
+\end{array}\right]+\left[\begin{array}{c}
+t\\
+t
+\end{array}\right]=\sigma_{1}^{1}-\sigma_{2}^{1}+\sigma_{3}^{1}$
+\end_inset
+
+, as expected.
+\end_layout
+
+\begin_layout Standard
+With two generators for the image, one might think that we have 
+\begin_inset Formula $\frac{\ker\partial_{1}}{\mathrm{im}\partial_{2}}\simeq\frac{\Z^{3}}{\left\langle \sigma_{2}^{1}-\sigma_{3}^{1}+\sigma_{1}^{1},\sigma_{1}^{1}-\sigma_{2}^{1}+\sigma_{3}^{1}\right\rangle }\simeq\Z$
+\end_inset
+
+, but Gemini 2.5 Pro is pointing out that that's wrong (and provides followup
+ tutoring on the right way to do it).
+ The system 
+\begin_inset Formula $\begin{cases}
+\sigma_{1}^{1}-\sigma_{2}^{1}+\sigma_{3}^{1}=0\\
+\sigma_{1}^{1}+\sigma_{2}^{1}-\sigma_{3}^{1}=0
+\end{cases}$
+\end_inset
+
+implies 
+\begin_inset Formula $\sigma_{3}=\sigma_{1}+\sigma_{2}$
+\end_inset
+
+ (from the second equation) and thus 
+\begin_inset Formula $\sigma_{1}\cancel{-\sigma_{2}}+\sigma_{1}\cancel{+\sigma_{2}}=2\sigma_{1}=0$
+\end_inset
+
+ (from substituting into the first).
+ Since 
+\begin_inset Formula $\sigma_{3}$
+\end_inset
+
+ is redundant, we can informally reason that we have two generators plus
+ the relation 
+\begin_inset Formula $2\sigma_{1}=0$
+\end_inset
+
+, which amounts to 
+\begin_inset Formula $\Z\oplus\Z/2\Z$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $H_{2}^{\Delta}(K)\simeq\{0\}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We need to compute 
+\begin_inset Formula $\frac{\ker\partial_{2}}{\mathrm{im}\partial_{3}}$
+\end_inset
+
+.
+ We've seen that 
+\begin_inset Formula $\mathrm{im}\partial_{2}\simeq\Z^{2}$
+\end_inset
+
+, and there are two 
+\begin_inset Formula $2$
+\end_inset
+
+-simplexes, so by the rank–nullity theorem, 
+\begin_inset Formula $\ker\partial_{2}\simeq\{0\}$
+\end_inset
+
+.
+ There are no 
+\begin_inset Formula $3$
+\end_inset
+
+-simplexes, so 
+\begin_inset Formula $\mathrm{im}\partial_{3}\simeq\{0\}$
+\end_inset
+
+, and we have 
+\begin_inset Formula $\frac{\{0\}}{\{0\}}\simeq\{0\}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW10.5#1
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Induced homomorphisms in singular homology are functorial: 
+\begin_inset Formula $(g\circ f)_{*}=g_{*}\circ f_{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $(\mathrm{id}_{X})_{*}=\mathrm{id}_{H_{n}(X)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Composition.) We have 
+\begin_inset Formula $(g\circ f)_{*}([c])=[(g\circ f)_{\#}(c)]=[\sum_{j}a_{j}(g\circ f\circ\sigma_{j})]$
+\end_inset
+
+ (for an arbitrary singular chain 
+\begin_inset Formula $c:=\sum_{j}a_{j}\sigma_{j}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+But 
+\begin_inset Formula $g_{*}\circ f_{*}([c])=g_{*}\circ[f_{\#}(c)]=g_{*}([\sum_{j}a_{j}(f\circ\sigma_{j})])=$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+ continue]
+\end_layout
+
+\begin_layout Standard
+(Identity.)
 \end_layout
 
 \end_body
