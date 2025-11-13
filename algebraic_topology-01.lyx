@@ -7114,11 +7114,6 @@ Introduction to
 
 \begin_layout Standard
 
-\series bold
-§1#1
-\series default
-.
- 
 \emph on
 Proposition
 \emph default
@@ -7205,55 +7200,8 @@ TODO
 Proposition
 \emph default
 .
- A simplex is the union of all line segments joining 
-\begin_inset Formula $a_{0}$
-\end_inset
-
- to simplex points spanned by 
-\begin_inset Formula $\{a_{j}\}_{j=1}^{n}$
-\end_inset
-
-.
- Two such line segments only intersect at 
-\begin_inset Formula $a_{0}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Proof
-\emph default
-.
- [
-\series bold
-TODO
-\series default
-]
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Proposition
-\emph default
-.
  A simplex is a compact, convex set in 
 \begin_inset Formula $\R^{n}$
-\end_inset
-
-, which is the intersection of all convex sets in 
-\begin_inset Formula $\R^{n}$
-\end_inset
-
- containing 
-\begin_inset Formula $\{a_{j}\}_{j=0}^{n}$
 \end_inset
 
 .
@@ -7327,20 +7275,6 @@ Proof
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-(Intersection of such convex sets.) The nontrivial direction is to show that
- if a point is in all convex sets containing 
-\begin_inset Formula $\{a_{j}\}_{j=0}^{n}$
-\end_inset
-
-, then it is in the simplex.
- [
-\series bold
-TODO
-\series default
-]
 \begin_inset Newline newline
 \end_inset
 
@@ -7794,6 +7728,7 @@ Even just the
 
  terms here are annoying enough that I want to reach for Python.
  (I don't expect it to be faster in absolute terms, just less demoralizing.)
+ After some debugging, we get—
 \end_layout
 
 \begin_layout LyX-Code
@@ -7870,125 +7805,6 @@ sitive)
 \end_layout
 
 \begin_layout LyX-Code
-def latex(simplices):
-\end_layout
-
-\begin_layout LyX-Code
-    out = ""
-\end_layout
-
-\begin_layout LyX-Code
-    for simplex in simplices:
-\end_layout
-
-\begin_layout LyX-Code
-        out += '+' if simplex.positive else '-'
-\end_layout
-
-\begin_layout LyX-Code
-        out += '['
-\end_layout
-
-\begin_layout LyX-Code
-        out += ', '.join(var for var in simplex.vertices)
-\end_layout
-
-\begin_layout LyX-Code
-        out += ']'
-\end_layout
-
-\begin_layout LyX-Code
-    return out
-\end_layout
-
-\begin_layout LyX-Code
-
-\end_layout
-
-\begin_layout LyX-Code
-if __name__ == "__main__":
-\end_layout
-
-\begin_layout LyX-Code
-    σ = SignedSimplex(["v_{0}", "v_{1}", "v_{2}", "v_{3}"])
-\end_layout
-
-\begin_layout LyX-Code
-    out = ""
-\end_layout
-
-\begin_layout LyX-Code
-    for τ in σ.boundary():
-\end_layout
-
-\begin_layout LyX-Code
-        out += latex(τ.boundary())
-\end_layout
-
-\begin_layout LyX-Code
-    print(out) 
-\end_layout
-
-\begin_layout Standard
-That yields 
-\begin_inset Formula $\partial_{2}\circ\partial_{3}[v_{0},v_{1},v_{2},v_{3}]=[v_{2},v_{3}]-[v_{1},v_{3}]+[v_{1},v_{2}]+[v_{2},v_{3}]-[v_{0},v_{3}]+[v_{0},v_{2}]+[v_{1},v_{3}]-[v_{0},v_{3}]+[v_{0},v_{1}]+[v_{1},v_{2}]-[v_{0},v_{2}]+[v_{0},v_{1}]$
-\end_inset
-
-, which I thought was 
-\begin_inset Formula $v_{3}-v_{2}+v_{1}-v_{3}+v_{2}-v_{1}+v_{3}-v_{2}-v_{0}+v_{3}+v_{2}-v_{0}+v_{3}-v_{1}-v_{0}+v_{3}-v_{1}+v_{0}+v_{2}-v_{1}-v_{0}+v_{2}+v_{1}-v_{0}$
-\end_inset
-
-, except actually more Python is called for, because the 
-\begin_inset Formula $v_{3}$
-\end_inset
-
-s aren't canceling, which makes me think I made a mistake while excising
- those brackets.
-\end_layout
-
-\begin_layout LyX-Code
-def one_simplex_latex(one_simplices):
-\end_layout
-
-\begin_layout LyX-Code
-    out = ""
-\end_layout
-
-\begin_layout LyX-Code
-    for one_simplex in one_simplices:
-\end_layout
-
-\begin_layout LyX-Code
-        out += "+{}-{}".format(one_simplex.vertices[1], one_simplex.vertices[0])
-\end_layout
-
-\begin_layout LyX-Code
-    return out 
-\end_layout
-
-\begin_layout Standard
-And we have 
-\begin_inset Formula $+v_{3}-v_{2}+v_{3}-v_{1}+v_{2}-v_{1}+v_{3}-v_{2}+v_{3}-v_{0}+v_{2}-v_{0}+v_{3}-v_{1}+v_{3}-v_{0}+v_{1}-v_{0}+v_{2}-v_{1}+v_{2}-v_{0}+v_{1}-v_{0}$
-\end_inset
-
-, which is (if all went well)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\underbrace{+v_{3}+v_{3}+v_{3}+v_{3}+v_{3}+v_{3}}+\underbrace{-v_{2}+v_{2}-v_{2}+v_{2}+v_{2}+v_{2}}\underbrace{-v_{1}-v_{1}-v_{1}+v_{1}-v_{1}+v_{1}}\underbrace{-v_{0}-v_{0}-v_{0}-v_{0}-v_{0}-v_{0}}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-...
- OK, I definitely have a bug in my code; I'm not propagating the signs through
- correctly.
- Correction—
-\end_layout
-
-\begin_layout LyX-Code
 def one_simplex_latex(one_simplices):
 \end_layout
 
@@ -8017,7 +7833,35 @@ def one_simplex_latex(one_simplices):
 \end_layout
 
 \begin_layout LyX-Code
-    return out 
+    return out
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+if __name__ == "__main__":
+\end_layout
+
+\begin_layout LyX-Code
+    σ = SignedSimplex(["v_{0}", "v_{1}", "v_{2}", "v_{3}"])
+\end_layout
+
+\begin_layout LyX-Code
+    out = ""
+\end_layout
+
+\begin_layout LyX-Code
+    for τ in σ.boundary():
+\end_layout
+
+\begin_layout LyX-Code
+        out += one_simplex_latex(τ.boundary())
+\end_layout
+
+\begin_layout LyX-Code
+    print(out) 
 \end_layout
 
 \begin_layout Standard
@@ -8750,213 +8594,6 @@ TODO
 \series default
 : dicussed in office hours 27 October, if we can show that between any two
  point, we only have a finite subcomplex, that would do it]
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $X$
-\end_inset
-
- be the 1-skeleton of a tetrahedron.
- 
-\end_layout
-
-\begin_layout Standard
-We have four vertices: 
-\begin_inset Formula $v_{0}():\Delta^{0}\to X=(0,0,0)$
-\end_inset
-
-, 
-\begin_inset Formula $v_{1}():\Delta^{0}\to X=(1,0,0)$
-\end_inset
-
-, 
-\begin_inset Formula $v_{2}():\Delta^{0}\to X=(0,1,0)$
-\end_inset
-
-, 
-\begin_inset Formula $v_{3}():\Delta^{0}\to X=(0,0,1)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-We have six edges: 
-\begin_inset Formula $e_{0}(t):\Delta^{1}\to X=(t,0,0)$
-\end_inset
-
-, 
-\begin_inset Formula $e_{1}(t):\Delta^{1}\to X=(0,t,0)$
-\end_inset
-
-, 
-\begin_inset Formula $e_{2}(t):\Delta^{1}\to X=(0,0,t)$
-\end_inset
-
-, 
-\begin_inset Formula $e_{3}(t):\Delta^{1}\to X=(1-t,t,0)$
-\end_inset
-
-, 
-\begin_inset Formula $e_{4}(t):\Delta^{1}\to X=(1-t,0,t)$
-\end_inset
-
-, 
-\begin_inset Formula $e_{5}(t):\Delta^{1}\to X=(0,1-t,t)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Or perhaps rather we should be thinking in terms of 
-\begin_inset Formula $e_{0}:=[v_{0},v_{1}]$
-\end_inset
-
-, 
-\begin_inset Formula $e_{1}:=[v_{0},v_{2}]$
-\end_inset
-
-, 
-\begin_inset Formula $e_{2}:=[v_{0},v_{3}]$
-\end_inset
-
-, 
-\begin_inset Formula $e_{3}:=[v_{1},v_{2}]$
-\end_inset
-
-, 
-\begin_inset Formula $e_{4}:=[v_{1},v_{3}]$
-\end_inset
-
-, 
-\begin_inset Formula $e_{5}:=[v_{2},v_{3}]$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-0\overbrace{\to}^{\partial_{2}^{\Delta}}\underbrace{C_{1}^{\Delta}(X)}_{\Z^{6}}\overbrace{\to}^{\partial_{1}^{\Delta}}\underbrace{C_{0}^{\Delta}(X)}_{\Z^{4}}\overbrace{\to}^{\partial_{0}^{\Delta}}0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Then we can compute what 
-\begin_inset Formula $\partial_{1}^{\Delta}$
-\end_inset
-
- does to an arbitrary element of 
-\begin_inset Formula $C_{1}^{\Delta}(X)$
-\end_inset
-
-.
- The arbitrary element is 
-\begin_inset Formula $\sum_{j=0}^{5}n_{j}e_{j}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Then 
-\begin_inset Formula $\partial_{1}^{\Delta}(\sum_{j=0}^{5}n_{j}e_{j})=n_{0}(v_{1}-v_{0})-n_{1}(v_{2}-v_{0})+n_{2}(v_{3}-v_{0})-n_{3}(v_{2}-v_{1})+n_{4}(v_{3}-v_{1})-n_{5}(v_{3}-v_{2})$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $=(n_{0}v_{1}-n_{0}v_{0})-(n_{1}v_{2}-n_{1}v_{0})+(n_{2}v_{3}-n_{2}v_{0})-(n_{3}v_{2}-n_{3}v_{1})+(n_{4}v_{3}-n_{4}v_{1})-(n_{5}v_{3}-n_{5}v_{2})$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $=-n_{0}v_{0}+n_{1}v_{0}-n_{2}v_{0}+n_{0}v_{1}+n_{3}v_{1}-n_{4}v_{1}-n_{1}v_{2}-n_{3}v_{2}+n_{5}v_{2}+n_{2}v_{3}+n_{4}v_{3}-n_{5}v_{3}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $=(-n_{0}+n_{1}-n_{2})v_{0}+(n_{0}+n_{3}-n_{4})v_{1}+(-n_{1}-n_{3}+n_{5})v_{2}+(n_{2}+n_{4}-n_{5})v_{3}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We want to find 
-\begin_inset Formula $\ker\partial_{1}^{\Delta}$
-\end_inset
-
-, the things the boundary operator maps to zero.
- That would be defined by the equations:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\begin{cases}
--n_{0}+n_{1}-n_{2}=0\\
-n_{0}+n_{3}-n_{4}=0\\
--n_{1}-n_{3}+n_{5}=0\\
-n_{2}+n_{4}-n_{5}=0
-\end{cases}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $H_{1}:=\frac{\ker(\partial_{1}^{\Delta})}{\mathrm{im}(\partial_{2}^{\Delta})}$
-\end_inset
-
-.
- But 
-\begin_inset Formula $\ker(\partial_{1}^{\Delta})$
-\end_inset
-
- is supposed to be isomorphic to some sort of group.
- How do we get a group out of those equations?? I am very confused.
-\end_layout
-
-\begin_layout Standard
-Gemini 2.5 Pro spoils the problem (
-\begin_inset Formula $H_{1}\simeq\Z^{3}$
-\end_inset
-
-, 
-\begin_inset Formula $H_{0}\simeq\Z$
-\end_inset
-
-) and is saying I got the sign rule wrong.
- 
-\begin_inset Formula $\partial$
-\end_inset
-
- is linear: the alternating signs are already baked in to the meaning of
- 
-\begin_inset Formula $[v_{i},v_{i+1}]$
-\end_inset
-
-.
 \begin_inset Newline newline
 \end_inset
 
