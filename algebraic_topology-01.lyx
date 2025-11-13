@@ -9564,6 +9564,27 @@ Question
 \begin_layout Standard
 
 \emph on
+Answer
+\emph default
+.
+ Claude Sonnet 4.5 responds that the 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ in 
+\begin_inset Formula $f_{*}([\alpha])$
+\end_inset
+
+ does have to be a cycle, even though 
+\begin_inset Formula $f_{\#}$
+\end_inset
+
+ takes arbitrary chains.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
 .
@@ -9644,7 +9665,7 @@ Question
 \end_inset
 
  is implicitly asserting that 
-\begin_inset Formula $\mathrm{im}\partial_{n+1}$
+\begin_inset Formula $\mathrm{im}\,\partial_{n+1}$
 \end_inset
 
  must be the kernel of a homomorphism with domain 
@@ -9653,6 +9674,20 @@ Question
 
 .
  What is that?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Answer
+\emph default
+.
+ Claude Sonnet 4.5 responds that it's just the canonical projection 
+\begin_inset Formula $\ker\partial_{n}\to\frac{\ker\partial_{n}}{\mathrm{im}\partial_{n+1}}$
+\end_inset
+
+.
+ This feels incredibly underwhelming, but I guess that's how it goes sometimes.
 \begin_inset Newline newline
 \end_inset
 
