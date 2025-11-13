@@ -7367,11 +7367,11 @@ Theorem
 \end_inset
 
 , 
-\begin_inset Formula $\sum_{k}\lambda_{k}p_{k}=0$
+\begin_inset Formula $\sum_{k=0}^{n}\lambda_{k}p_{k}=0$
 \end_inset
 
  and 
-\begin_inset Formula $\sum_{k}\lambda_{k}=0$
+\begin_inset Formula $\sum_{k=0}^{n}\lambda_{k}=0$
 \end_inset
 
  imply that for all 
@@ -7388,40 +7388,139 @@ Theorem
 \begin_layout Standard
 
 \emph on
+Commentary
+\emph default
+.
+ This doesn't look like it should be hard at all, but it somehow gave me
+ a ton of trouble, as if I'm retarded in a specific, localized way.
+ This is Lemma 3.1 in Gamelin and Greene §IV.3.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
 .
- (
-\begin_inset Formula $\Rightarrow$
+ Let 
+\begin_inset Formula $A$
 \end_inset
 
-) Suppose 
-\begin_inset Formula $\{p_{k}\}_{k=0}^{n}$
+ mean 
+\begin_inset Formula $\sum_{k=1}^{n}\lambda_{k}(p_{k}-p_{0})=0$
 \end_inset
 
- are affinely independent: that is, that 
-\begin_inset Formula $\sum_{j=1}^{n}\lambda_{j}(p_{j}-p_{0})=0$
+ and 
+\begin_inset Formula $A'$
 \end_inset
 
- implies 
-\begin_inset Formula $\lambda_{j}=0$
+ mean 
+\begin_inset Formula $\sum_{k=1}^{n}\lambda_{k}p_{k}=\sum_{k=1}^{n}\lambda_{k}p_{0}$
 \end_inset
 
 .
- Some algebra transforms that to 
-\begin_inset Formula $\sum_{j=1}^{n}\lambda_{j}p_{j}=\sum_{j=1}^{n}\lambda_{j}p_{0}$
+ (
+\begin_inset Formula $A\Leftrightarrow A'$
 \end_inset
 
- implies 
+ is two steps of algebra.)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $B$
+\end_inset
+
+ mean 
 \begin_inset Formula $\forall k\ \text{\ensuremath{\lambda_{k}=0}}$
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-: chain the implications, dummy] 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $C$
+\end_inset
+
+ mean 
+\begin_inset Formula $\sum_{k=0}^{n}\lambda_{k}p_{k}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $D$
+\end_inset
+
+ mean 
+\begin_inset Formula $\sum_{k=0}^{n}\lambda_{k}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Prof.
+ Clader defines 
+\emph on
+affine independence
+\emph default
+ as 
+\begin_inset Formula $A\rightarrow B$
+\end_inset
+
+, but Gamelin and Green define it as 
+\begin_inset Formula $C\,\&\,D\rightarrow B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) We want to show that 
+\begin_inset Formula $A\rightarrow B\Rightarrow C\,\&\,D\rightarrow B$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $A\rightarrow B$
+\end_inset
+
+, and suppose 
+\begin_inset Formula $C\,\&\,D$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $\sum_{k=1}^{n}\lambda_{k}(p_{k}-p_{0})=\sum_{k=1}^{n}\lambda_{k}p_{k}-\lambda_{k}p_{0}$
+\end_inset
+
+.
+ The first term is zero due to 
+\begin_inset Formula $C$
+\end_inset
+
+ and the second term is zero due to 
+\begin_inset Formula $D$
+\end_inset
+
+ ...
+ except, no, it's not! 
 \end_layout
 
 \begin_layout Standard
@@ -7429,11 +7528,24 @@ TODO
 \begin_inset Formula $\Leftarrow$
 \end_inset
 
-) [
-\series bold
-TODO
-\series default
-]
+) We want to show that 
+\begin_inset Formula $C\,\&\,D\rightarrow B\Rightarrow A\rightarrow B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $C\,\&\,D\rightarrow B$
+\end_inset
+
+, and suppose 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ [...]
 \begin_inset Newline newline
 \end_inset
 
@@ -9866,18 +9978,19 @@ Proof
 
 \begin_layout Standard
 But 
-\begin_inset Formula $g_{*}\circ f_{*}([c])=g_{*}\circ[f_{\#}(c)]=g_{*}([\sum_{j}a_{j}(f\circ\sigma_{j})])=$
+\begin_inset Formula $g_{*}\circ f_{*}([c])=g_{*}\circ[f_{\#}(c)]=g_{*}([\sum_{j}a_{j}(f\circ\sigma_{j})])=[\sum_{j}a_{j}(g\circ f\circ\sigma_{j})]$
 \end_inset
 
- [
-\series bold
-TODO
-\series default
- continue]
+.
+ 
 \end_layout
 
 \begin_layout Standard
-(Identity.)
+(Identity.) 
+\begin_inset Formula $(\mathrm{id}_{X})_{*}([c])=[(\mathrm{id}_{X})_{\#}(c)]=[\sum_{j}a_{j}\cdot\mathrm{id}_{X}(\sigma_{j})]=[\sum_{j}a_{j}\cdot\mathrm{id}_{X}(\sigma_{j})]$
+\end_inset
+
+
 \end_layout
 
 \end_body
