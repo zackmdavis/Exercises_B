@@ -7293,10 +7293,10 @@ Theorem
 \emph default
 .
  
-\begin_inset Formula $\{p_{k}\}_{k=0}^{n}$
+\begin_inset Formula $\{p_{k}-p_{0}\}_{k=1}^{n}$
 \end_inset
 
- is affinely independent iff for all 
+ is linearly independent iff for all 
 \begin_inset Formula $\{\lambda_{k}\}_{k=0}^{n}$
 \end_inset
 
@@ -7325,9 +7325,40 @@ Theorem
 Commentary
 \emph default
 .
- This doesn't look like it should be hard at all, but it somehow gave me
- a ton of trouble, as if I'm retarded in a specific, localized way.
- This is Lemma 3.1 in Gamelin and Greene §IV.3.
+ This doesn't look like it should be hard at all, but it gave me a ton of
+ trouble.
+ In order to reduce the cognitive load of thinking about implications-of-implica
+tions, I had tried chunking it as 
+\begin_inset Formula $A\rightarrow B\Rightarrow C\,\&\,D\rightarrow B$
+\end_inset
+
+, where 
+\begin_inset Formula $B$
+\end_inset
+
+ represented 
+\begin_inset Quotes eld
+\end_inset
+
+all the coëfficients are zero
+\begin_inset Quotes erd
+\end_inset
+
+, but Gemini 2.5 Pro pointed out that that choice was concealing the essence
+ of the problem: 
+\begin_inset Quotes eld
+\end_inset
+
+all the coëfficients
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\emph on
+means something different
+\emph default
+ for the 1-indexed linear-independence-of-vector-differences criterion and
+ the 0-indexed zero-linear-combination-and-zero-sum-of-coëfficients criterion.
 \end_layout
 
 \begin_layout Standard
@@ -7336,125 +7367,59 @@ Commentary
 Proof
 \emph default
 .
- Let 
-\begin_inset Formula $A$
+ (
+\begin_inset Formula $\Rightarrow$
 \end_inset
 
- mean 
+) Suppose 
+\begin_inset Formula $\{p_{k}-p_{0}\}_{k=1}^{n}$
+\end_inset
+
+ is linearly independent, which is to say that if 
 \begin_inset Formula $\sum_{k=1}^{n}\lambda_{k}(p_{k}-p_{0})=0$
 \end_inset
 
- and 
-\begin_inset Formula $A'$
+, then for all 
+\begin_inset Formula $k\in\{1...n\}$
 \end_inset
 
- mean 
-\begin_inset Formula $\sum_{k=1}^{n}\lambda_{k}p_{k}=\sum_{k=1}^{n}\lambda_{k}p_{0}$
-\end_inset
-
-.
- (
-\begin_inset Formula $A\Leftrightarrow A'$
-\end_inset
-
- is two steps of algebra.)
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $B$
-\end_inset
-
- mean 
-\begin_inset Formula $\forall k\ \text{\ensuremath{\lambda_{k}=0}}$
+, 
+\begin_inset Formula $\lambda_{k}=0$
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $C$
-\end_inset
-
- mean 
+ Furthermore suppose that 
 \begin_inset Formula $\sum_{k=0}^{n}\lambda_{k}p_{k}=0$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $D$
-\end_inset
-
- mean 
+ and 
 \begin_inset Formula $\sum_{k=0}^{n}\lambda_{k}=0$
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Prof.
- Clader defines 
-\emph on
-affine independence
-\emph default
- as 
-\begin_inset Formula $A\rightarrow B$
+ Crucially, 
+\begin_inset Formula $\sum_{k=0}^{n}\lambda_{k}=0$
 \end_inset
 
-, but Gamelin and Green define it as 
-\begin_inset Formula $C\,\&\,D\rightarrow B$
+ implies that 
+\begin_inset Formula $\lambda_{0}=-\sum_{k=1}^{n}\lambda_{k}$
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-(
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
-) We want to show that 
-\begin_inset Formula $A\rightarrow B\Rightarrow C\,\&\,D\rightarrow B$
+ Thus we can write 
+\begin_inset Formula $0=\sum_{k=0}^{n}\lambda_{k}p_{k}=\lambda_{0}p_{0}+\sum_{k=1}^{n}\lambda_{k}p_{k}=(-\sum_{k=1}^{n}\lambda_{k})p_{0}+\sum_{k=1}^{n}\lambda_{k}p_{k}=\sum_{k=1}^{n}\lambda_{k}p_{k}-\sum_{k=1}^{n}\lambda_{k}p_{0}=\sum_{k=1}^{n}\lambda_{k}(p_{k}-p_{0})$
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-Suppose 
-\begin_inset Formula $A\rightarrow B$
+ Then the linear independence of 
+\begin_inset Formula $\{p_{k}-p_{0}\}_{k=1}^{n}$
 \end_inset
 
-, and suppose 
-\begin_inset Formula $C\,\&\,D$
+ guarantees that 
+\begin_inset Formula $\{\lambda_{k}\}_{k=1}^{n}=\{0\}$
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-Then 
-\begin_inset Formula $\sum_{k=1}^{n}\lambda_{k}(p_{k}-p_{0})=\sum_{k=1}^{n}\lambda_{k}p_{k}-\lambda_{k}p_{0}$
-\end_inset
-
-.
- The first term is zero due to 
-\begin_inset Formula $C$
-\end_inset
-
- and the second term is zero due to 
-\begin_inset Formula $D$
-\end_inset
-
- ...
- except, no, it's not! 
 \end_layout
 
 \begin_layout Standard
@@ -7462,105 +7427,26 @@ Then
 \begin_inset Formula $\Leftarrow$
 \end_inset
 
-) We want to show that 
-\begin_inset Formula $C\,\&\,D\rightarrow B\Rightarrow A\rightarrow B$
+) Suppose 
+\begin_inset Formula $\sum_{k=0}^{n}\lambda_{k}p_{k}=0$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-Suppose 
-\begin_inset Formula $C\,\&\,D\rightarrow B$
+ and 
+\begin_inset Formula $\sum_{k=0}^{n}\lambda_{k}=0$
 \end_inset
 
-, and suppose 
-\begin_inset Formula $A$
+ imply that for all 
+\begin_inset Formula $k\in\{0...n\}$
 \end_inset
 
-.
- [...]
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-HW9#2
-\series default
-.
- Let 
-\begin_inset Formula $P(\{p_{k}\}_{k=0}^{n},\{a_{k}\}_{k=1}^{n}):=\left\{ v\in\R^{n}:v=p_{0}+\sum_{k=1}^{n}a_{i}(p_{i}-p_{0})\right\} $
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-a
-\series default
-.
  
-\emph on
-Theorem
-\emph default
-.
- The plane 
-\begin_inset Formula $P$
+\begin_inset Formula $\lambda_{k}=0$
 \end_inset
 
- doesn't depend on how the 
-\begin_inset Formula $\{p_{k}\}_{k}$
+, and furthermore suppose that 
+\begin_inset Formula $\sum_{k=1}^{n}\lambda_{k}(p_{k}-p_{0})=0$
 \end_inset
 
- are indexed.
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Proof
-\emph default
-.
- [
-\series bold
-TODO
-\series default
-]
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-b
-\series default
-.
- 
-\emph on
-Theorem
-\emph default
-.
- If 
-\begin_inset Formula $w\notin P$
-\end_inset
-
-, then 
-\begin_inset Formula $\{w\}\cup\{p_{k}\}_{k=0}^{n}$
-\end_inset
-
- are affinely independent.
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Proof
-\emph default
 .
  [
 \series bold
@@ -9599,23 +9485,424 @@ Theorem
 \begin_layout Standard
 
 \emph on
-Proof
+Preliminaries
 \emph default
 .
- (Composition.) We have 
-\begin_inset Formula $(g\circ f)_{*}([c])=[(g\circ f)_{\#}(c)]=[\sum_{j}a_{j}(g\circ f\circ\sigma_{j})]$
+ Recall that for 
+\begin_inset Formula $f:X\to Y$
 \end_inset
 
- (for an arbitrary singular chain 
-\begin_inset Formula $c:=\sum_{j}a_{j}\sigma_{j}$
+ and 
+\begin_inset Formula $\sigma:\Delta^{n}\to X$
 \end_inset
 
-).
+, we define 
+\begin_inset Formula $f_{\#}(\sigma):C_{n}(X)\to C_{n}(Y)=f\circ\sigma$
+\end_inset
+
+, and 
+\begin_inset Formula $f_{*}([\alpha]):H_{n}(X)\to H_{n}(Y)=[f_{\#}(\alpha)]$
+\end_inset
+
+.
+ The brackets represent the equivalence relation of being represented by
+ the same element in the homology group: 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is an 
+\begin_inset Formula $n$
+\end_inset
+
+-chain in 
+\begin_inset Formula $X$
+\end_inset
+
+, 
+\begin_inset Formula $f_{\#}(\alpha)$
+\end_inset
+
+ is an 
+\begin_inset Formula $n$
+\end_inset
+
+-chain in 
+\begin_inset Formula $Y$
+\end_inset
+
+, and 
+\begin_inset Formula $[f_{\#}(\alpha)]$
+\end_inset
+
+ is in the 
+\begin_inset Formula $n$
+\end_inset
+
+th homology group of 
+\begin_inset Formula $Y$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-But 
-\begin_inset Formula $g_{*}\circ f_{*}([c])=g_{*}\circ[f_{\#}(c)]=g_{*}([\sum_{j}a_{j}(f\circ\sigma_{j})])=[\sum_{j}a_{j}(g\circ f\circ\sigma_{j})]$
+
+\emph on
+Question
+\emph default
+.
+ This seems to be defined for arbitrary chains, but it's not clear to me
+ how arbitrary chains fit into the homology group.
+ The homology group is 
+\begin_inset Formula $\frac{\ker\partial_{n}}{\mathrm{im}\partial_{n+1}}$
+\end_inset
+
+, that is, cycles quotiented by boundaries.
+ What about chains that aren't boundaries?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $c:=\sum_{j}a_{j}\sigma_{j}$
+\end_inset
+
+ be a chain.
+\end_layout
+
+\begin_layout Standard
+(Composition.) 
+\begin_inset Formula $(g\circ f)_{*}([c])=[(g\circ f)_{\#}(c)]=[(g\circ f)(c)]$
+\end_inset
+
+, but 
+\begin_inset Formula $g_{*}\circ f_{*}([c])=g_{*}\circ[f_{\#}(c)]=[g_{\#}\circ f_{\#}(c)]=[g_{\#}\circ f(c)]=[(g\circ f)(c)]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Identity.) 
+\begin_inset Formula $(\mathrm{id}_{X})_{*}([c])=[(\mathrm{id}_{X})_{\#}(c)]=[\mathrm{id}_{X}(c)]=[c]$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Question
+\emph default
+.
+ Recall that a quotient group 
+\begin_inset Formula $G/K$
+\end_inset
+
+ is associated with a homomorphism 
+\begin_inset Formula $\varphi:G\to H$
+\end_inset
+
+; 
+\begin_inset Formula $K$
+\end_inset
+
+ is the kernel of 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ The elements of 
+\begin_inset Formula $G/K$
+\end_inset
+
+ are translates of the kernel 
+\begin_inset Formula $K$
+\end_inset
+
+, which functions as the identity.
+ So the very existence of the homology group 
+\begin_inset Formula $H_{n}=\frac{\ker\partial_{n}}{\mathrm{im}\partial_{n+1}}$
+\end_inset
+
+ is implicitly asserting that 
+\begin_inset Formula $\mathrm{im}\partial_{n+1}$
+\end_inset
+
+ must be the kernel of a homomorphism with domain 
+\begin_inset Formula $\ker\partial_{n}$
+\end_inset
+
+.
+ What is that?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW10.5#2
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ The reduced singular homology groups append 
+\begin_inset Formula $\tilde{\partial_{0}}(\sum_{j}a_{j}\sigma_{j})=\sum_{j}a_{j}$
+\end_inset
+
+ (for 
+\begin_inset Formula $\sigma_{j}\in C_{0}(X)$
+\end_inset
+
+) to the chain complex.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\tilde{H}_{n}(X):=\begin{cases}
+H_{n}(X) & n>0\\
+\{0\} & n=0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+, 
+\begin_inset Formula $\tilde{H}_{n}=\frac{\ker\tilde{\partial_{n}}}{\mathrm{im}\tilde{\partial_{n+1}}}=\frac{\ker\partial_{n}}{\mathrm{im}\partial_{n+1}}=H_{n}$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $n=0$
+\end_inset
+
+, 
+\begin_inset Formula $\tilde{H}_{0}=\frac{\ker\tilde{\partial_{0}}}{\mathrm{im}\tilde{\partial_{1}}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We reason casually: 
+\begin_inset Formula $\tilde{\partial_{0}}$
+\end_inset
+
+ is summing up the coëfficients of a formal linear combination of 
+\begin_inset Formula $0$
+\end_inset
+
+-chains; speaking tautologically and pleonastically, its kernel is all formal
+ linear combinations of 
+\begin_inset Formula $0$
+\end_inset
+
+-chains (points) whose coëfficients sum to zero.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\tilde{\partial_{1}}$
+\end_inset
+
+takes a formal linear combination of 
+\begin_inset Formula $1$
+\end_inset
+
+-chains (line segments) to the sum of formal differences of their endpoints.
+ But every formal difference 
+\begin_inset Formula $v_{1}-v_{0}$
+\end_inset
+
+ is a formal linear combination whose coëfficients sum to zero, so 
+\begin_inset Formula $\mathrm{im}\tilde{\partial_{1}}\simeq\ker\tilde{\partial_{0}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{\ker\tilde{\partial_{0}}}{\mathrm{im}\tilde{\partial_{1}}}\simeq\{0\}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW10.5#3
+\series default
+.
+ A loop 
+\begin_inset Formula $f:[0,1]\to X$
+\end_inset
+
+ induces a singular 
+\begin_inset Formula $1$
+\end_inset
+
+-simplex 
+\begin_inset Formula $\hat{f}:=f\circ p$
+\end_inset
+
+ where 
+\begin_inset Formula $p(1-t,t):\Delta^{1}\to[0,1]=t$
+\end_inset
+
+.
+ (So 
+\begin_inset Formula $f\circ p$
+\end_inset
+
+ goes 
+\begin_inset Formula $\Delta^{1}\to[0,1]\to X$
+\end_inset
+
+.) For any 
+\begin_inset Formula $x\in X$
+\end_inset
+
+, let 
+\begin_inset Formula $h([f]):\pi_{1}(X,x)\to H_{1}(X)=[\hat{f}]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $h$
+\end_inset
+
+ is well-defined: 
+\begin_inset Formula $[f]=[g]$
+\end_inset
+
+ in 
+\begin_inset Formula $\pi_{1}(X,x)$
+\end_inset
+
+ implies 
+\begin_inset Formula $[\hat{f}]=[\hat{g}]$
+\end_inset
+
+ in 
+\begin_inset Formula $H_{1}(X)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Because 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ are in the same homotopy class, we have a path homotopy 
+\begin_inset Formula $H:[0,1]\times[0,1]\to X$
+\end_inset
+
+ between them.
+ Let 
+\begin_inset Formula $p_{2}(1-s-t,s,t):\Delta^{2}\to[0,1]\times[0,1]=(s,t)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $H\circ p_{2}$
+\end_inset
+
+ goes 
+\begin_inset Formula $\Delta^{2}\to[0,1]\times[0,1]\to X$
+\end_inset
+
+ and is a 
+\begin_inset Formula $2$
+\end_inset
+
+-chain whose boundary is 
+\begin_inset Formula $\hat{f}-\hat{g}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ For 
+\begin_inset Formula $[f],[g]\in\pi_{1}(X,x)$
+\end_inset
+
+, let 
+\begin_inset Formula $\sigma(1-s-t,s,t):\Delta^{2}\to X=(f*g)(\frac{1}{2}s+t)$
 \end_inset
 
 .
@@ -9623,11 +9910,108 @@ But
 \end_layout
 
 \begin_layout Standard
-(Identity.) 
-\begin_inset Formula $(\mathrm{id}_{X})_{*}([c])=[(\mathrm{id}_{X})_{\#}(c)]=[\sum_{j}a_{j}\cdot\mathrm{id}_{X}(\sigma_{j})]=[\sum_{j}a_{j}\cdot\mathrm{id}_{X}(\sigma_{j})]$
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\partial_{1}\sigma=\hat{f}+\hat{g}-\hat{f*g}$
 \end_inset
 
+.
+ [
+\series bold
+TODO
+\series default
+: what is the 
+\begin_inset Quotes eld
+\end_inset
 
+dynamic-length hat
+\begin_inset Quotes erd
+\end_inset
+
+ LaTeX command?]
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Um, I know how to take the boundary of a simplex-as-oriented\SpecialChar softhyphen
+vertex-list;
+ I don't think I know how to take the boundary of 
+\begin_inset Formula $(f*g)(\frac{1}{2}s+t)$
+\end_inset
+
+.
+ But that is supposed to be a map 
+\emph on
+from
+\emph default
+ a simplex, the standard 
+\begin_inset Formula $2$
+\end_inset
+
+-simplex.
+ The standard 
+\begin_inset Formula $2$
+\end_inset
+
+-simplex is 
+\begin_inset Formula $\left[\left[\begin{array}{c}
+1\\
+0\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+1\\
+0
+\end{array}\right],\left[\begin{array}{c}
+0\\
+0\\
+1
+\end{array}\right]\right]$
+\end_inset
+
+ and its boundary is 
+\begin_inset Formula $\left[\begin{array}{c}
+0\\
+0\\
+1
+\end{array}\right]-\left[\begin{array}{c}
+0\\
+1\\
+0
+\end{array}\right]-\left[\begin{array}{c}
+0\\
+0\\
+1
+\end{array}\right]+\left[\begin{array}{c}
+1\\
+0\\
+0
+\end{array}\right]+\left[\begin{array}{c}
+0\\
+1\\
+0
+\end{array}\right]-\left[\begin{array}{c}
+1\\
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+ ...
+ um, which is zero.
+ [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
