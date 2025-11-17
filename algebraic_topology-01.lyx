@@ -9719,9 +9719,8 @@ a
 \begin_layout Standard
 
 \emph on
-Theorem
+Theorem?
 \emph default
-.
  
 \begin_inset Formula $\tilde{H}_{n}(X):=\begin{cases}
 H_{n}(X) & n>0\\
@@ -9735,7 +9734,7 @@ H_{n}(X) & n>0\\
 \begin_layout Standard
 
 \emph on
-Proof
+Attempt
 \emph default
 .
  For 
@@ -9759,7 +9758,11 @@ Proof
 \end_layout
 
 \begin_layout Standard
-We reason casually: 
+For 
+\begin_inset Formula $n=0$
+\end_inset
+
+, we reason casually: 
 \begin_inset Formula $\tilde{\partial_{0}}$
 \end_inset
 
@@ -9789,11 +9792,353 @@ takes a formal linear combination of
 \end_inset
 
  is a formal linear combination whose coëfficients sum to zero, so 
-\begin_inset Formula $\mathrm{im}\tilde{\partial_{1}}\simeq\ker\tilde{\partial_{0}}$
+\begin_inset Formula $\mathrm{im}\,\tilde{\partial_{1}}=\ker\tilde{\partial_{0}}$
 \end_inset
 
  and 
 \begin_inset Formula $\frac{\ker\tilde{\partial_{0}}}{\mathrm{im}\tilde{\partial_{1}}}\simeq\{0\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ Claude Sonnet 4.5 points out that we've only shown that 
+\begin_inset Formula $\mathrm{im}\,\tilde{\partial_{1}}\subseteq\ker\tilde{\partial_{0}}$
+\end_inset
+
+, and asks us to consider a space of two isolated points.
+ The problem is apparent: 
+\begin_inset Formula $+v_{1}-v_{2}$
+\end_inset
+
+ has coëfficients that sum to zero, but isn't the image of a 
+\begin_inset Formula $1$
+\end_inset
+
+-chain if there's no 
+\begin_inset Formula $1$
+\end_inset
+
+-simplex connecting 
+\begin_inset Formula $v_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $v_{2}$
+\end_inset
+
+.
+ We should actually expect 
+\begin_inset Formula $\Z^{r-1}$
+\end_inset
+
+ when there are 
+\begin_inset Formula $r$
+\end_inset
+
+ connected components.
+\end_layout
+
+\begin_layout Standard
+We atone for our sins by providing the correct
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ Suppose a topological space 
+\begin_inset Formula $X$
+\end_inset
+
+ has 
+\begin_inset Formula $r\in\mathbb{N}^{+}$
+\end_inset
+
+ path-connected components.
+ Then 
+\begin_inset Formula $\tilde{H}_{n}(X):=\begin{cases}
+\Z^{r-1} & n=0\\
+H_{n}(X) & \mathrm{else}
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ For 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+, 
+\begin_inset Formula $\tilde{H}_{n}=\frac{\ker\tilde{\partial_{n}}}{\mathrm{im}\,\widetilde{\partial_{n+1}}}=\frac{\ker\partial_{n}}{\mathrm{im}\,\partial_{n+1}}=H_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $n=0$
+\end_inset
+
+, 
+\begin_inset Formula $\tilde{H}_{0}=\frac{\ker\tilde{\partial_{0}}}{\mathrm{im}\,\tilde{\partial_{1}}}$
+\end_inset
+
+, which amounts to the set of formal linear combinations of 
+\begin_inset Formula $0$
+\end_inset
+
+-chains whose coëfficients sum to zero which are not the boundary of a 
+\begin_inset Formula $1$
+\end_inset
+
+-chain.
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $\tau\in\ker\tilde{\partial_{0}}$
+\end_inset
+
+ but 
+\begin_inset Formula $\tau\notin\mathrm{im}\,\tilde{\partial_{1}}$
+\end_inset
+
+ where 
+\begin_inset Formula $\tau$
+\end_inset
+
+ is an otherwise arbitrary 
+\begin_inset Formula $0$
+\end_inset
+
+-chain given by 
+\begin_inset Formula $\tau:=\sum_{\alpha\in A_{\tau}}c_{\alpha}\sigma_{\alpha}$
+\end_inset
+
+ for some index set 
+\begin_inset Formula $A_{\tau}$
+\end_inset
+
+.
+ Every 
+\begin_inset Formula $\sigma_{\alpha}$
+\end_inset
+
+ is wholly contained within exactly one path component, so we can write
+ 
+\begin_inset Formula $\tau=\sum_{k=1}^{r}\sum_{\alpha_{k}\in A_{\tau,k}}c_{\alpha_{k}}\sigma_{\alpha_{k}}$
+\end_inset
+
+ for index sets 
+\begin_inset Formula $A_{\tau,k}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sigma_{\alpha_{k}}$
+\end_inset
+
+ belongs to the 
+\begin_inset Formula $k$
+\end_inset
+
+th path component (and thus 
+\begin_inset Formula $\bigcup_{k=1}^{r}A_{\tau,k}=A_{\tau}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+It is not the case that for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{\alpha_{k}\in A_{\tau,k}}c_{\alpha_{k}}=0$
+\end_inset
+
+.
+ Why? Suppose for a contradiction that it were.
+ Then for all 
+\begin_inset Formula $k$
+\end_inset
+
+, 
+\begin_inset Formula $\sum_{\alpha_{k}\in A_{\tau,k}}c_{\alpha_{k}}=0$
+\end_inset
+
+ could be written as 
+\begin_inset Formula $\sum_{p\in A_{\tau,k}^{+}}c_{p}+\sum_{n\in A_{\tau,k}^{-}}c_{n}$
+\end_inset
+
+ where 
+\begin_inset Formula $c_{p}$
+\end_inset
+
+ are all positive and 
+\begin_inset Formula $c_{n}$
+\end_inset
+
+ are all negative, and 
+\begin_inset Formula $\sum_{p\in A_{\tau,k}^{+}}c_{p}=\sum_{n\in A_{\tau,k}^{-}}c_{n}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $N:=\sum_{p\in A_{\tau,k}^{+}}c_{p}=\sum_{n\in A_{\tau,k}^{-}}c_{n}$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $\gamma_{a,b}:\Delta^{1}\to X$
+\end_inset
+
+ be a 
+\begin_inset Formula $1$
+\end_inset
+
+-simplex whose image is a path from the image of 
+\begin_inset Formula $\sigma_{a}$
+\end_inset
+
+ to the image of 
+\begin_inset Formula $\sigma_{b}$
+\end_inset
+
+.
+ Consider the 
+\begin_inset Formula $1$
+\end_inset
+
+-chain 
+\begin_inset Formula $\beta$
+\end_inset
+
+ constructed as follows.
+ Construct lists 
+\begin_inset Formula $C_{+}:=[(c_{p},p)]_{p\in A_{\tau,k}^{+}}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{-}:=[(c_{n},n)]_{n\in A_{\tau,k}^{-}}$
+\end_inset
+
+.
+ On each of 
+\begin_inset Formula $N$
+\end_inset
+
+ loop iterations, do the following: let 
+\begin_inset Formula $(c_{p},p)$
+\end_inset
+
+ be the last element of 
+\begin_inset Formula $C_{+}$
+\end_inset
+
+ and let 
+\begin_inset Formula $(c_{n},n)$
+\end_inset
+
+ be the last element of 
+\begin_inset Formula $C_{-}$
+\end_inset
+
+; add 
+\begin_inset Formula $\gamma_{n,p}$
+\end_inset
+
+ to 
+\begin_inset Formula $\beta$
+\end_inset
+
+; decrement the first tuple-element of the last element of 
+\begin_inset Formula $C_{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{-}$
+\end_inset
+
+; pop the last element from 
+\begin_inset Formula $C_{+}$
+\end_inset
+
+ and 
+\begin_inset Formula $C_{-}$
+\end_inset
+
+ if its first tuple-element is 
+\begin_inset Formula $0$
+\end_inset
+
+; end loop iteration.
+ Then we would have 
+\begin_inset Formula $\partial_{1}(\beta)=\tau$
+\end_inset
+
+ , but we specified that 
+\begin_inset Formula $\tau\notin\mathrm{im}\,\tilde{\partial_{1}}$
+\end_inset
+
+.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $\tau\in\ker\tilde{\partial_{0}}$
+\end_inset
+
+, we know that 
+\begin_inset Formula $\tau=\sum_{k=1}^{r}\sum_{\alpha_{k}\in A_{\tau,k}}c_{\alpha_{k}}=0$
+\end_inset
+
+.
+ We can think of this equation as indicating the kernel of a surjective
+ linear map 
+\begin_inset Formula $\Z^{r}\to\Z$
+\end_inset
+
+ (where 
+\begin_inset Formula $\sum_{\alpha_{k}\in A_{\tau,k}}c_{\alpha_{k}}$
+\end_inset
+
+ are the coordinates and 
+\begin_inset Formula $A_{\tau,k}$
+\end_inset
+
+ are the 
+\begin_inset Quotes eld
+\end_inset
+
+basis vectors
+\begin_inset Quotes erd
+\end_inset
+
+), which is 
+\begin_inset Formula $r-1$
+\end_inset
+
+-dimensional; thus, 
+\begin_inset Formula $\tilde{H}_{n}(X)\simeq\Z^{r-1}$
 \end_inset
 
 .
