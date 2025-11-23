@@ -105,7 +105,7 @@ Advanced Topics in Mathematics: Algebraic Topology
 \end_inset
 
  at San Francisco State University.
- Other books on hand: Theodore W.
+ Other books on hand as exercise sources: Theodore W.
  Gamelin and Robert Everist Greene's 
 \emph on
 Introduction to Topology 
@@ -118,7 +118,11 @@ Topology
 \emph on
 Elements of Algebraic Topology
 \emph default
- (PDF downloaded using SFSU library privileges).
+ and Kammeyer's 
+\emph on
+Introduction to Algebraic Topology
+\emph default
+ (PDFs downloaded using SFSU library privileges).
 \end_layout
 
 \begin_layout Standard
@@ -148,6 +152,14 @@ Elements of Algebraic Topology
 \begin_layout Standard
 \begin_inset FormulaMacro
 \newcommand{\id}[1]{\mathrm{id}_{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\cat}[1]{\mathsf{#1}}
 \end_inset
 
 
@@ -10296,23 +10308,10 @@ Proposition
 \emph default
 .
  
-\begin_inset Formula $\partial_{1}\sigma=\hat{f}+\hat{g}-\hat{f*g}$
+\begin_inset Formula $\partial_{1}\sigma=\hat{f}+\hat{g}-\widehat{f*g}$
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-: what is the 
-\begin_inset Quotes eld
-\end_inset
-
-dynamic-length hat
-\begin_inset Quotes erd
-\end_inset
-
- LaTeX command?]
 \end_layout
 
 \begin_layout Standard
@@ -10387,6 +10386,200 @@ from
 
  ...
  um, which is zero.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I told Tristen Gann that I would help on his project about category theory,
+ so I guess I will look at Kammeyer, who takes a category-theoretic approach.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.1
+\series default
+.
+ Let 
+\begin_inset Formula $G$
+\end_inset
+
+ be a group, and consider the category 
+\begin_inset Formula $G$
+\end_inset
+
+-
+\begin_inset Formula $\cat{Set}$
+\end_inset
+
+, the category of left 
+\begin_inset Formula $G$
+\end_inset
+
+-sets, whose objects are functors from 
+\begin_inset Formula $G$
+\end_inset
+
+ to 
+\begin_inset Formula $\cat{Set}$
+\end_inset
+
+ and whose morphisms are natural transformations.
+\end_layout
+
+\begin_layout Standard
+We want to find the left adjoint to the forgetful functor 
+\begin_inset Formula $G$
+\end_inset
+
+-
+\begin_inset Formula $\cat{Set}\to\cat{Set}$
+\end_inset
+
+.
+ Obviously, the left adjoint will have the domain–codomain signature 
+\begin_inset Formula $\cat{Set}\to G$
+\end_inset
+
+-
+\begin_inset Formula $\cat{Set}$
+\end_inset
+
+, but what does it actually look like?
+\end_layout
+
+\begin_layout Standard
+Let's make this concrete.
+ Suppose 
+\begin_inset Formula $G:=\Z_{3}$
+\end_inset
+
+.
+ An object in 
+\begin_inset Formula $\Z_{3}$
+\end_inset
+
+-
+\begin_inset Formula $\cat{Set}$
+\end_inset
+
+ is a functor 
+\begin_inset Formula $\Z_{3}\to\cat{Set}$
+\end_inset
+
+, which means it takes objects in 
+\begin_inset Formula $\Z_{3}$
+\end_inset
+
+ (the group construed as a category with one object) to objects in 
+\begin_inset Formula $\cat{Set}$
+\end_inset
+
+, and morphisms in 
+\begin_inset Formula $\Z_{3}$
+\end_inset
+
+ (where the elements of 
+\begin_inset Formula $\Z_{3}$
+\end_inset
+
+ are morphisms from the singleton object to itself which compose in a way
+ that respects the group table) to morphisms in 
+\begin_inset Formula $\cat{Set}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+But which specific morphisms in 
+\begin_inset Formula $\cat{Set}$
+\end_inset
+
+? Presumably that's pinned down by the 
+\begin_inset Quotes eld
+\end_inset
+
+natural transformation
+\begin_inset Quotes erd
+\end_inset
+
+ criterion.
+\end_layout
+
+\begin_layout Standard
+A natural transformation 
+\begin_inset Formula $n:\mathcal{F}\to\mathcal{G}$
+\end_inset
+
+ between functors 
+\begin_inset Formula $\mathcal{F},\mathcal{G}:\mathcal{C}\to\mathcal{D}$
+\end_inset
+
+ assigns a morphism 
+\begin_inset Formula $n(A)$
+\end_inset
+
+ to every 
+\begin_inset Formula $A$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathrm{obj}(\mathcal{C})$
+\end_inset
+
+ such that ...
+ [
+\series bold
+TODO
+\series default
+, finish working this out]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ The left adjoint to the forgetful functor 
+\begin_inset Formula $G$
+\end_inset
+
+-
+\begin_inset Formula $\cat{Set}\to\cat{Set}$
+\end_inset
+
+ is [
+\series bold
+TODO
+\series default
+].
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
  [
 \series bold
 TODO
