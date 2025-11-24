@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\usepackage{tikz-cd}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -10529,11 +10532,11 @@ A natural transformation
 \begin_inset Formula $\mathcal{F},\mathcal{G}:\mathcal{C}\to\mathcal{D}$
 \end_inset
 
- assigns a morphism 
-\begin_inset Formula $n(A)$
+ is a morphism in the category of functors 
+\begin_inset Formula $\mathcal{C}\to\mathcal{D}$
 \end_inset
 
- to every 
+, such that for every 
 \begin_inset Formula $A$
 \end_inset
 
@@ -10541,50 +10544,210 @@ A natural transformation
 \begin_inset Formula $\mathrm{obj}(\mathcal{C})$
 \end_inset
 
- such that ...
- [
-\series bold
-TODO
-\series default
-, finish working this out]
-\begin_inset Newline newline
+, it assigns a morphism 
+\begin_inset Formula $n_{A}:\mathcal{F}(A)\to\mathcal{G}(A)$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{D}$
+\end_inset
+
+ such that for every morphism 
+\begin_inset Formula $f:A\to B\in\mathrm{Hom}_{\mathcal{C}}(A,B)$
+\end_inset
+
+, we have 
+\begin_inset Formula $\mathcal{G}(f)\circ n_{A}=n_{B}\circ\mathcal{F}(f)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In this case, 
+\begin_inset Formula $\mathcal{C}:=\Z_{3}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{D}:=\cat{Set}$
+\end_inset
+
+, so for every 
+\begin_inset Formula $\bullet\in\mathrm{obj}(\Z_{3})$
+\end_inset
+
+ (that's the singleton in the group-construed-as-category), there's a morphism
+ 
+\begin_inset Formula $n_{\bullet}:\mathcal{F}(\bullet)\to\mathcal{G}(\bullet)$
+\end_inset
+
+ such that for every morphism 
+\begin_inset Formula $f:\bullet\to\bullet\in\mathrm{Hom}_{\Z_{3}}(\bullet,\bullet)$
+\end_inset
+
+ (these are the three morphisms representing the elements of 
+\begin_inset Formula $\Z_{3}$
+\end_inset
+
+), we have 
+\begin_inset Formula $\mathcal{G}(f)\circ n_{\bullet}=n_{\bullet}\circ\mathcal{F}(f)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzcd}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bullet 
+\backslash
+arrow[r, "
+\backslash
+mathcal{F}(f)"] 
+\backslash
+arrow[d, "n_{
+\backslash
+bullet}"]     & 
+\backslash
+bullet 
+\backslash
+arrow[d, "n_{
+\backslash
+bullet}"] 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+bullet 
+\backslash
+arrow[r, "
+\backslash
+mathcal{G}(f)"]     & 
+\backslash
+bullet
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzcd}
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+It seems like we just have three different morphisms from 
+\begin_inset Formula $\bullet$
+\end_inset
 
-\emph on
-Proposition
-\emph default
-.
- The left adjoint to the forgetful functor 
+ (the singleton member of the group-as-category) to an arbitrary set.
+ Call the morphisms 
+\begin_inset Formula $e$
+\end_inset
+
+,
+\begin_inset Formula $g$
+\end_inset
+
+, 
+\begin_inset Formula $h$
+\end_inset
+
+, which are distinct because of the rules for how they compose (
+\begin_inset Formula $g\circ g=h$
+\end_inset
+
+, 
+\begin_inset Formula $h\circ g=e$
+\end_inset
+
+, 
+\begin_inset Formula $e\circ e=e$
+\end_inset
+
+), not because of where they point to or from.
+ This is a disappointingly trivial answer considering how much work we did
+ just to understand the question, but that's how it goes sometimes.
+\end_layout
+
+\begin_layout Standard
+So what does that say about the left adjoint? It takes an arbitrary set,
+ and makes it into a 
 \begin_inset Formula $G$
 \end_inset
 
 -
-\begin_inset Formula $\cat{Set}\to\cat{Set}$
+\begin_inset Formula $\cat{Set}$
 \end_inset
 
- is [
-\series bold
-TODO
-\series default
-].
+.
+ Is there supposed to be a less trivial answer than that? At this point,
+ we've earned the right to turn Gemini 3 Pro with the question itself, not
+ just background definition tutoring.
 \end_layout
 
 \begin_layout Standard
+Gemini straightens us out: an object in 
+\begin_inset Formula $\Z_{3}$
+\end_inset
 
-\emph on
-Proof
-\emph default
+-
+\begin_inset Formula $\cat{Set}$
+\end_inset
+
+ is a functor 
+\begin_inset Formula $\Z_{3}\to\cat{Set}$
+\end_inset
+
+ that picks out both some specific set 
+\begin_inset Formula $X$
+\end_inset
+
+ and an action of 
+\begin_inset Formula $\Z_{3}$
+\end_inset
+
+ on 
+\begin_inset Formula $X$
+\end_inset
+
 .
- [
-\series bold
-TODO
-\series default
-]
+ Recall that an action of 
+\begin_inset Formula $G$
+\end_inset
+
+ on 
+\begin_inset Formula $X$
+\end_inset
+
+ is a function 
+\begin_inset Formula $G\times X\to X$
+\end_inset
+
+ that respects the group operations.
 \end_layout
 
 \end_body
