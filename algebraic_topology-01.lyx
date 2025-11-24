@@ -166,6 +166,14 @@ Introduction to Algebraic Topology
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Hom}[1]{\mathrm{Hom}_{#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \emph on
 Theorem
@@ -10684,6 +10692,247 @@ Gemini straightens us out: an object in
 \end_inset
 
  that respects the group operations.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.2
+\series default
+.
+ Let 
+\begin_inset Formula $\cat{FinBij}$
+\end_inset
+
+ be the category whose objects are finite sets and whose morphisms are bijection
+s.
+ For a finite set 
+\begin_inset Formula $X$
+\end_inset
+
+, let 
+\begin_inset Formula $\mathcal{B}(X)$
+\end_inset
+
+ be the set of bijections 
+\begin_inset Formula $X\to X$
+\end_inset
+
+ and let 
+\begin_inset Formula $\mathcal{O}(X)$
+\end_inset
+
+ be the set of total orders on 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\mathcal{B}$
+\end_inset
+
+ is a functor 
+\begin_inset Formula $\cat{FinBij}\to\cat{Set}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Attempt
+\emph default
+.
+ (Objects to objects.) Consider 
+\begin_inset Formula $X\in\mathrm{obj}(\cat{FinBij})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\mathcal{B}(X)$
+\end_inset
+
+ is a 
+\emph on
+set
+\emph default
+ of bijections, so 
+\begin_inset Formula $\mathcal{B}(X)\in\mathrm{obj}(\cat{Set})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Morphisms to morphisms.) Consider 
+\begin_inset Formula $m:X\to Y\in\mathrm{mor}(\cat{FinBij)}$
+\end_inset
+
+.
+ It's an arrow between objects that are finite sets of the same size, representi
+ng a bijection of those sets.
+ It can get mapped to the arrow 
+\begin_inset Formula $\mathcal{B}(X)\to\mathcal{B}(Y)\in\mathrm{mor}(\cat{Set})$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Identity.) For every 
+\begin_inset Formula $X\in\mathrm{obj}(\cat{FinBij})$
+\end_inset
+
+, there's an identity morphism 
+\begin_inset Formula $\id X\in\Hom{\mathrm{\cat{FinBij}}}(X,X)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Now 
+\begin_inset Formula $\id{\mathcal{B}(X)}$
+\end_inset
+
+ is such that for every 
+\begin_inset Formula $f:\mathcal{B}(X)\to K$
+\end_inset
+
+ and 
+\begin_inset Formula $g:K\to\mathcal{B}(X)$
+\end_inset
+
+, 
+\begin_inset Formula $f\circ\id X=f$
+\end_inset
+
+ and 
+\begin_inset Formula $\id X\circ g=g$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We need to check that the morphisms-to-morphisms rule sends 
+\begin_inset Formula $\id X$
+\end_inset
+
+ to 
+\begin_inset Formula $\id{\mathcal{B}(X)}$
+\end_inset
+
+.
+ But it totally does: an arrow from a finite set 
+\begin_inset Formula $X$
+\end_inset
+
+ to itself is getting mapped by the functor to an arrow from the set of
+ bijections 
+\begin_inset Formula $X\to X$
+\end_inset
+
+ to itself.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Composition.) We need to check that 
+\begin_inset Formula $\mathcal{B}(f\circ g)=\mathcal{B}(f)\circ\mathcal{B}(g)$
+\end_inset
+
+.
+ The composed bijections 
+\begin_inset Formula $X\xrightarrow{g}Y\xrightarrow{f}Z$
+\end_inset
+
+ become a bijection 
+\begin_inset Formula $X\to Z$
+\end_inset
+
+, and similarly 
+\begin_inset Formula $\mathcal{B}(X)\xrightarrow{\mathcal{B}(g)}\mathcal{B}(Y)\xrightarrow{\mathcal{B}(Z)}\mathcal{B}(Z)$
+\end_inset
+
+ becomes 
+\begin_inset Formula $\mathcal{B}(X)\to\mathcal{B}(Z)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ Gemini 3 Pro thinks I'm being too vague with the morphisms-to-morphisms,
+ as does Claude Opus 4.5 (released today).
+ What we need to do is, given a bijection 
+\begin_inset Formula $m:X\to Y$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma:X\to X\in\mathcal{B}(X)$
+\end_inset
+
+, we need to produce 
+\begin_inset Formula $\mathcal{B}(m)(\sigma)=\tau:Y\to Y$
+\end_inset
+
+, which is going to turn out to be conjugation.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Atonement
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
