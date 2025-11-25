@@ -10691,7 +10691,7 @@ Gemini straightens us out: an object in
 \begin_inset Formula $G\times X\to X$
 \end_inset
 
- that respects the group operations.
+ that respects the group operations ...
 \begin_inset Newline newline
 \end_inset
 
@@ -10799,10 +10799,6 @@ ng a bijection of those sets.
 
 .
  
-\begin_inset Formula $\checkmark$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -10863,10 +10859,6 @@ We need to check that the morphisms-to-morphisms rule sends
 
  to itself.
  
-\begin_inset Formula $\checkmark$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -10893,10 +10885,6 @@ We need to check that the morphisms-to-morphisms rule sends
 
 .
  
-\begin_inset Formula $\checkmark$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -10920,6 +10908,52 @@ Criticism
 \end_inset
 
 , which is going to turn out to be conjugation.
+ On followup questioning, Gemini points out that the 
+\begin_inset Quotes eld
+\end_inset
+
+conjugation
+\begin_inset Quotes erd
+\end_inset
+
+ insight is discoverable from the square commutative diagram: the down arrow
+ on the right side of the square needs to be the same as going around 
+\begin_inset Quotes eld
+\end_inset
+
+the long way
+\begin_inset Quotes erd
+\end_inset
+
+ left–down–right.
+\end_layout
+
+\begin_layout Standard
+I think I'm getting confused about whether to think of morphisms as being
+ like a directed edge in a graph, or like a function with domain and codomain.
+ Gemini clarifies that it's a directed multigraph, but an edge often represents
+ a function.
+ (
+\emph on
+E.g
+\emph default
+., in 
+\begin_inset Formula $\cat{Top},$
+\end_inset
+
+if 
+\begin_inset Formula $X$
+\end_inset
+
+ and 
+\begin_inset Formula $Y$
+\end_inset
+
+ are topological spaces, then the morphism 
+\begin_inset Formula $X\to Y$
+\end_inset
+
+ is a continuous map with that domain and codomain.)
 \end_layout
 
 \begin_layout Standard
@@ -10928,11 +10962,41 @@ Criticism
 Atonement
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-]
+ (Morphisms to morphisms.) For 
+\begin_inset Formula $X,Y\in\mathrm{obj}(\cat{FinBij})$
+\end_inset
+
+, consider 
+\begin_inset Formula $m:X\to Y\in\mathrm{mor}(\cat{FinBij)}$
+\end_inset
+
+.
+ We want to define 
+\begin_inset Formula $\mathcal{B}(m):\mathcal{B}(X)\to\mathcal{\mathcal{B}}(Y)$
+\end_inset
+
+, a morphism from the set of bijections 
+\begin_inset Formula $X\to X$
+\end_inset
+
+ to the set of bijections 
+\begin_inset Formula $Y\to Y$
+\end_inset
+
+, which in the category of 
+\begin_inset Formula $\cat{Set}$
+\end_inset
+
+ would be a bijection, so we have to say how an arbitrary particular bijection
+ 
+\begin_inset Formula $X\to X$
+\end_inset
+
+ gets mapped to a bijection 
+\begin_inset Formula $Y\to Y$
+\end_inset
+
+.
 \end_layout
 
 \end_body
