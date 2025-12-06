@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-August–November 2025
+August–December 2025
 \end_layout
 
 \begin_layout Abstract
@@ -10997,6 +10997,221 @@ Atonement
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW11#2
+\series default
+.
+ Let 
+\begin_inset Formula $A_{\bullet}$
+\end_inset
+
+, 
+\begin_inset Formula $B_{\bullet}$
+\end_inset
+
+, and 
+\begin_inset Formula $C_{\bullet}$
+\end_inset
+
+ be chain complexes, and let 
+\begin_inset Formula $i_{\bullet}:A_{\bullet}\to B_{\bullet}$
+\end_inset
+
+ and 
+\begin_inset Formula $j_{\bullet}:B_{\bullet}\to C_{\bullet}$
+\end_inset
+
+ be chain maps such that 
+\begin_inset Formula $0\to A_{n}\xrightarrow{i_{n}}B_{n}\xrightarrow{j_{n}}C_{n}\to0$
+\end_inset
+
+ is an exact sequence for all 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\delta([c]):H_{n}(C_{\bullet})\to H_{n-1}(A_{\bullet})=[a]$
+\end_inset
+
+ where 
+\begin_inset Formula $a\in A_{n-1}$
+\end_inset
+
+ is such that 
+\begin_inset Formula $i_{n-1}(a)=\partial_{n}^{B}(b)$
+\end_inset
+
+ for some 
+\begin_inset Formula $b\in B_{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $c\in j_{n}(b)$
+\end_inset
+
+.
+ We're going to show that this is well-defined, step by step.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There exists 
+\begin_inset Formula $b\in B_{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $c=j_{n}(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Presumably this is going to be a simple application of the rules for what
+ exact sequences with 0s in them imply about injectivity and surjectivity,
+ which I'm going to need to look up.
+ I'm being told (by Ben Lynn's webpage at 
+\emph on
+https://crypto.stanford.edu/pbc/notes/commalg/exact.html
+\emph default
+) that 
+\begin_inset Formula $0\rightarrow A\xrightarrow{f}B$
+\end_inset
+
+ is exact iff 
+\begin_inset Formula $f$
+\end_inset
+
+ is injective and 
+\begin_inset Formula $A\xrightarrow{g}B\rightarrow0$
+\end_inset
+
+ is exact iff 
+\begin_inset Formula $g$
+\end_inset
+
+ is surjective.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The claim that there exists 
+\begin_inset Formula $b\in B_{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $c=j_{n}(b)$
+\end_inset
+
+ is the same as saying that 
+\begin_inset Formula $j_{n}$
+\end_inset
+
+ is surjective, which must be true if 
+\begin_inset Formula $B_{n}\xrightarrow{j_{n}}C_{n}\to0$
+\end_inset
+
+ is a short exact sequence.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For any such 
+\begin_inset Formula $b$
+\end_inset
+
+ as in the previous proposition, there exists 
+\begin_inset Formula $a\in A_{n-1}$
+\end_inset
+
+ such that 
+\begin_inset Formula $i_{n-1}(a)=\partial_{n}^{B}(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ This is the sublemma that lets us go 
+\begin_inset Quotes eld
+\end_inset
+
+down
+\begin_inset Quotes erd
+\end_inset
+
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+levels
+\begin_inset Quotes erd
+\end_inset
+
+ of the long exact sequence (construed as levels of three): we need to show
+ that there's something in 
+\begin_inset Formula $A_{n-1}$
+\end_inset
+
+ that hits the same target as 
+\begin_inset Formula $\partial_{n}^{B}:B_{n}\to B_{n-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
 \end_layout
 
 \end_body
