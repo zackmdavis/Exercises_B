@@ -214,7 +214,21 @@ complexity
 
  of a model class corresponded to its number of parameters: more parameters,
  more complexity.
- But the deep learning revolution of the 2010s presented the puzzle of 
+ But the deep learning revolution of the 2010s calls this into question,
+ because neural networks generalize much better than they 
+\begin_inset Quotes eld
+\end_inset
+
+should
+\begin_inset Quotes erd
+\end_inset
+
+ according to classical theory.
+ 
+\end_layout
+
+\begin_layout Standard
+A striking example is the puzzle of 
 \emph on
 double descent
 \emph default
@@ -222,7 +236,13 @@ double descent
  polynomial) as the number of parameters approaches the number of training
  examples, but it turns out that if you keep increasing the number of parameters
  past the point where the model can memorize the training data, you actually
- get better performance.
+ get better performance, which should be impossible.
+\end_layout
+
+\begin_layout Standard
+Another potential example is the existence of LoRAs: you can fine-tune a
+ network's high-level behavior while only optimizing a tiny number of additional
+ parameters.
 \end_layout
 
 \begin_layout Standard
@@ -324,16 +344,266 @@ r point in parameter-space at any given time, but we can imagine the ideal
  Bayesian probability distribution over parameterizations: start with a
  prior distribution over parameter-space, and then update it on data.
  As data comes in, probability-mass shifts to favor the true parameters,
- but favoring regions with a low RCLT.
+ but favoring regions with a low RLCT.
  Our neural network learns to be a pretty-good easy-to-find model, before
  it learns to be better, harder-to-find model.
 \end_layout
 
 \begin_layout Standard
-The fact that LoRAs work is related to deep nets being singular.
- (It seems miraculous that you can fine-tune your model while only touching
- a few parameters, but that's because the true complexity is much smaller
- than the number of parameters would imply for a regular model.)
+Recall Bayes's theorem 
+\begin_inset Formula $P(H_{i}|E)=\frac{P(E|H_{i})P(H_{i})}{P(E)}=\frac{P(E|H_{i})P(H_{i})}{\sum_{j}P(E|H_{j})P(H_{j})}$
+\end_inset
+
+.
+ Let's adapt that form of Bayes to the setting of singular learning theory.
+\end_layout
+
+\begin_layout Standard
+Instead of a collection of hypotheses 
+\begin_inset Formula $\{H_{i}\}_{i}$
+\end_inset
+
+ to sum over, we'll consider settings of weight parameters 
+\begin_inset Formula $w$
+\end_inset
+
+ to integrate over.
+\end_layout
+
+\begin_layout Standard
+Our evidence will be a dataset of size 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\begin_inset Formula $D_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We have a prior distribution 
+\begin_inset Formula $\varphi(w)$
+\end_inset
+
+ on the weights.
+\end_layout
+
+\begin_layout Standard
+The likelihood 
+\begin_inset Formula $P(E|H_{i})$
+\end_inset
+
+ becomes the probability of the dataset given the weights, 
+\begin_inset Formula $P(D_{n}|w)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So our posterior for the weights given the data is
+\begin_inset Formula 
+\[
+p(w|D_{n})=\frac{p(D_{n}|w)\varphi(w)}{\int p(D_{n}|w)\varphi(w)\,dw}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We're interested in computing the denominator 
+\begin_inset Formula $Z_{n}:=\int p(D_{n}|w)\varphi(w)\,dw$
+\end_inset
+
+ for large 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ This is a very high-dimensional integral that is hard to compute.
+\end_layout
+
+\begin_layout Standard
+We're interested in 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ because, by virtue of being the average likelihood over weight-settings,
+ it's saying something about how good our model architecture is fitting
+ the observed data: higher 
+\begin_inset Formula $Z_{n}$
+\end_inset
+
+ means there's more prior probability-mass on weight-settings that make
+ the data seem likely.
+\end_layout
+
+\begin_layout Standard
+Suppose our datapoints 
+\begin_inset Formula $(x_{i},y_{i})$
+\end_inset
+
+ are independent.
+ Then the likelihood 
+\begin_inset Formula $p(D_{n}|w)$
+\end_inset
+
+ is a product 
+\begin_inset Formula $\prod_{i=1}^{n}p(y_{i}|x_{i},w)$
+\end_inset
+
+.
+ We'd prefer to work with a sum (and by convention to minimize error rather
+ than maximize probability), so we're going to use the (average) negative
+ log likelihood as our loss function: 
+\begin_inset Formula $L_{n}(w)=-\frac{1}{n}\sum_{i=1}^{n}\log p(y_{i}|x_{i},w)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+L_{n}(w)=-\frac{1}{n}\sum_{i=1}^{n}\log p(y_{i}|x_{i},w)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-nL_{n}(w)=\sum_{i=1}^{n}\log p(y_{i}|x_{i},w)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\exp(-nL_{n}(w))=\exp\left(\sum_{i=1}^{n}\log p(y_{i}|x_{i},w)\right)=\prod_{i=1}^{n}\cancel{\exp}\left(\cancel{\log}p(y_{i}|x_{i},w)\right)=\prod_{i=1}^{n}p(y_{i}|x_{i},w)=p(D_{n}|w)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, we have shown that given the negative log likelihood loss function,
+ the likelihood can be written as 
+\begin_inset Formula $\exp(-nL_{n}(w))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So, we want to evaluate the integral 
+\begin_inset Formula 
+\[
+Z_{n}=\int\exp(-nL_{n}(w))\varphi(w)\,dw
+\]
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For regular models and for large 
+\begin_inset Formula $n$
+\end_inset
+
+, only a neighborhood around the minimum 
+\begin_inset Quotes eld
+\end_inset
+
+matters
+\begin_inset Quotes erd
+\end_inset
+
+ for the integral, because everything else is getting crushed to zero exponentia
+lly.
+ 
+\end_layout
+
+\begin_layout Standard
+Because only the local neighborhood matters, we can use the Taylor expansion.
+ At the minimum 
+\begin_inset Formula $w_{0}$
+\end_inset
+
+, the first derivative of the loss function 
+\begin_inset Formula $L(w)$
+\end_inset
+
+ is zero; the first nonzero term is the quadratic.
+ Because we're looking at a tiny 
+\begin_inset Quotes eld
+\end_inset
+
+spiky
+\begin_inset Quotes erd
+\end_inset
+
+ neighborhood, we can pretend the prior is constant and make-believe that
+ our integral is 
+\begin_inset Formula $\int\exp(-nL_{n}(w))\,dw$
+\end_inset
+
+.
+ The quadratic approximation is 
+\begin_inset Formula $\int\exp(-n\cdot\frac{1}{2}w^{T}Hw)$
+\end_inset
+
+, where 
+\begin_inset Formula $H$
+\end_inset
+
+ is the second derivative matrix of 
+\begin_inset Formula $L(w)$
+\end_inset
+
+.
+ The value of this 
+\begin_inset Quotes eld
+\end_inset
+
+Gaussian integral
+\begin_inset Quotes erd
+\end_inset
+
+ is known to be proportional to 
+\begin_inset Formula $\frac{1}{\sqrt{\det H}}$
+\end_inset
+
+ (derivation deferred).
+\end_layout
+
+\begin_layout Standard
+For singular models, this approximation doesn't work, because 
+\begin_inset Formula $\det H=0$
+\end_inset
+
+: the higher-than-quadratic terms matter.
+ Instead of the minimum of the loss function being a single point, it's
+ going to be an algebraic variety.
+ A variety can have singularities, cusps or self-intersections, and it turns
+ out that these dominate the integral.
+ To calculate the integral, we need Hironaka's technique on the resolution
+ of singularities.
 \end_layout
 
 \end_body
