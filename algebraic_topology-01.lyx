@@ -11203,6 +11203,45 @@ levels
 \end_inset
 
 .
+ That would be easy (just like the previous proposition) if 
+\begin_inset Formula $i_{n-1}$
+\end_inset
+
+ were surjective, but I don't think we know that: 
+\begin_inset Formula $0\rightarrow A_{n-1}\xrightarrow{i_{n-1}}B_{n-1}$
+\end_inset
+
+ gives us 
+\emph on
+injectivity
+\emph default
+, not surjectivity.
+\end_layout
+
+\begin_layout Standard
+If it's not that, presumably we can work with 
+\begin_inset Formula $\partial_{n}^{B}$
+\end_inset
+
+ not being injective: there exist 
+\begin_inset Formula $n-1$
+\end_inset
+
+-chains that aren't the boundary of an 
+\begin_inset Formula $n$
+\end_inset
+
+-chain.
+ (
+\emph on
+E.g
+\emph default
+., the formal sum of three distinctpoints isn't the boundary of any 1-simplex,
+ because the boundary is a formal sum of two distinct points.)
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Standard

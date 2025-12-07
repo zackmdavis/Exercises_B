@@ -600,10 +600,133 @@ For singular models, this approximation doesn't work, because
 : the higher-than-quadratic terms matter.
  Instead of the minimum of the loss function being a single point, it's
  going to be an algebraic variety.
- A variety can have singularities, cusps or self-intersections, and it turns
+ A variety can have singularities—cusps or self-intersections—and it turns
  out that these dominate the integral.
  To calculate the integral, we need Hironaka's technique on the resolution
  of singularities.
+\end_layout
+
+\begin_layout Standard
+Let's consider the simplest possible case: a neural network with one hidden
+ layer of one neuron, activating linearly: 
+\begin_inset Formula $f(x)=w_{2}w_{1}x$
+\end_inset
+
+.
+ (There's a super annoying convention where the diagrams often depict 
+\begin_inset Quotes eld
+\end_inset
+
+neurons
+\begin_inset Quotes erd
+\end_inset
+
+ connected by lines, but the actual weights are the lines in the diagram.
+ Input, then hidden layer, then output, is two weights, not three.) Suppose
+ the true function is 
+\begin_inset Formula $f(x)=0$
+\end_inset
+
+, and we're using squared-error loss 
+\begin_inset Formula $L(w_{1},w_{2},x)=(w_{1}w_{2}x-0)^{2}=w_{1}^{2}w_{2}^{2}x^{2}$
+\end_inset
+
+.
+ We can marginalize over 
+\begin_inset Formula $x$
+\end_inset
+
+ to get a constant that doesn't matter and just work with 
+\begin_inset Formula $L(w)=w_{1}^{2}w_{2}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The solution to 
+\begin_inset Formula $w_{1}w_{2}=0$
+\end_inset
+
+ is the union of the 
+\begin_inset Formula $w_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $w_{2}$
+\end_inset
+
+ axes.
+ The Hessian is 
+\begin_inset Formula $\left[\begin{array}{cc}
+\frac{\partial^{2}L}{\partial w_{1}^{2}} & \frac{\partial^{2}L}{\partial w_{1}\partial w_{2}}\\
+\frac{\partial^{2}L}{\partial w_{2}\partial w_{1}} & \frac{\partial^{2}L}{\partial w_{2}^{2}}
+\end{array}\right]=\left[\begin{array}{cc}
+2w_{2}^{2} & 4w_{1}w_{2}\\
+4w_{1}w_{2} & 2w_{1}^{2}
+\end{array}\right]$
+\end_inset
+
+, which is 0 at the origin.
+\end_layout
+
+\begin_layout Standard
+We make a new coordinate chart that maps to our weightspace: 
+\begin_inset Formula $\begin{cases}
+w_{1}=u\\
+w_{2}=uv
+\end{cases}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $L$
+\end_inset
+
+ in terms of 
+\begin_inset Formula $u$
+\end_inset
+
+ and 
+\begin_inset Formula $v$
+\end_inset
+
+ becomes 
+\begin_inset Formula $u^{2}(uv)^{2}=u^{4}v^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+And we also need to include the Jacobian for the change-of-variables: 
+\begin_inset Formula $\left|\begin{array}{cc}
+\frac{\partial w_{1}}{\partial u} & \frac{\partial w_{1}}{\partial v}\\
+\frac{\partial w_{2}}{\partial u} & \frac{\partial w_{2}}{\partial v}
+\end{array}\right|=\left|\begin{array}{cc}
+1 & 0\\
+v & u
+\end{array}\right|=u$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So our integral becomes 
+\begin_inset Formula $Z_{n}=\int\exp(-nL(u,v))\cdot|J(u,v)|\,du\,dv=\int\exp(-nu^{4}v^{2})\cdot u\,du\:dv$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
