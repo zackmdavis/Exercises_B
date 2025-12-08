@@ -89,6 +89,10 @@ Notes on Singular Learning Theory
 December 2025
 \end_layout
 
+\begin_layout Subsection*
+Introduction
+\end_layout
+
 \begin_layout Standard
 A statistical model is some procedure that we use to make predictions about
  data.
@@ -336,6 +340,10 @@ flatness
  In the limit of infinite data, the most accurate parametrization wins,
  but for finite amounts of data, regions with a better accuracy/simplicity
  trade-off can be favored.
+\end_layout
+
+\begin_layout Subsection*
+The Bayesian Context
 \end_layout
 
 \begin_layout Standard
@@ -606,6 +614,10 @@ For singular models, this approximation doesn't work, because
  of singularities.
 \end_layout
 
+\begin_layout Subsection*
+First Example
+\end_layout
+
 \begin_layout Standard
 Let's consider the simplest possible case: a neural network with one hidden
  layer of one neuron, activating linearly: 
@@ -723,10 +735,6 @@ So our integral becomes
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \end_body
