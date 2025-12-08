@@ -11068,6 +11068,39 @@ Let
 
 \begin_layout Standard
 
+\emph on
+Commentary
+\emph default
+.
+ We're going to prove the snake lemma by infering the existence of the 
+\begin_inset Quotes eld
+\end_inset
+
+snake map
+\begin_inset Quotes erd
+\end_inset
+
+ from the properties of 
+\begin_inset Formula $i_{n-1}$
+\end_inset
+
+, 
+\begin_inset Formula $\partial^{B}$
+\end_inset
+
+, and 
+\begin_inset Formula $j_{n}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \series bold
 a
 \series default
@@ -11143,6 +11176,10 @@ Proof
 \end_inset
 
  is a short exact sequence.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11177,24 +11214,7 @@ Proposition
 Commentary
 \emph default
 .
- This is the sublemma that lets us go 
-\begin_inset Quotes eld
-\end_inset
-
-down
-\begin_inset Quotes erd
-\end_inset
-
- the 
-\begin_inset Quotes eld
-\end_inset
-
-levels
-\begin_inset Quotes erd
-\end_inset
-
- of the long exact sequence (construed as levels of three): we need to show
- that there's something in 
+ We need to show that there's something in 
 \begin_inset Formula $A_{n-1}$
 \end_inset
 
@@ -11241,7 +11261,46 @@ E.g
 \end_layout
 
 \begin_layout Standard
+Glancing at 
+\emph on
+https://en.wikipedia.org/wiki/Snake_lemma#Construction_of_the_maps
+\emph default
+ gives me a hint that might be sufficient to proceed under my own power.
+ By commutativity of the diagram, 
+\begin_inset Formula $j_{n-1}(\partial^{B}(b))=\partial^{C}(j_{n}(b))$
+\end_inset
 
+ ...
+ okay, I'm actually not sure how that helps us; let's read the 
+\emph on
+Wikipedia
+\emph default
+ account in more detail.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Wikipedia
+\emph default
+ seems to be claiming (in our notation) that 
+\begin_inset Formula $j_{n}(b)$
+\end_inset
+
+ is in the kernel of 
+\begin_inset Formula $\partial_{n}^{C}$
+\end_inset
+
+, and I don't see why that would have to be true.
+\end_layout
+
+\begin_layout Standard
+Gemini 3 Pro points out that the fact that 
+\begin_inset Formula $c$
+\end_inset
+
+ is a homology group representative means that it has to be a cycle, and
+ clarifies the last step.
 \end_layout
 
 \begin_layout Standard
@@ -11250,7 +11309,245 @@ E.g
 Proof
 \emph default
 .
+ We know that 
+\begin_inset Formula $j_{n-1}(\partial^{B}(b))=\partial^{C}(j_{n}(b))=0$
+\end_inset
+
+ (where the first equality follows from the commutativity of the diagram,
+ and the second because 
+\begin_inset Formula $c=j_{n}(b)$
+\end_inset
+
+ is a homology class representative, thus a cycle, thus its boundary is
+ zero).
+ But 
+\begin_inset Formula $j_{n-1}(\partial^{B}(b))$
+\end_inset
+
+ getting mapped to zero means that 
+\begin_inset Formula $\partial^{B}(b)\in\ker(j_{n-1})$
+\end_inset
+
+, so by exactness, 
+\begin_inset Formula $\partial^{B}(b)\in\mathrm{im}(i_{n-1})$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
  
+\emph on
+Proposition
+\emph default
+.
+ The previous propositions don't depend on the choice of 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Attempt
+\emph default
+.
+ Suppose 
+\begin_inset Formula $b$
+\end_inset
+
+ and 
+\begin_inset Formula $b'$
+\end_inset
+
+ are such that 
+\begin_inset Formula $j_{n}(b)=j_{n}(b')=c$
+\end_inset
+
+, and suppose that 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $a'$
+\end_inset
+
+ are such that 
+\begin_inset Formula $i_{n-1}(a)=\partial_{n}^{B}(b)$
+\end_inset
+
+ and 
+\begin_inset Formula $i_{n-1}(a')=\partial_{n}^{B}(b')$
+\end_inset
+
+.
+ We want to show that 
+\begin_inset Formula $[a]=[a']$
+\end_inset
+
+ in 
+\begin_inset Formula $H_{n-1}(A_{\bullet})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $j_{n}(b),j_{n}(b')\in[c]$
+\end_inset
+
+, then they 
+\begin_inset Quotes eld
+\end_inset
+
+differ by a boundary
+\begin_inset Quotes erd
+\end_inset
+
+, so 
+\begin_inset Formula $b'=b+d$
+\end_inset
+
+ where 
+\begin_inset Formula $d$
+\end_inset
+
+ is a boundary.
+ The boundary of a boundary is zero, so 
+\begin_inset Formula $\partial_{n}^{B}(b')=\partial_{n}^{B}(b+d)=\partial_{n}^{B}(b)+\cancel{\partial_{n}^{B}(d)}=\partial_{n}^{B}(b)$
+\end_inset
+
+.
+ So we know that 
+\begin_inset Formula $i_{n-1}(a)=i_{n-1}(a')=\partial_{n}^{B}(b)$
+\end_inset
+
+.
+ But the exactness of the short exact sequence 
+\begin_inset Formula $0\to A_{n-1}\to B_{n-1}$
+\end_inset
+
+ implies that 
+\begin_inset Formula $i_{n-1}$
+\end_inset
+
+ is injective, so 
+\begin_inset Formula $a=a'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ Gemini 3 Pro disagrees.
+ (I should have known 
+\begin_inset Formula $a=a'$
+\end_inset
+
+ was too strong.) [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Atonement
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW11#3
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW11#4
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Let 
+\begin_inset Formula $X$
+\end_inset
+
+ be a path-connected topological space, and 
+\begin_inset Formula $x\in X$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $H_{n}(X,x)=\begin{cases}
+H_{n}(X) & n>0\\
+\{0\} & \mathrm{else}
+\end{cases}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
