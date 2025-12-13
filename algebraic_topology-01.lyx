@@ -7138,88 +7138,6 @@ Introduction to
 Proposition
 \emph default
 .
- The barycentric coördinates of a point in a simplex are continuous functions
- of the point.
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Commentary
-\emph default
-.
- We need to show that for all 
-\begin_inset Formula $\varepsilon$
-\end_inset
-
-, there exists a 
-\begin_inset Formula $\delta$
-\end_inset
-
- such that 
-\begin_inset Formula $d(x,y)<\delta$
-\end_inset
-
- implies 
-\begin_inset Formula $d(f_{j}(x),f_{j}(y))<\varepsilon$
-\end_inset
-
-.
- Actually, the first 
-\begin_inset Formula $d$
-\end_inset
-
- is in 
-\begin_inset Formula $\R^{n}$
-\end_inset
-
- (where the metric is 
-\begin_inset Formula $\sqrt{\sum_{j}\left(y_{j}-x_{j}\right)^{2}}$
-\end_inset
-
-), and the second 
-\begin_inset Formula $d$
-\end_inset
-
- is in 
-\begin_inset Formula $\R$
-\end_inset
-
-.
- But we know that the distance along one dimension is less than or equal
- to the total distance.
- Except these are barycentric coordinates, not Euclidean! 
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Proof
-\emph default
-.
- Fix 
-\begin_inset Formula $\varepsilon$
-\end_inset
-
-.
- [
-\series bold
-TODO
-\series default
-: this should be easy but embarrassingly somehow it's not coming to me right
- now]
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Proposition
-\emph default
-.
  A simplex is a compact, convex set in 
 \begin_inset Formula $\R^{n}$
 \end_inset
@@ -7468,11 +7386,7 @@ Proof
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-]
+ [Incomplete, with regrets.]
 \begin_inset Newline newline
 \end_inset
 
@@ -7863,11 +7777,7 @@ Let
 \begin_inset Formula $\partial_{n}\circ\partial_{n+1}c$
 \end_inset
 
- [
-\series bold
-TODO
-\series default
-]
+ [Incomplete, with regrets.]
 \begin_inset Newline newline
 \end_inset
 
@@ -8029,15 +7939,8 @@ Attempt
 Criticism
 \emph default
 .
- Gemini 2.5 Pro isn't having it: 
-\emph on
-https://gemini.google.com/app/7488749c6d19c9a7
-\emph default
- [
-\series bold
-TODO 
-\series default
-address, and part b]
+ Gemini 2.5 Pro isn't having it.
+ [Incomplete, with regrets.]
 \begin_inset Newline newline
 \end_inset
 
@@ -8493,13 +8396,8 @@ stitch them together.
 \begin_inset Quotes erd
 \end_inset
 
- ...
- [
-\series bold
-TODO
-\series default
-: dicussed in office hours 27 October, if we can show that between any two
- point, we only have a finite subcomplex, that would do it]
+ This was discussed in office hours 27 October: if we can show that between
+ any two points, we only have a finite subcomplex, that should do it.
 \begin_inset Newline newline
 \end_inset
 
@@ -10285,6 +10183,17 @@ Proof
 \end_inset
 
 .
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ Gemini says this is wrong; we need two simplices to cover the homotopy
+ square.
 \begin_inset Newline newline
 \end_inset
 
@@ -10394,11 +10303,7 @@ from
 
  ...
  um, which is zero.
- [
-\series bold
-TODO
-\series default
-]
+ [Incomplete, with regrets.]
 \begin_inset Newline newline
 \end_inset
 
@@ -11059,7 +10964,7 @@ Let
 \end_inset
 
  such that 
-\begin_inset Formula $c\in j_{n}(b)$
+\begin_inset Formula $c=j_{n}(b)$
 \end_inset
 
 .
@@ -11457,7 +11362,7 @@ differ by a boundary
 \begin_layout Standard
 
 \emph on
-Criticism
+Criticism and Atonement
 \emph default
 .
  Gemini 3 Pro disagrees.
@@ -11465,24 +11370,111 @@ Criticism
 \begin_inset Formula $a=a'$
 \end_inset
 
- was too strong.) [
-\series bold
-TODO
-\series default
-]
+ was too strong.) The homology equivalence is between 
+\begin_inset Formula $j_{n}(b)$
+\end_inset
+
+ and 
+\begin_inset Formula $j_{n}(b')$
+\end_inset
+
+ in 
+\begin_inset Formula $C_{n}$
+\end_inset
+
+, not 
+\begin_inset Formula $b$
+\end_inset
+
+ and 
+\begin_inset Formula $b'$
+\end_inset
+
+ in 
+\begin_inset Formula $B_{n}$
+\end_inset
+
+, dummy.
+ If 
+\begin_inset Formula $j_{n}(b)=j_{n}(b')=c$
+\end_inset
+
+, then 
+\begin_inset Formula $j_{n}(b)-j_{n}(b')=c-c=0$
+\end_inset
+
+.
+ Gemini reassures me that 
+\begin_inset Formula $j_{n}$
+\end_inset
+
+ is 
+\begin_inset Quotes eld
+\end_inset
+
+linear
+\begin_inset Quotes erd
+\end_inset
+
+ (my word choice; it's a group homomorphism), such that 
+\begin_inset Formula $j_{n}(b)-j_{n}(b')=0\Rightarrow j_{n}(b-b')=0$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
+With more tutoring: so we know that 
+\begin_inset Formula $b-b'\in\ker j_{n}$
+\end_inset
 
-\emph on
-Atonement
-\emph default
+, and thus by exactness that 
+\begin_inset Formula $b-b'\in\mathrm{im}i_{n}$
+\end_inset
+
+, which is to say there exists 
+\begin_inset Formula $x\in A_{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $b-b'=i_{n}(x)$
+\end_inset
+
 .
- [
-\series bold
-TODO
-\series default
-]
+ Taking the boundary, we get 
+\begin_inset Formula $\partial_{n}^{B}(b)-\partial_{n}^{B}(b')=\partial_{n}^{B}(i_{n}(x))$
+\end_inset
+
+, which we know is 
+\begin_inset Formula $i_{n-1}(a)-i_{n-1}(a')=\partial_{n}^{B}(i_{n}(x))$
+\end_inset
+
+.
+ By commutativity of the square diagram, 
+\begin_inset Formula $\partial_{n}^{B}\circ i_{n}=i_{n-1}\circ\partial_{n}^{A}$
+\end_inset
+
+, so we have 
+\begin_inset Formula $i_{n-1}(a)-i_{n-1}(a')=i_{n-1}(\partial_{n}^{A}(x))$
+\end_inset
+
+, and thus 
+\begin_inset Formula $a-a'=\partial_{n}^{A}(x)$
+\end_inset
+
+, 
+\emph on
+viz
+\emph default
+., that 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $a'$
+\end_inset
+
+ differ by a boundary and are therefore in the same homology class.
 \begin_inset Newline newline
 \end_inset
 
@@ -11495,11 +11487,277 @@ TODO
 HW11#3
 \series default
 .
- [
+ We dwell on how one would prove that the long sequence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+...\rightarrow H_{n}(A_{\bullet})\xrightarrow{i_{*}}H_{n}(B_{\bullet})\xrightarrow{j_{*}}H_{n}(C_{\bullet})\xrightarrow{\delta}H_{n-1}(A_{\bullet})\xrightarrow{i_{*}}H_{n-1}(B_{\bullet})\rightarrow...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is exact.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\ker\delta=\mathrm{im}j_{*}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ I was hoping to get through this one with less LLM tutoring, but right
+ off the bat I needed a hint from Gemini that 
+\begin_inset Formula $\exists a'\in A_{n}$
+\end_inset
+
+ 
+\begin_inset Formula $a=\partial_{n}^{A}(a')$
+\end_inset
+
+ isn't unconditionally true, and then another hint on how to establish 
+\begin_inset Formula $\partial_{n}^{B}(b)=\partial_{n}^{B}(i_{n}(a'))$
+\end_inset
+
+, and then even a reminder that 
+\begin_inset Formula $j_{n}(b)=c$
+\end_inset
+
+ and that exactness means double-composition is zero, and then even yet
+ more guidance on part b.
+ I'm going to die.
+\end_layout
+
+\begin_layout Standard
+I also don't think I've been properly distinguishing between chain complexes
+ and homology groups, which is another reason I'm going to die.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+
 \series bold
-TODO
+ a
 \series default
-]
+.
+ (
+\begin_inset Formula $\ker\delta\subseteq\mathrm{im}j_{*}$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $[c]\in\ker\delta$
+\end_inset
+
+.
+ That means 
+\begin_inset Formula $\delta([c])=[0]$
+\end_inset
+
+, so if 
+\begin_inset Formula $\partial([c])=[a]$
+\end_inset
+
+, then 
+\begin_inset Formula $[a]=[0]$
+\end_inset
+
+, which means that 
+\begin_inset Formula $a$
+\end_inset
+
+ is a boundary (because the homology group is cycles quotiented by boundaries).
+ 
+\end_layout
+
+\begin_layout Standard
+We next want to show that 
+\begin_inset Formula $b-i_{n}(a')\in\ker(\partial_{n}^{B})$
+\end_inset
+
+, which is to say that 
+\begin_inset Formula $\partial_{n}^{B}(b-i_{n}(a'))=\partial_{n}^{B}(b)-\partial_{n}^{B}(i_{n}(a'))=0$
+\end_inset
+
+, so 
+\begin_inset Formula $\partial_{n}^{B}(b)=\partial_{n}^{B}(i_{n}(a'))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+By diagram chasing, 
+\begin_inset Formula $\partial_{n}^{B}(i_{n}(a'))=i_{n-1}(\partial_{n}^{A}(a'))$
+\end_inset
+
+, which is 
+\begin_inset Formula $i_{n-1}(a)$
+\end_inset
+
+, but we defined 
+\begin_inset Formula $a$
+\end_inset
+
+ precisely such that 
+\begin_inset Formula $i_{n-1}(a)=\partial_{n}^{B}(b)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then we want to show that 
+\begin_inset Formula $j_{*}([b-i_{n}(a')])=[c]$
+\end_inset
+
+.
+ By the definition of the induced homomorphism, that amounts to 
+\begin_inset Formula $[j_{n}(b)-j_{n}(i_{n}(a'))]=[c]$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $b$
+\end_inset
+
+ was defined such that 
+\begin_inset Formula $j_{n}(b)=c$
+\end_inset
+
+, and the idea of 
+\begin_inset Quotes eld
+\end_inset
+
+exactness
+\begin_inset Quotes erd
+\end_inset
+
+ is a generalization of 
+\begin_inset Formula $\partial^{2}=0$
+\end_inset
+
+; that is, 
+\begin_inset Formula $j_{n}\circ i_{n}=0$
+\end_inset
+
+ because the outputs (image) of 
+\begin_inset Formula $j_{n}$
+\end_inset
+
+ are the inputs to 
+\begin_inset Formula $i_{n}$
+\end_inset
+
+ that get mapped to zero (the kernel).
+ All of which is to say 
+\begin_inset Formula $j_{*}([b-i_{n}(a')])=[j_{n}(b)-j_{n}(i_{n}(a'))]=[c-0]=c$
+\end_inset
+
+.
+ That's assuming we know that we have exactness at 
+\begin_inset Formula $B_{n}$
+\end_inset
+
+, but I think we do know that.
+ (The current endeavor is showing the exactness of the long exact sequence;
+ we've long ago assumed for all 
+\begin_inset Formula $n$
+\end_inset
+
+ the exactness of the short exact sequence 
+\begin_inset Formula $0\rightarrow A_{n}\rightarrow B_{n}\rightarrow C_{n}\rightarrow0$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ (
+\begin_inset Formula $\mathrm{im}j_{*}\subseteq\ker\delta$
+\end_inset
+
+) By definition, 
+\begin_inset Formula $\delta([c])=[a]$
+\end_inset
+
+ where 
+\begin_inset Formula $a\in A_{n-1}$
+\end_inset
+
+ is such that 
+\begin_inset Formula $i_{n-1}(a)=\partial_{n}^{B}(b)$
+\end_inset
+
+ for some 
+\begin_inset Formula $b\in B_{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $c=j_{n}(b)$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $[c]=j_{*}([b])$
+\end_inset
+
+, then we have such a 
+\begin_inset Formula $b$
+\end_inset
+
+ that is, in particular, a cycle (because it's a homology class representative).
+ So 
+\begin_inset Formula $\partial_{n}^{B}(b)=0$
+\end_inset
+
+, and we have 
+\begin_inset Formula $i_{n-1}(a)=0$
+\end_inset
+
+, which implies 
+\begin_inset Formula $a=0$
+\end_inset
+
+ because 
+\begin_inset Formula $i_{n-1}$
+\end_inset
+
+ is injective by virtue of its position in the short exact sequence 
+\begin_inset Formula $0\to A_{n-1}\to B_{n-1}$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -11527,7 +11785,7 @@ Theorem
 
 .
  Then 
-\begin_inset Formula $H_{n}(X,x)=\begin{cases}
+\begin_inset Formula $H_{n}(X,\{x\})=\begin{cases}
 H_{n}(X) & n>0\\
 \{0\} & \mathrm{else}
 \end{cases}$
@@ -11543,11 +11801,199 @@ H_{n}(X) & n>0\\
 Proof
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-]
+ We use the long exact sequence of the pair.
+ Recall that 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+...\rightarrow H_{n}(X)\rightarrow H_{n}(X,A)\rightarrow H_{n-1}(A)\rightarrow H_{n-1}(X)\rightarrow...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+is an exact sequence.
+ In the case 
+\begin_inset Formula $A:=\{x\}$
+\end_inset
+
+, this becomes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+...\rightarrow\underbrace{H_{n}(\{x\})}_{\{0\}\,\mathrm{if}\,n>0}\xrightarrow{e}H_{n}(X)\xrightarrow{f}\underbrace{H_{n}(X,\{x\})}_{\mathrm{we\,want\,this}}\xrightarrow{g}\underbrace{H_{n-1}(\{x\})}_{\{0\}\,\mathrm{if}\,n>1}\xrightarrow{h}H_{n-1}(X)\rightarrow...
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $n>1$
+\end_inset
+
+, then 
+\begin_inset Formula $f$
+\end_inset
+
+ is both surjective (from 
+\begin_inset Formula $g=0$
+\end_inset
+
+ and exactness properties) and injective (from 
+\begin_inset Formula $e=0$
+\end_inset
+
+ and exactness properties), thus an isomorphism, so 
+\begin_inset Formula $H_{n}(X)\cong H_{n}(X,\{x\})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It remains to check the 
+\begin_inset Formula $n:=1$
+\end_inset
+
+ and 
+\begin_inset Formula $n:=0$
+\end_inset
+
+ cases.
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $n:=1$
+\end_inset
+
+, we have 
+\begin_inset Formula 
+\[
+...\rightarrow\underbrace{H_{1}(\{x\})}_{\{0\}}\xrightarrow{e}H_{1}(X)\xrightarrow{f}H_{1}(X,\{x\})\xrightarrow{g}\underbrace{H_{0}(\{x\})}_{\Z}\xrightarrow{h}\underbrace{H_{0}(X)}_{\Z}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(where we know that 
+\begin_inset Formula $H_{0}(\{x\})\cong H_{0}(X)\cong\Z$
+\end_inset
+
+ from path-connectedness and the path-connection-component-counting nature
+ of 
+\begin_inset Formula $H_{0}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $n:=0$
+\end_inset
+
+, we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+...\rightarrow\underbrace{H_{0}(\{x\})}_{\Z}\xrightarrow{e}\underbrace{H_{0}(X)}_{\Z}\xrightarrow{f}H_{0}(X,\{x\})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here we turn to Gemini 3 Pro for tutoring, where it teaches us an important
+ fact about exact sequences.
+ I knew that a 
+\begin_inset Quotes eld
+\end_inset
+
+zero on the left
+\begin_inset Quotes erd
+\end_inset
+
+ makes the next map injective, and a 
+\begin_inset Quotes eld
+\end_inset
+
+zero on the right
+\begin_inset Quotes erd
+\end_inset
+
+ makes the previous map surjective.
+ But consider 
+\begin_inset Formula $A\xrightarrow{f}B\xrightarrow{g}C$
+\end_inset
+
+ where 
+\begin_inset Formula $g$
+\end_inset
+
+ is an isomorphism.
+ The isomorphism gives us 
+\begin_inset Formula $\ker g=\{0\}$
+\end_inset
+
+, thus 
+\begin_inset Formula $\mathrm{im}f=\{0\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+That gives us 
+\begin_inset Formula $H_{1}(X)\cong H_{1}(X,\{x\})$
+\end_inset
+
+ (the isomorphism to the right becomes a zero on the right).
+\end_layout
+
+\begin_layout Standard
+Then in the 
+\begin_inset Formula $n:=0$
+\end_inset
+
+ sequence, 
+\begin_inset Formula $e$
+\end_inset
+
+ being an isomorphism means that its image is 
+\begin_inset Formula $\Z$
+\end_inset
+
+, which means the kernel of 
+\begin_inset Formula $f$
+\end_inset
+
+ is 
+\begin_inset Formula $\Z$
+\end_inset
+
+, which means that 
+\begin_inset Formula $H_{0}(X,\{x\})\cong\{0\}$
+\end_inset
+
+.
 \end_layout
 
 \end_body
