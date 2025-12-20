@@ -104,6 +104,14 @@ Deep Learning: Foundations and Concepts
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\var}{\mathrm{var}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 2.1
@@ -122,7 +130,7 @@ Deep Learning: Foundations and Concepts
 \end_inset
 
 .
- Bayes says: 
+ Bayes says:
 \begin_inset Formula 
 \[
 p(C=1|T=1)=\frac{p(T=1|C=1)P(C=1)}{p(T=1|C=1)P(C=1)+p(T=1|C=0)P(C=0)}=\frac{0.9\cdot0.001}{0.9\cdot0.001+0.03\cdot0.999}\approx0.029
@@ -541,6 +549,174 @@ Proof
 
 
 \begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2.10
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Expectation is linear.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $E_{X,Y}[X+Y]=\sum_{x\in X,y\in Y}p(x,y)(x+y)=\sum_{x\in X}\sum_{y\in Y}x\cdot p(x,y)+\sum_{x\in X}\sum_{y\in Y}y\cdot p(x,y)=\sum_{x\in X}x\cdot p(x)+\sum_{y\in Y}y\cdot p(x,y)=E[X]+E[Y]$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ Variance of independent random variables is linear.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\mathrm{var}(X+Y)=E[(X+Y)^{2}]-E[X+Y]^{2}=E[(X+Y)^{2}]-\left(E[X]+E[Y]\right)^{2}=E[(X+Y)^{2}]-\left(E[X]^{2}+2E[X]E[Y]+E[Y]^{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But 
+\begin_inset Formula $E[(X+Y)^{2}]=E[X^{2}+2XY+Y^{2}]=E[X^{2}]+2E[XY]+E[Y]^{2}$
+\end_inset
+
+ by the linearity of expectation.
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $E[XY]=\sum_{x\in X,y\in Y}xy\cdot p(x,y)$
+\end_inset
+
+ but independence means that 
+\begin_inset Formula $p(x,y)=p(x)p(y)$
+\end_inset
+
+, so we have 
+\begin_inset Formula $\sum_{x\in X}\sum_{y\in Y}xy\cdot p(x)\cdot p(y)=\sum_{x\in X}x\cdot p(x)\sum_{y\in Y}y\cdot p(y)=E[X]E[Y]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Thus, we see that ultimately, the cross-terms cancel: 
+\begin_inset Formula $E[X^{2}]\cancel{+2E[X]E[Y]}+E[Y]^{2}-E[X]^{2}\cancel{-2E[X]E[Y]}-E[Y]^{2}=\underbrace{E[X^{2}]-E[X]^{2}}_{\mathrm{var}(X)}+\underbrace{E[Y]^{2}-E[Y]^{2}}_{\mathrm{var}(Y)}$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2.11
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $E[X]=E_{Y}[E_{X}[X|Y]]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $E_{y}[E_{x}[X|Y]]=\sum_{y}E[X|Y=y]\cdot p(y)=\sum_{y}\sum_{x}x\cdot p(x|y)\cdot p(y)=\sum_{x}x\sum_{y}p(x|y)p(y)=\sum_{x}x\cdot p(x)=E[X]$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\var(X)=E_{Y}[\var_{X}[X|Y]]+\var_{Y}[E_{X}[X|Y]]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ This decomposition ought to have some philosophy behind it, which is currently
+ opaque to me.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $E_{Y}[\var_{X}[X|Y]]=\sum_{y\in Y}\var_{X}[X|Y=y]\cdot p(y)=\sum_{y\in Y}\left(E[X^{2}|Y=y]-E[X|Y=y]^{2}\right)\cdot p(y)$
 \end_inset
 
 

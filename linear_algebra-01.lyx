@@ -4974,5 +4974,92 @@ Proof
 .
 \end_layout
 
+\begin_layout Subsection*
+Exercises 9A
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is a bilinear form on 
+\begin_inset Formula $\F$
+\end_inset
+
+, then there exists 
+\begin_inset Formula $c\in\F$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x,y\in\F$
+\end_inset
+
+, 
+\begin_inset Formula $\beta(x,y)=cxy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ A bilinear form on 
+\begin_inset Formula $\F$
+\end_inset
+
+ is a function 
+\begin_inset Formula $\F\times\F\to\F$
+\end_inset
+
+ that's linear in each component.
+\end_layout
+
+\begin_layout Standard
+That means 
+\begin_inset Formula $\beta(x_{0},y)+\beta(x_{0},y')=\beta(x_{0},y+y')$
+\end_inset
+
+ (additivity with 
+\begin_inset Formula $x$
+\end_inset
+
+ fixed) and 
+\begin_inset Formula $\beta(x_{0},ty)=t\beta(x_{0},y)$
+\end_inset
+
+ (homogeneity with 
+\begin_inset Formula $x$
+\end_inset
+
+ fixed) and similarly for 
+\begin_inset Formula $y$
+\end_inset
+
+ fixed.
+\end_layout
+
+\begin_layout Standard
+It's trivial to show that 
+\begin_inset Formula $cxy$
+\end_inset
+
+ satisfies those four conditions, but we want the converse.
+\end_layout
+
 \end_body
 \end_document
