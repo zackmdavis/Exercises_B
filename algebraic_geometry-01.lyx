@@ -1,0 +1,849 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Exercises in Algebraic Geometry
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+January 2026
+\end_layout
+
+\begin_layout Abstract
+Notes and exercises from 
+\emph on
+Beginning in Algebraic Geometry
+\emph default
+ by Emily Clader and Dustin Ross.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\A}{\mathbb{A}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\newcommand{\C}{\mathbb{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\V}{\mathcal{V}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Proposition 1.9 claims that the ring homomorphism 
+\begin_inset Formula $K[x_{i}]\to K[\A^{n}]$
+\end_inset
+
+ is an isomorphism iff 
+\begin_inset Formula $K$
+\end_inset
+
+ is infinite.
+ To prove 
+\begin_inset Quotes eld
+\end_inset
+
+isomorphic 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ infinite
+\begin_inset Quotes erd
+\end_inset
+
+, we prove the contrapositive 
+\begin_inset Quotes eld
+\end_inset
+
+finite 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ not-isomorphic
+\begin_inset Quotes erd
+\end_inset
+
+ by considering the nonzero polynomial 
+\begin_inset Formula $f=\prod_{i=1}^{n}(x_{1}-a_{i})\in K[x_{1}]\subseteq K[x_{j}]$
+\end_inset
+
+.
+ We are told 
+\begin_inset Quotes eld
+\end_inset
+
+Plugging in any value of 
+\begin_inset Formula $K$
+\end_inset
+
+ for 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ produces a factor of zero
+\begin_inset Quotes erd
+\end_inset
+
+ ...
+ oh, because it's a product of linear factors over all the field elements,
+ so one of the factors is going to be 
+\begin_inset Formula $a_{i}-a_{i}=0$
+\end_inset
+
+, so we have a nonzero polynomial that defines the zero function.
+\end_layout
+
+\begin_layout Standard
+In the other direction, we're told that by definition, 
+\begin_inset Formula $K[x_{j}]_{j=1}^{n}\to K[\A^{n}]$
+\end_inset
+
+ is surjective.
+ I'm not sure why that's 
+\begin_inset Quotes eld
+\end_inset
+
+by definition
+\begin_inset Quotes erd
+\end_inset
+
+? 
+\begin_inset Formula $K[\A^{n}]$
+\end_inset
+
+ is the set of polynomial functions 
+\begin_inset Formula $\A^{n}\to K$
+\end_inset
+
+.
+ It's surjective because every polynomial function has to correspond to
+ some polynomial; you can't have a polynomial function that isn't the evaluation
+ of some polynomial.
+\end_layout
+
+\begin_layout Standard
+Then to prove injectivity, for one-variable polynomials, the zero function
+ in an infinite field has infinitely many zeros, but nonzero polynomials
+ only have finitely many, so only the zero polynomial can represent the
+ zero function, and then you can induct up to multiple variables.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.1.2
+\series default
+.
+ We are asked to express some sets as 
+\begin_inset Formula $\V(S)$
+\end_inset
+
+ for some set of polynomials 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ If 
+\begin_inset Formula $\V(S)=\{0,\pi,-1\}\subseteq\A_{\R}^{1}$
+\end_inset
+
+, then it would seem that 
+\begin_inset Formula $S=\{cx(x-\pi)(x+1):c\in\R\}$
+\end_inset
+
+ (or, any such 
+\begin_inset Formula $S$
+\end_inset
+
+ is a subset of that).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ For 
+\begin_inset Formula $\V(S)$
+\end_inset
+
+ being the 
+\begin_inset Formula $x$
+\end_inset
+
+-axis in 
+\begin_inset Formula $\A_{\R}^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $\{y,z\}\subseteq\R[x,y,z]$
+\end_inset
+
+ should work.
+ (If you're on the x-axis, then 
+\begin_inset Formula $y=0$
+\end_inset
+
+ and 
+\begin_inset Formula $z=0$
+\end_inset
+
+.
+ For a moment, I thought we wanted the polynomial 
+\begin_inset Formula $yz$
+\end_inset
+
+, but that's zero is 
+\begin_inset Formula $y$
+\end_inset
+
+ 
+\emph on
+or
+\emph default
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ is zero; we need a conjunction, not a disjunction.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $\V(S)=\{(4,-1,3)\}\subseteq\A_{\R}^{3}$
+\end_inset
+
+.
+ As in the 
+\begin_inset Quotes eld
+\end_inset
+
+single points
+\begin_inset Quotes erd
+\end_inset
+
+ Example 1.6, we have 
+\begin_inset Formula $S=\{x-4,y+1,z-3\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\begin_inset Formula $\V(S)=\{(-1,0),(1,0)\}\subseteq\A_{\R}^{2}$
+\end_inset
+
+.
+ We can force the 
+\begin_inset Formula $x$
+\end_inset
+
+-coördinate to be 
+\begin_inset Formula $1$
+\end_inset
+
+ or 
+\begin_inset Formula $-1$
+\end_inset
+
+ with 
+\begin_inset Formula $x^{2}=1$
+\end_inset
+
+, which is 
+\begin_inset Formula $x^{2}-1=0$
+\end_inset
+
+, and then we need to separately force 
+\begin_inset Formula $y$
+\end_inset
+
+ to zero.
+ That's 
+\begin_inset Formula $S=\{x^{2}-1,y\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+e
+\series default
+.
+ 
+\begin_inset Formula $\V(S)=\{(a,a,a):a\in\R\}\subseteq\A_{\R}^{3}$
+\end_inset
+
+.
+ This one is more of a puzzle.
+ We need a polynomial in 
+\begin_inset Formula $\R[x,y,z]$
+\end_inset
+
+ that's zero iff all of its inputs are the same—rather, a set of polynomials
+ whose zero sets intersect iff all of the inputs are the same.
+ A 
+\begin_inset Quotes eld
+\end_inset
+
+cycle
+\begin_inset Quotes erd
+\end_inset
+
+ should do it: 
+\begin_inset Formula $S=\{x-y,y-z,z-x\}$
+\end_inset
+
+.
+ (Because 
+\begin_inset Formula $x-y=0$
+\end_inset
+
+ is equivalent to 
+\begin_inset Formula $x=y$
+\end_inset
+
+, and we get 
+\begin_inset Formula $y=z$
+\end_inset
+
+ and 
+\begin_inset Formula $z=x$
+\end_inset
+
+ similarly.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+f
+\series default
+.
+ 
+\begin_inset Formula $\V(S)=\{(\cos a,\sin a,\cos^{2}a-\sin^{2}a):a\in[0,2\pi)\}\subseteq\A_{\R}^{3}$
+\end_inset
+
+.
+ I take it back, this one is the puzzle.
+ We know that 
+\begin_inset Formula $(\cos a,\sin a)$
+\end_inset
+
+ is a circle (which is 
+\begin_inset Formula $\V(x^{2}+y^{2}-1)$
+\end_inset
+
+), but what's going on in the 
+\begin_inset Formula $z$
+\end_inset
+
+--coördinate? Of course 
+\begin_inset Formula $\cos^{2}+\sin^{2}=1$
+\end_inset
+
+, but here we have the difference, not the sum.
+ Claude Opus 4.5 points out that 
+\begin_inset Formula $\cos^{2}a-\sin^{2}a=\cos2a$
+\end_inset
+
+ such that 
+\begin_inset Formula $z=2x^{2}-1$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.1.3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The origin 
+\begin_inset Formula $\{(0,0)\}\subseteq\A_{K}^{2}$
+\end_inset
+
+ can be defined by a single equation if 
+\begin_inset Formula $K=\R$
+\end_inset
+
+, but not 
+\begin_inset Formula $K=\C$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ In 
+\begin_inset Formula $\R$
+\end_inset
+
+, 
+\begin_inset Formula $\V()$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.1.4
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\V(fg)=\V(f)\cup\V(g)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\V(fg)\subseteq\V(f)\cup\V(g)$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $a\in\V(fg)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $(fg)(a)=0$
+\end_inset
+
+, which is to say 
+\begin_inset Formula $f(a)g(a)=0$
+\end_inset
+
+.
+ One of the factors of a zero product must be zero, so either 
+\begin_inset Formula $f(a)=0$
+\end_inset
+
+ or 
+\begin_inset Formula $g(a)=0$
+\end_inset
+
+, which is to say either 
+\begin_inset Formula $a\in\V(f)$
+\end_inset
+
+ or 
+\begin_inset Formula $a\in\V(g)$
+\end_inset
+
+, which is to say 
+\begin_inset Formula $a\in\V(f)\cup\V(g)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\V(f)\cup\V(g)\subseteq\V(fg)$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $a\in\V(f)$
+\end_inset
+
+ (without loss of generality 
+\begin_inset Formula $\V(g)$
+\end_inset
+
+).
+ Then 
+\begin_inset Formula $f(a)=0$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $(fg)(a)=f(a)g(a)=0\cdot g(a)=0$
+\end_inset
+
+, so 
+\begin_inset Formula $a\in\V(fg)$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\V(f,g)=\V(f)\cap\V(g)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By definition, 
+\begin_inset Formula $\V(S)$
+\end_inset
+
+ is the set of 
+\begin_inset Formula $a\in\A^{n}$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $f$
+\end_inset
+
+ in 
+\begin_inset Formula $S$
+\end_inset
+
+, 
+\begin_inset Formula $f(a)=0$
+\end_inset
+
+; this is just the special case 
+\begin_inset Formula $S=\{f,g\}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.1.5
+\series default
+.
+ Let 
+\begin_inset Formula $X:=\V(x^{2}-yz,xz-x)\subseteq\A^{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $X=\V(x,y)\cup\V(x,z)\cup\V(x^{2}-y,z-1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.1.6
+\series default
+.–
+\series bold
+1.1.7
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ For any field 
+\begin_inset Formula $K$
+\end_inset
+
+, every finite set in 
+\begin_inset Formula $\A_{K}^{n}$
+\end_inset
+
+ can be expressed as the vanishing set of 
+\begin_inset Formula $n$
+\end_inset
+
+ polynomials.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By induction.
+ (Base.) A finite set in 
+\begin_inset Formula $\A_{K}^{1}$
+\end_inset
+
+ is a collection of finitely many points 
+\begin_inset Formula $\{a_{k}\}_{k=1}^{m}$
+\end_inset
+
+ for some 
+\begin_inset Formula $m\in\mathbb{N}$
+\end_inset
+
+.
+ It's the vanishing set of the polynomial 
+\begin_inset Formula $\prod_{k=1}^{n}(x-a_{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Induction.) Suppose that every finite set in 
+\begin_inset Formula $\A_{K}^{n}$
+\end_inset
+
+ can be expressed as the vanishing set of 
+\begin_inset Formula $n$
+\end_inset
+
+ polynomials; we need to show that this is also true of any finite set in
+ 
+\begin_inset Formula $\A_{K}^{n+1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A finite set in 
+\begin_inset Formula $\A_{K}^{n+1}$
+\end_inset
+
+ is a collection of finitely many points 
+\begin_inset Formula $\{(a_{j})_{j=1}^{n+1}\}_{k=1}^{m}$
+\end_inset
+
+.
+ We've assumed that 
+\begin_inset Formula $\{(a_{j})_{j=1}^{n}\}_{k=1}^{m}$
+\end_inset
+
+ can be expressed as the vanishing set of 
+\begin_inset Formula $n$
+\end_inset
+
+ polynomials.
+ [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\end_body
+\end_document
