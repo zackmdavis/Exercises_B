@@ -471,7 +471,10 @@ f
 \end_inset
 
 , but here we have the difference, not the sum.
- Claude Opus 4.5 points out that 
+\end_layout
+
+\begin_layout Standard
+Claude Opus 4.5 points out that 
 \begin_inset Formula $\cos^{2}a-\sin^{2}a=\cos2a$
 \end_inset
 
@@ -480,11 +483,45 @@ f
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-]
+ Um, I'm not sure how it got that; if 
+\begin_inset Formula $x:=\cos^{2}a$
+\end_inset
+
+ and 
+\begin_inset Formula $y:=\sin^{2}a$
+\end_inset
+
+, I'm getting 
+\begin_inset Formula $x^{2}-y^{2}=\cos2a$
+\end_inset
+
+; I don't see how to express the double-angle in the polynomial world.
+ Consulting Appendix D of James Stewart's 
+\emph on
+Calculus: Early Transcendentals
+\emph default
+, I see it: 
+\begin_inset Formula $\cos^{2}a+\sin^{2}a=1$
+\end_inset
+
+ implies 
+\begin_inset Formula $\sin^{2}a=1-\cos^{2}a$
+\end_inset
+
+, so 
+\begin_inset Formula $\cos^{2}a-\sin^{2}a=\cos^{2}a-\left(1-\cos^{2}a\right)=2\cos^{2}a-1$
+\end_inset
+
+, which amounts to 
+\begin_inset Formula $2x^{2}-1$
+\end_inset
+
+.
+ So we're just collecting those two polynomials, 
+\begin_inset Formula $S:=\{x^{2}+y^{2}-1,\,2x^{2}-1\}$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -510,7 +547,54 @@ Proposition
 \begin_inset Formula $K=\R$
 \end_inset
 
-, but not 
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ The 
+\begin_inset Quotes eld
+\end_inset
+
+single points
+\begin_inset Quotes erd
+\end_inset
+
+ example in the text uses separate polynomials to pin down each coördinate,
+ so there must be a trick.
+ I think the trick is that a point is a circle of radius zero.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\V(\{x^{2}+y^{2}\})=\{(0,0)\}$
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ ...
+ but not 
 \begin_inset Formula $K=\C$
 \end_inset
 
@@ -523,19 +607,20 @@ Proposition
 Proof
 \emph default
 .
- In 
-\begin_inset Formula $\R$
+ Suppose for a contradiction that there exists a polynomial 
+\begin_inset Formula $P$
 \end_inset
 
-, 
-\begin_inset Formula $\V()$
+ such that 
+\begin_inset Formula $\V(\{P\})=\{(0+0i,0+0i)\}$
 \end_inset
 
+.
  [
 \series bold
 TODO
 \series default
-]
+: what goes wrong?] 
 \begin_inset Newline newline
 \end_inset
 
@@ -708,6 +793,11 @@ Proof
 1.1.5
 \series default
 .
+ 
+\series bold
+a
+\series default
+.
  Let 
 \begin_inset Formula $X:=\V(x^{2}-yz,xz-x)\subseteq\A^{3}$
 \end_inset
@@ -731,14 +821,63 @@ Proposition
 \begin_layout Standard
 
 \emph on
+Commentary
+\emph default
+.
+ What do we know about the unions of vanishing sets? In the previous exercise,
+ we showed that 
+\begin_inset Formula $\V(fg)=\V(f)\cup\V(g)$
+\end_inset
+
+, but that doesn't immediately help us, because we have multiple polynomials
+ inside the operator—but that's covered by the other part of the previous
+ exercise, great.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
 .
- [
+ 
+\begin_inset Formula $\V(x^{2}-yz,xz-x)=\V(x^{2}-yz)\cap\V(xz-x)=\V(x^{2}-yz)\cap\left(\V(x)\cup\V(z-1)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left(\V(x^{2}-yz)\cap\V(x)\right)\cup\left(\V(x^{2}-yz)\cap\V(z-1)\right)=\V(x,x^{2}-yz)\cup\V(x^{2}-yz,z-1)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\V(x,y)\cup\V(x,z)\cup\V(x^{2}-y,z-1)=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)=\left(\V(x)\cap\V(y)\right)\cup\left(\cap\V(z)\right)$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+[
 \series bold
 TODO
 \series default
-]
+: finish untangling the algebra here]
 \begin_inset Newline newline
 \end_inset
 
@@ -750,7 +889,140 @@ TODO
 \series bold
 1.1.6
 \series default
-.–
+.
+
+\series bold
+ 
+\series default
+\emph on
+Proposition
+\emph default
+.
+ For any field 
+\begin_inset Formula $K$
+\end_inset
+
+, every finite set in 
+\begin_inset Formula $\A_{K}^{2}$
+\end_inset
+
+ can be expressed as the vanishing set of 2 polynomials.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Imagine we have the points 
+\begin_inset Formula $(1,2)$
+\end_inset
+
+, 
+\begin_inset Formula $(3,4)$
+\end_inset
+
+, and 
+\begin_inset Formula $(5,6)$
+\end_inset
+
+.
+ By the fundamental theorem of algebra, there's a polynomial in 
+\begin_inset Formula $x$
+\end_inset
+
+ that vanishes at 
+\begin_inset Formula $x=1$
+\end_inset
+
+, 
+\begin_inset Formula $3$
+\end_inset
+
+, and 
+\begin_inset Formula $5$
+\end_inset
+
+, namely, 
+\begin_inset Formula $(x-1)(x-3)(x-5)$
+\end_inset
+
+.
+ Similarly, 
+\begin_inset Formula $(y-2)(y-4)(y-6)$
+\end_inset
+
+ vanishes at 
+\begin_inset Formula $y=2$
+\end_inset
+
+, 
+\begin_inset Formula $4$
+\end_inset
+
+, and 
+\begin_inset Formula $6$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+You might naïvely think that 
+\begin_inset Formula $(x-1)(y-2)(x-3)(y-4)(x-5)(y-6)$
+\end_inset
+
+ would suffice, but that vanishes at, 
+\emph on
+e.g
+\emph default
+., 
+\begin_inset Formula $(1,4)$
+\end_inset
+
+, which is not in the spec.
+ (And anyway that's just one polynomial.)
+\end_layout
+
+\begin_layout Standard
+The next thought is that it probably goes the other way: cap/adjoin, not
+ cup/multiply.
+ But that doesn't seem right, either! We learned above that 
+\begin_inset Formula $\V(f,g)=\V(f)\cap\V(g)$
+\end_inset
+
+, but 
+\begin_inset Formula $x=c$
+\end_inset
+
+ and 
+\begin_inset Formula $y=d$
+\end_inset
+
+ are lines; three lines intersect in nine points, not three.
+\end_layout
+
+\begin_layout Standard
+This really did seem like the obvious thing to try.
+ (We have as many polynomials as coördinates; what else would you do but
+ spend one polynomial to pin down the 
+\begin_inset Formula $i$
+\end_inset
+
+th coördinate for all the points?) [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
 \series bold
 1.1.7
 \series default
@@ -843,6 +1115,145 @@ A finite set in
 TODO
 \series default
 ]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.2.1
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ The only affine varieties in 
+\begin_inset Formula $\A^{1}$
+\end_inset
+
+ are 
+\begin_inset Formula $\varnothing$
+\end_inset
+
+, finite collections of points, and 
+\begin_inset Formula $\A^{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ It seems like the same argument from the beginning of the section goes
+ through.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose not: that some affine variety 
+\begin_inset Formula $V$
+\end_inset
+
+ consists of an infinite collection of points which is not 
+\begin_inset Formula $\A^{1}$
+\end_inset
+
+.
+ Its generator needs to contain a nonzero polynomial (for 
+\begin_inset Formula $\V(\{0\})=\A^{1}$
+\end_inset
+
+), which we can call 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $f(a)=0$
+\end_inset
+
+ for infinitely many 
+\begin_inset Formula $a$
+\end_inset
+
+, which isn't true of any polynomial.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Further commentary
+\emph default
+.
+ But wait, how is this compatible with the existence of affine varieties
+ that are curves with infinitely many points? Why does two-or-more dimensionalit
+y let us escape this sterile result? It seems the fundamental theorem of
+ algebra is fundamentally 
+\begin_inset Quotes eld
+\end_inset
+
+one-dimensional
+\begin_inset Quotes erd
+\end_inset
+
+: the variety 
+\begin_inset Formula $y-x^{2}$
+\end_inset
+
+ has infinitely many zeros on a parabola because there are an infinite number
+ of ways you can increase 
+\begin_inset Formula $y$
+\end_inset
+
+ and cancel it out by decreasing 
+\begin_inset Formula $-x^{2}$
+\end_inset
+
+ by the same amount.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.2.2
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Affine varieties are defined by ideals: 
+\begin_inset Formula $\V(S)=\V(\left\langle S\right\rangle )$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Recall that 
 \end_layout
 
 \end_body
