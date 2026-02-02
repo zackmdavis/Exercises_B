@@ -1253,7 +1253,111 @@ Theorem
 Proof
 \emph default
 .
- Recall that 
+ Recall that ideals are closed under subtraction and absorb multiplication.
+\end_layout
+
+\begin_layout Standard
+Multiplying a polynomial by a constant doesn't change the zeros.
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $p,q\in S$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $x\in\V(S)$
+\end_inset
+
+, then 
+\begin_inset Formula $p(x)=q(x)=0$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $(p-q)(x)=0$
+\end_inset
+
+, and 
+\begin_inset Formula $x\in\V(\left\langle S\right\rangle )$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Similarly, if 
+\begin_inset Formula $x\notin\V(S)$
+\end_inset
+
+, then 
+\begin_inset Formula $p(x)\ne0$
+\end_inset
+
+ or 
+\begin_inset Formula $q(x)\ne0$
+\end_inset
+
+.
+ Um, except it doesn't follow that 
+\begin_inset Formula $(p-q)(x)\ne0$
+\end_inset
+
+, because we could have 
+\begin_inset Formula $p=-q$
+\end_inset
+
+, right? [
+\series bold
+TODO
+\series default
+: What am I missing?]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.2.3
+\series default
+.
+ We want examples of different ideals with the same vanishing set.
+ We should have 
+\begin_inset Formula $\V(\left\langle x,y\right\rangle )=\V(\left\langle x^{2}+y^{2}\right\rangle )$
+\end_inset
+
+, which are both the origin.
+ Except this seems in tension with Example 1.17, which seems to imply that
+ 
+\begin_inset Formula $\left\langle x,y\right\rangle $
+\end_inset
+
+ is unique; are these not actually distinct ideals? I guess not, 
+\begin_inset Quotes eld
+\end_inset
+
+absorbs multiplication
+\begin_inset Quotes erd
+\end_inset
+
+ means multiplication by any ring element, not just a 
+\begin_inset Quotes eld
+\end_inset
+
+scalar
+\begin_inset Quotes erd
+\end_inset
+
+ as I think I was assuming (it's not a vector space!), so the zero-radius
+ circle ideal can be constructed as 
+\begin_inset Formula $x^{2}+y^{2}=x\cdot x-(-y\cdot y)$
+\end_inset
+
+.
 \end_layout
 
 \end_body
