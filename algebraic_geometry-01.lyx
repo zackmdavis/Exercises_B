@@ -604,6 +604,24 @@ Proposition
 \begin_layout Standard
 
 \emph on
+Commentary
+\emph default
+.
+ 
+\begin_inset Formula $u^{2}+v^{2}$
+\end_inset
+
+ (analogous to the real case) doesn't work, because it factors as 
+\begin_inset Formula $(u+iy)(u-iy)$
+\end_inset
+
+.
+ But that's not a proof.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
 .
@@ -866,7 +884,7 @@ Proof
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)=\left(\V(x)\cap\V(y)\right)\cup\left(\cap\V(z)\right)$
+\begin_inset Formula $=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)$
 \end_inset
 
 
@@ -1336,7 +1354,7 @@ TODO
 \begin_inset Formula $\left\langle x,y\right\rangle $
 \end_inset
 
- is unique; are these not actually distinct ideals? I guess not, 
+ is unique; are these not actually distinct ideals? I guess not: 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1358,6 +1376,166 @@ scalar
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Later sections say something about radical ideals: 
+\begin_inset Formula $\left\langle x^{2}\right\rangle $
+\end_inset
+
+ is an ideal but not a radical ideal, because 
+\begin_inset Formula $\sqrt{x^{2}}=x\notin\left\langle x^{2}\right\rangle $
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: pin down the example]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.2.4
+\series default
+.
+ We want to show that the affine twisted cubic curve 
+\begin_inset Formula $X:=\{(a,a^{2},a^{3}):a\in K\}\subseteq\A^{3}$
+\end_inset
+
+ is an affine variety.
+ Intuitively, I think it's going to be 
+\begin_inset Formula $\V(x,y^{2},z^{3},x-y,y-z)$
+\end_inset
+
+? (The first three to pin down each coördinate, and the next two to pin
+ down 
+\begin_inset Formula $x=y$
+\end_inset
+
+ and 
+\begin_inset Formula $y=z$
+\end_inset
+
+, such that we're traversing the linear, quadratic, and cubic dimensions
+ at the same rate.)
+\end_layout
+
+\begin_layout Standard
+How do we check this? It looks wrong when I plug it in: we get 
+\begin_inset Formula $a$
+\end_inset
+
+, 
+\begin_inset Formula $a^{4}$
+\end_inset
+
+, 
+\begin_inset Formula $a^{9}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+What about the other power order, 
+\begin_inset Formula $\V(x^{3},y^{2},z,x-y,y-z)$
+\end_inset
+
+? Plugging gives us 
+\begin_inset Formula $a^{3}$
+\end_inset
+
+, 
+\begin_inset Formula $a^{4}$
+\end_inset
+
+, 
+\begin_inset Formula $a^{3}$
+\end_inset
+
+ ...
+ but I think my main problem is that I'm confused about fundamentals.
+ I know a lot about the roots of a single-variable polynomial, but I don't
+ think I have a general method for understanding vanishing sets of 
+\begin_inset Formula $K[x_{j}]$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: what am I confused about that I'm not getting from the book; this one
+ looks like it should be easy!!]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.2.7
+\series default
+.
+ A guided proof.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $y-\exp(x)$
+\end_inset
+
+ is not an affine variety.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose it were.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ For all 
+\begin_inset Formula $a\in\R$
+\end_inset
+
+, there exists a polynomial 
+\begin_inset Formula $f\in\R[x,y]$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(a,\exp(a))=0$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: continue ...]
 \end_layout
 
 \end_body
