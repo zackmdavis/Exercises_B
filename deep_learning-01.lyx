@@ -719,7 +719,41 @@ Proof
 \begin_inset Formula $E_{Y}[\var_{X}[X|Y]]=\sum_{y\in Y}\var_{X}[X|Y=y]\cdot p(y)=\sum_{y\in Y}\left(E[X^{2}|Y=y]-E[X|Y=y]^{2}\right)\cdot p(y)$
 \end_inset
 
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2.15
+\series default
+.
+ The likelihood of an i.i.d.
+ Gaussian dataset is 
+\begin_inset Formula $p(\boldsymbol{x}|\mu,\,\sigma^{2})=\prod_{j=1}^{N}\mathcal{N}(x_{j}|\mu,\,\sigma^{2})=\prod_{j=1}^{N}\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left(-\frac{1}{2\sigma^{2}}(x_{j}-\mu)^{2}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The log likelihood is 
+\begin_inset Formula $\sum_{j=1}^{N}\log\frac{1}{\sqrt{2\pi\sigma^{2}}}\exp\left(-\frac{1}{2\sigma^{2}}(x_{j}-\mu)^{2}\right)=\sum_{n=1}^{N}\log\frac{1}{\sqrt{2\pi\sigma^{2}}}+\cancel{\log\exp}\left(-\frac{1}{2\sigma^{2}}(x-\mu)^{2}\right)=\sum_{n=1}^{N}$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
