@@ -607,6 +607,7 @@ Proposition
 Commentary
 \emph default
 .
+ I was stuck here and turned to LLM guidance.
  
 \begin_inset Formula $u^{2}+v^{2}$
 \end_inset
@@ -616,29 +617,137 @@ Commentary
 \end_inset
 
 .
- 
+ (So 
+\begin_inset Formula $(1,i)$
+\end_inset
+
+ becomes a solution, as 
+\begin_inset Formula $(1+i^{2})(1-i^{2})=(1-1)(1+1)=0(2)=0$
+\end_inset
+
+.) Opus 4.5 asks guiding questions to help us get to the proof by contradiction.
+ Suppose 
+\begin_inset Formula $P(u,v)$
+\end_inset
+
+ were such that 
+\begin_inset Formula $\V(P)=\{(0,0)\}$
+\end_inset
+
+.
+ We consider the diagonal line 
+\begin_inset Formula $u=v$
+\end_inset
+
+, which parametrizes as 
+\begin_inset Formula $(t,t)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $P(t,t)$
+\end_inset
+
+ (subbing in 
+\begin_inset Formula $t$
+\end_inset
+
+ for both 
+\begin_inset Formula $v$
+\end_inset
+
+ and 
+\begin_inset Formula $u$
+\end_inset
+
+) becomes a polynomial in one variable.
+ If it vanishes only at the origin, then it has to be of the form 
+\begin_inset Formula $c(t-0)^{r}$
+\end_inset
+
+.
+ But this is also true of any other line through the origin 
+\begin_inset Formula $(t,\lambda t)$
+\end_inset
+
+, so we have a family 
+\begin_inset Formula $c_{\lambda}t^{r_{\lambda}}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-
-\emph on
-Proof
-\emph default
-.
- Suppose for a contradiction that there exists a polynomial 
-\begin_inset Formula $P$
+We can decompose 
+\begin_inset Formula $P(u,v)$
 \end_inset
 
- such that 
-\begin_inset Formula $\V(\{P\})=\{(0+0i,0+0i)\}$
+ into same-degree parts.
+ A property of homogenous polynomials of degree 
+\begin_inset Formula $k$
+\end_inset
+
+ is that 
+\begin_inset Formula $P_{k}(t,\lambda t)=t^{k}P(1,\lambda)$
 \end_inset
 
 .
- [
+ (You're just 
+\begin_inset Quotes eld
+\end_inset
+
+pulling out
+\begin_inset Quotes erd
+\end_inset
+
+ all the 
+\begin_inset Formula $t$
+\end_inset
+
+s.)
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $P(t,\lambda t)=\sum_{j}t^{j}P_{j}(1,\lambda)$
+\end_inset
+
+, and all but one of the coëfficients 
+\begin_inset Formula $P_{j}(1,\lambda)$
+\end_inset
+
+ must be zero in order for it to be a pure power.
+ So we end up needing 
+\begin_inset Formula $P_{k}(1,\lambda)$
+\end_inset
+
+ to be zero for all 
+\begin_inset Formula $\lambda\in\C$
+\end_inset
+
+, but as a polynomial in 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, 
+\begin_inset Formula $P_{k}(1,\lambda)$
+\end_inset
+
+ only has 
+\begin_inset Formula $k$
+\end_inset
+
+ zeros.
+ Contradiction! [
 \series bold
 TODO
 \series default
-: what goes wrong?] 
+: still not right?!!? Augggh I'm gonna die]
+\end_layout
+
+\begin_layout Standard
+(I feel like there's no way I would have gotten that argument without the
+ extensive guidance and corrections, which is bearish.)
 \begin_inset Newline newline
 \end_inset
 
