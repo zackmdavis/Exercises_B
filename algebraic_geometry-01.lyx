@@ -91,7 +91,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-January 2026
+January–February 2026
 \end_layout
 
 \begin_layout Abstract
@@ -612,11 +612,11 @@ Commentary
 \end_inset
 
  (analogous to the real case) doesn't work, because it factors as 
-\begin_inset Formula $(u+iy)(u-iy)$
+\begin_inset Formula $(u+iv)(u-iv)$
 \end_inset
 
 .
- But that's not a proof.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -884,7 +884,7 @@ Proof
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)$
+\begin_inset Formula $=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)$
 \end_inset
 
 
@@ -1028,11 +1028,9 @@ This really did seem like the obvious thing to try.
 \begin_inset Formula $i$
 \end_inset
 
-th coördinate for all the points?) [
-\series bold
-TODO
-\series default
-]
+th coördinate for all the points?) Opus 4.5 pointed out that polynomials
+ don't have to intersect in as many places as straight lines; is that enough
+ of a hint?
 \begin_inset Newline newline
 \end_inset
 
@@ -1275,20 +1273,32 @@ Proof
 \end_layout
 
 \begin_layout Standard
-Multiplying a polynomial by a constant doesn't change the zeros.
+(Multiplication absorption.) Multiplying a polynomial by a constant doesn't
+ change the zeros ...
+ but multiplying by another polynomial can enlarge the set of zeros.
+ We want to show 
+\begin_inset Formula $\V(S)=\V(\left\langle S\right\rangle )$
+\end_inset
+
+, not just 
+\begin_inset Formula $\V(S)\subseteq\V(\left\langle S\right\rangle )$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Suppose 
+(Subtraction closure.) Suppose 
 \begin_inset Formula $p,q\in S$
 \end_inset
 
 .
- If 
+ Suppose 
 \begin_inset Formula $x\in\V(S)$
 \end_inset
 
-, then 
+.
+ Then 
 \begin_inset Formula $p(x)=q(x)=0$
 \end_inset
 
@@ -1301,36 +1311,11 @@ Suppose
 \begin_inset Formula $x\in\V(\left\langle S\right\rangle )$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-Similarly, if 
-\begin_inset Formula $x\notin\V(S)$
-\end_inset
-
-, then 
-\begin_inset Formula $p(x)\ne0$
-\end_inset
-
- or 
-\begin_inset Formula $q(x)\ne0$
-\end_inset
-
-.
- Um, except it doesn't follow that 
-\begin_inset Formula $(p-q)(x)\ne0$
-\end_inset
-
-, because we could have 
-\begin_inset Formula $p=-q$
-\end_inset
-
-, right? [
+ [
 \series bold
 TODO
 \series default
-: What am I missing?]
+: fix!].
 \begin_inset Newline newline
 \end_inset
 
@@ -1388,7 +1373,19 @@ Later sections say something about radical ideals:
 \end_inset
 
 .
- [
+ But per Example 1.22, 
+\begin_inset Formula $\left\langle x^{2}\right\rangle $
+\end_inset
+
+ isn't the vanishing ideal of 
+\emph on
+any
+\emph default
+ set; we're looking for different ideals with the same vanishing set.
+\end_layout
+
+\begin_layout Standard
+[
 \series bold
 TODO
 \series default
@@ -1469,12 +1466,87 @@ What about the other power order,
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-: what am I confused about that I'm not getting from the book; this one
- looks like it should be easy!!]
+\end_layout
+
+\begin_layout Standard
+When I chatted to Claude Opus 4.5 the other night about what foundation I
+ was missing, it said eliminating parameters was a 
+\begin_inset Quotes eld
+\end_inset
+
+Calculus II
+\begin_inset Quotes erd
+\end_inset
+
+ technique, which is ...
+ revealing.
+ We have a system 
+\begin_inset Formula $\begin{cases}
+x=a\\
+y=a^{2}\\
+z=a^{3}
+\end{cases}$
+\end_inset
+
+.
+ We can infer that 
+\begin_inset Formula $y=x^{2}$
+\end_inset
+
+ (both sides are 
+\begin_inset Formula $a^{2}$
+\end_inset
+
+) and 
+\begin_inset Formula $z=xy$
+\end_inset
+
+ (both sides are 
+\begin_inset Formula $a^{3}$
+\end_inset
+
+), which suggests that 
+\begin_inset Formula $X=\V(x^{2}-y,xy-z)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Quotes eld
+\end_inset
+
+Algebraic Geometry
+\begin_inset Quotes erd
+\end_inset
+
+ article in the 
+\emph on
+Princeton Companion to Mathematics 
+\emph default
+actually mentions this example, and it says it's 
+\begin_inset Formula $\V(xz-y^{2},y^{3}-z^{2},x^{3}-z)$
+\end_inset
+
+, which checks out (it's 
+\begin_inset Formula $a^{4}=a^{4}$
+\end_inset
+
+, 
+\begin_inset Formula $a^{6}=a^{6}$
+\end_inset
+
+, and 
+\begin_inset Formula $a^{3}=a^{3}$
+\end_inset
+
+, but what is the procedure by which one would know that these suffice?
+ (It's not three equations for the three pairs of variables, because 
+\begin_inset Formula $xz-y^{2}$
+\end_inset
+
+ involves all three.) 
 \begin_inset Newline newline
 \end_inset
 
