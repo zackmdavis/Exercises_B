@@ -682,7 +682,15 @@ We can decompose
 \begin_inset Formula $P(u,v)$
 \end_inset
 
- into same-degree parts.
+ into same-degree (
+\begin_inset Quotes eld
+\end_inset
+
+homogenous
+\begin_inset Quotes erd
+\end_inset
+
+) parts.
  A property of homogenous polynomials of degree 
 \begin_inset Formula $k$
 \end_inset
@@ -708,8 +716,12 @@ s.)
 \end_layout
 
 \begin_layout Standard
-So 
-\begin_inset Formula $P(t,\lambda t)=\sum_{j}t^{j}P_{j}(1,\lambda)$
+So if 
+\begin_inset Formula $P$
+\end_inset
+
+ is non-homogenous, 
+\begin_inset Formula $P(t,\lambda t)=\sum_{j=0}^{\deg(P)}t^{j}P_{j}(1,\lambda)$
 \end_inset
 
 , and all but one of the coëfficients 
@@ -717,37 +729,77 @@ So
 \end_inset
 
  must be zero in order for it to be a pure power.
- So we end up needing 
-\begin_inset Formula $P_{k}(1,\lambda)$
-\end_inset
-
- to be zero for all 
-\begin_inset Formula $\lambda\in\C$
-\end_inset
-
-, but as a polynomial in 
+ But a finite sum of polynomials only has finitely many roots, and we need
+ this work for all uncountably many 
 \begin_inset Formula $\lambda$
 \end_inset
 
-, 
-\begin_inset Formula $P_{k}(1,\lambda)$
-\end_inset
-
- only has 
-\begin_inset Formula $k$
-\end_inset
-
- zeros.
- Contradiction! [
-\series bold
-TODO
-\series default
-: still not right?!!? Augggh I'm gonna die]
+.
+ Contradiction!
 \end_layout
 
 \begin_layout Standard
-(I feel like there's no way I would have gotten that argument without the
- extensive guidance and corrections, which is bearish.)
+If 
+\begin_inset Formula $P$
+\end_inset
+
+ is itself homogenous, then its vanishing set can't just be the origin for
+ a different reason.
+ If 
+\begin_inset Formula $P(1,\lambda)$
+\end_inset
+
+ has a root, then 
+\begin_inset Formula $(1,\lambda)$
+\end_inset
+
+ is a vanishing point besides the origin.
+ If it doesn't have a root, then it must be a nonzero constant.
+ 
+\begin_inset Formula $P(1,\lambda)$
+\end_inset
+
+ being a nonzero constant (and homogenous of degree 
+\begin_inset Formula $k$
+\end_inset
+
+) means that we have 
+\begin_inset Formula $c=\sum_{j=0}^{k}a_{j}\lambda^{j}(1)^{k-j}=\sum_{j=0}^{k}a_{j}\lambda^{j}$
+\end_inset
+
+, so that only 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+ is nonzero, which means that for 
+\begin_inset Formula $P(u,v)$
+\end_inset
+
+, the only nonzero term is 
+\begin_inset Formula $a_{0}u^{k}v^{0}$
+\end_inset
+
+, a pure power in 
+\begin_inset Formula $u$
+\end_inset
+
+, which vanishes at 
+\begin_inset Formula $(0,v)$
+\end_inset
+
+ for all 
+\begin_inset Formula $v$
+\end_inset
+
+ (which is not just the origin).
+ 
+\end_layout
+
+\begin_layout Standard
+I feel like there's no way I would have gotten that argument without the
+ extensive guidance and corrections, which is bearish for me (and the human
+ race) but bullish for Claude (and the successor species).
+ Also possibly bearish on the exercise difficulty calibration of this book.
 \begin_inset Newline newline
 \end_inset
 
@@ -978,7 +1030,7 @@ Proof
 \begin_inset Formula $=\left(\V(x^{2}-yz)\cap\V(x)\right)\cup\left(\V(x^{2}-yz)\cap\V(z-1)\right)=\V(x,x^{2}-yz)\cup\V(x^{2}-yz,z-1)$
 \end_inset
 
-
+ ...
 \begin_inset Newline newline
 \end_inset
 
@@ -986,6 +1038,7 @@ Proof
 \end_layout
 
 \begin_layout Standard
+From the other direction, 
 \begin_inset Formula $\V(x,y)\cup\V(x,z)\cup\V(x^{2}-y,z-1)=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)$
 \end_inset
 
@@ -993,18 +1046,102 @@ Proof
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $=\left(\V(x)\cap\V(y)\right)\cup\left(\V(x)\cap\V(z)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)$
+\begin_inset Formula $=\left(\left(\V(x)\cup\left(\V(x)\cap\V(z)\right)\right)\cap\left(\V(y)\cup\left(\V(x)\cap\V(z)\right)\right)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)=\left(\V(x)\cap\left(\V(y)\cup\left(\V(x)\cap\V(z)\right)\right)\right)\cup\left(\V(x^{2}-y)\cap\V(z-1)\right)$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left(\V(x)\cap\V(yx,yz)\right)\cup\V(x^{2}-y,z-1)=\V(x,yx,yz)\cup\V(x^{2}-y,z-1)$
+\end_inset
+
+ ...
+\end_layout
+
+\begin_layout Standard
+Why isn't this converging? Am I too retarded to grind algebra?
 \begin_inset Newline newline
 \end_inset
 
-[
-\series bold
-TODO
-\series default
-: finish untangling the algebra here]
+
+\end_layout
+
+\begin_layout Standard
+Opus 4.5 suggests that grinding the algebra is not the way.
+ 
+\begin_inset Formula $xz-x$
+\end_inset
+
+ factors as 
+\begin_inset Formula $x(z-1)$
+\end_inset
+
+, so we know that 
+\begin_inset Formula $x=0$
+\end_inset
+
+ or 
+\begin_inset Formula $z=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $x=0$
+\end_inset
+
+, then 
+\begin_inset Formula $x^{2}-yz$
+\end_inset
+
+ becomes 
+\begin_inset Formula $-yz$
+\end_inset
+
+, so 
+\begin_inset Formula $-yz=0$
+\end_inset
+
+, so 
+\begin_inset Formula $y=0$
+\end_inset
+
+ (which is 
+\begin_inset Formula $\V(x,y)$
+\end_inset
+
+) or 
+\begin_inset Formula $z=0$
+\end_inset
+
+ (which is 
+\begin_inset Formula $\V(x,z)$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $z=1$
+\end_inset
+
+, then 
+\begin_inset Formula $x^{2}-yz$
+\end_inset
+
+ becomes 
+\begin_inset Formula $x^{2}-y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+That is much simpler.
 \begin_inset Newline newline
 \end_inset
 
@@ -1140,10 +1277,34 @@ This really did seem like the obvious thing to try.
 th coördinate for all the points?) Opus 4.5 pointed out that polynomials
  don't have to intersect in as many places as straight lines; is that enough
  of a hint?
-\begin_inset Newline newline
+\end_layout
+
+\begin_layout Standard
+Opus 4.5 elaborates: if there are no collisions, you can use Lagrange interpolati
+on 
+\begin_inset Formula $\sum_{j}y_{j}\prod_{k\ne j}\frac{x-x_{k}}{x_{j}-x_{k}}$
+\end_inset
+
+ to hit all the plane points, then use the other polynomial to zero them
+ out with 
+\begin_inset Formula $\prod_{j}(x-x_{j})$
 \end_inset
 
 .
+ I imagine if you don't have unique 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ coördinates, you can just choose a different basis in which you do.
+ (Opus 4.5 says you'd need a different argument for finite fields.)
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1235,10 +1396,20 @@ A finite set in
 \end_inset
 
  polynomials.
+ Just adjoin another polynomial 
+\begin_inset Formula $\prod(x_{n}-a_{n,k})$
+\end_inset
+
+.
  [
 \series bold
 TODO
 \series default
+: this is still making the same mistake from the naive 2D attempt, fix the
+ writeup: 
+\emph on
+https://claude.ai/chat/64432a25-cb12-4a2d-89ed-96eeb94c01e1
+\emph default
 ]
 \begin_inset Newline newline
 \end_inset
