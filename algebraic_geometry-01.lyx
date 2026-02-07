@@ -121,11 +121,21 @@ Beginning in Algebraic Geometry
 \end_inset
 
 
+\begin_inset FormulaMacro
+\newcommand{\Z}{\mathbb{Z}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset FormulaMacro
 \newcommand{\V}{\mathcal{V}}
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\I}{\mathcal{I}}
 \end_inset
 
 
@@ -1300,117 +1310,9 @@ on
 \end_inset
 
  coördinates, you can just choose a different basis in which you do.
- (Opus 4.5 says you'd need a different argument for finite fields.)
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-1.1.7
-\series default
-.
- 
-\emph on
-Theorem
-\emph default
-.
- For any field 
-\begin_inset Formula $K$
-\end_inset
-
-, every finite set in 
-\begin_inset Formula $\A_{K}^{n}$
-\end_inset
-
- can be expressed as the vanishing set of 
-\begin_inset Formula $n$
-\end_inset
-
- polynomials.
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Proof
-\emph default
-.
- By induction.
- (Base.) A finite set in 
-\begin_inset Formula $\A_{K}^{1}$
-\end_inset
-
- is a collection of finitely many points 
-\begin_inset Formula $\{a_{k}\}_{k=1}^{m}$
-\end_inset
-
- for some 
-\begin_inset Formula $m\in\mathbb{N}$
-\end_inset
-
-.
- It's the vanishing set of the polynomial 
-\begin_inset Formula $\prod_{k=1}^{n}(x-a_{k})$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-(Induction.) Suppose that every finite set in 
-\begin_inset Formula $\A_{K}^{n}$
-\end_inset
-
- can be expressed as the vanishing set of 
-\begin_inset Formula $n$
-\end_inset
-
- polynomials; we need to show that this is also true of any finite set in
- 
-\begin_inset Formula $\A_{K}^{n+1}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-A finite set in 
-\begin_inset Formula $\A_{K}^{n+1}$
-\end_inset
-
- is a collection of finitely many points 
-\begin_inset Formula $\{(a_{j})_{j=1}^{n+1}\}_{k=1}^{m}$
-\end_inset
-
-.
- We've assumed that 
-\begin_inset Formula $\{(a_{j})_{j=1}^{n}\}_{k=1}^{m}$
-\end_inset
-
- can be expressed as the vanishing set of 
-\begin_inset Formula $n$
-\end_inset
-
- polynomials.
- Just adjoin another polynomial 
-\begin_inset Formula $\prod(x_{n}-a_{n,k})$
-\end_inset
-
-.
- [
-\series bold
-TODO
-\series default
-: this is still making the same mistake from the naive 2D attempt, fix the
- writeup: 
-\emph on
-https://claude.ai/chat/64432a25-cb12-4a2d-89ed-96eeb94c01e1
-\emph default
-]
+ (Opus 4.5 says you'd need a different argument for finite fields; Gemini
+ 3 Pro points out that every function over a finite field is a polynomial,
+ so it's fine.)
 \begin_inset Newline newline
 \end_inset
 
@@ -1546,56 +1448,89 @@ Theorem
 \begin_layout Standard
 
 \emph on
-Proof
+Commentary and Tutoring
 \emph default
 .
  Recall that ideals are closed under subtraction and absorb multiplication.
+ Multiplying a polynomial by a constant doesn't change the zeros ...
+ but multiplying by another polynomial can enlarge the set of zeros.
+ Gemini 3 Pro reminds us that 
+\begin_inset Formula $\V(\left\langle S\right\rangle )$
+\end_inset
+
+ is the intersection of all the polynomials in the ideal, which can be written
+ in terms of the generators.
 \end_layout
 
 \begin_layout Standard
-(Multiplication absorption.) Multiplying a polynomial by a constant doesn't
- change the zeros ...
- but multiplying by another polynomial can enlarge the set of zeros.
- We want to show 
-\begin_inset Formula $\V(S)=\V(\left\langle S\right\rangle )$
+(
+\begin_inset Formula $\V(\left\langle S\right\rangle )\subseteq\V(S)$
 \end_inset
 
-, not just 
+) The vanishing set of a set of polynomials is the intersection of the vanishing
+ sets.
+ Adding more polynomials (as one does when extending generators to an ideal)
+ can only make the intersection smaller.
+\end_layout
+
+\begin_layout Standard
+(
 \begin_inset Formula $\V(S)\subseteq\V(\left\langle S\right\rangle )$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-(Subtraction closure.) Suppose 
-\begin_inset Formula $p,q\in S$
-\end_inset
-
-.
- Suppose 
+) Suppose 
 \begin_inset Formula $x\in\V(S)$
 \end_inset
 
-.
- Then 
-\begin_inset Formula $p(x)=q(x)=0$
+, which is to say that if 
+\begin_inset Formula $f\in S$
+\end_inset
+
+, then 
+\begin_inset Formula $f(x)=0$
 \end_inset
 
 .
- So 
-\begin_inset Formula $(p-q)(x)=0$
-\end_inset
-
-, and 
+ We want to show that 
 \begin_inset Formula $x\in\V(\left\langle S\right\rangle )$
 \end_inset
 
- [
-\series bold
-TODO
-\series default
-: fix!].
+, which is to say that if 
+\begin_inset Formula $g\in\left\langle S\right\rangle $
+\end_inset
+
+, then 
+\begin_inset Formula $g(x)=0$
+\end_inset
+
+.
+ A member of the ideal 
+\begin_inset Formula $\left\langle S\right\rangle $
+\end_inset
+
+ can be written in terms of the generators: if 
+\begin_inset Formula $g\in\left\langle S\right\rangle $
+\end_inset
+
+, then 
+\begin_inset Formula $g=\sum_{j}r_{j}f_{j}$
+\end_inset
+
+, where for all 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $f_{j}\in S$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $g(x)=\sum_{j}r_{j}f_{j}(x)=\sum_{j}r_{j}(0)=0$
+\end_inset
+
+.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -1665,11 +1600,52 @@ any
 \end_layout
 
 \begin_layout Standard
-[
-\series bold
-TODO
-\series default
-: pin down the example]
+Gemini 3 Pro is saying that boths of these actually work.
+ 
+\begin_inset Formula $\left\langle x,y\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left\langle x^{2}+y^{2}\right\rangle $
+\end_inset
+
+ are 
+\emph on
+not
+\emph default
+ secretly the same ideal: sure, you can build 
+\begin_inset Formula $x^{2}+y^{2}$
+\end_inset
+
+ out of 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+—but not 
+\emph on
+vice versa
+\emph default
+.
+ I think my intuition about inclusions was confused.
+ We have 
+\begin_inset Formula $2<8$
+\end_inset
+
+ as an integer inequality, but 
+\begin_inset Formula $8\Z\subseteq2\Z$
+\end_inset
+
+ as an ideal inclusion.
+ In Examples 1.17 and 1.22, the 
+\begin_inset Formula $\I$
+\end_inset
+
+ operator is finding the biggest ideal; you can still have subideals with
+ the same vanishing set.
 \begin_inset Newline newline
 \end_inset
 
@@ -1826,7 +1802,194 @@ actually mentions this example, and it says it's
 \begin_inset Formula $xz-y^{2}$
 \end_inset
 
- involves all three.) 
+ involves all three.)
+\end_layout
+
+\begin_layout Standard
+Gemini 3 Pro is saying we should just plug the already solved 
+\begin_inset Formula $x=a$
+\end_inset
+
+ into the other two to get 
+\begin_inset Formula $\V(x^{2}-y,x^{3}-z)$
+\end_inset
+
+, but that my 
+\begin_inset Formula $\V(x^{2}-y,xy-z)$
+\end_inset
+
+ was also right, and that the Princeton Companion author was probably thinking
+ about projective space, in which there's an extra 
+\begin_inset Quotes eld
+\end_inset
+
+line at infinity
+\begin_inset Quotes erd
+\end_inset
+
+ that needs to be excluded.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.2.6
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $X=\{(a,ab):a,b\in K\}\subseteq\A^{2}$
+\end_inset
+
+ is not an affine variety.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Attempt
+\emph default
+.
+ We have the system 
+\begin_inset Formula $\begin{cases}
+x=a\\
+y=ab
+\end{cases}$
+\end_inset
+
+.
+ Substituting the first into the second, we have 
+\begin_inset Formula $y=bx$
+\end_inset
+
+.
+ We also have 
+\begin_inset Formula $\frac{y}{b}=a$
+\end_inset
+
+, which can be substituted into the first to get 
+\begin_inset Formula $x=\frac{y}{b}$
+\end_inset
+
+, which is consistent with 
+\begin_inset Formula $y=bx$
+\end_inset
+
+.
+ Um, I don't see the problem here? Why is this bad?
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Hint
+\emph default
+.
+ Gemini 3 Pro points out that the parameter 
+\begin_inset Formula $b$
+\end_inset
+
+ is not a constant, and implores us to investigate 
+\begin_inset Formula $a=0$
+\end_inset
+
+ and 
+\begin_inset Formula $a\ne0$
+\end_inset
+
+ cases separately.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+If you fix 
+\begin_inset Formula $x$
+\end_inset
+
+ to be some non-zero number (say, 5), can you produce any 
+\begin_inset Formula $y$
+\end_inset
+
+ value by choosing the right 
+\begin_inset Formula $b$
+\end_inset
+
+?
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Followup
+\emph default
+.
+ If 
+\begin_inset Formula $a=0$
+\end_inset
+
+, we have 
+\begin_inset Formula $x=0$
+\end_inset
+
+ and 
+\begin_inset Formula $y=0b=0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $a\ne0$
+\end_inset
+
+—for concreteness as suggested, if 
+\begin_inset Formula $x=a:=5$
+\end_inset
+
+, we have 
+\begin_inset Formula $y=5b$
+\end_inset
+
+.
+ Then you can get any 
+\begin_inset Formula $y$
+\end_inset
+
+ value by setting 
+\begin_inset Formula $b:=\frac{y}{5}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the plane, we would have all of 
+\begin_inset Formula $\A^{2}$
+\end_inset
+
+ except for the positive and negative 
+\begin_inset Formula $y$
+\end_inset
+
+-axis, which is not 
+\begin_inset Formula $\A^{2}$
+\end_inset
+
+ yet as a nonempty interior, so it's not an affine variety.
 \begin_inset Newline newline
 \end_inset
 
@@ -1870,24 +2033,344 @@ Proof
 a
 \series default
 .
- For all 
-\begin_inset Formula $a\in\R$
-\end_inset
-
-, there exists a polynomial 
+ Then there would exist a nonzero polynomial 
 \begin_inset Formula $f\in\R[x,y]$
 \end_inset
 
- such that 
+ such that for all 
+\begin_inset Formula $a\in\R$
+\end_inset
+
+, 
 \begin_inset Formula $f(a,\exp(a))=0$
 \end_inset
 
+, because that's what it would mean for 
+\begin_inset Formula $y-\exp(x)$
+\end_inset
+
+ to be an affine variety.
+ In this hypothetical world, there's a polynomial that has the same vanishing
+ set as 
+\begin_inset Formula $y-\exp(x)$
+\end_inset
+
+, and 
+\begin_inset Formula $y-\exp(x)=0$
+\end_inset
+
+ implies 
+\begin_inset Formula $y=\exp(x)$
+\end_inset
+
+, which you could parametrize as 
+\begin_inset Formula $(a,\exp(a))$
+\end_inset
+
 .
- [
+\end_layout
+
+\begin_layout Standard
+
 \series bold
-TODO
+b
 \series default
-: continue ...]
+.
+ Then we could write it as 
+\begin_inset Formula $f(x,y)=\sum_{j=0}^{d}p_{j}(x)y^{j}$
+\end_inset
+
+, where I assume 
+\begin_inset Formula $d$
+\end_inset
+
+ is the maximum degree of 
+\begin_inset Formula $y$
+\end_inset
+
+.
+ (I think the book could have been more explicit on this point in just a
+ few words rather than pulling 
+\begin_inset Formula $d$
+\end_inset
+
+ out of nowhere and expecting the reader to infer what I just did.) But we
+ know that 
+\begin_inset Formula $f(a,\exp(a))=0$
+\end_inset
+
+, so this becomes 
+\begin_inset Formula $\sum_{j=0}^{d}p_{j}(a)\exp(a)^{j}=0$
+\end_inset
+
+, which is 
+\begin_inset Formula $\sum_{j=0}^{d}\frac{p_{j}(a)}{\exp((d-j)a)}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ Taking the limit as 
+\begin_inset Formula $a\to\infty$
+\end_inset
+
+, we get 
+\begin_inset Formula $p_{d}(x)=0$
+\end_inset
+
+, which isn't something that can happen for a nonzero polynomial.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Gemini 3 Pro helps me digest Example 1.12 about the square not being an affine
+ variety: if a polynomial is zero on a 2D area, it must be zero on a 1D
+ line within that area, but if a polynomial is zero on a 1D line (which
+ has infinitely many points), then it must be the zero polynomial (because
+ that's the only way to have infinitely many zeros).
+ A plane can be a variety in 
+\begin_inset Formula $\A^{3}$
+\end_inset
+
+, but it's important that the plane's flatness 
+\begin_inset Quotes eld
+\end_inset
+
+goes on forever
+\begin_inset Quotes erd
+\end_inset
+
+; it can't suddenly curve upwards in a way that wasn't foretold by local
+ power series information.
+ With that background in place, it's easy to articulate
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.2.8
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $X\subset\A^{n}$
+\end_inset
+
+ is an affine variety, then the interior of 
+\begin_inset Formula $X$
+\end_inset
+
+ is empty.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose not.
+ 
+\begin_inset Formula $X$
+\end_inset
+
+ being an algebraic variety means that 
+\begin_inset Formula $X=\V(S)$
+\end_inset
+
+ for some set of polynomials 
+\begin_inset Formula $S$
+\end_inset
+
+.
+ If the interior of 
+\begin_inset Formula $X$
+\end_inset
+
+ is non-empty, then there's an 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional ball 
+\begin_inset Formula $B$
+\end_inset
+
+ contained in 
+\begin_inset Formula $X$
+\end_inset
+
+ such that for 
+\begin_inset Formula $f\in S$
+\end_inset
+
+ and 
+\begin_inset Formula $x\in B$
+\end_inset
+
+, 
+\begin_inset Formula $f(x)=0$
+\end_inset
+
+.
+ But if 
+\begin_inset Formula $f(x)=0$
+\end_inset
+
+ in an 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional ball, then for any one-dimensional cross-section of the ball
+ that takes 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+ as variable and takes the other cöordinates as constant, we have 
+\begin_inset Formula $f_{i}(x_{i})=0$
+\end_inset
+
+ in the ball, which is infinitely many zeros, so that we must have
+\begin_inset Formula $f_{i}=0$
+\end_inset
+
+ ...
+ and that's for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ So we end up with 
+\begin_inset Formula $f=0$
+\end_inset
+
+ ...
+ but we said that 
+\begin_inset Formula $X$
+\end_inset
+
+ was a 
+\emph on
+strict
+\emph default
+ subset of 
+\begin_inset Formula $\A^{n}$
+\end_inset
+
+, and 
+\begin_inset Formula $f=0$
+\end_inset
+
+ would give us all of 
+\begin_inset Formula $\A^{n}$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.3.1
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ For any 
+\begin_inset Formula $X\subseteq\A^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $\I(X)\subseteq K[x_{j}]_{j=1}^{n}$
+\end_inset
+
+ is an ideal.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Recall that 
+\begin_inset Formula $\I(X)=\{f\in K[x_{j}]_{j=1}^{n}:\forall\vec{a}\in X\ f(\vec{a})=0\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Subtraction closure.) If 
+\begin_inset Formula $f,g\in\I(X)$
+\end_inset
+
+, then for all 
+\begin_inset Formula $\vec{a}\in X$
+\end_inset
+
+, 
+\begin_inset Formula $f(\vec{a})=g(\vec{a})=0$
+\end_inset
+
+, so 
+\begin_inset Formula $(f-g)(\vec{a})=0$
+\end_inset
+
+, so 
+\begin_inset Formula $f-g\in\I(X)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Multiplication absorption.) If 
+\begin_inset Formula $f\in\I(X)$
+\end_inset
+
+ and 
+\begin_inset Formula $g\in K[x_{j}]_{j=1}^{n}$
+\end_inset
+
+, then 
+\begin_inset Formula $(fg)(\vec{a})=f(\vec{a})g(\vec{a})=0\cdot g(\vec{a})=0$
+\end_inset
+
+, so 
+\begin_inset Formula $fg\in\I(X)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_body
