@@ -1467,7 +1467,7 @@ Commentary and Tutoring
 \begin_inset Formula $\V(\left\langle S\right\rangle )\subseteq\V(S)$
 \end_inset
 
-) The vanishing set of a set of polynomials is the intersection of the vanishing
+.) The vanishing set of a set of polynomials is the intersection of the vanishing
  sets.
  Adding more polynomials (as one does when extending generators to an ideal)
  can only make the intersection smaller.
@@ -1478,7 +1478,7 @@ Commentary and Tutoring
 \begin_inset Formula $\V(S)\subseteq\V(\left\langle S\right\rangle )$
 \end_inset
 
-) Suppose 
+.) Suppose 
 \begin_inset Formula $x\in\V(S)$
 \end_inset
 
@@ -1989,7 +1989,7 @@ In the plane, we would have all of
 \begin_inset Formula $\A^{2}$
 \end_inset
 
- yet as a nonempty interior, so it's not an affine variety.
+ yet has a nonempty interior, so it's not an affine variety.
 \begin_inset Newline newline
 \end_inset
 
@@ -2371,6 +2371,421 @@ Proof
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.3.2
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $S\subseteq K[x_{j}]_{j=1}^{n}$
+\end_inset
+
+, then 
+\begin_inset Formula $\I(\V(S))\supseteq S$
+\end_inset
+
+ with equality iff 
+\begin_inset Formula $S=\I(X)$
+\end_inset
+
+ for some 
+\begin_inset Formula $X\subseteq\A^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\I(\V(S))\supseteq S$
+\end_inset
+
+.) Suppose 
+\begin_inset Formula $f\in S$
+\end_inset
+
+.
+ We know that for 
+\begin_inset Formula $x\in\V(S)$
+\end_inset
+
+, 
+\begin_inset Formula $f(x)=0$
+\end_inset
+
+.
+ But that implies that 
+\begin_inset Formula $f\in\I(\V(S))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $S=\I(X)\Rightarrow\I(\V(S))=S.$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $S=\I(X)$
+\end_inset
+
+ for some 
+\begin_inset Formula $X$
+\end_inset
+
+, which is to say that 
+\begin_inset Formula $S$
+\end_inset
+
+ is the set of all 
+\begin_inset Formula $f\in K[x_{j}]_{j=1}^{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(x)=0$
+\end_inset
+
+ for 
+\begin_inset Formula $x\in X$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\V(S)=X$
+\end_inset
+
+.
+ (Some of the 
+\begin_inset Formula $f\in S$
+\end_inset
+
+ can vanish on a larger set, but the 
+\begin_inset Formula $\V$
+\end_inset
+
+ operator is intersecting the vanishing sets of them all, and what they
+ all have in common is vanishing on 
+\begin_inset Formula $X$
+\end_inset
+
+.) But that substitutes directly into the antecedent to get 
+\begin_inset Formula $S=\I(\V(X))$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\I(\V(S))=S\Rightarrow S=\I(X).$
+\end_inset
+
+) Take the contrapositive and suppose that 
+\begin_inset Formula $S\ne\I(X)$
+\end_inset
+
+: or rather, that is to say, there does not exist an 
+\begin_inset Formula $X\in\A^{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $S=\I(X)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We want to show that 
+\begin_inset Formula $S\ne\I(\V(S))$
+\end_inset
+
+.
+ Suppose not, that 
+\begin_inset Formula $S=\I(\V(S))$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $\V(S)$
+\end_inset
+
+ is precisely such an 
+\begin_inset Formula $X$
+\end_inset
+
+ that we supposed doesn't exist.
+ Contradiction!
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Maybe some people would frown on a proof by contradiction inside of a proof
+ of the contrapositive as being convoluted, but that's what I found and
+ I think it's great.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Oversight
+\emph default
+.
+ Gemini 3 Pro complains that 
+\begin_inset Quotes eld
+\end_inset
+
+Then 
+\begin_inset Formula $\V(S)=X$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ is false if 
+\begin_inset Formula $X$
+\end_inset
+
+ is not already a variety.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.3.3
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Consider a finite set 
+\begin_inset Formula $X:=\{a_{j}\}_{j=1}^{r}\subseteq\A$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\I(X)=\left\langle \prod_{j=1}^{r}(x-a_{j})\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Claude Opus 4.6 taught me that being able to divide by 
+\begin_inset Formula $(x-a)$
+\end_inset
+
+ is called the 
+\begin_inset Quotes eld
+\end_inset
+
+factor theorem
+\begin_inset Quotes erd
+\end_inset
+
+, but arguably that shouldn't count as AI assistance that I should have
+ to cite, because I was basically using it as a semantic search engine to
+ point me at Corollary 0.48, not generating proof steps for me.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\I(X)$
+\end_inset
+
+ is the set of all polynomials that vanish on the given points.
+ Clearly, 
+\begin_inset Formula $\prod_{j=1}^{r}(x-a_{j})$
+\end_inset
+
+ is one such polynomial.
+ We need to show that any other such polynomial belongs to the ideal generated
+ by 
+\begin_inset Formula $\prod_{j=1}^{r}(x-a_{j})$
+\end_inset
+
+.
+ We know that each of the 
+\begin_inset Formula $(x-a_{j})$
+\end_inset
+
+ are irreducible.
+ (That was Example 0.13.)
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $p\in\I(X),$
+\end_inset
+
+ such that 
+\begin_inset Formula $p(x)$
+\end_inset
+
+ vanishes on 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ Iteratively applying the factor theorem (Corollary 0.48), we have 
+\begin_inset Formula $p(x)=q(x)\prod_{j=1}^{r}(x-a_{j})$
+\end_inset
+
+ for some 
+\begin_inset Formula $q(x)\in K[x]$
+\end_inset
+
+.
+ The fact that 
+\begin_inset Formula $p$
+\end_inset
+
+ is a multiple (in the polynomial ring) of 
+\begin_inset Formula $\prod_{j=1}^{r}(x-a_{j})$
+\end_inset
+
+ means 
+\begin_inset Formula $p$
+\end_inset
+
+ is in the ideal generated by 
+\begin_inset Formula $\prod_{j=1}^{r}(x-a_{j})$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $X$
+\end_inset
+
+ is infinite, then 
+\begin_inset Formula $\I(X)=\left\langle 0\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\I(X)$
+\end_inset
+
+ is the set of polynomials that all vanish on all of 
+\begin_inset Formula $X$
+\end_inset
+
+, which means that all polynomials in 
+\begin_inset Formula $\I(X)$
+\end_inset
+
+ have infinitely many zeroes, but there's only one polynomial in 
+\begin_inset Formula $K[x]$
+\end_inset
+
+ that does that, the zero polynomial.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.3.5
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Let 
+\begin_inset Formula $X=\{(a_{j})_{j=1}^{n}\}\subseteq\A^{n}$
+\end_inset
+
+ be a single point.
+ Then 
+\begin_inset Formula $\I(X)=\left\langle x_{j}-a_{j}\right\rangle _{j=1}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Let 
+\begin_inset Formula $f\in\I(X)$
+\end_inset
+
+.
+ [...]
 \end_layout
 
 \end_body
