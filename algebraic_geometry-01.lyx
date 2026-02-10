@@ -1600,7 +1600,7 @@ any
 \end_layout
 
 \begin_layout Standard
-Gemini 3 Pro is saying that boths of these actually work.
+Gemini 3 Pro is saying that both of these actually work.
  
 \begin_inset Formula $\left\langle x,y\right\rangle $
 \end_inset
@@ -2785,7 +2785,211 @@ Proof
 \end_inset
 
 .
- [...]
+ We know that 
+\begin_inset Formula $f(\vec{a})=0$
+\end_inset
+
+.
+ An ideal in a ring 
+\begin_inset Formula $R$
+\end_inset
+
+ is an 
+\begin_inset Formula $R$
+\end_inset
+
+-linear combination of generators, so we want to show that there exist polynomia
+ls 
+\begin_inset Formula $\{r_{j}(x)\}_{j=1}^{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $f=\sum_{j=1}^{n}r_{j}(x_{j}-a_{j})$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: I think I'm going to need a hint here]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.3.6
+\series default
+.
+ A guided proof that 
+\begin_inset Formula $\I(\V(x^{2}+y^{2}-1))=\left\langle x^{2}+y^{2}-1\right\rangle $
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $\V(x^{2}+y^{2}-1)$
+\end_inset
+
+ is the unit circle.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ (
+\begin_inset Formula $\left\langle x^{2}+y^{2}-1\right\rangle \subseteq\I(\V(x^{2}+y^{2}-1))$
+\end_inset
+
+.) We want to show that a member of the given ideal, is a member of the vanishing
+ ideal of the unit circle.
+ That is, if 
+\begin_inset Formula $p(x)=q(x)(x^{2}+y^{2}-1)$
+\end_inset
+
+, then if 
+\begin_inset Formula $x\in\V(x^{2}+y^{2}-1)$
+\end_inset
+
+, then 
+\begin_inset Formula $p(x)=0$
+\end_inset
+
+.
+ But if 
+\begin_inset Formula $x\in\V(x^{2}+y^{2}-1)$
+\end_inset
+
+, then 
+\begin_inset Formula $p(x)=q(x)(x^{2}+y^{2}-1)=q(x)\cdot0=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ (
+\begin_inset Formula $\I(\V(x^{2}+y^{2}-1))\subseteq\left\langle x^{2}+y^{2}-1\right\rangle $
+\end_inset
+
+.) We want to show that a member of the vanishing ideal of the unit circle,
+ is a member of the given ideal.
+ Suppose 
+\begin_inset Formula $f\in\I(\V(x^{2}+y^{2}-1))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+i
+\series default
+.
+ We want to show that there exist 
+\begin_inset Formula $g_{1},g_{2}\in\R[x]$
+\end_inset
+
+ such that 
+\begin_inset Formula $f-g_{1}-g_{2}\in\left\langle x^{2}+y^{2}-1\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+First thought: we know that the given ideal is a subset of 
+\begin_inset Formula $\I(\V(x^{2}+y^{2}-1))$
+\end_inset
+
+, and ideals are closed under subtraction, so we should be able to use subtracti
+on to go from 
+\begin_inset Formula $f$
+\end_inset
+
+ (our arbitrary member of 
+\begin_inset Formula $\I(\V(x^{2}+y^{2}-1))$
+\end_inset
+
+), to an arbitrary member of 
+\begin_inset Formula $\left\langle x^{2}+y^{2}-1\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Is there a theorem I should be citing about being 
+\begin_inset Quotes eld
+\end_inset
+
+closed under
+\begin_inset Quotes erd
+\end_inset
+
+ an operation implying that, or is it obvious/trivial? (Potential counterexample
+ to obviousness: the positive numbers are closed under addition, but you
+ can't use addition to go from 
+\begin_inset Formula $0$
+\end_inset
+
+ to 
+\begin_inset Formula $5$
+\end_inset
+
+.
+ It does work for subtraction, which is what's at issue for ideals, but
+ maybe we're supposed to prove it.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+ii
+\series default
+.
+ Given that 
+\begin_inset Formula $f\in\I(\V(x^{2}+y^{2}-1))$
+\end_inset
+
+, we want to show that for all 
+\begin_inset Formula $a\in[-1,1]$
+\end_inset
+
+, 
+\begin_inset Formula $g_{1}(a)^{2}=(1-a^{2})g_{2}(a)^{2}$
+\end_inset
+
+, and conclude that 
+\begin_inset Formula $g_{1}(x)^{2}=(1-x^{2})g_{2}(x)^{2}$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+: uh ...]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+iii
+\series default
+.
 \end_layout
 
 \end_body
