@@ -3167,9 +3167,7 @@ Proposition
 Commentary
 \emph default
 .
- It was pretty humiliating how much AI assistance I needed on the last one,
- but perhaps we can atone by doing this one in the way of the before-time.
- (It should just be 
+ This should just be 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3181,7 +3179,7 @@ the same thing
 \begin_inset Formula $n$
 \end_inset
 
- variables.)
+ variables.
 \end_layout
 
 \begin_layout Standard
@@ -3194,12 +3192,109 @@ Proof
 \begin_inset Formula $\left\langle \sum_{j}x_{j}^{2}-1\right\rangle \subseteq\I(\V(\sum_{j}x_{j}^{2}-1))$
 \end_inset
 
-.) [
+.) Members of 
+\begin_inset Formula $\left\langle \sum_{j}x_{j}^{2}-1\right\rangle $
+\end_inset
+
+ take the form 
+\begin_inset Formula $\sum_{k}r_{k}(x)$
+\end_inset
+
+
+\begin_inset Formula $\left(\sum_{j}x_{j}^{2}-1\right)$
+\end_inset
+
+ for 
+\begin_inset Formula $\{r_{k}(x)\}\subset\R[x_{j}]_{j=1}^{n}$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\vec{x}$
+\end_inset
+
+ is on the unit hypersphere, that's 
+\begin_inset Formula $\sum_{k}r_{k}(x)\cdot0=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\I(\V(\sum_{j}x_{j}^{2}-1))\subseteq\left\langle \sum_{j}x_{j}^{2}-1\right\rangle $
+\end_inset
+
+.) Suppose 
+\begin_inset Formula $f\in\I(\V(\sum_{j}x_{j}^{2}-1))$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The doctrine of polynomial long division says that 
+\begin_inset Formula $f=q\cdot\left(\sum_{j}x_{j}^{2}-1\right)+r$
+\end_inset
+
+.
+ Opus 4.6 clarifies that we need to be specific about which variable we're
+ operating with respect to.
+ So, we're in 
+\begin_inset Formula $\R[x_{j}]_{j=1}^{n}$
+\end_inset
+
+, but we can think of it as 
+\begin_inset Formula $\R[x_{1}][x_{j}]_{j=2}^{n}$
+\end_inset
+
+ and do polynomial long division with respect to 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $r$
+\end_inset
+
+ is linear or constant with respect to 
+\begin_inset Formula $x_{1}$
+\end_inset
+
+ (but the 
+\begin_inset Quotes eld
+\end_inset
+
+coëfficients
+\begin_inset Quotes erd
+\end_inset
+
+ can involve 
+\begin_inset Formula $x_{2}$
+\end_inset
+
+ through 
+\begin_inset Formula $x_{n}$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+So we have 
+\begin_inset Formula $f(x_{j})_{j=1}^{n}-g_{1}(x_{j})_{j=2}^{n}-x_{1}g_{2}(x_{j})_{j=2}^{n}=q(x_{j})_{j=1}^{n}\left(\sum_{j}x_{j}^{2}-1\right)$
+\end_inset
+
+.
+ My instinct here was to keep inducting more variables, but Opus 4.5 says
+ No.
+ [
 \series bold
 TODO
 \series default
-: write out the generalization, should be an easy thing to do on a future
- morning when I have the pep]
+]
 \begin_inset Newline newline
 \end_inset
 
@@ -3272,6 +3367,24 @@ all
  the only people who would be confused, deserve it for not reading carefully),
  but it's still polite to have a warning when newbies would consider the
  notation misleading.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+My copy dated 12 January 2025 has a typographical error near the top of
+ page 53: 
+\begin_inset Quotes eld
+\end_inset
+
+Exampe
+\begin_inset Quotes erd
+\end_inset
+
+.
+ But it's fixed in the 27 March 2025 version.
 \end_layout
 
 \end_body
