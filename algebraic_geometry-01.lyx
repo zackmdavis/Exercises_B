@@ -126,6 +126,11 @@ Beginning in Algebraic Geometry
 \end_inset
 
 
+\begin_inset FormulaMacro
+\newcommand{\F}[1]{\mathbb{F}_{#1}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1818,8 +1823,12 @@ Gemini 3 Pro is saying we should just plug the already solved
 \begin_inset Formula $\V(x^{2}-y,xy-z)$
 \end_inset
 
- was also right, and that the Princeton Companion author was probably thinking
- about projective space, in which there's an extra 
+ was also right, and that the 
+\emph on
+Princeton Companion
+\emph default
+ author was probably thinking about projective space, in which there's an
+ extra 
 \begin_inset Quotes eld
 \end_inset
 
@@ -3295,6 +3304,216 @@ So we have
 TODO
 \series default
 ]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.3.8
+\series default
+.
+ Let 
+\begin_inset Formula $K$
+\end_inset
+
+ be an infinite field with 
+\begin_inset Formula $1\ne-1$
+\end_inset
+
+ and let 
+\begin_inset Formula $X:=\V(x^{2}+y^{2}-1)\subseteq\A_{K}^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For any 
+\begin_inset Formula $a\in K$
+\end_inset
+
+ with 
+\begin_inset Formula $a^{2}\ne-1$
+\end_inset
+
+, 
+\begin_inset Formula $\left(\frac{a^{2}-1}{a^{2}+1},\frac{2a}{a^{2}+1}\right)\in X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\left(\frac{a^{2}-1}{a^{2}+1}\right)^{2}+\left(\frac{2a}{a^{2}+1}\right)^{2}-1=\frac{\left(a^{2}-1\right)^{2}+4a^{2}}{\left(a^{2}+1\right)^{2}}-1=\frac{a^{4}\cancel{-2a^{2}}+1+\cancelto{2}{4}a^{2}}{a^{4}+2a^{2}+1}-1=1-1=0$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ There are infinitely many values 
+\begin_inset Formula $a\in K$
+\end_inset
+
+ such that 
+\begin_inset Formula $(a,b)\in X$
+\end_inset
+
+ for some 
+\begin_inset Formula $b\in K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+The Obvious Argument
+\emph default
+.
+ 
+\begin_inset Formula $K$
+\end_inset
+
+ is an infinite field.
+ The previous proposition holds for any 
+\begin_inset Formula $a\in K$
+\end_inset
+
+ where 
+\begin_inset Formula $a^{2}\ne-1$
+\end_inset
+
+.
+ There are going to be infinitely many of those (because 
+\begin_inset Formula $a^{2}\ne-1$
+\end_inset
+
+ can have at most two solutions, and infinity minus two is infinity).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Doubts
+\emph default
+.
+ Is 
+\begin_inset Formula $a^{n}$
+\end_inset
+
+ having at most 
+\begin_inset Formula $n$
+\end_inset
+
+ solutions actually true in a general field? I mean, it seems intuitively
+ obvious, but we probably need to show it from the field axioms.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ [
+\series bold
+TODO
+\series default
+: yet another generalization of 1.3.6.]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.3.9
+\series default
+.
+ Let 
+\begin_inset Formula $K=\F 2$
+\end_inset
+
+, the field with two elements.
+ Let 
+\begin_inset Formula $X:=\V(y^{2}-x)\subseteq\A_{\F 2}^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\I(X)\ne\left\langle y^{2}-x\right\rangle $
+\end_inset
+
+ (in contrast to the real case discussed in Example 1.19).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ The logic that 
+\begin_inset Formula $\left\langle y^{2}-x\right\rangle \cdot f(x,y)\subseteq\I(X)$
+\end_inset
+
+ still seems to hold.
+ [
+\series bold
+TODO
+\series default
+: finish]
 \begin_inset Newline newline
 \end_inset
 
