@@ -127,6 +127,11 @@ Beginning in Algebraic Geometry
 
 
 \begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\begin_inset FormulaMacro
 \newcommand{\F}[1]{\mathbb{F}_{#1}}
 \end_inset
 
@@ -3299,11 +3304,57 @@ So we have
 .
  My instinct here was to keep inducting more variables, but Opus 4.5 says
  No.
- [
-\series bold
-TODO
-\series default
-]
+ Presumably, we can instead proceed just as in 1.3.6.ii.
+\end_layout
+
+\begin_layout Standard
+Consider 
+\begin_inset Formula $\vec{x}:=(x_{j})_{j=1}^{n}$
+\end_inset
+
+ on the unit hypersphere.
+ We have 
+\begin_inset Formula $\cancel{f(x_{j})_{j=1}^{n}}-g_{1}(x_{j})_{j=2}^{n}-x_{1}g_{2}(x_{j})_{j=2}^{n}=\cancel{q(x_{j})_{j=1}^{n}\left(\sum_{j}x_{j}^{2}-1\right)}$
+\end_inset
+
+ and so we have 
+\begin_inset Formula $x_{1}g_{2}(x_{j})_{j=2}^{n}=-g_{1}(x_{j})_{j=2}^{n}$
+\end_inset
+
+, which squares to 
+\begin_inset Formula $x_{1}^{2}\left(g_{2}(x_{j})_{j=2}^{n}\right)^{2}=\left(g_{1}(x_{j})_{j=2}^{n}\right)^{2}$
+\end_inset
+
+, which is 
+\begin_inset Formula $\left(1-\sum_{j=2}^{n}x_{j}^{2}\right)\left(g_{2}(x_{j})_{j=2}^{n}\right)^{2}=\left(g_{1}(x_{j})_{j=2}^{n}\right)^{2}$
+\end_inset
+
+.
+ Again, the multiplicity of any factor on the right side must be even, but
+ we have 
+\begin_inset Formula $\left(1-\sum_{j=2}^{n}x_{j}^{2}\right)$
+\end_inset
+
+ with multiplicity one on the left, so the only solution is 
+\begin_inset Formula $g_{1}=g_{2}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ The thing where you'd expect to need an induction to go to 
+\begin_inset Formula $n$
+\end_inset
+
+ dimensions, but it turns out that you can just pick one variable arbitrarily
+ and do the same argument reminds me of the proof that higher homotopy groups
+ are abelian.
 \begin_inset Newline newline
 \end_inset
 
@@ -3452,23 +3503,6 @@ Doubts
 \begin_layout Standard
 
 \series bold
-c
-\series default
-.
- [
-\series bold
-TODO
-\series default
-: yet another generalization of 1.3.6.]
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
 1.3.9
 \series default
 .
@@ -3501,19 +3535,95 @@ Proposition
 \begin_layout Standard
 
 \emph on
-Proof
+Attempt
 \emph default
 .
  The logic that 
-\begin_inset Formula $\left\langle y^{2}-x\right\rangle \cdot f(x,y)\subseteq\I(X)$
+\begin_inset Formula $\left\langle y^{2}-x\right\rangle \subseteq\I(X)$
 \end_inset
 
- still seems to hold.
- [
-\series bold
-TODO
-\series default
-: finish]
+ (because anything of the form 
+\begin_inset Formula $\left(y^{2}-x\right)\cdot f(x,y)$
+\end_inset
+
+ is zero on 
+\begin_inset Formula $X$
+\end_inset
+
+) still seems to hold; it should still be true in 
+\begin_inset Formula $\F 2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the other direction, consider 
+\begin_inset Formula $f\in\I(X)$
+\end_inset
+
+.
+ It's a polynomial in 
+\begin_inset Formula $\F 2$
+\end_inset
+
+ such that 
+\begin_inset Formula $f(x,y)=0$
+\end_inset
+
+ when 
+\begin_inset Formula $x=y^{2}$
+\end_inset
+
+.
+ In 
+\begin_inset Formula $\F 2$
+\end_inset
+
+, 
+\begin_inset Formula $y^{2}=y$
+\end_inset
+
+ (because 
+\begin_inset Formula $1\cdot1=1$
+\end_inset
+
+ and 
+\begin_inset Formula $0\cdot0=0$
+\end_inset
+
+), so 
+\begin_inset Formula $x-y\in\I(X)$
+\end_inset
+
+, and 
+\begin_inset Formula $x-y\notin\left\langle y^{2}-x\right\rangle $
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+I feel pretty confused about this because I have no experience in polynomials
+ over finite field.
+ Should we even be talking about 
+\begin_inset Formula $y^{2}$
+\end_inset
+
+? Maybe it's fine as a 
+\begin_inset Quotes eld
+\end_inset
+
+formal
+\begin_inset Quotes erd
+\end_inset
+
+ polynomial and it's not our job to worry about which formal polynomials
+ in 
+\begin_inset Formula $K[x]$
+\end_inset
+
+ collapse to being the same thing when you try to evaluate them?
 \begin_inset Newline newline
 \end_inset
 
@@ -3558,14 +3668,167 @@ Theorem
 \begin_layout Standard
 
 \emph on
-Proof
+Bad Attempt
 \emph default
 .
- [
+ 
+\begin_inset Formula $\I(X)$
+\end_inset
+
+ consists of all polynomials 
+\begin_inset Formula $f$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x\in X$
+\end_inset
+
+, 
+\begin_inset Formula $f(x)=0$
+\end_inset
+
+.
+ We want to show that 
+\begin_inset Formula $\{x:\forall f\in\I(X),\ f(x)=0\}\subseteq Y$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Suppose not.
+ Then there would exist 
+\begin_inset Formula $z\notin Y$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $f\in\I(X)$
+\end_inset
+
+, 
+\begin_inset Formula $f(z)=0$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $x_{0}\in X$
+\end_inset
+
+.
+ But consider a polynomial 
+\begin_inset Formula $g$
+\end_inset
+
+ such that 
+\begin_inset Formula $g(x_{0})=0$
+\end_inset
+
+ and 
+\begin_inset Formula $g(z)\ne0$
+\end_inset
+
+.
+ That has to exist because you can always fit a polynomial to two points.
+ Then we would have 
+\begin_inset Formula $g\in\I(X)$
+\end_inset
+
+ (because 
+\begin_inset Formula $g(x_{0})=0$
+\end_inset
+
+), but 
+\begin_inset Formula $g(z)\ne0$
+\end_inset
+
+.
+ Contradiction! 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Criticism
+\emph default
+.
+ Opus 4.6 points out that this is broken because we need 
+\begin_inset Formula $g$
+\end_inset
+
+ to vanish on all of 
+\begin_inset Formula $X$
+\end_inset
+
+.
+ The correct answer makes use of 
+\begin_inset Formula $Y$
+\end_inset
+
+ being a variety, which means that it's 
+\begin_inset Formula $\V(S)$
+\end_inset
+
+ for some 
+\begin_inset Formula $S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Atonement
+\emph default
+.
+ 
+\series bold
+
+\begin_inset Formula $Y$
+\end_inset
+
+
+\series default
+ is a variety, so there exists an 
+\begin_inset Formula $S$
+\end_inset
+
+ such that 
+\begin_inset Formula $Y:=\V(S)$
+\end_inset
+
+.
+ Vanishing on all of 
+\begin_inset Formula $Y$
+\end_inset
+
+ is a stricter criterion than vanishing on all of 
+\begin_inset Formula $X$
+\end_inset
+
+ (you have to cover 
+\begin_inset Formula $Y\backslash X$
+\end_inset
+
+, not just 
+\begin_inset Formula $X$
+\end_inset
+
+), so 
+\begin_inset Formula $\I(X)$
+\end_inset
+
+ can be bigger than 
+\begin_inset Formula $S$
+\end_inset
+
+ ...
+ and I'm still not seeing it?! What's wrong with me?! [
 \series bold
 TODO
 \series default
-]
+: halp] 
 \begin_inset Newline newline
 \end_inset
 
@@ -3604,6 +3867,832 @@ Exampe
 
 .
  But it's fixed in the 27 March 2025 version.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+An ideal is radical if, when a power of an element is in the ideal, then
+ the element itself is in the ideal.
+ For any 
+\begin_inset Formula $X\subseteq\A^{n}$
+\end_inset
+
+, 
+\begin_inset Formula $\I(X)$
+\end_inset
+
+ is a radical ideal, because if 
+\begin_inset Formula $f^{m}(x)=0$
+\end_inset
+
+, then taking the 
+\begin_inset Formula $m$
+\end_inset
+
+th root of both sides gives us 
+\begin_inset Formula $f(x)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We can radicalize an ideal by 
+\begin_inset Quotes eld
+\end_inset
+
+adding the missing roots
+\begin_inset Quotes erd
+\end_inset
+
+ (whose absence is preventing the ideal from being closed under taking roots);
+ radicalizing a radical does nothing because it's already radical.
+\end_layout
+
+\begin_layout Standard
+Recall (as if) that a principal ideal is an ideal that can be generated
+ by a single element.
+ Polynomial rings are a U.F.D., so that element has a unique irreducible factorizat
+ion 
+\begin_inset Formula $f=a\prod_{j}q_{j}^{k_{j}}$
+\end_inset
+
+.
+ Then the radical 
+\begin_inset Formula $\sqrt{\left\langle f\right\rangle }$
+\end_inset
+
+ is 
+\begin_inset Formula $\left\langle \prod q_{j}\right\rangle $
+\end_inset
+
+.
+ This is the analogue of being squarefree.
+\end_layout
+
+\begin_layout Standard
+Recall (as if) that an ideal is prime if for all 
+\begin_inset Formula $a,b\in R$
+\end_inset
+
+, 
+\begin_inset Formula $ab\in I$
+\end_inset
+
+ implies 
+\begin_inset Formula $a\in I$
+\end_inset
+
+ or 
+\begin_inset Formula $b\in I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's consider a non-example.
+ We know 
+\begin_inset Formula $\left\langle 6\right\rangle $
+\end_inset
+
+ isn't prime because of the Trope Namer, but we can see this failing the
+ definition because 
+\begin_inset Formula $3\cdot4=12\in\left\langle 6\right\rangle $
+\end_inset
+
+, but 
+\begin_inset Formula $3,4\notin\left\langle 6\right\rangle $
+\end_inset
+
+.
+ The definition failure was possible to construct because the fact that
+ 
+\begin_inset Formula $6=2\cdot3$
+\end_inset
+
+ isn't prime, meant that we could factor a multiple of 
+\begin_inset Formula $6$
+\end_inset
+
+ (
+\emph on
+viz
+\emph default
+., 12) in a way that 
+\begin_inset Quotes eld
+\end_inset
+
+split up
+\begin_inset Quotes erd
+\end_inset
+
+ the 
+\begin_inset Formula $2$
+\end_inset
+
+ and the 
+\begin_inset Formula $3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Every prime ideal is a radical ideal.
+\end_layout
+
+\begin_layout Standard
+Over an algebraically closed field, the 
+\emph on
+Nullstellensatz
+\emph default
+ gives us a bijection between radical ideals and algebraic varieties.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.4.1
+\series default
+.
+ We are asked to determine whether an ideal is radical, and give its radical
+ if it is not.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\begin_inset Formula $\left\langle 4\right\rangle \subseteq\Z$
+\end_inset
+
+ is not radical because 
+\begin_inset Formula $4=2^{2}$
+\end_inset
+
+ is not squarefree, but 
+\begin_inset Formula $\sqrt{\left\langle 4\right\rangle }=\left\langle 2\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\begin_inset Formula $\left\langle 6\right\rangle \subseteq\Z$
+\end_inset
+
+ is radical because 
+\begin_inset Formula $6=2\cdot3$
+\end_inset
+
+ is squarefree.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\begin_inset Formula $\left\langle 18\right\rangle \subseteq\Z$
+\end_inset
+
+ is not radical because 
+\begin_inset Formula $18=2\cdot3^{2}$
+\end_inset
+
+ is not squarefree, but 
+\begin_inset Formula $\sqrt{\left\langle 18\right\rangle }=\left\langle 6\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\begin_inset Formula $\left\langle x^{2}+y^{2}-1\right\rangle \subseteq\R[x,y]$
+\end_inset
+
+ ...
+ I think this is radical because it looks irreducible, but I could probably
+ use some tutoring on irreducibility in 
+\begin_inset Formula $\R[x,y]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+e
+\series default
+.
+ 
+\begin_inset Formula $\left\langle x^{2},y^{3}\right\rangle \subseteq\R[x,y]$
+\end_inset
+
+ is not radical.
+ Recall that 
+\begin_inset Formula $\left\langle a,b\right\rangle $
+\end_inset
+
+ is the ideal generated by 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+, which are ring-linear combinations of 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+.
+ The coëfficients can be zero, so 
+\begin_inset Formula $x^{2}\subseteq\left\langle x^{2},y^{3}\right\rangle $
+\end_inset
+
+, but 
+\begin_inset Formula $\sqrt{x^{2}}=x\notin\left\langle x^{2},y^{3}\right\rangle $
+\end_inset
+
+.
+ One would imagine that 
+\begin_inset Formula $\sqrt{\left\langle x^{2},y^{3}\right\rangle }=\left\langle x,y\right\rangle $
+\end_inset
+
+, but it's not entirely obvious.
+ (
+\begin_inset Formula $\left\langle x^{2},y^{3}\right\rangle $
+\end_inset
+
+ isn't a principal ideal, so we can't just cite Proposition 1.31.)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+f
+\series default
+.
+ 
+\begin_inset Formula $\left\langle y-x^{2},y\right\rangle \subseteq\R[x,y]$
+\end_inset
+
+ seems like it should be radical.
+ We know that 
+\begin_inset Formula $y-x^{2}$
+\end_inset
+
+ is irreducible (as Proposition 0.14), and 
+\begin_inset Formula $y$
+\end_inset
+
+ is irreducible, and linear combinations of those are going to be 
+\begin_inset Formula $cy-x^{2}$
+\end_inset
+
+, and 
+\begin_inset Quotes eld
+\end_inset
+
+it would be weird if
+\begin_inset Quotes erd
+\end_inset
+
+ the reducibility of that depended on the exact value of 
+\begin_inset Formula $c$
+\end_inset
+
+? This is not rigorous reasoning at all, but I bet it's true.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+g
+\series default
+.
+ 
+\begin_inset Formula $\left\langle x^{2}-y^{2}\right\rangle \subseteq\R[x,y]$
+\end_inset
+
+ ...
+ I really need that multivariate irreducibility tutorial; I don't see how
+ to factor this, but that's not an argument.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.4.2
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $I\subseteq R$
+\end_inset
+
+ is an ideal, then 
+\begin_inset Formula $\sqrt{I}$
+\end_inset
+
+ is an ideal.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ The text provides a hint: use the binomial theorem to prove that 
+\begin_inset Formula $\sqrt{I}$
+\end_inset
+
+ is closed under addition.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Recall that 
+\begin_inset Formula $\sqrt{I}:=\{a\in R:\exists m\in\N^{+}\ a^{m}\in I\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Multiplication absorption.) Let 
+\begin_inset Formula $a\in\sqrt{I}$
+\end_inset
+
+, which is to say that 
+\begin_inset Formula $a\in R$
+\end_inset
+
+ is such that 
+\begin_inset Formula $a^{m}\in I$
+\end_inset
+
+.
+ We want to show that 
+\begin_inset Formula $ca\in\sqrt{I}$
+\end_inset
+
+, which is to say that 
+\begin_inset Formula $(ca)^{m}\in I$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $(ca)^{m}=c^{m}a^{m}\in I$
+\end_inset
+
+ because of multiplication absorption for the ideal 
+\begin_inset Formula $I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Subtraction closure.) Let 
+\begin_inset Formula $a,b\in\sqrt{I}$
+\end_inset
+
+, which is to say that 
+\begin_inset Formula $a,b\in R$
+\end_inset
+
+ are such that 
+\begin_inset Formula $a^{m}\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $b^{n}\in I$
+\end_inset
+
+.
+ We want to show that 
+\begin_inset Formula $a-b\in\sqrt{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Um, I'm not seeing how to use the binomial theorem hint.
+ We can take (say) 
+\begin_inset Formula $(a-b)^{mn}$
+\end_inset
+
+, which gives us a polynomial which includes terms which have 
+\begin_inset Formula $a^{m}$
+\end_inset
+
+ and 
+\begin_inset Formula $b^{n}$
+\end_inset
+
+ as factors, but there are a bunch of other terms; the whole thing has no
+ reason to be in 
+\begin_inset Formula $I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Like, yes, I know the binomial theorem 
+\begin_inset Formula $(a-b)^{n}=\sum_{j=0}^{n}\binom{n}{j}a^{j}b^{n-j}$
+\end_inset
+
+, but I'm not seeing how this is helpful? If we did 
+\begin_inset Formula $(a^{m}-b^{n})^{k}$
+\end_inset
+
+, then all the terms would be in the ideal, but that's not what's at issue.
+ [
+\series bold
+TODO
+\series default
+: halp]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.4.3
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ A principal ideal 
+\begin_inset Formula $\left\langle f\right\rangle \subseteq K[x_{j}]_{j=1}^{n}$
+\end_inset
+
+ is radical iff 
+\begin_inset Formula $f$
+\end_inset
+
+ is not divisible by the square of a nonconstant polynomial.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Take the contrapositive and suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is divisible by the square of a nonconstant polynomial 
+\begin_inset Formula $q$
+\end_inset
+
+: 
+\begin_inset Formula $f=q^{2}g$
+\end_inset
+
+.
+ Then we want to show that 
+\begin_inset Formula $\left\langle f\right\rangle $
+\end_inset
+
+ is not radical.
+ We know that 
+\begin_inset Formula $gf\in\left\langle f\right\rangle $
+\end_inset
+
+, but 
+\begin_inset Formula $gf=q^{2}g^{2}=(qg)^{2}$
+\end_inset
+
+, and 
+\begin_inset Formula $qg\notin\left\langle f\right\rangle $
+\end_inset
+
+, because 
+\begin_inset Formula $qg$
+\end_inset
+
+ can't be generated by 
+\begin_inset Formula $f$
+\end_inset
+
+, because in order to take 
+\begin_inset Quotes eld
+\end_inset
+
+something
+\begin_inset Quotes erd
+\end_inset
+
+ times 
+\begin_inset Formula $f$
+\end_inset
+
+ to get 
+\begin_inset Formula $qg$
+\end_inset
+
+, the 
+\begin_inset Quotes eld
+\end_inset
+
+something
+\begin_inset Quotes erd
+\end_inset
+
+ would have to be 
+\begin_inset Formula $q^{-1}$
+\end_inset
+
+, and that's not a polynomial at all.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Take the contrapositive and suppose that 
+\begin_inset Formula $\left\langle f\right\rangle $
+\end_inset
+
+ is not radical, then we want to show that 
+\begin_inset Formula $f$
+\end_inset
+
+ is divisible by the square of a nonconstant polynomial.
+ Because 
+\begin_inset Formula $\left\langle f\right\rangle $
+\end_inset
+
+ is not radical, we know that there exists 
+\begin_inset Formula $g^{m}\in\left\langle f\right\rangle $
+\end_inset
+
+ such that 
+\begin_inset Formula $g\notin\left\langle f\right\rangle $
+\end_inset
+
+.
+ So 
+\begin_inset Formula $g^{m}=hf$
+\end_inset
+
+ for some 
+\begin_inset Formula $h\in K[x_{j}]_{j=1}^{n}$
+\end_inset
+
+, but [
+\series bold
+TODO
+\series default
+: finish]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Question for later: why do I remember 
+\begin_inset Quotes eld
+\end_inset
+
+closed under subtraction
+\begin_inset Quotes erd
+\end_inset
+
+ as part of the ideal definition? Why subtraction? Watanabe says addition!
+ Is that secretly 
+\begin_inset Quotes eld
+\end_inset
+
+folding in
+\begin_inset Quotes erd
+\end_inset
+
+ the one-step subgroup test? (Maybe this is worth a quick blog post?)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.4.4
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ An example of an ideal in 
+\begin_inset Formula $K[x,y]$
+\end_inset
+
+ that's not radical? We already know 
+\begin_inset Formula $\left\langle x^{2}\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ A radical ideal in 
+\begin_inset Formula $K[x,y]$
+\end_inset
+
+ that's not prime? What about 
+\begin_inset Formula $\left\langle xy^{2}\right\rangle $
+\end_inset
+
+? The generator itself 
+\begin_inset Formula $xy^{2}\in\left\langle xy^{2}\right\rangle $
+\end_inset
+
+, but it factors as 
+\begin_inset Formula $x\notin\left\langle xy^{2}\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $y\notin\left\langle xy^{2}\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ A prime ideal in 
+\begin_inset Formula $K[x,y]$
+\end_inset
+
+ that's not maximal? Example 0.41 was 
+\begin_inset Formula $\left\langle y-x^{2}\right\rangle $
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.4.5
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ An ideal 
+\begin_inset Formula $\left\langle f_{1},f_{2}\right\rangle \subseteq K[x_{j}]_{j=1}^{n}$
+\end_inset
+
+ need not be radical even if 
+\begin_inset Formula $f_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{2}$
+\end_inset
+
+ are squarefree.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.4.8
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\sqrt{I\cap J}=\sqrt{I}\cap\sqrt{J}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\text{\ensuremath{\subseteq}}$
+\end_inset
+
+) [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\supseteq$
+\end_inset
+
+) [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
