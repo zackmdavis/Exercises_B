@@ -4367,6 +4367,86 @@ TODO
 \end_layout
 
 \begin_layout Standard
+I'm having more trouble with 1.4.3 (
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+).
+ Example 1.29 gives a squarefreeness argument in 
+\begin_inset Formula $\Z$
+\end_inset
+
+, maybe that generalizes? Let's think about how 1.29 works: we're showing
+ that 
+\begin_inset Formula $\sqrt{\left\langle 12\right\rangle }=\left\langle 6\right\rangle $
+\end_inset
+
+.
+ If 
+\begin_inset Formula $r\in\sqrt{\left\langle 12\right\rangle }$
+\end_inset
+
+, then there exist 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $k$
+\end_inset
+
+ such that 
+\begin_inset Formula $r^{m}=12k$
+\end_inset
+
+.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Since 2 is prime and 
+\begin_inset Formula $2|r^{m}$
+\end_inset
+
+, it follows from Euclid's Lemma that 
+\begin_inset Formula $2|r$
+\end_inset
+
+.
+\begin_inset Quotes erd
+\end_inset
+
+ Euclid's Lemma states that 
+\begin_inset Formula $p|mn$
+\end_inset
+
+ implies 
+\begin_inset Formula $p|m$
+\end_inset
+
+ or 
+\begin_inset Formula $p|n$
+\end_inset
+
+.
+ But in the case of a power, the disjunctive consequent is just one case,
+ because all the disjuncts are the same.
+ By the same reasoning, you get 
+\begin_inset Formula $3|r$
+\end_inset
+
+, and those together buy us 
+\begin_inset Formula $\left\langle 6\right\rangle $
+\end_inset
+
+ membership.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 1.4.3
@@ -4459,7 +4539,24 @@ something
 \begin_inset Formula $q^{-1}$
 \end_inset
 
-, and that's not a polynomial at all.
+.
+ (Because if 
+\begin_inset Formula $xf=qg$
+\end_inset
+
+, then we have 
+\begin_inset Formula $xq^{\cancel{2}}\cancel{g}=\cancelto{1}{qg}$
+\end_inset
+
+ and then 
+\begin_inset Formula $x=q^{-1}$
+\end_inset
+
+.) But 
+\begin_inset Formula $q^{-1}$
+\end_inset
+
+ is not a polynomial at all.
 \end_layout
 
 \begin_layout Standard
@@ -4497,11 +4594,117 @@ something
 \begin_inset Formula $h\in K[x_{j}]_{j=1}^{n}$
 \end_inset
 
-, but [
+.
+ But 
+\begin_inset Formula $K[x_{j}]_{j=1}^{n}$
+\end_inset
+
+ is a unique factorization domain, so we know that 
+\begin_inset Formula $h$
+\end_inset
+
+ goes into 
+\begin_inset Formula $g^{m}$
+\end_inset
+
+, and in fact, 
+\begin_inset Formula $h$
+\end_inset
+
+ goes into 
+\begin_inset Formula $g$
+\end_inset
+
+.
+ (Because if 
+\begin_inset Formula $h:=\prod_{j}p_{j}$
+\end_inset
+
+ on the right side, then we need the same unique factorization on the left
+ side, but the left side is a power.
+ If 
+\begin_inset Formula $g:=\prod_{j}q_{j}$
+\end_inset
+
+, then 
+\begin_inset Formula $g^{m}=\prod_{j}q_{j}^{m}$
+\end_inset
+
+; 
+\begin_inset Formula $h$
+\end_inset
+
+ can't go in 
+\begin_inset Quotes eld
+\end_inset
+
+just once
+\begin_inset Quotes erd
+\end_inset
+
+.) Let 
+\begin_inset Formula $g:=qh$
+\end_inset
+
+.
+ Then we have 
+\begin_inset Formula $(qh)^{m}=q^{m}h^{m}=hf$
+\end_inset
+
+ implies 
+\begin_inset Formula $q^{m}h^{m-1}=f$
+\end_inset
+
+, and 
+\begin_inset Formula $f$
+\end_inset
+
+ is divisible by 
+\begin_inset Formula $q^{m}$
+\end_inset
+
+ (and we know that 
+\begin_inset Formula $m\ge2$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Maybe we also need to check that 
+\begin_inset Formula $q$
+\end_inset
+
+ is nonconstant? But if 
+\begin_inset Formula $q$
+\end_inset
+
+ were constant, then 
+\begin_inset Formula $g$
+\end_inset
+
+ would be a constant multiple of 
+\begin_inset Formula $h$
+\end_inset
+
+, such that 
+\begin_inset Formula $g:=kh$
+\end_inset
+
+, and we would have 
+\begin_inset Formula $(kh)^{m}=k^{m}h^{m}=hf$
+\end_inset
+
+, and 
+\begin_inset Formula $k^{m}h^{m-1}=f$
+\end_inset
+
+.
+ [
 \series bold
 TODO
 \series default
-: finish]
+: finish debugging]
 \begin_inset Newline newline
 \end_inset
 
@@ -4634,10 +4837,118 @@ Proposition
 \begin_layout Standard
 
 \emph on
+Commentary
+\emph default
+.
+ Presumably there's some way to 
+\begin_inset Quotes eld
+\end_inset
+
+mix
+\begin_inset Quotes erd
+\end_inset
+
+ the factors of 
+\begin_inset Formula $f_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{2}$
+\end_inset
+
+ to get the non-radicality, analogous to how 
+\begin_inset Formula $\left\langle 12\right\rangle $
+\end_inset
+
+ isn't radical in 
+\begin_inset Formula $\Z$
+\end_inset
+
+ even though 
+\begin_inset Formula $2$
+\end_inset
+
+ and 
+\begin_inset Formula $6=2\cdot3$
+\end_inset
+
+ are squarefree.
+ But it's not a trivial translation, because 
+\begin_inset Formula $\left\langle 12\right\rangle $
+\end_inset
+
+ is principal, and the non-principality is presumably part of the problem
+ here.
+ (When you have two generators, you can build new ideal elements with addition,
+ not just multiplication.)
+\end_layout
+
+\begin_layout Standard
+
+\emph on
 Proof
 \emph default
 .
  [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1.4.7
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For ideal 
+\begin_inset Formula $I\subseteq R$
+\end_inset
+
+, 
+\begin_inset Formula $\sqrt{I}=R$
+\end_inset
+
+ iff 
+\begin_inset Formula $I=R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) [
+\series bold
+TODO
+\series default
+]
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) [
 \series bold
 TODO
 \series default
@@ -4673,26 +4984,94 @@ Proof
 \emph default
 .
  (
-\begin_inset Formula $\text{\ensuremath{\subseteq}}$
+\begin_inset Formula $\supseteq$
 \end_inset
 
-) [
-\series bold
-TODO
-\series default
-]
+) Suppose 
+\begin_inset Formula $b\in\sqrt{I}$
+\end_inset
+
+ and 
+\begin_inset Formula $b\in\sqrt{J}$
+\end_inset
+
+.
+ That means there exists 
+\begin_inset Formula $m$
+\end_inset
+
+ such that 
+\begin_inset Formula $b^{m}\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+ such that 
+\begin_inset Formula $b^{n}\in J$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $b^{m+n}\in I$
+\end_inset
+
+ (because 
+\begin_inset Formula $b^{m}\in I$
+\end_inset
+
+ and ideals absorb multiplication, including multiplication by 
+\begin_inset Formula $b^{n}$
+\end_inset
+
+, so 
+\begin_inset Formula $b^{n}b^{m}=b^{n+m}\in I$
+\end_inset
+
+) and 
+\begin_inset Formula $b^{m+n}\in J$
+\end_inset
+
+, too (same reasoning without loss of generality).
 \end_layout
 
 \begin_layout Standard
 (
-\begin_inset Formula $\supseteq$
+\begin_inset Formula $\text{\ensuremath{\subseteq}}$
 \end_inset
 
-) [
-\series bold
-TODO
-\series default
-]
+) Suppose 
+\begin_inset Formula $b\in\sqrt{I\cap J}$
+\end_inset
+
+.
+ That means that there exists an 
+\begin_inset Formula $m$
+\end_inset
+
+ such that 
+\begin_inset Formula $b^{m}\in I\cap J$
+\end_inset
+
+.
+ But then the same 
+\begin_inset Formula $m$
+\end_inset
+
+ implies 
+\begin_inset Formula $b^{m}\in I$
+\end_inset
+
+ and 
+\begin_inset Formula $b^{m}\in J$
+\end_inset
+
+ separately.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_body
