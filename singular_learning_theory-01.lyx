@@ -1,0 +1,199 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children no
+\language american
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Exercises in Singular Learning Theory
+\end_layout
+
+\begin_layout Author
+Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+July 2026
+\end_layout
+
+\begin_layout Abstract
+Working through 
+\emph on
+https://timaeus.co/blog/slt/2024-08-30-exercises
+\emph default
+,
+ with notes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\dd}[1]{\frac{\partial}{\partial#1}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ddth}{\dd{\theta}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+1
+\series default
+.
+ We are asked to calculate the Fisher information matrix of the normal distribution 
+\begin_inset Formula $p(x|\mu)=\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}(x-\mu)^{2})$
+\end_inset
+
+ (which will be a 
+\begin_inset Formula $1\times1$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+matrix
+\begin_inset Quotes erd
+\end_inset
+
+ for a one-parameter model like this).
+\end_layout
+
+\begin_layout Standard
+What is the Fisher information matrix?
+\end_layout
+
+\begin_layout Standard
+Fisher information measures how much information a random variable conveys about model parameters.
+ If a small change to the parameter changes the distribution a lot,
+ then observing a sample from the distribution tells you a lot about the parameter.
+\end_layout
+
+\begin_layout Standard
+The partial derivative (with respect to parameter 
+\begin_inset Formula $\theta$
+\end_inset
+
+) of the log-likelihood is called the 
+\emph on
+score
+\emph default
+.
+ Given regularity conditions (that I think fail for singular models,
+ which is what this whole endeavor is about?) the expectation of the score at the true parameter value is 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ The Fisher information is the variance of the score.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E_{\theta}\left[\left(\ddth\log f(X;\theta)\right)^{2}\right]=\int\left(\ddth\log f(X;\theta)\right)^{2}f(x;\theta)\,dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
