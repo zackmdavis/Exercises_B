@@ -175,8 +175,8 @@ The partial derivative (with respect to parameter
 score
 \emph default
 .
- Given regularity conditions (that I think fail for singular models,
- which is what this whole endeavor is about?) the expectation of the score at the true parameter value is 
+ Given some boring regularity conditions,
+ the expectation of the score at the true parameter value is 
 \begin_inset Formula $0$
 \end_inset
 
@@ -187,12 +187,153 @@ score
 \begin_layout Standard
 \begin_inset Formula 
 \[
-E_{\theta}\left[\left(\ddth\log f(X;\theta)\right)^{2}\right]=\int\left(\ddth\log f(X;\theta)\right)^{2}f(x;\theta)\,dx
+\mathrm{Var}\left(\ddth\log f(X;\theta)\right)=E\left[\mathrm{score}^{2}\right]-\cancelto{0}{E\left[\mathrm{score}\right]^{2}}=E_{X\sim P_{\theta}}\left[\left(\ddth\log f(X;\theta)\right)^{2}\right]=\int\left(\ddth\log f(X;\theta)\right)^{2}f(x;\theta)\,dx
 \]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+GPT-5.6 Sol writes out the example of a Bernoulli distribution for us (so that I'm not spoiled for the normal,
+ which was the actual exercise).
+ The Bernoulli with parameter 
+\begin_inset Formula $p$
+\end_inset
+
+ is 
+\begin_inset Formula $f(x;p)=p^{x}(1-p)^{1-x}$
+\end_inset
+
+.
+ Take the logarithm:
+ that's 
+\begin_inset Formula $\log p^{x}(1-p)^{1-x}=x\log p+(1-x)\log(1-p)$
+\end_inset
+
+.
+ Then differentiate with respect to 
+\begin_inset Formula $p$
+\end_inset
+
+:
+ that's 
+\begin_inset Formula $\frac{x}{p}-\frac{1-x}{1-p}=\frac{(1-p)x-p(1-x)}{p(1-p)}=\frac{x\cancel{-px}-p\cancel{+px}}{p(1-p)}=\frac{x-p}{p(1-p)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then we square and take the expectation:
+ 
+\begin_inset Formula $E_{X\sim\mathrm{Bern}(p)}\left[\frac{\left(x-p\right)^{2}}{p^{2}(1-p)^{2}}\right]$
+\end_inset
+
+.
+ The denominator doesn't depend on 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ so we're at 
+\begin_inset Formula $\frac{E\left[\left(x-p\right)^{2}\right]}{p^{2}(1-p)^{2}}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $E\left[\left(x-p\right)^{2}\right]$
+\end_inset
+
+ is the variance (because in this case,
+ the parameter 
+\begin_inset Formula $p$
+\end_inset
+
+ is the mean),
+ and the variance for the Bernoulli is 
+\begin_inset Formula $p(1-p)$
+\end_inset
+
+,
+ so we have 
+\begin_inset Formula $\frac{p(1-p)}{p^{2}(1-p)^{2}}=\frac{1}{p(1-p)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's try the normal now.
+ We start with 
+\begin_inset Formula $p(x|\mu)=\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}(x-\mu)^{2})$
+\end_inset
+
+ and take the logarithm 
+\begin_inset Formula $\log\left(\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}(x-\mu)^{2})\right)=\log\left(\frac{1}{\sqrt{2\pi}}\right)+\cancel{\log\exp}\left(-\frac{1}{2}(x-\mu)^{2}\right)$
+\end_inset
+
+,
+ so we have 
+\begin_inset Formula $\log\left(\frac{1}{\sqrt{2\pi}}\right)-\frac{1}{2}(x-\mu)^{2}$
+\end_inset
+
+,
+ but the constant term drops out when we differentiate with respect to the parameter 
+\begin_inset Formula $\mu$
+\end_inset
+
+:
+ 
+\begin_inset Formula $\dd{\mu}\left(-\frac{1}{2}(x-\mu)^{2}+C\right)=-\cancel{\frac{2}{2}}(x-\mu)\cdot-1=x-\mu$
+\end_inset
+
+.
+ Then we square and take the expectation.
+\begin_inset Formula 
+\[
+E_{X\sim\mathrm{Norm(\mu,1)}}\left[\left(X-\mu\right)^{2}\right]=\int\left(X-\mu\right)^{2}\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}(x-\mu)^{2})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+...
+ and it's not clear to me what I'm supposed to do with this integral.
+ GPT-5.6 Sol (prompted for a minimal hint) points out that we don't need it—
+
+\begin_inset Formula $E\left[\left(X-\mu\right)^{2}\right]$
+\end_inset
+
+ is the definition of variance.
+ 
+\end_layout
+
+\begin_layout Standard
+The exercise prompt says,
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Use this to show the model is regular,
+\begin_inset Quotes erd
+\end_inset
+
+ and,
+ well,
+ the 
+\begin_inset Formula $1\times1$
+\end_inset
+
+ matrix 
+\begin_inset Formula $\left[1\right]$
+\end_inset
+
+ indeed does not have any zero eigenvalues.
 \end_layout
 
 \end_body
