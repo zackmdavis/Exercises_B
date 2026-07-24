@@ -136,6 +136,11 @@ https://timaeus.co/blog/slt/2024-08-30-exercises
 1
 \series default
 .
+ 
+\series bold
+a
+\series default
+.
  We are asked to calculate the Fisher information matrix of the normal distribution 
 \begin_inset Formula $p(x|\mu)=\frac{1}{\sqrt{2\pi}}\exp(-\frac{1}{2}(x-\mu)^{2})$
 \end_inset
@@ -334,6 +339,106 @@ Use this to show the model is regular,
 \end_inset
 
  indeed does not have any zero eigenvalues.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ We are asked to write an explicit expression for the KL divergence 
+\begin_inset Formula $K(\mu)$
+\end_inset
+
+ between 
+\begin_inset Formula $q(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $p(x|\mu)$
+\end_inset
+
+ as a function of 
+\begin_inset Formula $\mu$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We are told that the 
+\begin_inset Quotes eld
+\end_inset
+
+Gray Book
+\begin_inset Quotes erd
+\end_inset
+
+ (
+\emph on
+Algebraic Geometry and Statistical Learning Theory
+\emph default
+) does the 2D normal as Example 1.1.
+ The Gray Book says that for the 2D normal 
+\begin_inset Formula $p(x,y|a,b):=\frac{1}{2\pi}\exp\left(-\frac{(x-a)^{2}+(y-b)^{2}}{2}\right)$
+\end_inset
+
+ (for parameters 
+\begin_inset Formula $w:=(a,b)$
+\end_inset
+
+),
+ the likelihood function for data 
+\begin_inset Formula $(x_{i},y_{i})_{i=1}^{n}$
+\end_inset
+
+ is 
+\begin_inset Formula $L_{n}(a,b)=\frac{1}{(2\pi)^{n}}\exp\left(-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-a)^{2}+(y_{i}-b)^{2}\right)$
+\end_inset
+
+.
+ That makes sense.
+ (You're multiplying the densities of each datapoint:
+ the 
+\begin_inset Formula $\frac{1}{2\pi}$
+\end_inset
+
+ factors stack,
+ and multiplying the exponentials sums the exponents.
+ Then the Gray Book says,
+ if the true distribution has parameters 
+\begin_inset Formula $(a_{0},b_{0})$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $q(x,y)=p(x,y|a_{0},b_{0})$
+\end_inset
+
+,
+ the log likelihood ratio function is 
+\begin_inset Formula 
+\[
+K_{n}(a,b)=\frac{a^{2}-a_{0}^{2}+b^{2}-b_{0}^{2}}{2}-(a-a_{0})\left(\frac{1}{n}\sum_{i=1}^{n}x_{i}\right)-(b-b_{0})\left(\frac{1}{n}\sum_{i=1}^{n}y_{i}\right)
+\]
+
+\end_inset
+
+ Where did that expression come from?
+ Presumably the 
+\begin_inset Quotes eld
+\end_inset
+
+log likelihood ratio function
+\begin_inset Quotes erd
+\end_inset
+
+ is 
+\begin_inset Formula $\frac{\log L_{n}(a,b)}{\log L_{n}(a_{0},b_{0})}$
+\end_inset
+
+.
 \end_layout
 
 \end_body
