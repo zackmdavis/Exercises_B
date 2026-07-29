@@ -439,6 +439,57 @@ log likelihood ratio function
 \end_inset
 
 .
+ Actually,
+ GPT-5.6 Sol points out that it isn't.
+ I'm retarded,
+ and shouldn't have needed assistance for that—
+or,
+ well,
+ maybe it's forgivable to have misparsed it as 
+\begin_inset Quotes eld
+\end_inset
+
+(log likelihood) ratio
+\begin_inset Quotes erd
+\end_inset
+
+ when it's actually 
+\begin_inset Quotes eld
+\end_inset
+
+log (likelihood ratio)
+\begin_inset Quotes erd
+\end_inset
+
+.
+ It's the log of the likelihood ratios,
+ 
+\emph on
+not
+\emph default
+ the ratio of the log-likelihoods.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\log\frac{L_{n}(a,b)}{L_{n}(a_{0},b_{0})}=\log\frac{\cancel{\frac{1}{(2\pi)^{n}}}\exp\left(-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-a)^{2}+(y_{i}-b)^{2}\right)}{\cancel{\frac{1}{(2\pi)^{n}}}\exp\left(-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-a_{0})^{2}+(y_{i}-b_{0})^{2}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\cancel{\log\exp}\left(-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-a)^{2}+(y_{i}-b)^{2}\right)-\cancel{\log\exp}\left(-\frac{1}{2}\sum_{i=1}^{n}(x_{i}-a_{0})^{2}+(y_{i}-b_{0})^{2}\right)
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
