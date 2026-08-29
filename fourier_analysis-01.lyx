@@ -106,7 +106,7 @@ August 2026
 \end_layout
 
 \begin_layout Abstract
-Artifact from crashing Prof.
+Notes and exercises relating to crashing Prof.
  Chun-Kit Lai's 
 \begin_inset Quotes eld
 \end_inset
@@ -116,7 +116,25 @@ Advanced Topics in Mathematics:
 \begin_inset Quotes erd
 \end_inset
 
- (Fourier and functional analysis) class at San Francisco State University.
+ (Fourier and functional analysis) Fall 2026 class at San Francisco State University.
+ Prof.
+ Lai's reference text is Stein and Shakarchi.
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\fhat}{\hat{f}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\ghat}{\hat{g}}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -149,10 +167,475 @@ Engineers get taught a version of Fourier series in which
 \end_inset
 
  for now) 
-\begin_inset Formula $\hat{f}(n):=\frac{}{}$
+\begin_inset Formula $\hat{f}(k):=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\:d\theta$
+\end_inset
+
+,
+ and then our series is 
+\begin_inset Formula $f(x)=\sum_{k=-\infty}^{\infty}\fhat(k)\exp(ik\theta)$
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+If a function were uniquely pinned down by its Fourier coëfficients,
+ then we could say:
+ if 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ have the same coëfficients,
+ then 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $g$
+\end_inset
+
+ are equal.
+ Then consider the difference 
+\begin_inset Formula $h:=f-g$
+\end_inset
+
+.
+ Putting both antecedent and consequent in terms of 
+\begin_inset Formula $h$
+\end_inset
+
+:
+ if 
+\begin_inset Formula $\forall k\ \hat{h}(k)=0$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $h=0$
+\end_inset
+
+.
+ That's not quite true,
+ because a function can differ at finitely many points and still have the same integral and therefore the same Fourier coëfficients,
+ but it's spiritually true:
+ 
+\begin_inset Formula $f(\theta_{0})=0$
+\end_inset
+
+ when 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous at 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We should do some exercises.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ch1#2
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ We want to show that Fourier series can be written as 
+\begin_inset Formula $f(\theta)\sim\fhat(0)+\sum_{k\ge1}\left(\fhat(k)+\fhat(-k)\right)\cos n\theta+i\left(\fhat(k)-\fhat(-k)\right)\sin n\theta$
+\end_inset
+
+,
+ which is intuitive enough that writing out the algebra shouldn't be difficult at all.
+ We have 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\fhat(k)\exp(ik\theta)=\sum_{k=-\infty}^{\infty}\fhat(k)\left(\cos(k\theta)+i\sin(k\theta)\right)=\sum_{k=-\infty}^{\infty}\fhat(k)\cos(k\theta)+i\fhat(k)\sin(k\theta)$
+\end_inset
+
+.
+ Then we'll separate the negative,
+ positive,
+ and zero parts of the integer argument.
+\end_layout
+
+\begin_layout Standard
+So we have 
+\begin_inset Formula $\fhat(0)\left(\cancelto{1}{\cos(0)}+\cancel{\sin(0)}\right)+\sum_{k\ge1}\fhat(-k)\cos(-k\theta)+i\fhat(-k)\sin(-k\theta)+\sum_{k\ge1}\fhat(k)\cos(k\theta)+i\fhat(k)\sin(k\theta)$
+\end_inset
+
+ and then cosine is even and sine is odd,
+ so that becomes 
+\begin_inset Formula $\fhat(0)+\sum_{k\ge1}\fhat(-k)\cos(k\theta)-i\fhat(-k)\sin(k\theta)+\sum_{k\ge1}\fhat(k)\cos(k\theta)+i\fhat(k)\sin(k\theta)$
+\end_inset
+
+ which is 
+\emph on
+quod erat demonstrandum
+\emph default
+ after regrouping.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is even,
+ then 
+\begin_inset Formula $\fhat(k)=\fhat(-k)$
+\end_inset
+
+ and we have a cosine series.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is even.
+ 
+\begin_inset Formula $\hat{f}(k):=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\:d\theta$
+\end_inset
+
+.
+ Can we integrate by parts (
+\begin_inset Formula $\int u\,dv=uv-\int v\,du$
+\end_inset
+
+) even if we don't non-symbolically know the derivative of 
+\begin_inset Formula $f$
+\end_inset
+
+?
+ Presumably it doesn't matter:
+ the point is that it should be the same if we swap 
+\begin_inset Formula $k\leftrightarrow-k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Assigning 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\underbrace{f(\theta)}_{u:=}\underbrace{\exp(-ik\theta)}_{dv:=}\:d\theta$
+\end_inset
+
+ yields 
+\begin_inset Formula $du:=f'(\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=\frac{-1}{ik}\exp(-ik\theta)$
+\end_inset
+
+,
+ so the parts formula (setting the factor of 
+\begin_inset Formula $\frac{1}{2\pi}$
+\end_inset
+
+ aside for a moment) yields 
+\begin_inset Formula 
+\[
+\left.\underbrace{f(\theta)}_{u}\cdot\underbrace{\frac{-1}{ik}\exp(-ik\theta)}_{v}\right|_{\theta=-\pi}^{\pi}-\frac{-1}{ik}\int_{-\pi}^{\pi}\underbrace{\exp(-ik\theta)}_{v}\cdot\underbrace{f'(\theta)}_{du}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{-1}{ik}\cdot\left(f(\pi)\exp(-ik\pi)-\underbrace{f(-\pi)}_{=f(\pi)\mathrm{\,(b/c\,even)}}\exp(ik\pi)\right)-\frac{-1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{-1}{ik}\cdot\left(f(\pi)\exp(-ik\pi)-f(\pi)\exp(ik\pi)\right)-\frac{-1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{-f(\pi)}{ik}\cdot\left(\exp(-ik\pi)-\exp(ik\pi)\right)-\frac{-1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But 
+\begin_inset Formula $\exp(-ik\pi)-\exp(ik\pi)$
+\end_inset
+
+ should just be zero,
+ so the boundary term vanishes.
+ (Whether 
+\begin_inset Formula $k$
+\end_inset
+
+ is even or odd only determines whether it works out as 
+\begin_inset Formula $-1-(-1)=-1+1=0$
+\end_inset
+
+ or 
+\begin_inset Formula $1-1=0$
+\end_inset
+
+.) We're left with 
+\begin_inset Formula $-\frac{-1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)$
+\end_inset
+
+,
+ which we should be able to integrate by parts 
+\begin_inset Quotes eld
+\end_inset
+
+the other way
+\begin_inset Quotes erd
+\end_inset
+
+,
+ 
+\begin_inset Formula $-\frac{-1}{ik}\int_{-\pi}^{\pi}\underbrace{\exp(-ik\theta)}_{u}\underbrace{f'(\theta)}_{dv}$
+\end_inset
+
+ yielding 
+\begin_inset Formula $du:=-ik\exp(-ik\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=f(\theta)$
+\end_inset
+
+.
+ Then
+\begin_inset Formula 
+\[
+\left.\underbrace{\exp(-ik\theta)f(\theta)}_{uv}\right|_{\theta:=-\pi}^{\pi}+\underbrace{ik\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)}_{\int v\,du}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Except—
+aren't we just going in circles here?
+ (The boundary term is going to be zero again,
+ and 
+\begin_inset Formula $\cancel{-}\frac{\cancel{-}1}{\cancel{ik}}\cancel{ik}=1$
+\end_inset
+
+.) Doing a long calculation to show that 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\:d\theta$
+\end_inset
+
+ equals itself doesn't help us at all!
+ (Although it is perhaps reässuring that I'm not writing total nonsense?)
+\end_layout
+
+\begin_layout Standard
+What would be non-circular would be to do the calculation for 
+\begin_inset Formula $\hat{f}(-k)$
+\end_inset
+
+ (
+\emph on
+not
+\emph default
+ 
+\begin_inset Formula $\hat{f}(k)$
+\end_inset
+
+).
+ So 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\underbrace{f(\theta)}_{u:=}\underbrace{\exp(ik\theta)}_{dv:=}\:d\theta$
+\end_inset
+
+ yields 
+\begin_inset Formula $du:=f'(\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=\frac{1}{ik}\exp(ik\theta)$
+\end_inset
+
+,
+ so we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left.\underbrace{f(\theta)}_{u}\cdot\underbrace{\frac{1}{ik}\exp(ik\theta)}_{v}\right|_{\theta=-\pi}^{\pi}-\int_{-\pi}^{\pi}\underbrace{\frac{1}{ik}\exp(ik\theta)}_{v}\cdot\underbrace{f'(\theta)}_{du}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The boundary term is 
+\begin_inset Formula $\frac{1}{ik}\left(f(\pi)\exp(ik\pi)-f(-\pi)\exp(ik\pi)\right)=\frac{1}{ik}f(\pi)\left(\exp(ik\pi)-\exp(ik\pi)\right)=\frac{1}{ik}f(\pi)\cdot0=0$
+\end_inset
+
+ again.
+ So now I guess we're doing parts 
+\emph on
+again
+\emph default
+,
+ on 
+\begin_inset Formula $-\frac{1}{ik}\int_{-\pi}^{\pi}\underbrace{\exp(ik\theta)}_{u}\cdot\underbrace{f'(\theta)}_{dv}$
+\end_inset
+
+,
+ yielding 
+\begin_inset Formula $du:=ik\exp(ik\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=f(\theta)$
+\end_inset
+
+,
+ to get 
+\begin_inset Formula $\left.\underbrace{\exp(ik\theta)}_{u}\cdot\underbrace{f(\theta)}_{v}\right|_{\theta:=-\pi}^{\pi}-\int_{-\pi}^{\pi}\underbrace{f(\theta)}_{v}\underbrace{ik\exp(ik\theta)}_{du}$
+\end_inset
+
+.
+ That same boundary term is going to vanish again,
+ and bringing back those constant factors we have 
+\begin_inset Formula $\frac{1}{2\pi}\cdot\cancel{-}\frac{1}{\cancel{ik}}\cdot\cancel{-}\int_{-\pi}^{\pi}f(\theta)\cancel{ik}\exp(ik\theta)=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(ik\theta)$
+\end_inset
+
+ ...
+ but that's just going in a circle again!
+ We want 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)$
+\end_inset
+
+,
+ with the negative sign inside the exponential.
+ In retrospect,
+ it would seem that 
+\begin_inset Quotes eld
+\end_inset
+
+integrate by parts,
+ then integrate by parts again `the other way'
+\begin_inset Quotes erd
+\end_inset
+
+ was not going to be helpful no matter where we start from;
+ there has to be some other trick.
+ But what?
+ The solution somehow needs to depend on 
+\begin_inset Formula $f$
+\end_inset
+
+ being even—
+and we did use that fact in determining that the boundary term vanishes.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ch2#4
+\series default
+.
+ Let 
+\begin_inset Formula $f(\theta):=\theta(\pi-\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $f(\theta)=\frac{8}{\pi}\sum_{k\in\mathbb{N}\mathrm{\,odd}}\frac{\sin k\theta}{k^{3}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
