@@ -138,6 +138,22 @@ Advanced Topics in Mathematics:
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\R}{\mathbb{R}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\N}{\mathbb{N}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Engineers get taught a version of Fourier series in which 
 \begin_inset Formula $a_{n}:=\frac{1}{L}\int_{-L}^{L}f(x)\cos\frac{n\pi x}{L}dx$
 \end_inset
@@ -252,12 +268,26 @@ Ch1#2
 a
 \series default
 .
- We want to show that Fourier series can be written as 
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
 \begin_inset Formula $f(\theta)\sim\fhat(0)+\sum_{k\ge1}\left(\fhat(k)+\fhat(-k)\right)\cos n\theta+i\left(\fhat(k)-\fhat(-k)\right)\sin n\theta$
 \end_inset
 
 ,
- which is intuitive enough that writing out the algebra shouldn't be difficult at all.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ This is intuitive enough that writing out the algebra shouldn't be difficult at all.
  We have 
 \begin_inset Formula $\sum_{k=-\infty}^{\infty}\fhat(k)\exp(ik\theta)=\sum_{k=-\infty}^{\infty}\fhat(k)\left(\cos(k\theta)+i\sin(k\theta)\right)=\sum_{k=-\infty}^{\infty}\fhat(k)\cos(k\theta)+i\fhat(k)\sin(k\theta)$
 \end_inset
@@ -611,6 +641,377 @@ Claude Opus 5 says that we should actually be doing a change-of-variables like
 \end_inset
 
  is differentiable.
+ 
+\end_layout
+
+\begin_layout Standard
+Let's do that.
+ We have 
+\begin_inset Formula $\hat{f}(k):=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\:d\theta$
+\end_inset
+
+,
+ and we substitute 
+\begin_inset Formula $\varphi:=-\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $d\varphi=-d\theta$
+\end_inset
+
+ to get 
+\begin_inset Formula $\hat{f}(k)=\frac{1}{2\pi}\int_{\pi}^{-\pi}-f(-\varphi)\exp(ik\varphi)\,d\varphi=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi)\exp(ik\varphi)\,d\varphi$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\fhat(-k)=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi)\exp(-ik\varphi)\,d\varphi=\fhat(k)$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The remaining question is,
+ why is that a cosine series?
+ That comes from part a.
+ We have as a proposition that 
+\begin_inset Formula $f(\theta)\sim\fhat(0)+\sum_{k\ge1}\left(\fhat(k)+\fhat(-k)\right)\cos n\theta+i\left(\fhat(k)-\fhat(-k)\right)\sin n\theta$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\fhat(k)=\fhat(-k)$
+\end_inset
+
+,
+ that becomes 
+\begin_inset Formula $\fhat(0)+\sum_{k\ge1}2\fhat(k)\cos n\theta+i\cancel{\left(\fhat(k)-\fhat(k)\right)}\sin n\theta$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is odd,
+ then 
+\begin_inset Formula $\fhat(k)=-\fhat(-k)$
+\end_inset
+
+ and we have a sine series.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Now that we've been straightened out from being retarded,
+ it's presumably the same deal.
+ The 
+\begin_inset Formula $\varphi=-\theta$
+\end_inset
+
+ substitution again brings us to 
+\begin_inset Formula $\hat{f}(k)=\frac{1}{2\pi}\int_{\pi}^{-\pi}-f(-\varphi)\exp(ik\varphi)\,d\varphi$
+\end_inset
+
+,
+ but this time 
+\begin_inset Formula $f$
+\end_inset
+
+ is odd,
+ so we get 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}-f(\varphi)\exp(ik\varphi)\,d\varphi$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\fhat(-k)=\frac{1}{2\pi}\int_{-\pi}^{\pi}-f(\varphi)\exp(-ik\varphi)\,d\varphi=-\fhat(k)$
+\end_inset
+
+,
+ and thus 
+\begin_inset Formula $\fhat(k)=-\fhat(-k)$
+\end_inset
+
+,
+ which is a sine series because 
+\begin_inset Formula $\sum_{k\ge1}\left(\fhat(k)+\fhat(-k)\right)\cos n\theta+i\left(\fhat(k)-\fhat(-k)\right)\sin n\theta$
+\end_inset
+
+ becomes 
+\begin_inset Formula $\sum_{k\ge1}\cancel{\left(\fhat(k)-\fhat(k)\right)}\cos n\theta+2i\fhat(k)\sin n\theta$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Suppose that for 
+\begin_inset Formula $\theta\in\R$
+\end_inset
+
+,
+ 
+\begin_inset Formula $f(\theta+\pi)=f(\theta)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\fhat(k)=0$
+\end_inset
+
+ for odd 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We were advised that when the hypothesis is a symmetry statement,
+ that's the transformation to apply,
+ so for lack of any better ideas,
+ we'll try substituting 
+\begin_inset Formula $\varphi:=\theta+\pi$
+\end_inset
+
+,
+ which implies 
+\begin_inset Formula $\theta=\varphi-\pi$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\:d\theta$
+\end_inset
+
+ becomes 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi-\pi)\exp(-ik(\varphi-\pi))\:d\varphi=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi-\pi)\exp((k\pi-k\varphi)i)\:d\varphi$
+\end_inset
+
+.
+ Then for odd 
+\begin_inset Formula $k$
+\end_inset
+
+,
+ we have 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi)\cancelto{-1}{\exp(k\pi i)}\cdot\left(-\exp(k\varphi i)\right)\:d\varphi=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi)\exp(k\varphi i)\:d\varphi$
+\end_inset
+
+.
+ It seems like all that did was get rid of the negative sign inside of the exponential,
+ which does not obviously help us.
+ Maybe the transformation was the wrong tack,
+ and the point is that the periodicity will make the antiderivative at 
+\begin_inset Formula $\pi$
+\end_inset
+
+ and 
+\begin_inset Formula $-\pi$
+\end_inset
+
+ come out the same,
+ so the integral is zero?
+ But I don't know how to do the integral:
+ we can't use parts with 
+\begin_inset Formula $u:=f(\theta)$
+\end_inset
+
+ if we don't know that 
+\begin_inset Formula $f$
+\end_inset
+
+ is differentiable (per Claude's earlier warning) and parts with 
+\begin_inset Formula $dv:=f(\theta)$
+\end_inset
+
+ doesn't help us if the periodicity constraint doesn't necessarily apply to the antiderivative 
+\begin_inset Formula $F$
+\end_inset
+
+.
+ Halp?
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+e
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ is real-valued if and only if 
+\begin_inset Formula $\forall k\ \overline{\fhat(k)}=\fhat(-k)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is real-valued.
+ Then 
+\begin_inset Formula $\overline{\fhat(k)}=\overline{\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\:d\theta}=\frac{1}{2\pi}\int_{-\pi}^{\pi}\overline{f(\theta)}\overline{\exp(-ik\theta)}\:d\theta=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(ik\theta)\:d\theta=\fhat(-k)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+) Suppose 
+\begin_inset Formula $\forall k\ \overline{\fhat(k)}=\fhat(-k)$
+\end_inset
+
+.
+ That is to say,
+ 
+\begin_inset Formula $\overline{\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\:d\theta}=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(ik\theta)\:d\theta$
+\end_inset
+
+.
+ We can pull the overline into the integral like 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\overline{f(\theta)}\overline{\exp(-ik\theta)}\:d\theta$
+\end_inset
+
+,
+ and into the exponential like 
+\begin_inset Formula $\overline{\exp(-ik\theta)}=\exp(ik\theta)$
+\end_inset
+
+.
+ (We know that 
+\begin_inset Formula $\theta$
+\end_inset
+
+ is real,
+ so 
+\begin_inset Formula $\overline{\theta}=\theta$
+\end_inset
+
+.) So we have 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\overline{f(\theta)}\exp(ik\theta)\:d\theta=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(ik\theta)\:d\theta$
+\end_inset
+
+.
+ It's tempting to just declare that this implies
+\begin_inset Formula $\overline{f(\theta)}=f(\theta)$
+\end_inset
+
+ and therefore that 
+\begin_inset Formula $f$
+\end_inset
+
+ is real-valued,
+ but I'm worried that that's a sloppy inference even if it has to be spiritually true.
+ For example,
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ being non-real at a single point wouldn't affect the value of the integral.
+ I'm daydreaming that there should be an elegant proof that if 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous,
+ then it can only be non-real-valued on an interval,
+ not a single point,
+ and then there would have to be some 
+\begin_inset Formula $k$
+\end_inset
+
+ that exposes it?
+ But we don't even know that 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous,
+ only Riemann-integrable.
 \begin_inset Newline newline
 \end_inset
 
@@ -659,6 +1060,250 @@ Proof
 TODO
 \series default
 ]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ch2#6
+\series default
+.
+ Consider 
+\begin_inset Formula $f(\theta)=\left|\theta\right|$
+\end_inset
+
+ on 
+\begin_inset Formula $[-\pi,\pi]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The Fourier coëfficients are 
+\begin_inset Formula $\fhat(k)=\begin{cases}
+\frac{\pi}{2} & k:=0\\
+\frac{-1+(-1)^{k}}{\pi k^{2}} & k:\ne0
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ We are asked what the series is in terms of sines and cosines.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\sum_{k\in\N\mathrm{\,odd}}\frac{1}{k^{2}}=\frac{\pi^{2}}{8}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{k^{2}}=\frac{\pi^{2}}{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ch2#10
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Suppose 
+\begin_inset Formula $f$
+\end_inset
+
+ is periodic with period 
+\begin_inset Formula $2\pi$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ times continuously differentiable.
+ Then 
+\begin_inset Formula $\fhat(k)=O\left(\frac{1}{\left|k\right|^{m}}\right)$
+\end_inset
+
+ as 
+\begin_inset Formula $\left|k\right|\to\infty$
+\end_inset
+
+,
+ which is to say that there exists a constant 
+\begin_inset Formula $C$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|\fhat(k)\right|\le\frac{C}{\left|k\right|^{m}}$
+\end_inset
+
+,
+ which is to say that there exists a bound 
+\begin_inset Formula $B$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|k\right|^{m}\left|\fhat(k)\right|\le B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Comment
+\emph default
+.
+ We get a hint to integrate by parts (which is now legal,
+ since we know that 
+\begin_inset Formula $f$
+\end_inset
+
+ is differentiable (
+\begin_inset Formula $m$
+\end_inset
+
+ times continuously).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Assigning 
+\begin_inset Formula $\fhat(k)=\frac{1}{2\pi}\int_{-\pi}^{\pi}\underbrace{f(\theta)}_{u}\underbrace{\exp(-ik\theta)}_{dv}\,d\theta$
+\end_inset
+
+ yields 
+\begin_inset Formula $du:=f'(\theta)$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=\frac{-1}{ik}\exp(-ik\theta)$
+\end_inset
+
+,
+ such that we have 
+\begin_inset Formula $\left.\frac{-1}{ik}f(\theta)\exp(-ik\theta)\right|_{\theta:=-\pi}^{\pi}+\frac{1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)\,d\theta$
+\end_inset
+
+ 
+\begin_inset Formula $=\frac{-1}{ik}f(\pi)\exp(-ik\pi)+\frac{1}{ik}f(-\pi)\exp(ik\pi)+\frac{1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)\,d\theta$
+\end_inset
+
+.
+ 
 \end_layout
 
 \end_body
