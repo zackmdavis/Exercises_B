@@ -588,6 +588,29 @@ integrate by parts,
 
  being even—
 and we did use that fact in determining that the boundary term vanishes.
+\end_layout
+
+\begin_layout Standard
+Claude Opus 5 says that we should actually be doing a change-of-variables like 
+\begin_inset Formula $\varphi:=-\theta$
+\end_inset
+
+ here (the changes in the limits should cancel with 
+\begin_inset Formula $d\varphi=-d\theta$
+\end_inset
+
+ and only the integrand gets negated,
+ which gets absorbed by evenness),
+ and that,
+ more generally,
+ when the hypothesis is a symmetry statement,
+ that's the transformation to apply.
+ Also,
+ we're not even allowed to use parts like that because we don't know that 
+\begin_inset Formula $f$
+\end_inset
+
+ is differentiable.
 \begin_inset Newline newline
 \end_inset
 
