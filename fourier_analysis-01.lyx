@@ -1012,6 +1012,43 @@ Proof
 
  is continuous,
  only Riemann-integrable.
+\end_layout
+
+\begin_layout Standard
+Good sign that I'm not retarded:
+ Prof.
+ Lai actually addressed this concern in class on Monday 31 August!
+ He said that we could assume that 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous (or if it's not continuous,
+ then it's real-valued merely almost everywhere).
+ (Is the implication that the venerable Stein and Shakarchi made a mistake in an exercise this simple?)
+\end_layout
+
+\begin_layout Standard
+We're probably not quite done with the proof.
+ Suppose that 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous,
+ and we have 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\overline{f(\theta)}\exp(ik\theta)\:d\theta=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(ik\theta)\:d\theta$
+\end_inset
+
+.
+ Suppose for a contradiction that 
+\begin_inset Formula $f$
+\end_inset
+
+ is not real-valued.
+ [
+\series bold
+TODO
+\series default
+]
 \begin_inset Newline newline
 \end_inset
 
