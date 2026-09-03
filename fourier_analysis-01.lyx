@@ -102,7 +102,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-August 2026
+August–September 2026
 \end_layout
 
 \begin_layout Abstract
@@ -888,6 +888,11 @@ Proof
 
 .
  Halp?
+ [
+\series bold
+TODO
+\series default
+]
 \begin_inset Newline newline
 \end_inset
 
@@ -1043,12 +1048,106 @@ We're probably not quite done with the proof.
 \begin_inset Formula $f$
 \end_inset
 
- is not real-valued.
- [
-\series bold
-TODO
-\series default
-]
+ is not real-valued:
+ there exists nonempty 
+\begin_inset Formula $B\subseteq[-\pi,\pi]$
+\end_inset
+
+ for which 
+\begin_inset Formula $x\in B\rightarrow f(x)\notin\R$
+\end_inset
+
+ (and possibly empty 
+\begin_inset Formula $A\subseteq[-\pi,\pi]$
+\end_inset
+
+ such that 
+\begin_inset Formula $x\in A\rightarrow f(x)\in\R$
+\end_inset
+
+,
+ such that 
+\begin_inset Formula $A\cup B=[-\pi,\pi]$
+\end_inset
+
+).
+ Then the integral over 
+\begin_inset Formula $A$
+\end_inset
+
+ is the same for both the 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ integrands,
+ but the integral over 
+\begin_inset Formula $B$
+\end_inset
+
+ is different,
+ which implies that the integral over 
+\begin_inset Formula $A\cup B=[-\pi,\pi]$
+\end_inset
+
+ is different.
+ To see why the integral over 
+\begin_inset Formula $B$
+\end_inset
+
+ is different,
+ consider that
+\begin_inset Formula $\int_{B}\overline{f(\theta)}\exp(ik\theta)\:d\theta$
+\end_inset
+
+ is the limit of a Riemann sum 
+\begin_inset Formula $\sum\text{\overline{f(\theta)}\exp(ik\theta)\ensuremath{\cdot}\ensuremath{\Delta}\ensuremath{\theta}}$
+\end_inset
+
+,
+ while 
+\begin_inset Formula $\int_{B}f(\theta)\exp(ik\theta)\:d\theta$
+\end_inset
+
+ is 
+\begin_inset Formula $\sum f(\theta)\exp(ik\theta)\cdot\ensuremath{\Delta}\ensuremath{\theta}$
+\end_inset
+
+.
+ What I mean is,
+ 
+\begin_inset Formula $a_{k}+b_{k}i\ne a_{k}-b_{k}i$
+\end_inset
+
+ when 
+\begin_inset Formula $b_{k}\ne0$
+\end_inset
+
+,
+ and they're still not going to be equal when you multiply both sides by the same thing (
+\emph on
+e.g.
+
+\emph default
+ 
+\begin_inset Formula $\exp(ik\theta)\ensuremath{\cdot}\ensuremath{\Delta}\ensuremath{\theta}$
+\end_inset
+
+),
+ and they're still not going to be equal when you sum over all 
+\begin_inset Formula $k$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\sum_{k}b_{k}i\cdot C_{k}\ne\sum_{k}-b_{k}i\cdot C_{k}$
+\end_inset
+
+.
+ I feel like this should be pretty obvious even if I'm not explaining it elegantly.
 \begin_inset Newline newline
 \end_inset
 
@@ -1089,18 +1188,136 @@ Proposition
 \begin_layout Standard
 
 \emph on
-Proof
+Proof?
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-]
-\begin_inset Newline newline
+ 
+\begin_inset Formula $\fhat(k)=\frac{1}{2\pi}\int_{0}^{2\pi}(\pi\theta-\theta^{2})\exp(-ik\theta)=\frac{1}{2\pi}\cdot\left(\pi\int_{0}^{2\pi}\theta\exp(-ik\theta)-\int_{0}^{2\pi}\theta^{2}\exp(-ik\theta)\right)$
+\end_inset
+
+.
+ Then I guess this is just going to be some tedious integrations by parts?
+\end_layout
+
+\begin_layout Standard
+Let's do 
+\begin_inset Formula $\int_{0}^{2\pi}\underbrace{\theta^{2}}_{u}\underbrace{\exp(-ik\theta)\,d\theta}_{dv}$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $du:=2\theta\,d\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=\frac{-1}{ik}\exp(-ik\theta)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $uv-\int v\,du$
+\end_inset
+
+ is 
+\begin_inset Formula $\left.\frac{-1}{ik}\theta^{2}\exp(-ik\theta)\right|_{\theta:=0}^{2\pi}+\frac{2}{ik}\int_{0}^{2\pi}\theta\exp(-ik\theta)\,d\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $\left.\frac{-1}{ik}\theta^{2}\exp(-ik\theta)\right|_{\theta:=0}^{2\pi}=\frac{-4\pi^{2}}{ik}\cancelto{1}{\exp(-2\pi ik)}-\cancel{\frac{-1}{ik}0^{2}\exp(0)}=\frac{4\pi^{2}i}{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then let's do 
+\begin_inset Formula $\int_{0}^{2\pi}\underbrace{\theta}_{u}\underbrace{\exp(-ik\theta)\,d\theta}_{dv}$
+\end_inset
+
+ (which appears twice as a subcomputation).
+ We have 
+\begin_inset Formula $du:=d\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=\frac{-1}{ik}\exp(-ik\theta)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $uv-\int v\,du$
+\end_inset
+
+ is 
+\begin_inset Formula $\left.\frac{-1}{ik}\theta\exp(-ik\theta)\right|_{\theta:=0}^{2\pi}+\frac{1}{ik}\int_{0}^{2\pi}\exp(-ik\theta)\,d\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $\left.\frac{-1}{ik}\theta\exp(-ik\theta)\right|_{\theta:=0}^{2\pi}=\frac{-1}{ik}2\pi\cancelto{1}{\exp(-2\pi ik)}-\cancel{\frac{-1}{ik}0\exp(0)}=\frac{2\pi i}{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $\int_{0}^{2\pi}\exp(-ik\theta)\,d\theta=\frac{-1}{ik}\cdot\cancelto{1-0=1}{(\exp(-2\pi ik)-\exp(0))}=\frac{-1}{ik}=\frac{i}{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $\int_{0}^{2\pi}\theta\exp(-ik\theta)\,d\theta=\frac{2\pi i}{k}+\frac{1}{\cancel{i}k}\cdot\frac{\cancel{i}}{k}=\frac{2\pi i}{k}+\frac{1}{k^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And 
+\begin_inset Formula $\int_{0}^{2\pi}\theta^{2}\exp(-ik\theta)\,d\theta=\frac{4\pi^{2}i}{k}+\frac{2}{ik}\cdot\left(\frac{2\pi i}{k}+\frac{1}{k^{2}}\right)=\frac{4\pi^{2}i}{k}+\frac{4\pi i}{ik^{2}}+\frac{2}{ik^{3}}$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Putting it together,
+ 
+\begin_inset Formula $\frac{1}{2\pi}\cdot\left(\pi\int_{0}^{2\pi}\theta\exp(-ik\theta)-\int_{0}^{2\pi}\theta^{2}\exp(-ik\theta)\right)=\frac{1}{2\pi}\left(\pi\cdot\left(\frac{2\pi i}{k}+\frac{1}{k^{2}}\right)-\left(\frac{4\pi^{2}i}{k}+\frac{4\pi i}{ik^{2}}+\frac{2}{ik^{3}}\right)\right)=\frac{1}{2\pi}\left(\frac{2\pi^{2}i}{k}+\frac{\pi}{k^{2}}-\frac{4\pi^{2}i}{k}-\frac{4\pi i}{ik^{2}}-\frac{2}{ik^{3}}\right)=\frac{1}{2\pi}\left(\frac{2\pi^{2}i^{2}k^{2}}{ik^{3}}+\frac{\pi ik}{ik^{3}}-\frac{4\pi^{2}i^{2}k^{2}}{ik^{3}}-\frac{4\pi ik}{ik^{3}}-\frac{2}{ik^{3}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{1}{2\pi}\cdot\frac{-2\pi^{2}k^{2}+\pi ik+4\pi^{2}k^{2}-4\pi ik-2}{ik^{3}}=\frac{1}{2\pi}\cdot\frac{2\pi^{2}k^{2}-3\pi ik-2}{ik^{3}}=\frac{1}{2\pi}\cdot\frac{-2\pi^{2}k^{2}i-3\pi k+2i}{k^{3}}=\frac{1}{2\pi}\cdot\frac{-3\pi k+2(1-\pi^{2}k^{2})i}{k^{3}}$
+\end_inset
+
+,
+ which goes to show why these computation-heavy exercises are so demoralizing.
+ We did all that work and got something with some superficial resemblance to the goal (the cubic factor in the denominator),
+ and it's just not at all clear how to proceed.
+ Are we actually confused about anything important,
+ or was there just some computational error?
+ Is there any way to find the error more efficiently than doing the entire computation from the top?
+ If I wasn't reliably skilled enough to get it right the first time,
+ why would I do better the second time?
+ I'm going to die.
+\begin_inset Newline newline
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1340,7 +1557,405 @@ Proof
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $f$
+\end_inset
+
+ is periodic with period 
+\begin_inset Formula $2\pi$
+\end_inset
+
+,
  
+\begin_inset Formula $f(-\pi)=f(\pi)$
+\end_inset
+
+,
+ so the boundary terms become 
+\begin_inset Formula $\frac{i}{k}f(\pi)\exp(-ik\pi)-\frac{i}{k}f(\pi)\exp(ik\pi)=f(\pi)\frac{i}{k}\cdot\left(\exp(-ik\pi)-\exp(ik\pi)\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So far we have 
+\begin_inset Formula $\fhat(k)=\frac{i}{k}\cdot\left(f(\pi)\cdot\left(\exp(-ik\pi)-\exp(ik\pi)\right)-\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)\,d\theta\right)$
+\end_inset
+
+.
+ And then,
+ what,
+ we integrate by parts again (we can go to 
+\begin_inset Formula $f^{(m)}$
+\end_inset
+
+),
+ and get another factor of 
+\begin_inset Formula $\frac{i}{k}$
+\end_inset
+
+?
+ But that wouldn't affect the boundary terms from the first integration-by-parts.
+ Halp?!
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In lecture on 2 September,
+ we got an introduction to the Dirac delta and 
+\begin_inset Quotes eld
+\end_inset
+
+good kernels.
+\begin_inset Quotes erd
+\end_inset
+
+ We're interested in the convergence properties of the partial sum 
+\begin_inset Formula $S_{N}f(x)=\sum_{k=-N}^{N}\fhat(k)\exp(ikx)=\sum_{k=-N}^{N}\underbrace{\left(\frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)\exp(-iky)\:dy\right)}_{\fhat(k)}\exp(ikx)$
+\end_inset
+
+.
+ (I'm introducing 
+\begin_inset Formula $y$
+\end_inset
+
+ so that we don't mix up 
+\begin_inset Formula $\fhat(k)$
+\end_inset
+
+ variable of integration with the 
+\begin_inset Quotes eld
+\end_inset
+
+outer
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $x$
+\end_inset
+
+.) Uniform convergence lets us switch the sum and the integral sign:
+ 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\sum_{k=-N}^{N}f(y)\exp(-iky)\:dy\exp(ikx)=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)\sum_{k=-N}^{N}\exp(ik(x-y))\:dy$
+\end_inset
+
+.
+ We can define the Dirichlet kernel as 
+\begin_inset Formula $D_{N}(t):=\sum_{k=-N}^{N}\exp(ikt)$
+\end_inset
+
+,
+ so we get 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)D_{N}(x-y)\,dy$
+\end_inset
+
+,
+ which is actually a convolution 
+\begin_inset Formula $(f*D_{N})(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Admittedly,
+ it's not immediately clear how this helps us,
+ because we are not yet a good friend of the convolution operation.
+\end_layout
+
+\begin_layout Standard
+Convolution with the 
+\begin_inset Quotes eld
+\end_inset
+
+one
+\begin_inset Quotes erd
+\end_inset
+
+ function is an average:
+ 
+\begin_inset Formula $(f*\boldsymbol{1})(x)=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)\,dy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Suppose we want to convolve with something to get the value at a point.
+ We can use the indicator function on a narrow interval but scaled to integrate to one,
+ and take the limit as the interval gets infinitely narrow.
+ That's Dirac's delta.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ For uniformly continuous 
+\begin_inset Formula $f$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\lim_{N\to\infty}\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}f(t)\,dt=f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\left|\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}f(t)\,dt-f(x)\right|=\left|\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}f(t)\,dt-f(x)\cdot\underbrace{\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}1\,dt}_{\mathrm{``fancy\,one"}}\right|=\left|\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}f(t)\,dt-\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}f(x)\,dt\right|$
+\end_inset
+
+ so the linearity of integration gets us to 
+\begin_inset Formula $\left|\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}f(t)-f(x)\,dt\right|$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\frac{N}{2}\left|\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}f(t)-f(x)\,dt\right|\le\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}\left|f(t)-f(x)\right|dt$
+\end_inset
+
+.
+ (The absolute value of an integral is not greater than the integral of the absolute value,
+ because positive and negative parts of the integral can cancel.) Uniform continuity means that for any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists an 
+\begin_inset Formula $N_{\varepsilon}$
+\end_inset
+
+ such that if 
+\begin_inset Formula $\left|t-x\right|<\frac{1}{N_{\varepsilon}}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\left|f(t)-f(x)\right|<\varepsilon$
+\end_inset
+
+.
+ So for any 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ we can choose an 
+\begin_inset Formula $N$
+\end_inset
+
+ such that 
+\begin_inset Formula $\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}\left|f(t)-f(x)\right|dt<\frac{N}{2}\int_{x-\frac{1}{N}}^{x+\frac{1}{N}}\varepsilon\,dt=\cancel{\frac{N}{2}\cdot\frac{2}{N}}\cdot\varepsilon=\varepsilon$
+\end_inset
+
+,
+ which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+The significance of the proposition is that we've shown that 
+\begin_inset Formula $\lim_{N\to\infty}f*\delta_{N}(x)=f(x)$
+\end_inset
+
+.
+ More generally,
+ we're interested in 
+\begin_inset Quotes eld
+\end_inset
+
+good kernels
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $K_{n}$
+\end_inset
+
+ such that 
+\begin_inset Formula $\lim_{N\to\infty}f*K_{N}=f(x)$
+\end_inset
+
+,
+ which satisfy three conditions.
+ It turns out that the Dirichlet kernel is not 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+I borrowed Adrian Constantin's 
+\emph on
+Fourier Analysis:
+ Part I—
+Theory
+\emph default
+ from the SFSU library,
+ which looks good.
+ Chapter 3 is on 
+\begin_inset Quotes eld
+\end_inset
+
+Elements of Functional Analysis.
+\begin_inset Quotes erd
+\end_inset
+
+ A pre-Hilbert space is a real or complex vector space with an inner product,
+ and then it's a Hilbert space if every Cauchy sequence converges inside the space.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§3.6.1#1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The following statements are equivalent in a real pre-Hilbert space.
+ (i) 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $y$
+\end_inset
+
+ are orthogonal.
+ (ii) 
+\begin_inset Formula $\left\Vert x+y\right\Vert ^{2}=\left\Vert x\right\Vert ^{2}+\left\Vert y\right\Vert ^{2}$
+\end_inset
+
+.
+ (iii) For all 
+\begin_inset Formula $\lambda\in\R$
+\end_inset
+
+,
+\begin_inset Formula $\left\Vert x\right\Vert \le\left\Vert x+\lambda y\right\Vert $
+\end_inset
+
+.
+ (iv) 
+\begin_inset Formula $\left\Vert x+y\right\Vert =\left\Vert x-y\right\Vert $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (i 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ii) Suppose 
+\begin_inset Formula $\left\langle x,y\right\rangle =0$
+\end_inset
+
+,
+ and recall that the metric is defined such that 
+\begin_inset Formula $\left\Vert x\right\Vert =\sqrt{\left\langle x,x\right\rangle }$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\left\Vert x+y\right\Vert ^{2}=\left\langle x+y,x+y\right\rangle =\left\langle x,x+y\right\rangle +\left\langle y,x+y\right\rangle =\cancel{\left\langle x,y\right\rangle }+\left\langle x,x\right\rangle +\cancel{\left\langle y,x\right\rangle }+\left\langle y,y\right\rangle =\left\Vert x\right\Vert ^{2}+\left\Vert y\right\Vert ^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(ii
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+i) By the same algebra,
+\begin_inset Formula $\left\Vert x+y\right\Vert ^{2}=\left\Vert x\right\Vert ^{2}+\left\Vert y\right\Vert ^{2}+\left\langle x,y\right\rangle +\left\langle y,x\right\rangle $
+\end_inset
+
+,
+ so if 
+\begin_inset Formula $\left\Vert x+y\right\Vert ^{2}=\left\Vert x\right\Vert ^{2}+\left\Vert y\right\Vert ^{2}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\left\langle x,y\right\rangle +\left\langle y,x\right\rangle =0$
+\end_inset
+
+.
+ But over 
+\begin_inset Formula $\R$
+\end_inset
+
+ we have symmetry 
+\begin_inset Formula $\left\langle x,y\right\rangle =\left\langle y,x\right\rangle $
+\end_inset
+
+,
+ so we have 
+\begin_inset Formula $2\left\langle x,y\right\rangle =0$
+\end_inset
+
+ and thus 
+\begin_inset Formula $\left\langle x,y\right\rangle =0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(iii,
+ iv) [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
