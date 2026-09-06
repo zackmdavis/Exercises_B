@@ -139,6 +139,14 @@ Advanced Topics in Mathematics:
 
 \begin_layout Standard
 \begin_inset FormulaMacro
+\newcommand{\C}{\mathbb{C}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
 \newcommand{\R}{\mathbb{R}}
 \end_inset
 
@@ -239,7 +247,7 @@ If a function were uniquely pinned down by its Fourier coëfficients,
  because a function can differ at finitely many points and still have the same integral and therefore the same Fourier coëfficients,
  but it's spiritually true:
  
-\begin_inset Formula $f(\theta_{0})=0$
+\begin_inset Formula $h(\theta_{0})=0$
 \end_inset
 
  when 
@@ -837,62 +845,32 @@ Proof
 \end_inset
 
 .
- Then 
-\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\:d\theta$
-\end_inset
-
- becomes 
-\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi-\pi)\exp(-ik(\varphi-\pi))\:d\varphi=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi-\pi)\exp((k\pi-k\varphi)i)\:d\varphi$
+ (Claude Opus 5 says I made a sign error and a bounds error on an earlier attempt,
+ so let's do it again.) 
+\begin_inset Formula $\fhat(k)=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\,d\theta=\frac{1}{2\pi}\int_{0}^{2\pi}f(\varphi-\pi)\exp(-ik(\varphi-\pi))\,d\varphi=\frac{1}{2\pi}\int_{0}^{2\pi}f(\varphi-\pi)\exp(ik\pi-ik\varphi))\,d\varphi=\frac{1}{2\pi}\int_{0}^{2\pi}\underbrace{f(\varphi)}_{=f(\varphi-\pi)}\exp(ik\pi)\exp(-ik\varphi)\,d\varphi$
 \end_inset
 
 .
- Then for odd 
+ For odd 
 \begin_inset Formula $k$
 \end_inset
 
 ,
- we have 
-\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi)\cancelto{-1}{\exp(k\pi i)}\cdot\left(-\exp(k\varphi i)\right)\:d\varphi=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\varphi)\exp(k\varphi i)\:d\varphi$
+ 
+\begin_inset Formula $\exp(ik\pi)=-1$
 \end_inset
 
 .
- It seems like all that did was get rid of the negative sign inside of the exponential,
- which does not obviously help us.
- Maybe the transformation was the wrong tack,
- and the point is that the periodicity will make the antiderivative at 
-\begin_inset Formula $\pi$
+ So we have 
+\begin_inset Formula $\fhat(k)=-\frac{1}{2\pi}\int_{0}^{2\pi}f(\varphi)\exp(-ik\varphi)\,d\varphi=-\fhat(k)$
 \end_inset
 
- and 
-\begin_inset Formula $-\pi$
-\end_inset
-
- come out the same,
- so the integral is zero?
- But I don't know how to do the integral:
- we can't use parts with 
-\begin_inset Formula $u:=f(\theta)$
-\end_inset
-
- if we don't know that 
-\begin_inset Formula $f$
-\end_inset
-
- is differentiable (per Claude's earlier warning) and parts with 
-\begin_inset Formula $dv:=f(\theta)$
-\end_inset
-
- doesn't help us if the periodicity constraint doesn't necessarily apply to the antiderivative 
-\begin_inset Formula $F$
+,
+ so 
+\begin_inset Formula $\fhat(k)=0$
 \end_inset
 
 .
- Halp?
- [
-\series bold
-TODO
-\series default
-]
 \begin_inset Newline newline
 \end_inset
 
@@ -1148,6 +1126,25 @@ e.g.
 
 .
  I feel like this should be pretty obvious even if I'm not explaining it elegantly.
+\end_layout
+
+\begin_layout Standard
+Claude Opus 5 isn't buying it.
+ Rather,
+ 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\overline{f(\theta)}\exp(ik\theta)\:d\theta=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(ik\theta)\:d\theta$
+\end_inset
+
+ is saying that 
+\begin_inset Formula $f$
+\end_inset
+
+ and 
+\begin_inset Formula $\overline{f}$
+\end_inset
+
+ have the same Fourier coëfficients,
+ which makes them equal everywhere that they're continuous (what Stein and Shakarchi call Theorem 2.1).
 \begin_inset Newline newline
 \end_inset
 
@@ -1188,7 +1185,7 @@ Proposition
 \begin_layout Standard
 
 \emph on
-Proof?
+First attempt
 \emph default
 .
  
@@ -1197,127 +1194,81 @@ Proof?
 
 .
  Then I guess this is just going to be some tedious integrations by parts?
+ (Then I waded into a huge mess of calculations that didn't get to where I needed to go.)
 \end_layout
 
 \begin_layout Standard
-Let's do 
-\begin_inset Formula $\int_{0}^{2\pi}\underbrace{\theta^{2}}_{u}\underbrace{\exp(-ik\theta)\,d\theta}_{dv}$
-\end_inset
 
+\emph on
+Guidance
+\emph default
 .
- We have 
-\begin_inset Formula $du:=2\theta\,d\theta$
+ Claude Opus 5 points out that the function was defined on 
+\begin_inset Formula $[0,\pi]$
 \end_inset
 
- and 
-\begin_inset Formula $v:=\frac{-1}{ik}\exp(-ik\theta)$
+;
+ it's the 
+\begin_inset Quotes eld
 \end_inset
 
-.
- Then 
-\begin_inset Formula $uv-\int v\,du$
+odd
+\begin_inset Quotes erd
 \end_inset
 
- is 
-\begin_inset Formula $\left.\frac{-1}{ik}\theta^{2}\exp(-ik\theta)\right|_{\theta:=0}^{2\pi}+\frac{2}{ik}\int_{0}^{2\pi}\theta\exp(-ik\theta)\,d\theta$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Then 
-\begin_inset Formula $\left.\frac{-1}{ik}\theta^{2}\exp(-ik\theta)\right|_{\theta:=0}^{2\pi}=\frac{-4\pi^{2}}{ik}\cancelto{1}{\exp(-2\pi ik)}-\cancel{\frac{-1}{ik}0^{2}\exp(0)}=\frac{4\pi^{2}i}{k}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Then let's do 
-\begin_inset Formula $\int_{0}^{2\pi}\underbrace{\theta}_{u}\underbrace{\exp(-ik\theta)\,d\theta}_{dv}$
-\end_inset
-
- (which appears twice as a subcomputation).
- We have 
-\begin_inset Formula $du:=d\theta$
-\end_inset
-
- and 
-\begin_inset Formula $v:=\frac{-1}{ik}\exp(-ik\theta)$
-\end_inset
-
-.
- Then 
-\begin_inset Formula $uv-\int v\,du$
-\end_inset
-
- is 
-\begin_inset Formula $\left.\frac{-1}{ik}\theta\exp(-ik\theta)\right|_{\theta:=0}^{2\pi}+\frac{1}{ik}\int_{0}^{2\pi}\exp(-ik\theta)\,d\theta$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Then 
-\begin_inset Formula $\left.\frac{-1}{ik}\theta\exp(-ik\theta)\right|_{\theta:=0}^{2\pi}=\frac{-1}{ik}2\pi\cancelto{1}{\exp(-2\pi ik)}-\cancel{\frac{-1}{ik}0\exp(0)}=\frac{2\pi i}{k}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-And 
-\begin_inset Formula $\int_{0}^{2\pi}\exp(-ik\theta)\,d\theta=\frac{-1}{ik}\cdot\cancelto{1-0=1}{(\exp(-2\pi ik)-\exp(0))}=\frac{-1}{ik}=\frac{i}{k}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-So 
-\begin_inset Formula $\int_{0}^{2\pi}\theta\exp(-ik\theta)\,d\theta=\frac{2\pi i}{k}+\frac{1}{\cancel{i}k}\cdot\frac{\cancel{i}}{k}=\frac{2\pi i}{k}+\frac{1}{k^{2}}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-And 
-\begin_inset Formula $\int_{0}^{2\pi}\theta^{2}\exp(-ik\theta)\,d\theta=\frac{4\pi^{2}i}{k}+\frac{2}{ik}\cdot\left(\frac{2\pi i}{k}+\frac{1}{k^{2}}\right)=\frac{4\pi^{2}i}{k}+\frac{4\pi i}{ik^{2}}+\frac{2}{ik^{3}}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Putting it together,
+ extension of that.
  
-\begin_inset Formula $\frac{1}{2\pi}\cdot\left(\pi\int_{0}^{2\pi}\theta\exp(-ik\theta)-\int_{0}^{2\pi}\theta^{2}\exp(-ik\theta)\right)=\frac{1}{2\pi}\left(\pi\cdot\left(\frac{2\pi i}{k}+\frac{1}{k^{2}}\right)-\left(\frac{4\pi^{2}i}{k}+\frac{4\pi i}{ik^{2}}+\frac{2}{ik^{3}}\right)\right)=\frac{1}{2\pi}\left(\frac{2\pi^{2}i}{k}+\frac{\pi}{k^{2}}-\frac{4\pi^{2}i}{k}-\frac{4\pi i}{ik^{2}}-\frac{2}{ik^{3}}\right)=\frac{1}{2\pi}\left(\frac{2\pi^{2}i^{2}k^{2}}{ik^{3}}+\frac{\pi ik}{ik^{3}}-\frac{4\pi^{2}i^{2}k^{2}}{ik^{3}}-\frac{4\pi ik}{ik^{3}}-\frac{2}{ik^{3}}\right)$
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\,d\theta=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\left(\cos k\theta-i\sin k\theta\right)\,d\theta$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $=\frac{1}{2\pi}\cdot\frac{-2\pi^{2}k^{2}+\pi ik+4\pi^{2}k^{2}-4\pi ik-2}{ik^{3}}=\frac{1}{2\pi}\cdot\frac{2\pi^{2}k^{2}-3\pi ik-2}{ik^{3}}=\frac{1}{2\pi}\cdot\frac{-2\pi^{2}k^{2}i-3\pi k+2i}{k^{3}}=\frac{1}{2\pi}\cdot\frac{-3\pi k+2(1-\pi^{2}k^{2})i}{k^{3}}$
+ but odd-function times even-function is odd (function 
+\begin_inset Quotes eld
 \end_inset
 
-,
- which goes to show why these computation-heavy exercises are so demoralizing.
- We did all that work and got something with some superficial resemblance to the goal (the cubic factor in the denominator),
- and it's just not at all clear how to proceed.
- Are we actually confused about anything important,
- or was there just some computational error?
- Is there any way to find the error more efficiently than doing the entire computation from the top?
- If I wasn't reliably skilled enough to get it right the first time,
- why would I do better the second time?
- I'm going to die.
+parity
+\begin_inset Quotes erd
+\end_inset
+
+ rules follow integer 
+\emph on
+addition
+\emph default
+ parity) so only the sine part will be left:
+ 
+\begin_inset Formula $-\frac{i}{2\pi}\int_{-\pi}^{\pi}f(\theta)\sin k\theta\,d\theta$
+\end_inset
+
+.
+ Opus 5 points out that 
+\begin_inset Formula $f$
+\end_inset
+
+ is odd 
+\emph on
+by stipulation
+\emph default
+ (the expression 
+\begin_inset Formula $\theta(\pi-\theta)$
+\end_inset
+
+ defined everywhere isn't odd),
+ so we have odd-function times odd-function is even,
+ and the symmetric integral is double the one-sided:
+ 
+\begin_inset Formula $-\frac{i}{\pi}\int_{0}^{\pi}\theta(\pi-\theta)\sin k\theta\,d\theta$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+:
+ and then we can integrate by parts]
 \begin_inset Newline newline
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -1583,7 +1534,7 @@ Because
 
 \begin_layout Standard
 So far we have 
-\begin_inset Formula $\fhat(k)=\frac{i}{k}\cdot\left(f(\pi)\cdot\left(\exp(-ik\pi)-\exp(ik\pi)\right)-\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)\,d\theta\right)$
+\begin_inset Formula $\fhat(k)=\frac{1}{2\pi}\cdot\frac{i}{k}\cdot\left(f(\pi)\cdot\left(\exp(-ik\pi)-\exp(ik\pi)\right)-\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)\,d\theta\right)$
 \end_inset
 
 .
@@ -1601,11 +1552,160 @@ So far we have
 ?
  But that wouldn't affect the boundary terms from the first integration-by-parts.
  Halp?!
- [
-\series bold
-TODO
-\series default
-]
+\end_layout
+
+\begin_layout Standard
+Claude Opus 5 offers the hint that we can do more to evaluate 
+\begin_inset Formula $\frac{i}{k}\cdot f(\pi)\cdot\left(\exp(-ik\pi)-\exp(ik\pi)\right)$
+\end_inset
+
+ at successive integers.
+ That is,
+ for 
+\begin_inset Formula $k:=1$
+\end_inset
+
+,
+ 
+\begin_inset Formula $e^{-\pi i}-e^{\pi i}=-1-(-1)=0$
+\end_inset
+
+.
+ For 
+\begin_inset Formula $k:=2$
+\end_inset
+
+,
+ 
+\begin_inset Formula $e^{-2\pi i}-e^{2\pi i}=1-1=0$
+\end_inset
+
+.
+ The difference 
+\begin_inset Formula $k$
+\end_inset
+
+ half-turns forward and backward will always be zero,
+ so the boundary term does cancel.
+\end_layout
+
+\begin_layout Standard
+That gives us 
+\begin_inset Formula $\fhat(k)=-\frac{1}{2\pi}\cdot\frac{i}{k}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)\,d\theta$
+\end_inset
+
+ (Opus 5 pointed out that I forgot the factor of 
+\begin_inset Formula $\frac{1}{ik}$
+\end_inset
+
+ here),
+ which is to say that 
+\begin_inset Formula $\fhat(k)=\frac{1}{ik}\hat{f'}(k)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But then integrating 
+\begin_inset Formula $\hat{f'}(k)=\frac{1}{2\pi}\int_{-\pi}^{\pi}\underbrace{f'(\theta)}_{u}\underbrace{\exp(-ik\theta)}_{dv}\,d\theta$
+\end_inset
+
+ is going to go the same:
+ it's going to be 
+\begin_inset Formula $\left.\frac{-1}{ik}f'(\theta)\exp(-ik\theta)\right|_{\theta:=-\pi}^{\pi}+\frac{1}{ik}\int_{-\pi}^{\pi}f''(\theta)\exp(-ik\theta)\,d\theta$
+\end_inset
+
+.
+ The boundary term is going to vanish again.
+ (A periodic function has a periodic derivative.) 
+\end_layout
+
+\begin_layout Standard
+So it would seem that 
+\begin_inset Formula $\fhat(k)=\frac{1}{ik}\hat{f'}(k)=-\frac{1}{k^{2}}\hat{f''}(k)$
+\end_inset
+
+ 
+\emph on
+&c
+\emph default
+.
+ But derivatives only came into it because we used parts;
+ we're actually trying to bound 
+\begin_inset Formula $\left|\fhat(k)\right|$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $\left|\fhat(k)\right|=\frac{1}{\left|k\right|^{m}}\left|\hat{f^{(m)}(k)}\right|$
+\end_inset
+
+ (and 
+\begin_inset Formula $\hat{f^{(m)}}$
+\end_inset
+
+ has to exist because the function is 
+\begin_inset Formula $m$
+\end_inset
+
+ times continuously differentiable).
+ So the qualitative moral here is that if a function is 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $m$
+\end_inset
+
+-any
+\begin_inset Quotes erd
+\end_inset
+
+ times continuously differentiable,
+ then the Fourier coëfficients have to go to zero like an 
+\begin_inset Formula $m$
+\end_inset
+
+th power,
+ which means that for smooth functions,
+ it's decreasing faster than any fixed power.
+ So smooth functions can't have too much weight on sufficiently high-frequency components?
+\end_layout
+
+\begin_layout Standard
+Opus 5 points out that we didn't finish getting a bound:
+ 
+\begin_inset Formula $\left|\hat{f^{(m)}(k)}\right|$
+\end_inset
+
+ isn't constant in 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ But if 
+\begin_inset Formula $\sum_{k}\hat{f^{(m)}}\exp(ik\theta)$
+\end_inset
+
+ converges,
+ then its coëfficients have to go to zero,
+ so there will be a bound.
+ Opus 5 objects that we don't know that the series converges (this point in the curriculum is doing a lot of work on that question!) and gets us started on the actual bound:
+ 
+\begin_inset Formula $\left|\hat{f^{(m)}(k)}\right|=\left|\frac{1}{2\pi}\int_{-\pi}^{\pi}f^{(m)}(\theta)\exp(-ik\theta)\,d\theta\right|\le\frac{1}{2\pi}\int_{-\pi}^{\pi}\left|f^{(m)}(\theta)\right|\underbrace{\left|\exp(-ik\theta)\right|}_{=1}\,d\theta\le\frac{1}{2\pi}\int_{-\pi}^{\pi}\left|f^{(m)}(\theta)\right|\,d\theta$
+\end_inset
+
+ but since 
+\begin_inset Formula $f^{(m)}$
+\end_inset
+
+ iis continuous on the compact interval 
+\begin_inset Formula $[-\pi,\pi]$
+\end_inset
+
+,
+ it must be bounded by the extreme value theorem.
 \begin_inset Newline newline
 \end_inset
 
@@ -1950,12 +2050,195 @@ i) By the same algebra,
 \end_layout
 
 \begin_layout Standard
-(iii,
- iv) [
+(i
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+iii) 
+\begin_inset Formula $\left\Vert x\right\Vert ^{2}=\left\langle x,x\right\rangle $
+\end_inset
+
+ but 
+\begin_inset Formula $\left\Vert x+\lambda y\right\Vert ^{2}=\left\langle x+\lambda y,x+\lambda y\right\rangle =\left\langle x+\lambda y,x\right\rangle +\left\langle x+\lambda y,\lambda y\right\rangle =\left\langle x,x\right\rangle +\cancel{\left\langle \lambda y,x\right\rangle }+\cancel{\left\langle x,\lambda y\right\rangle }+\left\langle \lambda y,\lambda y\right\rangle \ge\left\langle x,x\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(iii
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+i) Same algebra,
+ but we observe that in 
+\begin_inset Formula $\left\langle x,x\right\rangle +\left\langle \lambda y,x\right\rangle +\left\langle x,\lambda y\right\rangle +\left\langle \lambda y,\lambda y\right\rangle $
+\end_inset
+
+,
+ the self-product terms are nonnegative.
+ If 
+\begin_inset Formula $\left\langle x,\lambda y\right\rangle $
+\end_inset
+
+ isn't zero,
+ we could make it negative with an appropriate choice of 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ to violate the inequality,
+ so it must be zero.
+ Claude Opus 5 points out a gap:
+ we have to show not only that 
+\begin_inset Formula $2\left\langle x,\lambda y\right\rangle $
+\end_inset
+
+ could be negative,
+ but that it's bigger than 
+\begin_inset Formula $\left\langle \lambda y,\lambda y\right\rangle $
+\end_inset
+
+;
+ the answer is that for small 
+\begin_inset Formula $\lambda$
+\end_inset
+
+,
+ the linear-in-
+\begin_inset Formula $\lambda$
+\end_inset
+
+ cross-term is bigger than than the quadratic 
+\begin_inset Formula $\lambda y$
+\end_inset
+
+ term.
+\end_layout
+
+\begin_layout Standard
+(iv
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+i) 
+\begin_inset Formula $\left\langle x+y,x+y\right\rangle =\left\langle x,x\right\rangle +2\left\langle x,y\right\rangle +\left\langle y,y\right\rangle $
+\end_inset
+
+,
+ but 
+\begin_inset Formula $\left\langle x-y,x-y\right\rangle =\left\langle x-y,x\right\rangle -\left\langle x-y,y\right\rangle =\left\langle x,x\right\rangle -\left\langle y,x\right\rangle -\left(\left\langle x,y\right\rangle -\left\langle y,y\right\rangle \right)=\left\langle x,x\right\rangle -2\left\langle y,x\right\rangle +\left\langle y,y\right\rangle $
+\end_inset
+
+,
+ so 
+\begin_inset Formula $2\left\langle x,y\right\rangle =-2\left\langle x,y\right\rangle $
+\end_inset
+
+,
+ which implies 
+\begin_inset Formula $\left\langle x,y\right\rangle =0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(i
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+iv) Same algebra:
+ if 
+\begin_inset Formula $\left\langle x,y\right\rangle =0$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\left\langle x,x\right\rangle \cancel{+2\left\langle x,y\right\rangle }+\left\langle y,y\right\rangle =\left\langle x,x\right\rangle \cancel{-2\left\langle y,x\right\rangle }+\left\langle y,y\right\rangle $
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+§3.6.1#8
+\series default
+.
+ Let 
+\begin_inset Formula $H$
+\end_inset
+
+ be the pre-Hilbert space of functions 
+\begin_inset Formula $f:[0,1]\to\C$
+\end_inset
+
+ with inner product 
+\begin_inset Formula $\left\langle f,g\right\rangle =\int_{0}^{1}f(x)\overline{g(x)}\,dx.$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ The subspace 
+\begin_inset Formula $M$
+\end_inset
+
+ of functions such that 
+\begin_inset Formula $\int_{0}^{\frac{1}{2}}f(x)\,dt=\int_{\frac{1}{2}}^{1}f(x)\,dt$
+\end_inset
+
+ is closed in 
+\begin_inset Formula $H$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Closed sets contain their limits.
+ Consider a sequence 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ such that for every 
+\begin_inset Formula $k$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\int_{0}^{\frac{1}{2}}f_{k}(t)\,dt=\int_{\frac{1}{2}}^{1}f_{k}(t)\,dx$
+\end_inset
+
+ [
 \series bold
 TODO
 \series default
 ]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body
