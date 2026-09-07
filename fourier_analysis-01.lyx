@@ -2196,7 +2196,7 @@ Proposition
 \end_inset
 
  of functions such that 
-\begin_inset Formula $\int_{0}^{\frac{1}{2}}f(x)\,dt=\int_{\frac{1}{2}}^{1}f(x)\,dt$
+\begin_inset Formula $\int_{0}^{\frac{1}{2}}f(x)\,dx=\int_{\frac{1}{2}}^{1}f(x)\,dx$
 \end_inset
 
  is closed in 
@@ -2213,32 +2213,179 @@ Proof
 \emph default
 .
  Closed sets contain their limits.
- Consider a sequence 
+ Consider an arbitrary sequence 
 \begin_inset Formula $f_{k}$
 \end_inset
 
- such that for every 
+ in M,
+ which means that for every 
 \begin_inset Formula $k$
 \end_inset
 
 ,
  
-\begin_inset Formula $\int_{0}^{\frac{1}{2}}f_{k}(t)\,dt=\int_{\frac{1}{2}}^{1}f_{k}(t)\,dx$
+\begin_inset Formula $\int_{0}^{\frac{1}{2}}f_{k}(x)\,dx=\int_{\frac{1}{2}}^{1}f_{k}(x)\,dx$
 \end_inset
 
- [
-\series bold
-TODO
-\series default
-]
-\begin_inset Newline newline
-\end_inset
-
-
+.
 \end_layout
 
 \begin_layout Standard
+Claude Opus 5 suggests we proceed by talking about the kernel of a linear functional.
+ Let 
+\begin_inset Formula $T(f):=\int_{0}^{\frac{1}{2}}f-\int_{\frac{1}{2}}^{1}f$
+\end_inset
 
+.
+ If 
+\begin_inset Formula $T$
+\end_inset
+
+ is continuous with respect to our norm,
+ then 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ converging to 
+\begin_inset Formula $f$
+\end_inset
+
+ implies 
+\begin_inset Formula $T(f_{k})$
+\end_inset
+
+ converges to 
+\begin_inset Formula $T(f)$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+ converges to 
+\begin_inset Formula $f$
+\end_inset
+
+ by hypothesis,
+ so 
+\begin_inset Formula $T(f_{k})$
+\end_inset
+
+ converges to 
+\begin_inset Formula $T(f)$
+\end_inset
+
+.
+ For all 
+\begin_inset Formula $k$
+\end_inset
+
+,
+ 
+\begin_inset Formula $T(f_{k})=0$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\{T(f_{k})\}_{k}$
+\end_inset
+
+ must converge to 0,
+ so by the uniqueness of limits,
+ 
+\begin_inset Formula $T(f)$
+\end_inset
+
+ must be zero,
+ which means that 
+\begin_inset Formula $f$
+\end_inset
+
+ is in 
+\begin_inset Formula $M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It remains to show that 
+\begin_inset Formula $T$
+\end_inset
+
+ is continuous with respect to the norm,
+ which is to say that it's bounded.
+ Opus 5 says to use linearity (and corrects me being retarded about norms).
+ 
+\begin_inset Formula $\left|T(f)-T(g)\right|=\left|T(f-g)\right|$
+\end_inset
+
+ whereas 
+\begin_inset Formula $\left\Vert f-g\right\Vert =\sqrt{\int_{0}^{1}\left|f(x)-g(x)\right|^{2}dx}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $\left|T(f-g)\right|=\left|\int_{0}^{\frac{1}{2}}(f-g)-\int_{\frac{1}{2}}^{1}(f-g)\right|\le\left|\int_{0}^{\frac{1}{2}}(f-g)\right|+\left|\int_{\frac{1}{2}}^{1}(f-g)\right|\le\int_{0}^{\frac{1}{2}}\left|f-g\right|+\int_{\frac{1}{2}}^{1}\left|f-g\right|=\int_{0}^{1}\left|f-g\right|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then there's a hint to apply Cauchy–Schwarz to 
+\begin_inset Formula $\left|f-g\right|$
+\end_inset
+
+ and the constant function 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ I guess that would be 
+\begin_inset Formula $\left|\left\langle f-g,1\right\rangle \right|\le\left\Vert f-g\right\Vert \left\Vert 1\right\Vert $
+\end_inset
+
+?
+ I should confess that
+\begin_inset Formula $\left\langle f-g,1\right\rangle $
+\end_inset
+
+ does not feel meaningful to me.
+ (I'm used to the concrete dot product in 
+\begin_inset Formula $\R^{n}$
+\end_inset
+
+,
+ which does not clearly have a 
+\begin_inset Quotes eld
+\end_inset
+
+1
+\begin_inset Quotes erd
+\end_inset
+
+—
+
+\begin_inset Formula $\left[\begin{array}{c}
+1\\
+0\\
+0
+\end{array}\right]$
+\end_inset
+
+ is not the same thing.) But if I just go with it,
+ presumably 
+\begin_inset Formula $\left\langle f-g,1\right\rangle =f-g$
+\end_inset
+
+?
 \end_layout
 
 \end_body
