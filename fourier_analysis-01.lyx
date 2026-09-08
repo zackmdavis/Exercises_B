@@ -2317,21 +2317,11 @@ It remains to show that
  is continuous with respect to the norm,
  which is to say that it's bounded.
  Opus 5 says to use linearity (and corrects me being retarded about norms).
- 
-\begin_inset Formula $\left|T(f)-T(g)\right|=\left|T(f-g)\right|$
-\end_inset
-
- whereas 
-\begin_inset Formula $\left\Vert f-g\right\Vert =\sqrt{\int_{0}^{1}\left|f(x)-g(x)\right|^{2}dx}$
-\end_inset
-
-.
- 
 \end_layout
 
 \begin_layout Standard
-Then 
-\begin_inset Formula $\left|T(f-g)\right|=\left|\int_{0}^{\frac{1}{2}}(f-g)-\int_{\frac{1}{2}}^{1}(f-g)\right|\le\left|\int_{0}^{\frac{1}{2}}(f-g)\right|+\left|\int_{\frac{1}{2}}^{1}(f-g)\right|\le\int_{0}^{\frac{1}{2}}\left|f-g\right|+\int_{\frac{1}{2}}^{1}\left|f-g\right|=\int_{0}^{1}\left|f-g\right|$
+We have 
+\begin_inset Formula $\left|T(f)-T(g)\right|=\left|T(f-g)\right|=\left|\int_{0}^{\frac{1}{2}}(f-g)-\int_{\frac{1}{2}}^{1}(f-g)\right|\le\left|\int_{0}^{\frac{1}{2}}(f-g)\right|+\left|\int_{\frac{1}{2}}^{1}(f-g)\right|\le\int_{0}^{\frac{1}{2}}\left|f-g\right|+\int_{\frac{1}{2}}^{1}\left|f-g\right|=\int_{0}^{1}\left|f-g\right|$
 \end_inset
 
 .
@@ -2349,12 +2339,12 @@ Then there's a hint to apply Cauchy–Schwarz to
 
 .
  I guess that would be 
-\begin_inset Formula $\left|\left\langle f-g,1\right\rangle \right|\le\left\Vert f-g\right\Vert \left\Vert 1\right\Vert $
+\begin_inset Formula $\left|\left\langle \left|f-g\right|,1\right\rangle \right|\le\left\Vert f-g\right\Vert \left\Vert 1\right\Vert $
 \end_inset
 
 ?
  I should confess that
-\begin_inset Formula $\left\langle f-g,1\right\rangle $
+\begin_inset Formula $\left\langle \left|f-g\right|,1\right\rangle $
 \end_inset
 
  does not feel meaningful to me.
@@ -2385,7 +2375,333 @@ Then there's a hint to apply Cauchy–Schwarz to
 \begin_inset Formula $\left\langle f-g,1\right\rangle =f-g$
 \end_inset
 
-?
+?—
+no,
+ because first of all,
+ that doesn't typecheck (the inner product is a scalar),
+ but more importantly,
+ I don't have to 
+\begin_inset Quotes eld
+\end_inset
+
+just go with it
+\begin_inset Quotes erd
+\end_inset
+
+,
+ because we have a definition:
+ 
+\begin_inset Formula $\left\langle \left|f-g\right|,1\right\rangle =\int_{0}^{1}\left|f-g\right|\cdot\overline{1}\,dx=\int_{0}^{1}\left|f-g\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So the Cauchy–Schwarz-with-one gambit gives us 
+\begin_inset Formula $\left|\int_{0}^{1}\left|f-g\right|\right|=\int_{0}^{1}\left|f-g\right|\le\left\Vert f-g\right\Vert $
+\end_inset
+
+.
+ Putting it together,
+ 
+\begin_inset Formula $\left|T(f)-T(g)\right|\le\int_{0}^{1}\left|f-g\right|\le\left\Vert f-g\right\Vert $
+\end_inset
+
+,
+ so 
+\begin_inset Formula $T$
+\end_inset
+
+ is bounded,
+ so 
+\begin_inset Formula $T$
+\end_inset
+
+ is continuous.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dirichlet's test relies on summation by parts,
+ which is the discrete analogue of integration by parts,
+ which a lot of retarded people just memorize by rote (
+\begin_inset Formula $\int u\,dv=uv-\int v\,du$
+\end_inset
+
+) without understanding that it's a corollary of the product rule:
+ 
+\begin_inset Formula $(uv)^{\prime}=u^{\prime}v+uv^{\prime}$
+\end_inset
+
+ integrates to 
+\begin_inset Formula $\int(uv)^{\prime}=\int u^{\prime}v+\int uv^{\prime}$
+\end_inset
+
+,
+ the fundamental theorem converts the left side to 
+\begin_inset Formula $uv$
+\end_inset
+
+,
+ so we have 
+\begin_inset Formula $\int uv^{\prime}=uv-\int u^{\prime}v$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For summation by parts,
+ we would start with a 
+\begin_inset Quotes eld
+\end_inset
+
+discrete product rule
+\begin_inset Quotes erd
+\end_inset
+
+.
+ For a sequence 
+\begin_inset Formula $\{a_{k}\}_{k}$
+\end_inset
+
+,
+ define the difference delta operation 
+\begin_inset Formula $\Delta a_{n}:=a_{n+1}-a_{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then we have 
+\begin_inset Formula $\Delta(a_{n}b_{n})=a_{n+1}b_{n+1}-a_{n}b_{n}=a_{n+1}b_{n+1}-a_{n}b_{n}+\underbrace{a_{n}b_{n+1}-a_{n}b_{n+1}}_{\mathrm{``fancy\,zero"}}=b_{n+1}(a_{n+1}-a_{n})+a_{n}(b_{n+1}-b_{n})=\Delta(a_{n})b_{n+1}+a_{n}\Delta(b_{n})$
+\end_inset
+
+.
+ (The asymmetry with 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+ but 
+\begin_inset Formula $b_{n+1}$
+\end_inset
+
+ is real;
+ the symmetric version would have a 
+\begin_inset Quotes eld
+\end_inset
+
+quadratic
+\begin_inset Quotes erd
+\end_inset
+
+ term which vanishes in the limit in the continuous version.)
+\end_layout
+
+\begin_layout Standard
+The fundamental theorem analogue is a telescoping sum:
+ 
+\begin_inset Formula 
+\[
+\sum_{k=M}^{N}\Delta(a_{k}b_{k})=\underbrace{\left(\cancel{a_{M+1}b_{M+1}}-a_{M}b_{M}\right)}_{\Delta(a_{M}b_{M})}+\underbrace{\left(\cancel{a_{M+2}b_{M+2}}-\cancel{a_{M+1}b_{M+1}}\right)}_{\Delta(a_{M+1}b_{M+1})}+...+\underbrace{\left(a_{N+1}b_{N+1}\cancel{-a_{N}b_{N}}\right)}_{\Delta(a_{N}b_{N})}=a_{N+1}b_{N+1}-a_{M}b_{M}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+So 
+\begin_inset Formula $\Delta(a_{n}b_{n})=\Delta(a_{n})b_{n+1}+a_{n}\Delta(b_{n})$
+\end_inset
+
+ gets summed on both sides to become 
+\begin_inset Formula $a_{N+1}b_{N+1}-a_{M}b_{M}=\sum_{k=M}^{N}\Delta(a_{k})b_{k+1}+\sum_{k=M}^{N}a_{k}\Delta(b_{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But the sequence I've called 
+\begin_inset Formula $b_{k}$
+\end_inset
+
+ here might be a sequence of partial sums of some other sequence,
+ which I'll call 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+.
+ That is 
+\begin_inset Formula $b_{k}:=\sum_{j=1}^{k}c_{j}$
+\end_inset
+
+.
+ Then we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{N+1}\sum_{j=1}^{N+1}c_{j}-a_{M}\sum_{j=1}^{M}c_{j}=\sum_{k=M}^{N}\Delta(a_{k})\sum_{j=1}^{k+1}c_{j}+\sum_{k=M}^{N}a_{k}c_{k+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which is so unreadable that we'll reluctantly defer to tradition (I wanted to see the 
+\begin_inset Quotes eld
+\end_inset
+
+sum-ness
+\begin_inset Quotes erd
+\end_inset
+
+) and write 
+\begin_inset Formula $B_{k}:=\sum_{j=1}^{k}c_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{k=M}^{N}a_{k}c_{k+1}=a_{N+1}B_{N+1}-a_{M}B_{M}-\sum_{k=M}^{N}\Delta(a_{k})B_{k+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The reason we're bothering with this is that we want Dirichlet's test.
+ If some conditions on 
+\begin_inset Formula $\{a_{k}\}$
+\end_inset
+
+ and 
+\begin_inset Formula $\{c_{k}\}$
+\end_inset
+
+ let us make 
+\begin_inset Formula $\left|\sum_{k=M}^{N}a_{k}c_{k}\right|$
+\end_inset
+
+ small for sufficiently large 
+\begin_inset Formula $M$
+\end_inset
+
+ and 
+\begin_inset Formula $N$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\sum_{k=1}^{\infty}a_{k}c_{k}$
+\end_inset
+
+ will converge by the Cauchy criterion for series.
+\end_layout
+
+\begin_layout Standard
+Suppose the partial sums of 
+\begin_inset Formula $\sum_{k=1}^{\infty}c_{k}$
+\end_inset
+
+ are bounded in magnitude,
+ say by 
+\begin_inset Formula $C$
+\end_inset
+
+ (this is weaker than converges because the partial sums could bounce around without converging) and that 
+\begin_inset Formula $\{a_{k}\}\downarrow0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula 
+\[
+\left|\sum_{k=M}^{N}a_{k}c_{k+1}\right|=\left|a_{N+1}B_{N+1}-a_{M}B_{M}-\sum_{k=M}^{N}\Delta(a_{k})B_{k+1}\right|\le\left|a_{N+1}B_{N+1}\right|+\left|a_{M}B_{M}\right|+\left|\sum_{k=M}^{N}\Delta(a_{k})B_{k+1}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\le\left|a_{N+1}B_{N+1}\right|+\left|a_{M}B_{M}\right|+\sum_{k=M}^{N}\left|\Delta(a_{k})\right|\left|B_{k+1}\right|\le C\cdot\left(\left|a_{N+1}\right|+\left|a_{M}\right|+\sum_{k=M}^{N}\left|\Delta(a_{k})\right|\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+But since 
+\begin_inset Formula $\{a_{k}\}$
+\end_inset
+
+ is decreasing monotonically to zero,
+ 
+\begin_inset Formula $\sum_{k=M}^{N}\left|\Delta(a_{k})\right|\le(N-M)\cdot a_{M}$
+\end_inset
+
+,
+ and for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists a 
+\begin_inset Formula $K$
+\end_inset
+
+such that if 
+\begin_inset Formula $k\ge K$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $a_{k}<\frac{\varepsilon}{\left((M-N)+2\right)C}$
+\end_inset
+
+.
+ For for 
+\begin_inset Formula $N>M\ge K$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\sum_{k=M}^{N}a_{k}c_{k+1}\le\cancel{C}\cdot\cancel{\left((M-N)+2\right)}\cdot\frac{\varepsilon}{\cancel{\left((M-N)+2\right)}\cancel{C}}=\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Claude Opus 5 says this is still wrong!!
+ Death!!
 \end_layout
 
 \end_body
