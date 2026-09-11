@@ -2626,7 +2626,7 @@ Suppose the partial sums of
 \begin_inset Formula $C$
 \end_inset
 
- (this is weaker than converges because the partial sums could bounce around without converging) and that 
+ (this is weaker than convergence because the partial sums could bounce around without converging) and that 
 \begin_inset Formula $\{a_{k}\}\downarrow0$
 \end_inset
 
@@ -2645,7 +2645,7 @@ Suppose the partial sums of
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\le\left|a_{N+1}B_{N+1}\right|+\left|a_{M}B_{M}\right|+\sum_{k=M}^{N}\left|\Delta(a_{k})\right|\left|B_{k+1}\right|\le C\cdot\left(\left|a_{N+1}\right|+\left|a_{M}\right|+\sum_{k=M}^{N}\left|\Delta(a_{k})\right|\right)
+\le\left|a_{N+1}B_{N+1}\right|+\left|a_{M}B_{M}\right|+\sum_{k=M}^{N}\left|\Delta(a_{k})\right|\left|B_{k+1}\right|
 \]
 
 \end_inset
@@ -2658,50 +2658,304 @@ Suppose the partial sums of
 \end_layout
 
 \begin_layout Standard
-But since 
+But if 
 \begin_inset Formula $\{a_{k}\}$
 \end_inset
 
  is decreasing monotonically to zero,
- 
-\begin_inset Formula $\sum_{k=M}^{N}\left|\Delta(a_{k})\right|\le(N-M)\cdot a_{M}$
+ then the sum of any number of 
+\begin_inset Formula $\left|\Delta a_{k}\right|$
+\end_inset
+
+ starting from 
+\begin_inset Formula $\left|\Delta a_{M}\right|$
+\end_inset
+
+ is at most 
+\begin_inset Formula $\left|a_{M}\right|$
+\end_inset
+
+—
+that's how far there is to go.
+ Which brings us to
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\le\left|a_{N+1}B_{N+1}\right|+\left|a_{M}B_{M}\right|+a_{M}\left|B_{N}\right|\le C\cdot\left(a_{N+1}+a_{M}+a_{M}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $\{a_{k}\}\to0$
 \end_inset
 
 ,
- and for all 
+ for all 
 \begin_inset Formula $\varepsilon$
 \end_inset
 
 ,
- there exists a 
-\begin_inset Formula $K$
+ there exists an 
+\begin_inset Formula $M_{\varepsilon}$
 \end_inset
 
-such that if 
-\begin_inset Formula $k\ge K$
+ such that if 
+\begin_inset Formula $k\ge M_{\varepsilon}$
 \end_inset
 
 ,
  then 
-\begin_inset Formula $a_{k}<\frac{\varepsilon}{\left((M-N)+2\right)C}$
+\begin_inset Formula $a_{k}<\frac{\varepsilon}{3C}$
 \end_inset
 
 .
- For for 
-\begin_inset Formula $N>M\ge K$
+ So for any 
+\begin_inset Formula $N>M_{\varepsilon}$
 \end_inset
 
 ,
- 
-\begin_inset Formula $\sum_{k=M}^{N}a_{k}c_{k+1}\le\cancel{C}\cdot\cancel{\left((M-N)+2\right)}\cdot\frac{\varepsilon}{\cancel{\left((M-N)+2\right)}\cancel{C}}=\varepsilon$
+ we have 
+\begin_inset Formula 
+\[
+\left|\sum_{k=M_{\varepsilon}}^{N}a_{k}c_{k+1}\right|\le C\cdot\left(a_{N+1}+a_{M}+a_{M}\right)\le3Ca_{M_{\varepsilon}}<\cancel{3C}\cdot\frac{\varepsilon}{\cancel{3C}}=\varepsilon
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW2#3 (Ch2#8)
+\series default
+.
+ We consider the sawtooth function 
+\begin_inset Formula $f(x)=\begin{cases}
+-\frac{\pi}{2}-\frac{x}{2} & x\in(-\pi,0)\\
+\frac{\pi}{2}-\frac{x}{2} & x\in(0,\pi)\\
+0 & x=0
+\end{cases}$
+\end_inset
+
+ whose Fourier series is 
+\begin_inset Formula $\frac{1}{2i}\sum_{k\ne0}\frac{\exp(ikx)}{k}$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-Claude Opus 5 says this is still wrong!!
- Death!!
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $\delta>0$
+\end_inset
+
+,
+ the partial sum of the Fourier series 
+\begin_inset Formula $S_{N}f(x)$
+\end_inset
+
+ converges uniformly on 
+\begin_inset Formula $(-\pi,-\delta]\cup[\delta,\pi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We need to show that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ and for all 
+\begin_inset Formula $x\in(-\pi,-\delta]\cup[\delta,\pi)$
+\end_inset
+
+,
+ there exists an 
+\begin_inset Formula $N_{\varepsilon}$
+\end_inset
+
+ (depending only on 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ not 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ thus 
+\begin_inset Quotes eld
+\end_inset
+
+uniform
+\begin_inset Quotes erd
+\end_inset
+
+) such that for all 
+\begin_inset Formula $k\ge N_{\varepsilon}$
+\end_inset
+
+ 
+\begin_inset Formula $\left|S_{k}f(x)-f(x)\right|<\varepsilon$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Let's think about the 
+\begin_inset Formula $[\delta,\pi)$
+\end_inset
+
+ branch first.
+ 
+\begin_inset Formula $\left|\frac{1}{2i}\sum_{k=1}^{N}\frac{\exp(ikx)}{k}+\frac{1}{2i}\sum_{k=-N}^{-1}\frac{\exp(ikx)}{k}-\frac{\pi}{2}-\frac{x}{2}\right|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+GPT-5.6 Sol suggests that the paired 
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $-k$
+\end_inset
+
+ terms are a 
+\begin_inset Quotes eld
+\end_inset
+
+familiar trigonometric expression
+\begin_inset Quotes erd
+\end_inset
+
+.
+ I feel like it's sine (on shallow pattern-matching,
+ not actually remembering the formula).
+ I think it's OK to look up the formula rather than rederiving it from 
+\begin_inset Formula $\sum_{k\in\N}\frac{x^{k}}{k!}=\cos x+i\sin x$
+\end_inset
+
+ right now.
+ Looking it up,
+ the formula is 
+\begin_inset Formula $\frac{\exp(ix)-\exp(-ix)}{2i}$
+\end_inset
+
+.
+ So we have 
+\begin_inset Formula $\left|\sum_{k=1}^{N}\frac{\sin kx}{k}-\frac{\pi}{2}-\frac{x}{2}\right|$
+\end_inset
+
+.
+ GPT-5.6 Sol points out that 
+\begin_inset Formula $\frac{1}{k}$
+\end_inset
+
+ can be the descending sequence in an invocation of Dirichlet's test,
+ and suggests thinking of 
+\begin_inset Formula $\sum\exp(ikx)$
+\end_inset
+
+ rather than 
+\begin_inset Formula $\sum\sin kx$
+\end_inset
+
+—
+and presumably that's where the geometric series comes in:
+ 
+\begin_inset Formula $\sum_{k=1}^{\infty}e^{ikx}=e^{ix}+e^{2ix}+e^{3ix}...$
+\end_inset
+
+ is a geometric series whose first term is 
+\begin_inset Formula $e^{ix}$
+\end_inset
+
+ and whose ratio is also 
+\begin_inset Formula $e^{ix}$
+\end_inset
+
+.
+ We have a standard formula for the sum of a geometric series,
+ 
+\begin_inset Formula $\frac{a}{1-r}$
+\end_inset
+
+,
+ here,
+ 
+\begin_inset Formula $\frac{e^{ix}}{1-e^{ix}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But Dirichlet's test only gives us convergence of 
+\begin_inset Formula $\sum_{k}a_{k}b_{k}$
+\end_inset
+
+ (where 
+\begin_inset Formula $\{a_{k}\}\downarrow0$
+\end_inset
+
+ and 
+\begin_inset Formula $\sum_{k}b_{k}$
+\end_inset
+
+ converges).
+ Merely knowing that 
+\begin_inset Formula $\sum_{k=1}^{N}\underbrace{\frac{1}{k}}_{a_{k}}\underbrace{\sin kx}_{b_{k}}$
+\end_inset
+
+ converges doesn't obviously let us 
+\emph on
+use
+\emph default
+ it in an estimate.
+\end_layout
+
+\begin_layout Standard
+GPT-5.6 Sol points out that 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
 \end_layout
 
 \end_body
