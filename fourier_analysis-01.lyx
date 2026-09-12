@@ -2947,7 +2947,160 @@ use
 \end_layout
 
 \begin_layout Standard
-GPT-5.6 Sol points out that 
+GPT-5.6 Sol points out that the series actually doesn't converge (
+\begin_inset Formula $\left|e^{ix}\right|=1$
+\end_inset
+
+),
+ but that we can use the geometric partial-sum formula in an estimate:
+ 
+\begin_inset Formula $\sum_{k=1}^{N}\exp(ikx)=\exp(ix)\frac{1-\exp(iNx)}{1-\exp(ix)}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\left|1-\exp(iNx)\right|\le2$
+\end_inset
+
+.
+ My explanation:
+ the farthest you can get away from 
+\begin_inset Formula $1$
+\end_inset
+
+ on the unit circle is 
+\begin_inset Formula $-1$
+\end_inset
+
+,
+ when 
+\begin_inset Formula $Nx$
+\end_inset
+
+ is an odd multiple of 
+\begin_inset Formula $\pi$
+\end_inset
+
+.
+ (And we're bounding the numerator to help us construct our chain-of-
+\begin_inset Formula $\le$
+\end_inset
+
+ estimate;
+ the denominator is also bounded by 2,
+ but that doesn't help us justify a 
+\begin_inset Formula $\le$
+\end_inset
+
+ estimate.)
+\end_layout
+
+\begin_layout Standard
+We want a 
+\emph on
+lower
+\emph default
+ bound on 
+\begin_inset Formula $\left|1-\exp(ix)\right|$
+\end_inset
+
+.
+ It would be zero if 
+\begin_inset Formula $x$
+\end_inset
+
+ were zero,
+ but 
+\begin_inset Formula $x\in[\delta,\pi]$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\left|1-\exp(ix)\right|^{2}=\left(1-\exp(ix)\right)\left(1-\exp(-ix)\right)=1-\exp(ix)-\exp(-ix)+\exp(ix-ix)=2-\exp(ix)-\exp(-ix)=2-2\cos(x)=2\left(1-\cos(x)\right)$
+\end_inset
+
+ and then apparently there's a half-angle formula such that we have 
+\begin_inset Formula $2\cdot2\sin^{2}(\frac{x}{2})=4\sin^{2}(\frac{x}{2})$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\left|1-\exp(ix)\right|=2\left|\sin(\frac{x}{2})\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+At this point I am consumed with despair that I couldn't realistically have learned Fourier analysis before 2024 (when LLMs started to become useful math tutors);
+ none of these steps are incomprehensible once explained,
+ but there's no way I could have realistically known to pull a half-angle identity out of a hat.
+\end_layout
+
+\begin_layout Standard
+The reason we endured all this suffering was to get a bound independent of 
+\begin_inset Formula $N$
+\end_inset
+
+ and 
+\begin_inset Formula $x$
+\end_inset
+
+:
+ 
+\begin_inset Formula $\left|\sum_{k=1}^{N}\sin(kx)\right|\le\frac{2}{2\sin(\frac{\delta}{2})}=\frac{1}{\sin(\frac{\delta}{2})}$
+\end_inset
+
+.
+ (Because 
+\begin_inset Formula $x\ge\delta$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\sin(\frac{x}{2})\ge\sin(\frac{\delta}{2})$
+\end_inset
+
+,
+ and the inequality goes the other way when it's in the denominator.)
+\end_layout
+
+\begin_layout Standard
+I didn't see how this would help us with our estimate of 
+\begin_inset Formula $\left|\sum_{k=1}^{N}\frac{\sin kx}{k}-\frac{\pi}{2}-\frac{x}{2}\right|$
+\end_inset
+
+,
+ but GPT-5.6 Sol points out that we're only asked to prove that the Fourier series converges,
+ not that it converges to 
+\begin_inset Formula $f$
+\end_inset
+
+,
+ so it's tempting to just say 
+\begin_inset Quotes eld
+\end_inset
+
+Dirichlet's test with 
+\begin_inset Formula $a_{k}:=\frac{1}{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $b_{k}:=\sin kx$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+,
+ but GPT-5.6 Sol furthermore points out that that's not good enough for uniform convergence.
+ [
+\series bold
+TODO
+\series default
+:
+ continue]
 \end_layout
 
 \begin_layout Standard
