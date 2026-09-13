@@ -358,7 +358,7 @@ Proposition
 \begin_layout Standard
 
 \emph on
-Proof
+Attempt
 \emph default
 .
  Suppose 
@@ -389,11 +389,13 @@ Proof
 \end_layout
 
 \begin_layout Standard
-Assigning 
+First,
+ I tried assigning 
 \begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\underbrace{f(\theta)}_{u:=}\underbrace{\exp(-ik\theta)}_{dv:=}\:d\theta$
 \end_inset
 
- yields 
+,
+ yielding 
 \begin_inset Formula $du:=f'(\theta)$
 \end_inset
 
@@ -401,130 +403,19 @@ Assigning
 \begin_inset Formula $v:=\frac{-1}{ik}\exp(-ik\theta)$
 \end_inset
 
-,
- so the parts formula (setting the factor of 
-\begin_inset Formula $\frac{1}{2\pi}$
-\end_inset
-
- aside for a moment) yields 
-\begin_inset Formula 
-\[
-\left.\underbrace{f(\theta)}_{u}\cdot\underbrace{\frac{-1}{ik}\exp(-ik\theta)}_{v}\right|_{\theta=-\pi}^{\pi}-\frac{-1}{ik}\int_{-\pi}^{\pi}\underbrace{\exp(-ik\theta)}_{v}\cdot\underbrace{f'(\theta)}_{du}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-=\frac{-1}{ik}\cdot\left(f(\pi)\exp(-ik\pi)-\underbrace{f(-\pi)}_{=f(\pi)\mathrm{\,(b/c\,even)}}\exp(ik\pi)\right)-\frac{-1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{-1}{ik}\cdot\left(f(\pi)\exp(-ik\pi)-f(\pi)\exp(ik\pi)\right)-\frac{-1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\frac{-f(\pi)}{ik}\cdot\left(\exp(-ik\pi)-\exp(ik\pi)\right)-\frac{-1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-But 
-\begin_inset Formula $\exp(-ik\pi)-\exp(ik\pi)$
-\end_inset
-
- should just be zero,
- so the boundary term vanishes.
- (Whether 
-\begin_inset Formula $k$
-\end_inset
-
- is even or odd only determines whether it works out as 
-\begin_inset Formula $-1-(-1)=-1+1=0$
-\end_inset
-
- or 
-\begin_inset Formula $1-1=0$
-\end_inset
-
-.) We're left with 
-\begin_inset Formula $-\frac{-1}{ik}\int_{-\pi}^{\pi}f'(\theta)\exp(-ik\theta)$
-\end_inset
-
-,
- which we should be able to integrate by parts 
-\begin_inset Quotes eld
-\end_inset
-
-the other way
-\begin_inset Quotes erd
-\end_inset
-
-,
- 
-\begin_inset Formula $-\frac{-1}{ik}\int_{-\pi}^{\pi}\underbrace{\exp(-ik\theta)}_{u}\underbrace{f'(\theta)}_{dv}$
-\end_inset
-
- yielding 
-\begin_inset Formula $du:=-ik\exp(-ik\theta)$
-\end_inset
-
- and 
-\begin_inset Formula $v:=f(\theta)$
-\end_inset
-
 .
- Then
-\begin_inset Formula 
-\[
-\left.\underbrace{\exp(-ik\theta)f(\theta)}_{uv}\right|_{\theta:=-\pi}^{\pi}+\underbrace{ik\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)}_{\int v\,du}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Except—
-aren't we just going in circles here?
- (The boundary term is going to be zero again,
+ Then after a long calculation (now omitted from the current revision of this document) I realized I was going in circles.
+ (The boundary term was going to be zero again,
  and 
 \begin_inset Formula $\cancel{-}\frac{\cancel{-}1}{\cancel{ik}}\cancel{ik}=1$
 \end_inset
 
-.) Doing a long calculation to show that 
+.) Showing that 
 \begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)\:d\theta$
 \end_inset
 
- equals itself doesn't help us at all!
- (Although it is perhaps reässuring that I'm not writing total nonsense?)
-\end_layout
-
-\begin_layout Standard
-What would be non-circular would be to do the calculation for 
+ equals itself doesn't help us at all.
+ Then I thought I should be doing the calculation for 
 \begin_inset Formula $\hat{f}(-k)$
 \end_inset
 
@@ -536,79 +427,9 @@ not
 \begin_inset Formula $\hat{f}(k)$
 \end_inset
 
-).
- So 
-\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\underbrace{f(\theta)}_{u:=}\underbrace{\exp(ik\theta)}_{dv:=}\:d\theta$
-\end_inset
-
- yields 
-\begin_inset Formula $du:=f'(\theta)$
-\end_inset
-
- and 
-\begin_inset Formula $v:=\frac{1}{ik}\exp(ik\theta)$
-\end_inset
-
-,
- so we have
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\left.\underbrace{f(\theta)}_{u}\cdot\underbrace{\frac{1}{ik}\exp(ik\theta)}_{v}\right|_{\theta=-\pi}^{\pi}-\int_{-\pi}^{\pi}\underbrace{\frac{1}{ik}\exp(ik\theta)}_{v}\cdot\underbrace{f'(\theta)}_{du}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The boundary term is 
-\begin_inset Formula $\frac{1}{ik}\left(f(\pi)\exp(ik\pi)-f(-\pi)\exp(ik\pi)\right)=\frac{1}{ik}f(\pi)\left(\exp(ik\pi)-\exp(ik\pi)\right)=\frac{1}{ik}f(\pi)\cdot0=0$
-\end_inset
-
- again.
- So now I guess we're doing parts 
-\emph on
-again
-\emph default
-,
- on 
-\begin_inset Formula $-\frac{1}{ik}\int_{-\pi}^{\pi}\underbrace{\exp(ik\theta)}_{u}\cdot\underbrace{f'(\theta)}_{dv}$
-\end_inset
-
-,
- yielding 
-\begin_inset Formula $du:=ik\exp(ik\theta)$
-\end_inset
-
- and 
-\begin_inset Formula $v:=f(\theta)$
-\end_inset
-
-,
- to get 
-\begin_inset Formula $\left.\underbrace{\exp(ik\theta)}_{u}\cdot\underbrace{f(\theta)}_{v}\right|_{\theta:=-\pi}^{\pi}-\int_{-\pi}^{\pi}\underbrace{f(\theta)}_{v}\underbrace{ik\exp(ik\theta)}_{du}$
-\end_inset
-
-.
- That same boundary term is going to vanish again,
- and bringing back those constant factors we have 
-\begin_inset Formula $\frac{1}{2\pi}\cdot\cancel{-}\frac{1}{\cancel{ik}}\cdot\cancel{-}\int_{-\pi}^{\pi}f(\theta)\cancel{ik}\exp(ik\theta)=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(ik\theta)$
-\end_inset
-
- ...
- but that's just going in a circle again!
- We want 
-\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}f(\theta)\exp(-ik\theta)$
-\end_inset
-
-,
- with the negative sign inside the exponential.
- In retrospect,
- it would seem that 
+),
+ which also (omitted) was circular:
+ in retrospect 
 \begin_inset Quotes eld
 \end_inset
 
@@ -617,8 +438,8 @@ integrate by parts,
 \begin_inset Quotes erd
 \end_inset
 
- was not going to be helpful no matter where we start from;
- there has to be some other trick.
+ was not going to be helpful no matter where we start from.
+ There has to be some other trick.
  But what?
  The solution somehow needs to depend on 
 \begin_inset Formula $f$
@@ -2735,7 +2556,7 @@ Because
 \begin_layout Standard
 
 \series bold
-HW2#3 (Ch2#8)
+HW2#2 (Ch2#8)
 \series default
 .
  We consider the sawtooth function 
@@ -3095,12 +2916,120 @@ Dirichlet's test with
 
 ,
  but GPT-5.6 Sol furthermore points out that that's not good enough for uniform convergence.
- [
-\series bold
-TODO
-\series default
-:
- continue]
+\end_layout
+
+\begin_layout Standard
+(With some GPT-5.6 Sol tutoring on how to cannabalize the summation-by-parts estimate and some bookkeeping issues—
+) We want to show that the partial sum 
+\begin_inset Formula $S_{N}f(x)$
+\end_inset
+
+ converges uniformly on 
+\begin_inset Formula $(-\pi,-\delta]\cup[\delta,\pi)$
+\end_inset
+
+.
+ Hopefully without loss of generality,
+ let's just think about 
+\begin_inset Formula $[\delta,\pi)$
+\end_inset
+
+ for now.
+ That means that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+ there exists an 
+\begin_inset Formula $M_{\varepsilon}$
+\end_inset
+
+ such that for 
+\begin_inset Formula $N\ge M\ge M_{\varepsilon}$
+\end_inset
+
+ and all 
+\begin_inset Formula $x\in[\delta,\pi)$
+\end_inset
+
+ 
+\begin_inset Formula $\left|S_{N}f(x)-S_{M-1}f(x)\right|<\varepsilon$
+\end_inset
+
+.
+ (It's uniform because 
+\begin_inset Formula $M$
+\end_inset
+
+ doesn't depend on 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ and we're going down to 
+\begin_inset Formula $M-1$
+\end_inset
+
+,
+ so that we can write the resulting tail in sigma notation as
+\begin_inset Formula $\sum_{k=M}^{N}$
+\end_inset
+
+.) So we have 
+\begin_inset Formula $\left|\sum_{k=M}^{N}\frac{1}{k}\cdot\sin kx\right|$
+\end_inset
+
+.
+ From our derivation of Dirichlet's test above,
+ we know that if 
+\begin_inset Formula $\{a_{k}\}\downarrow0$
+\end_inset
+
+ and any partial sum of 
+\begin_inset Formula $\sum c_{k}$
+\end_inset
+
+is bounded by 
+\begin_inset Formula $C$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\left|\sum_{k=M}^{N}a_{k}c_{k+1}\right|\le3Ca_{M}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We assign 
+\begin_inset Formula $\underbrace{\frac{1}{k}}_{:=a_{k}}\cdot\underbrace{\sin kx}_{:=c_{k+1}}$
+\end_inset
+
+ and 
+\begin_inset Formula $C:=\frac{1}{\sin(\frac{\delta}{2})}$
+\end_inset
+
+.
+ Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $M_{\varepsilon}:=\left\lceil \frac{3}{\varepsilon\sin(\frac{\delta}{2})}\right\rceil +1$
+\end_inset
+
+.
+ Then for 
+\begin_inset Formula $N\ge M\ge M_{\varepsilon},$
+\end_inset
+
+ 
+\begin_inset Formula $\left|\sum_{k=M}^{N}\frac{1}{k}\sin kx\right|<\frac{\cancel{3}}{\cancel{\sin(\frac{\delta}{2})}}\cdot\frac{\varepsilon\cancel{\sin(\frac{\delta}{2})}}{\cancel{3}}=\varepsilon$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3108,6 +3037,562 @@ TODO
 \series bold
 b
 \series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $S_{N}f(0)\to0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\frac{1}{2i}\sum_{k\ne0}\frac{\exp(ikx)}{k}=\frac{1}{2i}\sum_{k\ne0}\frac{\exp(ik0)}{k}=\frac{1}{2i}\sum_{k\ne0}\frac{1}{k}$
+\end_inset
+
+ ...
+ and I was thinking that doesn't converge,
+ but GPT-5.6 Sol points out that we want the limit of the symmetric partial sum.
+ 
+\begin_inset Formula $\sum_{k\ne0}\frac{1}{k}=\lim_{N\to\infty}\sum_{k=-N}^{-1}\frac{1}{k}+\sum_{k=1}^{N}\frac{1}{k}=\sum_{k=1}^{N}\frac{1}{k}-\frac{1}{k}=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW2#3
+\series default
+ 
+\series bold
+(Ch2#9)
+\series default
+.
+ Consider the characteristic function 
+\begin_inset Formula $\chi_{[a,b]}(x)=\begin{cases}
+1 & x\in[a,b]\\
+0 & \mathrm{else}
+\end{cases}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ The Fourier series of 
+\begin_inset Formula $\chi_{[a,b]}$
+\end_inset
+
+ is 
+\begin_inset Formula $\frac{b-a}{2\pi}+\sum_{k\ne0}\frac{\exp(-ika)-\exp(-ikb)}{2\pi ik}\exp(ikx)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}\chi_{[a,b]}(x)\exp(-ikx)\,dx=\frac{1}{2\pi}\int_{a}^{b}\exp(-ikx)\,dx$
+\end_inset
+
+.
+ When 
+\begin_inset Formula $k:=0$
+\end_inset
+
+,
+ that's 
+\begin_inset Formula $\frac{1}{2\pi}\int_{a}^{b}\exp(0)=\frac{1}{2\pi}\int_{a}^{b}1\,dx=\frac{b-a}{2\pi}$
+\end_inset
+
+,
+ otherwise it's 
+\begin_inset Formula $\frac{1}{2\pi}\cdot\frac{1}{-ik}\left.\exp(-ikx)\right|_{x=a}^{b}=\frac{1}{2\pi ik}\cdot\left(\exp(-ika)-\exp(ikb)\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ If 
+\begin_inset Formula $a\ne-\pi$
+\end_inset
+
+ or 
+\begin_inset Formula $b\ne\pi$
+\end_inset
+
+ and 
+\begin_inset Formula $a\ne b$
+\end_inset
+
+,
+ the Fourier series does not converge absolutely for any 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (We got a series of walkthrough hints from Prof.
+ Lai.) We're showing that 
+\begin_inset Formula $\sum_{k\ne0}\left|\frac{\exp(-ika)-\exp(-ikb)}{2\pi ik}\exp(ikx)\right|$
+\end_inset
+
+ diverges.
+ Let 
+\begin_inset Formula $\theta_{0}:=\frac{b-a}{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The hint sequence has us proceed with 
+\begin_inset Formula $\sin(k\theta_{0})$
+\end_inset
+
+,
+ and I wasn't sure where the 
+\begin_inset Formula $x$
+\end_inset
+
+ went.
+ GPT-5.6 Sol reminded me that 
+\begin_inset Formula $\left|\exp(ikx)\right|$
+\end_inset
+
+ is one—
+I note that the absolute value bars eliminating such factors has been a recurring theme that I shouldn't need to ask about again—
+and explained that the choice of 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+ is to make the exponents symmetrical so that we can invoke the complex sine formula.
+\end_layout
+
+\begin_layout Standard
+That is,
+ we see that 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+ is half the length of the interval.
+ If 
+\begin_inset Formula $m$
+\end_inset
+
+ is the midpoint,
+ then 
+\begin_inset Formula $a=m-\theta_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $b=m+\theta_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We have
+\begin_inset Formula $\left|\frac{\exp(-ika)-\exp(-ikb)}{2\pi ik}\exp(ikx)\right|=\frac{1}{\pi k}\left|\frac{\exp(-ika)-\exp(-ikb)}{2i}\right|=\frac{1}{\pi k}\left|\frac{\exp(-ik(m-\theta_{0}))-\exp(-ik(m+\theta_{0}))}{2i}\right|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{1}{\pi k}\cancelto{1}{\left|\exp(-im)\right|}\left|\frac{\exp(k\theta_{0})-\exp(-k\theta_{0})}{2i}\right|=\frac{1}{\pi k}\left|\sin(k\theta_{0})\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(With much more tutoring from GPT-5.6 Sol,
+ on top of the hint sequence—
+) We're trying to show that 
+\begin_inset Formula $\sum_{k}\frac{1}{\pi k}\left|\sin(k\theta_{0})\right|$
+\end_inset
+
+ diverges.
+ Consider some small 
+\begin_inset Formula $c$
+\end_inset
+
+,
+ and consider the interval of such 
+\begin_inset Formula $x$
+\end_inset
+
+ such that 
+\begin_inset Formula $\left|\sin x\right|\ge c$
+\end_inset
+
+:
+ that's 
+\begin_inset Formula $[\arcsin c,\pi-\arcsin c]$
+\end_inset
+
+.
+ The length of that interval is 
+\begin_inset Formula $\pi-\arcsin c-\arcsin c=\pi-2\arcsin c$
+\end_inset
+
+.
+ Recall that the terms of our series are
+\begin_inset Formula $\left|\sin(k\theta_{0})\right|$
+\end_inset
+
+ for 
+\begin_inset Formula $k\in\N$
+\end_inset
+
+:
+ we're 
+\begin_inset Quotes eld
+\end_inset
+
+sampling
+\begin_inset Quotes erd
+\end_inset
+
+ the sine function at intervals of 
+\begin_inset Formula $\theta_{0}$
+\end_inset
+
+.
+ If the length of the interval where 
+\begin_inset Formula $\left|\sin x\right|\ge c$
+\end_inset
+
+ is longer than 
+\begin_inset Formula $\theta$
+\end_inset
+
+,
+ then every such interval will contain at least one of the sample points.
+ The intervals are the same size,
+ so the not-less-than-
+\begin_inset Formula $c$
+\end_inset
+
+ terms can't thin out faster than linearly,
+ so 
+\begin_inset Formula $\sum_{k}\frac{1}{\pi k}\left|\sin(k\theta_{0})\right|$
+\end_inset
+
+ has a subseries that 
+\begin_inset Quotes eld
+\end_inset
+
+looks like
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\frac{1}{\pi}\sum_{k}\frac{c}{k}$
+\end_inset
+
+,
+ which diverges as the harmonic series.
+\end_layout
+
+\begin_layout Standard
+Specifically,
+ the 
+\begin_inset Formula $j$
+\end_inset
+
+th 
+\begin_inset Formula $\left|\sin\right|$
+\end_inset
+
+-not-less-than-
+\begin_inset Formula $c$
+\end_inset
+
+ interval 
+\begin_inset Formula $[j\pi+\arcsin c,(j+1)\pi-\arcsin c]$
+\end_inset
+
+ contains a point 
+\begin_inset Formula $n_{j}\theta_{0}<(j+1)\pi-\arcsin c$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $n_{j}<\frac{(j+1)\pi-\arcsin c}{\theta_{0}}$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\frac{1}{n_{j}}>\frac{\theta_{0}}{(j+1)\pi-\arcsin c}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\frac{\theta_{0}}{(j+1)\pi-\arcsin c}>\frac{\theta_{0}}{(j+1)\pi}$
+\end_inset
+
+ (subtracting 
+\begin_inset Formula $\arcsin c$
+\end_inset
+
+ in the denominator makes the denominator smaller,
+ which makes the fraction bigger).
+ We were concerned with the series 
+\begin_inset Formula $\sum_{k}\frac{1}{\pi k}\left|\sin(k\theta_{0})\right|$
+\end_inset
+
+.
+ Taking the terms corresponding to our 
+\begin_inset Formula $\left|\sin\right|$
+\end_inset
+
+-not-less-than-
+\begin_inset Formula $c$
+\end_inset
+
+ intervals (which we index with 
+\begin_inset Formula $j$
+\end_inset
+
+),
+ we have 
+\begin_inset Formula $\sum_{j}\frac{1}{\pi n_{j}}\left|\sin(n_{j}\theta_{0})\right|\ge\sum_{j}\frac{\theta_{0}}{(j+1)\pi^{2}}c$
+\end_inset
+
+,
+ which diverges as the harmonic series.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ If 
+\begin_inset Formula $a:=-\pi$
+\end_inset
+
+ and 
+\begin_inset Formula $b:=\pi$
+\end_inset
+
+,
+ the series becomes 
+\begin_inset Formula $\frac{\pi-(-\pi)}{2\pi}+\sum_{k\ne0}\frac{\exp(ik\pi)-\exp(-ik\pi)}{2\pi ik}=\frac{2\pi}{2\pi}+\sum_{k\ne0}\frac{0}{2\pi ik}=1$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW2#4 (Ch2#11)
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ Let 
+\begin_inset Formula $\{f_{j}\}_{j=1}^{\infty}$
+\end_inset
+
+ be a sequence of Riemann integrable functions on 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ such that 
+\begin_inset Formula $\lim_{j\to\infty}\int_{0}^{1}\text{\left|f_{j}(x)-f(x)\right|}=0$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\lim_{j\to\infty}\hat{f_{j}}(k)=\fhat(k)$
+\end_inset
+
+ (uniformly).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We want to show that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists a 
+\begin_inset Formula $J$
+\end_inset
+
+ such that if 
+\begin_inset Formula $j\ge J$
+\end_inset
+
+,
+ then for all 
+\begin_inset Formula $k$
+\end_inset
+
+,
+ 
+\begin_inset Formula 
+\[
+\left|\int_{0}^{1}f_{j}(x)\exp(-2\pi ikx)\,dx-\int_{0}^{1}f(x)\exp(-2\pi ikx)\,dx\right|<\varepsilon
+\]
+
+\end_inset
+
+(It's uniform because 
+\begin_inset Formula $J$
+\end_inset
+
+ doesn't depend on 
+\begin_inset Formula $k$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+And we know as a hypothesis that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists a 
+\begin_inset Formula $J_{0}$
+\end_inset
+
+ such that if 
+\begin_inset Formula $j\ge J_{0}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\int_{0}^{1}\text{\left|f_{j}(x)-f(x)\right|}<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ and suppose 
+\begin_inset Formula $j\ge J_{0}$
+\end_inset
+
+.
+ We can state 
+\begin_inset Formula $\left|\hat{f_{j}}(k)-\fhat(k)\right|$
+\end_inset
+
+ as 
+\begin_inset Formula $\left|\int_{0}^{1}f_{j}(x)\exp(-2\pi ikx)-f(x)\exp(-2\pi ikx)\,dx\right|$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+By the linearity of integration and triangle inequality for integrals,
+ we have 
+\begin_inset Formula 
+\[
+\left|\int_{0}^{1}f_{j}(x)\exp(-2\pi ikx)-f(x)\exp(-2\pi ikx)\,dx\right|=\left|\int_{0}^{1}\exp(-2\pi ikx)\left(f_{j}(x)-f(x)\right)\,dx\right|\le\int_{0}^{1}\left|\exp(-2\pi ikx)\right|\left|f_{j}(x)-f(x)\right|\,dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But 
+\begin_inset Formula $\left|\exp(-2\pi ikx)\right|=1$
+\end_inset
+
+.
+ So 
+\begin_inset Formula 
+\[
+\left|\int_{0}^{1}f_{j}(x)\exp(-2\pi ikx)\,dx-\int_{0}^{1}f(x)\exp(-2\pi ikx)\,dx\right|\le\int_{0}^{1}\left|f_{j}(x)-f(x)\right|\,dx<\varepsilon
+\]
+
+\end_inset
+
+which is 
+\emph on
+quod erat demonstrandum
+\emph default
 .
 \end_layout
 
