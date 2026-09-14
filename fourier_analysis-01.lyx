@@ -162,6 +162,14 @@ Advanced Topics in Mathematics:
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\Z}{\mathbb{Z}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Engineers get taught a version of Fourier series in which 
 \begin_inset Formula $a_{n}:=\frac{1}{L}\int_{-L}^{L}f(x)\cos\frac{n\pi x}{L}dx$
 \end_inset
@@ -983,6 +991,7 @@ Ch2#4
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1015,7 +1024,9 @@ First attempt
 
 .
  Then I guess this is just going to be some tedious integrations by parts?
- (Then I waded into a huge mess of calculations that didn't get to where I needed to go.)
+ (Then I waded into a huge mess of calculations,
+ now omitted from this document,
+ that didn't get to where I needed to go.)
 \end_layout
 
 \begin_layout Standard
@@ -1074,18 +1085,142 @@ by stipulation
 
  defined everywhere isn't odd),
  so we have odd-function times odd-function is even,
- and the symmetric integral is double the one-sided:
- 
-\begin_inset Formula $-\frac{i}{\pi}\int_{0}^{\pi}\theta(\pi-\theta)\sin k\theta\,d\theta$
+ and the symmetric integral is double the one-sided,
+ so our expression in 
+\begin_inset Formula $-\frac{2i}{\pi}\int_{0}^{\pi}\theta(\pi-\theta)\sin k\theta\,d\theta$
 \end_inset
 
 .
- [
-\series bold
-TODO
-\series default
-:
- and then we can integrate by parts]
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Second attempt
+\emph default
+.
+ I again waded into a huge mess of integration by parts equations,
+ starting with 
+\begin_inset Formula $-\frac{2i}{\pi}\int_{0}^{\pi}\theta(\pi-\theta)\sin k\theta\,d\theta=-\frac{2i}{\pi}\int_{0}^{\pi}\theta\pi\sin k\theta-\theta^{2}\sin k\theta\,d\theta=-2i\int_{0}^{\pi}\theta\sin k\theta\,d\theta+\frac{2i}{\pi}\int_{0}^{\pi}\theta^{2}\sin k\theta\,d\theta$
+\end_inset
+
+,
+ and then compiling 
+\begin_inset Formula $\int_{0}^{\pi}\underbrace{\theta^{2}}_{u:=}\underbrace{\sin k\theta\,d\theta}_{dv:=}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\int_{0}^{\pi}\underbrace{\theta}_{u:=}\underbrace{\sin k\theta\,d\theta}_{dv:=}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\int_{0}^{\pi}\underbrace{\theta}_{u:=}\underbrace{\cos k\theta\,d\theta}_{dv:=}$
+\end_inset
+
+,
+ 
+\emph on
+&c
+\emph default
+.,
+ but again failed to achieve the goal!
+ (GPT-5.6 Sol points out that I had a stray factor of 
+\begin_inset Formula $2$
+\end_inset
+
+ in the very setup,
+ and a dropped 
+\begin_inset Formula $\theta$
+\end_inset
+
+ later.) Why can't I do anything right?!
+ I'm going to die.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Further guidance
+\emph default
+.
+ GPT-5.6 Sol says the computation didn't have to be that hard.
+ An odd function has no cosine terms,
+ so we can look at 
+\begin_inset Formula $\frac{2}{\pi}\int_{0}^{\pi}\underbrace{\theta(\pi-\theta)}_{u:=}\underbrace{\sin(k\theta)\,d\theta}_{dv:=}$
+\end_inset
+
+.
+ Setting the constant factor aside for a moment,
+ we have 
+\begin_inset Formula $du=\pi-2\theta$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=-\frac{1}{k}\cos k\theta$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $uv-\int v\,du$
+\end_inset
+
+ is 
+\begin_inset Formula $-\frac{1}{k}\left.\theta(\pi-\theta)\cos k\theta\right|_{\theta:=0}^{\pi}+\frac{1}{k}\int_{0}^{\pi}\left(\pi-2\theta\right)\cos k\theta=\cancel{-\frac{1}{k}\left(\pi\cdot0\cos k\pi-0\left(-\pi\right)\cos0\right)}+\frac{1}{k}\int_{0}^{\pi}\left(\pi-2\theta\right)\cos k\theta$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And then parts again:
+ 
+\begin_inset Formula $\int_{0}^{\pi}\underbrace{\left(\pi-2\theta\right)}_{u:=}\underbrace{\cos k\theta}_{dv:=}$
+\end_inset
+
+ with 
+\begin_inset Formula $du:=-2$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=\frac{1}{k}\sin k\theta$
+\end_inset
+
+ gives 
+\begin_inset Formula $\left.\frac{1}{k}\left(\pi-2\theta\right)\sin k\theta\right|_{0}^{\pi}+2\frac{1}{k}\int_{0}^{\pi}\sin k\theta=\frac{2}{k}\cdot\frac{1}{k}(1-(-1)^{k})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Bringing back the constant factors,
+ we have 
+\begin_inset Formula $\frac{2}{\pi}\cdot\frac{1}{k}\cdot\frac{2}{k^{2}}(1-(-1)^{k})$
+\end_inset
+
+.
+ For even 
+\begin_inset Formula $k$
+\end_inset
+
+,
+ it zeroes out,
+ for odd 
+\begin_inset Formula $k$
+\end_inset
+
+,
+ the coëfficient is 
+\begin_inset Formula $\frac{8}{\pi}\cdot\frac{1}{k^{3}}$
+\end_inset
+
+ as expected.
 \begin_inset Newline newline
 \end_inset
 
@@ -1133,18 +1268,85 @@ Proposition
 \begin_layout Standard
 
 \emph on
-Proof
+First attempt
 \emph default
 .
- [
-\series bold
-TODO
-\series default
-]
-\begin_inset Newline newline
+ 
+\begin_inset Formula $\fhat(k)=\frac{1}{2\pi}\cdot\left(\int_{0}^{\pi}\theta\exp(-ik\theta)\:d\theta-\int_{-\pi}^{0}\theta\exp(-ik\theta)\,d\theta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let's consider 
+\begin_inset Formula $k:=0$
+\end_inset
+
+ first.
+ 
+\begin_inset Formula $\frac{1}{2\pi}\cdot\left(\int_{0}^{\pi}\theta\:d\theta-\int_{-\pi}^{0}\theta\,d\theta\right)=\frac{1}{2\pi}\cdot\left(\left(\frac{1}{2}\pi^{2}\right)-\left(-\frac{1}{2}\pi^{2}\right)\right)=\frac{1}{2\pi}\pi^{2}=\frac{\pi}{2}$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Then to do 
+\begin_inset Formula $k:\ne0$
+\end_inset
+
+,
+ I tried to compute the integration by parts 
+\begin_inset Formula $\int\underbrace{\theta}_{u:=}\underbrace{\exp(-ik\theta)\,d\theta}_{dv:=}$
+\end_inset
+
+ and made yet another mistake!
+ Why can't I ever,
+ ever do anything right?!
+ I deserve to die.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Guidance
+\emph default
+.
+ GPT-5.6 Sol points out that since 
+\begin_inset Formula $\left|\theta\right|$
+\end_inset
+
+ is an even function (only cosines),
+ we can just do 
+\begin_inset Formula $\frac{1}{\pi}\int_{0}^{\pi}\theta\cos k\theta\:d\theta$
+\end_inset
+
+.
+ We have 
+\begin_inset Formula $du:=1$
+\end_inset
+
+ and 
+\begin_inset Formula $v:=\frac{1}{k}\sin\theta$
+\end_inset
+
+ and get 
+\begin_inset Formula $\cancel{\left.\frac{1}{k}\sin\theta\right|_{0}^{\pi}}-\frac{1}{k}\int_{0}^{\pi}\sin k\theta\,d\theta=\frac{1}{k^{2}}(\cos0-\cos k\pi)=\frac{1}{k^{2}}(1-(-1)^{k})$
+\end_inset
+
+.
+ Putting together the constant factors,
+ we have 
+\begin_inset Formula $\frac{1}{\pi k^{2}}(1-(-1)^{k})$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1154,11 +1356,18 @@ c
 \series default
 .
  We are asked what the series is in terms of sines and cosines.
- [
-\series bold
-TODO
-\series default
-]
+ It's 
+\begin_inset Formula $\frac{\pi}{2}+\sum_{k\in\Z\backslash\{0\}}\frac{-1+(-1)^{k}}{\pi k^{2}}\exp(ik\theta)=\frac{\pi}{2}+\sum_{k\in\Z\backslash\{0\}}\frac{-1+(-1)^{k}}{\pi k^{2}}(\cos k\theta+i\sin\theta)$
+\end_inset
+
+.
+ (Desperately trying to find a gap in the following part,
+ I second-guessed myself and thought that we might need a factor of 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+ on the constant term as in the engineer's convention,
+ but GPT-5.6 Sol set me straight.)
 \begin_inset Newline newline
 \end_inset
 
@@ -1171,59 +1380,115 @@ TODO
 d
 \series default
 .
- 
+
 \emph on
-Theorem
-\emph default
-.
  
+\emph default
+We are asked to show that taking 
+\begin_inset Formula $\theta:=0$
+\end_inset
+
+ yields the theorems 
 \begin_inset Formula $\sum_{k\in\N\mathrm{\,odd}}\frac{1}{k^{2}}=\frac{\pi^{2}}{8}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Proof
-\emph default
-.
- [
-\series bold
-TODO
-\series default
-]
-\begin_inset Newline newline
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Theorem
-\emph default
-.
- 
+ and 
 \begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{k^{2}}=\frac{\pi^{2}}{6}$
 \end_inset
 
+.
+ Above,
+ we said that the series was 
+\begin_inset Formula $\frac{\pi}{2}+\sum_{k\in\Z\backslash\{0\}}\frac{-1+(-1)^{k}}{\pi k^{2}}(\cos k\theta+i\sin k\theta)$
+\end_inset
 
+.
+ Taking 
+\begin_inset Formula $\theta:=0$
+\end_inset
+
+ gives 
+\begin_inset Formula $\frac{\pi}{2}+\sum_{k\in\Z\backslash\{0\}}\frac{-1+(-1)^{k}}{\pi k^{2}}$
+\end_inset
+
+.
+ But also,
+ 
+\begin_inset Formula $f(0)=0$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
+So we have 
+\begin_inset Formula $-\frac{\pi}{2}=\sum_{k\in\Z\backslash\{0\}}\frac{-1+(-1)^{k}}{\pi k^{2}}$
+\end_inset
 
-\emph on
-Proof
-\emph default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\end_layout
+
+\begin_layout Standard
+Let's look at the first few terms of the series.
+ It's 
+\begin_inset Formula $\sum_{k\in\Z\backslash\{0\}}\frac{-1+(-1)^{k}}{\pi k^{2}}=...+\frac{-2}{\pi}+\frac{-2}{9\pi}+\frac{-2}{25\pi}+...$
+\end_inset
+
+.
+ So we have 
+\begin_inset Formula $\frac{-\pi}{2}=\sum_{k\in\N\,\mathrm{odd}}\frac{-2}{\pi}\cdot2\cdot\frac{1}{k^{2}}$
+\end_inset
+
+.
+ (The factor of 
+\begin_inset Formula $2$
+\end_inset
+
+ is because we're doing both the positive and negative integers;
+ GPT-5.6 Sol flagged this as the source of the missing factor of 
+\begin_inset Formula $\frac{1}{2}$
+\end_inset
+
+.) Then 
+\begin_inset Formula $\sum_{k\in\N\,\mathrm{odd}}\frac{1}{k^{2}}=\frac{-\pi}{2}\cdot\frac{\pi}{-4}=\frac{\pi^{2}}{8}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+I wasn't sure where the 
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{k^{2}}=\frac{\pi^{2}}{6}$
+\end_inset
+
+ comes from.
+ GPT-5.6 Sol explains the trick:
+ 
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{k^{2}}=\sum_{k\,\mathrm{even}}\frac{1}{k^{2}}+\sum_{k\,\mathrm{odd}}\frac{1}{k^{2}}$
+\end_inset
+
+,
+ and then the even part can be written as 
+\begin_inset Formula $\frac{1}{(2n)^{2}}=\frac{1}{4n^{2}}$
+\end_inset
+
+,
+ so we have 
+\begin_inset Formula $S=\frac{\pi^{2}}{8}+\frac{1}{4}S$
+\end_inset
+
+ implies 
+\begin_inset Formula $\frac{3}{4}S=\frac{\pi^{2}}{8}$
+\end_inset
+
+ and thus 
+\begin_inset Formula $S=\frac{4}{3\cdot8}\pi^{2}=\frac{1}{3\cdot2}\pi^{2}=\frac{\pi^{2}}{6}$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -2551,6 +2816,10 @@ Because
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3068,6 +3337,10 @@ Proof
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
