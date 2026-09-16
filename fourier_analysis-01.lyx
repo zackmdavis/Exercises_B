@@ -3867,6 +3867,162 @@ which is
 quod erat demonstrandum
 \emph default
 .
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's think more about good kernels and the Fejer kernel.
+ The three criteria for a good kernel are:
+\end_layout
+
+\begin_layout Enumerate
+It integrates to unity.
+ 
+\begin_inset Formula $\forall k\,\frac{1}{2\pi}\int_{-\pi}^{\pi}K_{k}(\theta)\,d\theta=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+The integral of its absolute value is bounded:
+ 
+\begin_inset Formula $\exists B\,\forall k\ \int_{-\pi}^{\pi}\left|K_{k}(\theta)\right|d\theta<B$
+\end_inset
+
+.
+ That means,
+ the way you get the 
+\begin_inset Quotes eld
+\end_inset
+
+integrates to one
+\begin_inset Quotes erd
+\end_inset
+
+ behavior is not through infinite oscillations canceling each other out.
+\end_layout
+
+\begin_layout Enumerate
+It vanishes away from the origin:
+ 
+\begin_inset Formula $\lim_{k\to\infty}\forall\delta\:\int_{[-\pi,-\delta]\cup[\delta,\pi]}K_{k}(\theta)\,d\theta=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We recall that the sum of a geometric series is 
+\begin_inset Formula $\frac{a}{1-r}$
+\end_inset
+
+ (for initial term 
+\begin_inset Formula $a$
+\end_inset
+
+ and successive ratio 
+\begin_inset Formula $r<1$
+\end_inset
+
+),
+ but we should also recall the partial sum 
+\begin_inset Formula $\sum_{k=0}^{n-1}ar^{k}=a\frac{1-r^{n}}{1-r}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A standard derivation:
+ 
+\begin_inset Formula $S:=\sum_{k=0}^{n-1}ar^{k}$
+\end_inset
+
+ implies 
+\begin_inset Formula $rS=\sum_{k=1}^{n}ar^{k}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $S-rS=a\cancel{r^{0}}-ar^{n}=a(1-r^{n})$
+\end_inset
+
+.
+ But then 
+\begin_inset Formula $S-rS=S(1-r)$
+\end_inset
+
+.
+ So if 
+\begin_inset Formula $S(1-r)=a(1-r^{n})$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $S=a\frac{1-r^{n}}{1-r}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The Dirichlet kernel is 
+\begin_inset Formula $D_{N}:=\sum_{k=-N}^{N}\exp(ik\theta)=\frac{\sin((N+\frac{1}{2})\theta)}{\sin(\frac{\theta}{2})}$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $\sum_{k=0}^{N}e^{ik\theta}$
+\end_inset
+
+ is a geometric series where the first term is 
+\begin_inset Formula $e^{0}=1$
+\end_inset
+
+ and the ratio of terms is 
+\begin_inset Formula $e^{i\theta}$
+\end_inset
+
+.
+ (For 
+\begin_inset Formula $e^{i\theta}\cdot e^{i\theta}=\exp(i\theta+i\theta)=\exp(2i\theta)$
+\end_inset
+
+,
+ 
+\emph on
+&c
+\emph default
+.) So the formula says the sum is 
+\begin_inset Formula $\frac{1-\exp(i\theta)^{N+1}}{1-\exp(i\theta)}$
+\end_inset
+
+.
+ That was just the positive 
+\begin_inset Formula $k$
+\end_inset
+
+.
+ In the other direction,
+ we have a series that starts at 
+\begin_inset Formula $e^{-i\theta}$
+\end_inset
+
+ and and the ratio is also 
+\begin_inset Formula $e^{-i\theta}$
+\end_inset
+
+,
+ so the formula says 
+\begin_inset Formula $e^{-i\theta}\frac{1-\exp(-i\theta)^{N}}{1-\exp(-i\theta)}$
+\end_inset
+
+.
 \end_layout
 
 \end_body
