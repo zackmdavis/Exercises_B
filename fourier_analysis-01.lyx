@@ -3968,6 +3968,11 @@ A standard derivation:
 \end_inset
 
 .
+ (
+\begin_inset Formula $n$
+\end_inset
+
+ is the number of terms.)
 \end_layout
 
 \begin_layout Standard
@@ -4023,6 +4028,42 @@ The Dirichlet kernel is
 \end_inset
 
 .
+ (Claude Opus 5 reminded me that just because we ultimately want sines,
+ doesn't mean we shouldn't compute with the complex exponential;
+ we can switch later.) We compute
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{1-e^{i(N+1)\theta}}{1-e^{i\theta}}+e^{-i\theta}\frac{1-e^{-iN\theta}}{1-e^{-i\theta}}=\frac{\left(1-e^{-i\theta}\right)\left(1-e^{i(N+1)\theta}\right)+e^{-i\theta}\left(1-e^{i\theta}\right)\left(1-e^{-iN\theta}\right)}{\left(1-e^{i\theta}\right)\left(1-e^{-i\theta}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{1-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}+e^{-i\theta}\cdot\left(-e^{i\theta}-e^{-iN\theta}+e^{-i(N-1)\theta}\right)}{1-e^{i\theta}-e^{-i\theta}+e^{\theta}}=\frac{\cancel{1}-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}\cancel{-1}-e^{-i(N+1)\theta}+e^{-iN\theta}}{1-e^{i\theta}-e^{-i\theta}+e^{\theta}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}-e^{-i(N+1)\theta}+e^{-iN\theta}}{1-e^{i\theta}-e^{-i\theta}+e^{\theta}}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \end_body
