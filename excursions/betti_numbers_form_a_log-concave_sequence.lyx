@@ -1,0 +1,393 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{fvextra}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children no
+\language american
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+The Betti Numbers 
+\begin_inset Formula $\dim A^{i}(\overline{\mathcal{L}}_{n}^{r})$
+\end_inset
+
+ Form a Log-Concave Sequence
+\end_layout
+
+\begin_layout Author
+Claude Opus 5 and Zack M.
+ Davis
+\end_layout
+
+\begin_layout Date
+September 2026
+\end_layout
+
+\begin_layout Standard
+Inspired by the exploits of Levant Alpöge (an employee of the artificial intelligence company Anthropic who has recently published several high-profile AI-assisted breakthroughs,
+ including a counterexample to the Jacobian conjecture
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+https://x.com/__alpoge__/status/2079028340955197566
+\end_layout
+
+\end_inset
+
+ and the existence
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\emph on
+https://x.com/__alpoge__/status/2091639597193368014
+\end_layout
+
+\end_inset
+
+ of a complex manifold on 
+\begin_inset Formula $S^{6}$
+\end_inset
+
+),
+ ZMD was curious whether publicly available language models could make progress on open problems,
+ and prompted Claude Opus 5 to look for candidates in the recent work of Emily Clader.
+ Within less than ten minutes,
+ the model claimed to have a proof of Conjecture 4.15 in Clader 
+\emph on
+et al
+\emph default
+.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Wonderful Compactifications and Rational Curves with Cyclic Action.
+\begin_inset Quotes erd
+\end_inset
+
+ This writeup represents ZMD's attempt to make sense of the model's work.
+\end_layout
+
+\begin_layout Section*
+Appendix:
+ Initial Claude Code Prompt
+\end_layout
+
+\begin_layout Standard
+The following file was created as intro.md.
+ A Claude Code session was started with the initial message 
+\begin_inset Quotes eld
+\end_inset
+
+Read intro.md.
+ Does the idea make sense?
+ Like,
+ do you see why I would be asking Claude this?
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Verbatim}[fontsize=
+\backslash
+footnotesize,breaklines=true,breakanywhere=true,frame=single]
+\end_layout
+
+\begin_layout Plain Layout
+
+## Introduction to Project Vibescoop
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Recently,
+ Anthropic employee Levent Alpöge has shocked the math world by Tweeting 
+\end_layout
+
+\begin_layout Plain Layout
+
+out the solutions to multiple significant open problems found in collaboration with 
+\end_layout
+
+\begin_layout Plain Layout
+
+internal Claude models (search for context).
+ As a scholar-aristocrat of mediocre 
+\end_layout
+
+\begin_layout Plain Layout
+
+math talent who hangs around the SFSU math department (read Diary_04B.md for 
+\end_layout
+
+\begin_layout Plain Layout
+
+context),
+ I wonder if there's a lot more low-hanging fruit that could be plucked by 
+\end_layout
+
+\begin_layout Plain Layout
+
+publicly-available LLMs that just hasn't been plucked yet,
+ because there are 
+\end_layout
+
+\begin_layout Plain Layout
+
+sufficiently few AI-pilled math nerds that no one bothered spending the tokens.
+ (My 
+\end_layout
+
+\begin_layout Plain Layout
+
+impression from hanging out at SFSU is that everyone knows about LLMs as homework 
+\end_layout
+
+\begin_layout Plain Layout
+
+help—
+that's why they can't do take-home exams anymore—
+but few people are 
+\end_layout
+
+\begin_layout Plain Layout
+
+thinking about the big picture.)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+The mission in this repo is to,
+ (1) investigate the recent work of Prof.
+ Emily 
+\end_layout
+
+\begin_layout Plain Layout
+
+Clader and try to find open problems that might be interesting to her that might be 
+\end_layout
+
+\begin_layout Plain Layout
+
+scoopable with an LLM (so,
+ like,
+ stuff where you can compute a checkable 
+\end_layout
+
+\begin_layout Plain Layout
+
+counterexample,
+ which would have been a master's student project),
+ and (2) actually 
+\end_layout
+
+\begin_layout Plain Layout
+
+scoop the result (which will probably demand expensive Fable tokens,
+ although Opus 
+\end_layout
+
+\begin_layout Plain Layout
+
+is probably fine for part (1)).
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+My role as a human is to be mathematically literate enough to be able to read what 
+\end_layout
+
+\begin_layout Plain Layout
+
+Claude comes up with given a few hours of background study even if it would take me 
+\end_layout
+
+\begin_layout Plain Layout
+
+months or years to do the work myself (see algebraic_topology-01.lyx for 
+\end_layout
+
+\begin_layout Plain Layout
+
+calibration of how skilled I am).
+ I'm just really curious if it's possible to find 
+\end_layout
+
+\begin_layout Plain Layout
+
+anything good enough to be worth taking to Prof.
+ Clader's office hours.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+A previous Claude suggested "Multimatroids and rational curves with cyclic action" 
+\end_layout
+
+\begin_layout Plain Layout
+
+(arXiv:2311.09314,
+ IMRN 2024) as a good paper to start with,
+ but you should look 
+\end_layout
+
+\begin_layout Plain Layout
+
+for more Clader papers.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+If the authors say things like,
+ "It would be interesting to investigate ...",
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+that's the kind of thing we're looking for (because that's stuff that would 
+\end_layout
+
+\begin_layout Plain Layout
+
+presumably be farmed out to a human Master's student).
+             
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
