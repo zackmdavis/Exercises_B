@@ -151,7 +151,7 @@ https://x.com/__alpoge__/status/2091639597193368014
 et al
 \emph default
 .
- 
+ 2025 
 \begin_inset Quotes eld
 \end_inset
 
@@ -160,6 +160,87 @@ Wonderful Compactifications and Rational Curves with Cyclic Action.
 \end_inset
 
  This writeup represents ZMD's attempt to make sense of the model's work.
+\end_layout
+
+\begin_layout Standard
+Theorem 4.13 states that for any 
+\begin_inset Formula $k\in\mathbb{N}_{0}$
+\end_inset
+
+,
+ there exists a group isomorphism 
+\begin_inset Formula 
+\[
+A^{k}(\overline{\mathcal{L}}_{n}^{r})\cong A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)\oplus\bigoplus_{\ell\ge1}\bigoplus_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\left(\bigoplus_{\mu\in M_{\boldsymbol{j}}}A^{k-\left|\mu\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)\right)^{\oplus N_{\boldsymbol{j}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\end_layout
+
+\begin_layout Standard
+To be clear,
+ I don't really know much about what this means,
+ but I'm given to understand that these are free abelian groups:
+ if they're isomorphic,
+ they have the same rank (and 
+\begin_inset Formula $\dim\left(G\oplus H\right)=\dim G+\dim H$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})=\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}N_{\boldsymbol{j}}\sum_{\mu\in M_{\boldsymbol{j}}}\dim A^{k-\left|\mu\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then we can form the Poincaré polynomial 
+\begin_inset Formula $P_{r,n}(t)$
+\end_inset
+
+:
+ a generating function in which (for a given 
+\begin_inset Formula $r$
+\end_inset
+
+ and 
+\begin_inset Formula $n$
+\end_inset
+
+),
+ the coëfficient of 
+\begin_inset Formula $t^{k}$
+\end_inset
+
+ is 
+\begin_inset Formula $\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{r,n}(t):=\sum_{k}\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})t^{k}=\sum_{k}\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)t^{k}+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}N_{\boldsymbol{j}}\sum_{\mu\in M_{\boldsymbol{j}}}\sum_{k}\dim A^{k-\left|\mu\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)t^{k}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
