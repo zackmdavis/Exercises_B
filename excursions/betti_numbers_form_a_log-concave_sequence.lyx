@@ -106,6 +106,19 @@ The Betti Numbers
 \begin_layout Author
 Claude Opus 5 and Zack M.
  Davis
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Correspondence:
+ 
+\emph on
+main@zackmdavis.net
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Date
@@ -113,7 +126,7 @@ September 2026
 \end_layout
 
 \begin_layout Standard
-Inspired by the exploits of Levant Alpöge (an employee of the artificial intelligence company Anthropic who has recently published several high-profile AI-assisted breakthroughs,
+Inspired by the exploits of Levent Alpöge (an employee of the artificial intelligence company Anthropic who has recently published several high-profile AI-assisted breakthroughs,
  including a counterexample to the Jacobian conjecture
 \begin_inset Foot
 status collapsed
@@ -138,7 +151,7 @@ https://x.com/__alpoge__/status/2091639597193368014
 
 \end_inset
 
- of a complex manifold on 
+ of a complex structure on 
 \begin_inset Formula $S^{6}$
 \end_inset
 
@@ -151,7 +164,7 @@ https://x.com/__alpoge__/status/2091639597193368014
 et al
 \emph default
 .
- 2025 
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -171,7 +184,7 @@ Theorem 4.13 states that for any
  there exists a group isomorphism 
 \begin_inset Formula 
 \[
-A^{k}(\overline{\mathcal{L}}_{n}^{r})\cong A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)\oplus\bigoplus_{\ell\ge1}\bigoplus_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\left(\bigoplus_{\mu\in M_{\boldsymbol{j}}}A^{k-\left|\mu\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)\right)^{\oplus N_{\boldsymbol{j}}}
+A^{k}(\overline{\mathcal{L}}_{n}^{r})\cong A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)\oplus\bigoplus_{\ell\ge1}\bigoplus_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\left(\bigoplus_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}A^{k-\left|\boldsymbol{\mu}\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)\right)^{\oplus N_{\boldsymbol{j}}}
 \]
 
 \end_inset
@@ -180,7 +193,17 @@ A^{k}(\overline{\mathcal{L}}_{n}^{r})\cong A^{k}\left(\left(\mathbb{P}^{1}\right
 \end_layout
 
 \begin_layout Standard
-where 
+where the absolute value bars denote the sum of the entries of a tuple,
+ 
+\begin_inset Formula $M_{\boldsymbol{j}}:=\{\boldsymbol{\mu}\in\mathbb{Z}^{\ell}:\forall i\in\{1...\ell\}\,1\le\mu_{i}<j_{i}\}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $N_{\boldsymbol{j}}:=\binom{n}{j_{1},...,j_{\ell},n-\left|\boldsymbol{j}\right|}r^{\left|\boldsymbol{j}\right|}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -198,7 +221,7 @@ To be clear,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})=\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}N_{\boldsymbol{j}}\sum_{\mu\in M_{\boldsymbol{j}}}\dim A^{k-\left|\mu\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)
+\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})=\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}N_{\boldsymbol{j}}\sum_{\mu\in M_{\boldsymbol{j}}}\dim A^{k-\left|\boldsymbol{\mu}\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)
 \]
 
 \end_inset
@@ -235,7 +258,130 @@ Then we can form the Poincaré polynomial
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P_{r,n}(t):=\sum_{k}\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})t^{k}=\sum_{k}\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)t^{k}+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}N_{\boldsymbol{j}}\sum_{\mu\in M_{\boldsymbol{j}}}\sum_{k}\dim A^{k-\left|\mu\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)t^{k}
+P_{r,n}(t):=\sum_{k}\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})t^{k}=\sum_{k}\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)t^{k}+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}N_{\boldsymbol{j}}\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}\sum_{k}\dim A^{k-\left|\boldsymbol{\mu}\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)t^{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $\mathbb{P}^{1}\cong S^{2}$
+\end_inset
+
+,
+ its Poincaré polynomial is 
+\begin_inset Formula $1+s^{2}$
+\end_inset
+
+,
+ but since all the homology is in even degree,
+ we use 
+\begin_inset Formula $t:=s^{2}$
+\end_inset
+
+ and get 
+\begin_inset Formula $1+t$
+\end_inset
+
+.
+ The polynomial of the product of spaces is the product of the polynomials (Künneth),
+ so 
+\begin_inset Formula $\sum_{k}\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{p}\right)t^{k}=(1+t)^{p}$
+\end_inset
+
+,
+ which we can apply to our first summation (with 
+\begin_inset Formula $p=n$
+\end_inset
+
+).
+ The same insight (with 
+\begin_inset Formula $p=n-\left|\boldsymbol{j}\right|$
+\end_inset
+
+) can be applied to the later summation,
+ but we have to reindex it:
+ if we say that 
+\begin_inset Formula $k':=k-\left|\boldsymbol{\mu}\right|$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $k=k'+\left|\boldsymbol{\mu}\right|$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $t^{k}=t^{k'+\left|\boldsymbol{\mu}\right|}=t^{k'}t^{\left|\boldsymbol{\mu}\right|}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\sum_{k}\dim A^{k-\left|\boldsymbol{\mu}\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)t^{k}=t^{\left|\boldsymbol{\mu}\right|}\sum_{k'}\dim A^{k'}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)t^{k'}=t^{\left|\boldsymbol{\mu}\right|}(1+t)^{n-\left|\boldsymbol{j}\right|}$
+\end_inset
+
+.
+ So we have
+\begin_inset Formula 
+\[
+(1+t)^{n}+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\binom{n}{j_{1},...,j_{\ell},n-\left|\boldsymbol{j}\right|}r^{\left|\boldsymbol{j}\right|}(1+t)^{n-\left|\boldsymbol{j}\right|}\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}t^{\left|\boldsymbol{\mu}\right|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let's interrogate 
+\begin_inset Formula $\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}t^{\left|\boldsymbol{\mu}\right|}$
+\end_inset
+
+.
+ Every 
+\begin_inset Formula $\boldsymbol{\mu}$
+\end_inset
+
+ is an 
+\begin_inset Formula $\ell$
+\end_inset
+
+-tuple of integers,
+ where the 
+\begin_inset Formula $i$
+\end_inset
+
+th entry is between 1 (inclusive) and 
+\begin_inset Formula $j_{i}$
+\end_inset
+
+ (exclusive,
+ for the 
+\begin_inset Formula $\boldsymbol{j}$
+\end_inset
+
+ from an outer summation).
+ We have 
+\begin_inset Formula $\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}t^{\left|\boldsymbol{\mu}\right|}=\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}t^{\sum_{i=1}^{\ell}\mu_{i}}=\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}\prod_{i=1}^{\ell}t^{\mu_{i}}$
+\end_inset
+
+,
+ and then by the distributive law,
+ 
+\begin_inset Formula $\prod_{i=1}^{\ell}\sum_{m=1}^{j_{i}-1}t^{m}$
+\end_inset
+
+.
+ So we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(1+t)^{n}+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\binom{n}{j_{1},...,j_{\ell},n-\left|\boldsymbol{j}\right|}r^{\left|\boldsymbol{j}\right|}(1+t)^{n-\left|\boldsymbol{j}\right|}\prod_{i=1}^{\ell}\sum_{m=1}^{j_{i}-1}t^{m}
 \]
 
 \end_inset
