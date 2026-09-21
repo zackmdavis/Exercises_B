@@ -221,7 +221,10 @@ To be clear,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})=\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}N_{\boldsymbol{j}}\sum_{\mu\in M_{\boldsymbol{j}}}\dim A^{k-\left|\boldsymbol{\mu}\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)
+\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})=\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)+\sum_{\ell\ge1}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}\\
+\left|\boldsymbol{j}\right|\le n
+}
+}N_{\boldsymbol{j}}\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}\dim A^{k-\left|\boldsymbol{\mu}\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)
 \]
 
 \end_inset
@@ -230,6 +233,9 @@ To be clear,
 \end_layout
 
 \begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
 Then we can form the Poincaré polynomial 
 \begin_inset Formula $P_{r,n}(t)$
 \end_inset
@@ -258,7 +264,10 @@ Then we can form the Poincaré polynomial
 \begin_layout Standard
 \begin_inset Formula 
 \[
-P_{r,n}(t):=\sum_{k}\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})t^{k}=\sum_{k}\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)t^{k}+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}N_{\boldsymbol{j}}\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}\sum_{k}\dim A^{k-\left|\boldsymbol{\mu}\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)t^{k}
+P_{r,n}(t):=\sum_{k}\dim A^{k}(\overline{\mathcal{L}}_{n}^{r})t^{k}=\sum_{k}\dim A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)t^{k}+\sum_{\ell\ge1}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}\\
+\left|\boldsymbol{j}\right|\le n
+}
+}N_{\boldsymbol{j}}\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}\sum_{k}\dim A^{k-\left|\boldsymbol{\mu}\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)t^{k}
 \]
 
 \end_inset
@@ -303,7 +312,7 @@ Because
 \end_inset
 
 ) can be applied to the later summation,
- but we have to reindex it:
+ but we have to reïndex it:
  if we say that 
 \begin_inset Formula $k':=k-\left|\boldsymbol{\mu}\right|$
 \end_inset
@@ -327,7 +336,10 @@ Because
  So we have
 \begin_inset Formula 
 \[
-(1+t)^{n}+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\binom{n}{j_{1},...,j_{\ell},n-\left|\boldsymbol{j}\right|}r^{\left|\boldsymbol{j}\right|}(1+t)^{n-\left|\boldsymbol{j}\right|}\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}t^{\left|\boldsymbol{\mu}\right|}
+(1+t)^{n}+\sum_{\ell\ge1}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}\\
+\left|\boldsymbol{j}\right|\le n
+}
+}\binom{n}{j_{1},...,j_{\ell},n-\left|\boldsymbol{j}\right|}r^{\left|\boldsymbol{j}\right|}(1+t)^{n-\left|\boldsymbol{j}\right|}\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}t^{\left|\boldsymbol{\mu}\right|}
 \]
 
 \end_inset
@@ -369,9 +381,9 @@ th entry is between 1 (inclusive) and
 \end_inset
 
 ,
- and then by the distributive law,
+ and then interchanging the sum and product by the distributive law,
  
-\begin_inset Formula $\prod_{i=1}^{\ell}\sum_{m=1}^{j_{i}-1}t^{m}$
+\begin_inset Formula $\sum_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}\prod_{i=1}^{\ell}t^{\mu_{i}}=\prod_{i=1}^{\ell}\sum_{m=1}^{j_{i}-1}t^{m}$
 \end_inset
 
 .
@@ -381,11 +393,285 @@ th entry is between 1 (inclusive) and
 \begin_layout Standard
 \begin_inset Formula 
 \[
-(1+t)^{n}+\sum_{\ell\ge1}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\binom{n}{j_{1},...,j_{\ell},n-\left|\boldsymbol{j}\right|}r^{\left|\boldsymbol{j}\right|}(1+t)^{n-\left|\boldsymbol{j}\right|}\prod_{i=1}^{\ell}\sum_{m=1}^{j_{i}-1}t^{m}
+(1+t)^{n}+\sum_{\ell\ge1}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}\\
+\left|\boldsymbol{j}\right|\le n
+}
+}\binom{n}{j_{1},...,j_{\ell},n-\left|\boldsymbol{j}\right|}r^{\left|\boldsymbol{j}\right|}(1+t)^{n-\left|\boldsymbol{j}\right|}\prod_{i=1}^{\ell}\sum_{m=1}^{j_{i}-1}t^{m}
 \]
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $\ell:=0$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\binom{n}{j_{1},...,j_{\ell},n-\left|\boldsymbol{j}\right|}r^{\left|\boldsymbol{j}\right|}(1+t)^{n-\left|\boldsymbol{j}\right|}\prod_{i=1}^{\ell}\sum_{m=1}^{j_{i}-1}t^{m}=\binom{n}{n-0}r^{0}(1+t)^{n-0}=(1+t)^{n}$
+\end_inset
+
+,
+ so the leading 
+\begin_inset Formula $(1+t)^{n}$
+\end_inset
+
+ term can be absorbed into the outer summation:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{r,n}(t)=\sum_{\ell\ge0}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}\\
+\left|\boldsymbol{j}\right|\le n
+}
+}\binom{n}{j_{1},...,j_{\ell},n-\left|\boldsymbol{j}\right|}r^{\left|\boldsymbol{j}\right|}(1+t)^{n-\left|\boldsymbol{j}\right|}\prod_{i=1}^{\ell}\sum_{m=1}^{j_{i}-1}t^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also,
+ 
+\begin_inset Formula $r^{\left|\boldsymbol{j}\right|}=r^{\sum_{i=1}^{\ell}j_{i}}=\prod_{i=1}^{\ell}r^{j_{i}}$
+\end_inset
+
+,
+ which can be merged into the product,
+ and we can write out the multinomial coefficient in terms of factorials:
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P_{r,n}(t)=\sum_{\ell\ge0}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}\\
+\left|\boldsymbol{j}\right|\le n
+}
+}\frac{n!}{(n-\left|\boldsymbol{j}\right|)!\prod_{i=1}^{\ell}j_{i}!}(1+t)^{n-\left|\boldsymbol{j}\right|}\prod_{i=1}^{\ell}r^{j_{i}}\sum_{m=1}^{j_{i}-1}t^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+At this point,
+ we've construct a generating function 
+\begin_inset Formula $P_{r,n}(t)$
+\end_inset
+
+ that reproduces individual rows of the table presented in Example 4.14 (where 
+\begin_inset Formula $t$
+\end_inset
+
+ picks out the 
+\begin_inset Formula $t$
+\end_inset
+
+th entry in the row).
+\end_layout
+
+\begin_layout Standard
+Next,
+ we'll construct an exponential generating function 
+\begin_inset Formula $F(x,t)$
+\end_inset
+
+ that reproduces the entire table (where 
+\begin_inset Formula $x$
+\end_inset
+
+ will pick out the 
+\begin_inset Formula $x$
+\end_inset
+
+th row).
+\end_layout
+
+\begin_layout Standard
+We begin by forming the exponential generating function by multiplying by 
+\begin_inset Formula $\frac{x^{n}}{n!}$
+\end_inset
+
+ and summing over 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(x,t):=\sum_{n\ge0}\sum_{\ell\ge0}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}\\
+\left|\boldsymbol{j}\right|\le n
+}
+}\frac{\cancel{n!}}{(n-\left|\boldsymbol{j}\right|)!\prod_{i=1}^{\ell}j_{i}!}\frac{x^{n}}{\cancel{n!}}(1+t)^{n-\left|\boldsymbol{j}\right|}\prod_{i=1}^{\ell}r^{j_{i}}\sum_{m=1}^{j_{i}-1}t^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But note that 
+\begin_inset Formula $n=n-\left|\boldsymbol{j}\right|+\sum_{i=1}^{\ell}j_{i}$
+\end_inset
+
+,
+ and therefore 
+\begin_inset Formula $x^{n}=x^{n-\left|\boldsymbol{j}\right|}\prod_{i=1}^{\ell}x^{j_{i}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(x,t)=\sum_{n\ge0}\sum_{\ell\ge0}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}\\
+\left|\boldsymbol{j}\right|\le n
+}
+}(1+t)^{n-\left|\boldsymbol{j}\right|}\frac{x^{n-\left|\boldsymbol{j}\right|}}{(n-\left|\boldsymbol{j}\right|)!}\prod_{i=1}^{\ell}\frac{x^{j_{i}}}{j_{i}!}r^{j_{i}}\sum_{m=1}^{j_{i}-1}t^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then we do some more reïndexing:
+ let 
+\begin_inset Formula $p:=n-\left|\boldsymbol{j}\right|$
+\end_inset
+
+.
+ Then we can pull out the subexpressions now newly in terms of 
+\begin_inset Formula $p$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(x,t)=\left(\sum_{p\ge0}(1+t)^{p}\frac{x^{p}}{p!}\right)\sum_{\ell\ge0}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\prod_{i=1}^{\ell}\frac{x^{j_{i}}}{j_{i}!}r^{j_{i}}\sum_{m=1}^{j_{i}-1}t^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But by the power series formulation of the natural exponential,
+ 
+\begin_inset Formula $\sum_{p\ge0}(1+t)^{p}\frac{x^{p}}{p!}=e^{(1+t)x}$
+\end_inset
+
+ :
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(x,t)=e^{(1+t)x}\sum_{\ell\ge0}\sum_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\prod_{i=1}^{\ell}\frac{x^{j_{i}}}{j_{i}!}r^{j_{i}}\sum_{m=1}^{j_{i}-1}t^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Interchanging the sum and product by the distributive law:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=e^{(1+t)x}\sum_{\ell\ge0}\prod_{i=1}^{\ell}\sum_{j\ge2}\frac{x^{j}}{j!}r^{j}\sum_{m=1}^{j-1}t^{m}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have a geometric series:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{(1+t)x}\sum_{\ell\ge0}\left(\sum_{j\ge2}\frac{x^{j}}{j!}r^{j}\sum_{m=1}^{j-1}t^{m}\right)^{\ell}=e^{(1+t)x}\cdot\frac{1}{1-\sum_{j\ge2}\frac{x^{j}}{j!}r^{j}\sum_{m=1}^{j-1}t^{m}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Which we can further simplify (
+\begin_inset Formula $\sum_{m=1}^{j-1}t^{m}$
+\end_inset
+
+ is a finite geometric series equal to 
+\begin_inset Formula $t\frac{1-t^{j-1}}{1-t}=\frac{t-t^{j}}{1-t}$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{e^{(1+t)x}}{1-\sum_{j\ge2}\frac{(rx)^{j}}{j!}\frac{t-t^{j}}{1-t}}=\frac{e^{(1+t)x}}{1-\sum_{j\ge2}\frac{t(rx)^{j}-(trx)^{j}}{\left(1-t\right)j!}}=\frac{e^{(1+t)x}}{1-\frac{1}{1-t}\left(t\sum_{j\ge2}\frac{(rx)^{j}}{j!}-\sum_{j\ge2}\frac{(trx)^{j}}{j!}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{e^{(1+t)x}}{1-\frac{1}{1-t}\left(t\left(e^{rx}-1-rx\right)-\left(e^{trx}-1-trx\right)\right)}=\frac{e^{(1+t)x}}{1-\frac{1}{1-t}\left(te^{rx}-t\cancel{-trx}-e^{trx}+1\cancel{+trx}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{e^{(1+t)x}}{\underbrace{\frac{1-t}{1-t}}_{``\mathrm{fancy\,one}"}-\frac{1}{1-t}\left(te^{rx}-t-e^{trx}+1\right)}=\frac{e^{(1+t)x}}{\frac{\cancel{1}\cancel{-t}-te^{rx}\cancel{+t}+e^{trx}\cancel{-1}}{1-t}}=\frac{\left(1-t\right)e^{(1+t)x}}{e^{trx}-te^{rx}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 
