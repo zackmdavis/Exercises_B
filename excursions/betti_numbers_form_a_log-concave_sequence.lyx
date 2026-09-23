@@ -183,9 +183,9 @@ Theorem 4.13 states that for any
 ,
  there exists a group isomorphism 
 \begin_inset Formula 
-\[
+\begin{equation}
 A^{k}(\overline{\mathcal{L}}_{n}^{r})\cong A^{k}\left(\left(\mathbb{P}^{1}\right)^{n}\right)\oplus\bigoplus_{\ell\ge1}\bigoplus_{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}}\left(\bigoplus_{\boldsymbol{\mu}\in M_{\boldsymbol{j}}}A^{k-\left|\boldsymbol{\mu}\right|}\left(\left(\mathbb{P}^{1}\right)^{n-\left|\boldsymbol{j}\right|}\right)\right)^{\oplus N_{\boldsymbol{j}}}
-\]
+\end{equation}
 
 \end_inset
 
@@ -208,7 +208,7 @@ where the absolute value bars denote the sum of the entries of a tuple,
 
 \begin_layout Standard
 To be clear,
- I don't really know much about what this means,
+ I don't really know much about the algebraic geometry here,
  but I'm given to understand that these are free abelian groups:
  if they're isomorphic,
  they have the same rank (and 
@@ -233,9 +233,6 @@ To be clear,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $ $
-\end_inset
-
 Then we can form the Poincaré polynomial 
 \begin_inset Formula $P_{r,n}(t)$
 \end_inset
@@ -451,12 +448,12 @@ Also,
 
 
 \begin_inset Formula 
-\[
+\begin{equation}
 P_{r,n}(t)=\sum_{\ell\ge0}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge2}\right)^{\ell}\\
 \left|\boldsymbol{j}\right|\le n
 }
 }\frac{n!}{(n-\left|\boldsymbol{j}\right|)!\prod_{i=1}^{\ell}j_{i}!}(1+t)^{n-\left|\boldsymbol{j}\right|}\prod_{i=1}^{\ell}r^{j_{i}}\sum_{m=1}^{j_{i}-1}t^{m}
-\]
+\end{equation}
 
 \end_inset
 
@@ -672,7 +669,665 @@ Which we can further simplify (
 \end_layout
 
 \begin_layout Standard
+So we've constructed this exponential generating function 
+\begin_inset Formula 
+\begin{equation}
+F(x,t)=\frac{\left(1-t\right)e^{(1+t)x}}{e^{rtx}-te^{rx}}
+\end{equation}
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next,
+ we're going to use a partial differential equation involving 
+\begin_inset Formula $F$
+\end_inset
+
+ to construct a recurrence relation for 
+\begin_inset Formula $P$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $D:=e^{rtx}-te^{rx}$
+\end_inset
+
+ (
+\begin_inset Formula $D$
+\end_inset
+
+ for the 
+\emph on
+d
+\emph default
+enominator of 
+\begin_inset Formula $F$
+\end_inset
+
+).
+ Its partial derivatives are 
+\begin_inset Formula $D_{x}=rte^{rtx}-rte^{rx}=rt\left(e^{rtx}-e^{rx}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $D_{t}=rxe^{rtx}-e^{rx}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now all three of 
+\begin_inset Formula $D$
+\end_inset
+
+,
+ 
+\begin_inset Formula $D_{x}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $D_{t}$
+\end_inset
+
+ are combinations of 
+\begin_inset Formula $e^{rtx}$
+\end_inset
+
+ and 
+\begin_inset Formula $e^{rx}$
+\end_inset
+
+,
+ so are dependent (in the sense of a vector space with coëfficients of rational functions of 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $t$
+\end_inset
+
+),
+ so there should be a relation among them.
+\end_layout
+
+\begin_layout Standard
+As it turns out,
+ 
+\begin_inset Formula 
+\begin{equation}
+-(1-rtx)D_{x}+rt(1-t)D_{t}=rt(rx-1)D
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We know that 
+\begin_inset Formula 
+\begin{equation}
+FD=\left(1-t\right)e^{(1+t)x}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Differentiating (5) with respect to 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ we have 
+\begin_inset Formula $F_{x}D+FD_{x}=\left(1+t\right)\underbrace{\left(1-t\right)e^{(1+t)x}}_{FD}=\left(1+t\right)FD$
+\end_inset
+
+.
+ Then dividing by 
+\begin_inset Formula $FD$
+\end_inset
+
+ gives 
+\begin_inset Formula $\frac{F_{x}}{F}+\frac{D_{x}}{D}=1+t$
+\end_inset
+
+,
+ which reärranges to 
+\begin_inset Formula $\frac{D_{x}}{D}=1+t-\frac{F_{x}}{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But differentiating (5) with respect to 
+\begin_inset Formula $t$
+\end_inset
+
+,
+ we also have 
+\begin_inset Formula $F_{t}D+FD_{t}=-e^{(1+t)x}+\left(1-t\right)xe^{(1+t)x}=-\frac{FD}{1-t}+\cancel{\left(1-t\right)}x\frac{FD}{\cancel{1-t}}=-\frac{FD}{1-t}+xFD=FD\left(-\frac{1}{1-t}+x\right)$
+\end_inset
+
+.
+ Then dividing by 
+\begin_inset Formula $FD$
+\end_inset
+
+ gives us 
+\begin_inset Formula $\frac{F_{t}}{F}+\frac{D_{t}}{D}=-\frac{1}{1-t}+x$
+\end_inset
+
+,
+ which reärranges to 
+\begin_inset Formula $\frac{D_{t}}{D}=-\frac{1}{1-t}+x-\frac{F_{t}}{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dividing (4) by 
+\begin_inset Formula $D$
+\end_inset
+
+ yields 
+\begin_inset Formula $-(1-rtx)\frac{D_{x}}{D}+rt(1-t)\frac{D_{t}}{D}=rt(rx-1)$
+\end_inset
+
+ and substituting yields 
+\begin_inset Formula $-(1-rtx)\left(1+t-\frac{F_{x}}{F}\right)+rt(1-t)\left(-\frac{1}{1-t}+x-\frac{F_{t}}{F}\right)=rt(rx-1)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We do some more algebra:
+ 
+\begin_inset Formula 
+\[
+rtx+rt^{2}x-rtx\frac{F_{x}}{F}-1-t+\frac{F_{x}}{F}+\cancel{-rt}+rt(1-t)x-rt(1-t)\frac{F_{t}}{F}=r^{2}tx\cancel{-rt}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+-rtx\frac{F_{x}}{F}+\frac{F_{x}}{F}-rt(1-t)\frac{F_{t}}{F}=r^{2}tx-rt(1-t)x+1+t-rtx-rt^{2}x=r^{2}tx-rtx+\cancel{rt^{2}x}+1+t-rtx\cancel{-rt^{2}x}=r(r-2)tx+1+t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then multiplying by 
+\begin_inset Formula $F$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(1-rtx\right)F_{x}-rt(1-t)F_{t}=r(r-2)txF+F+tF
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And reärranging,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F_{x}=r(r-2)txF+\left(1+t\right)F+rtxF_{x}+rt(1-t)F_{t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This partial differential equation for 
+\begin_inset Formula $F$
+\end_inset
+
+ corresponds to a recurrence relation for 
+\begin_inset Formula $P$
+\end_inset
+
+.
+ For instance,
+ 
+\begin_inset Formula $F_{x}=\sum_{n\ge1}P_{r,n}(t)\frac{x^{n-1}}{\left(n-1\right)!}$
+\end_inset
+
+,
+ which can be reïndexed to 
+\begin_inset Formula $\sum_{n\ge0}P_{r,n+1}(t)\frac{x^{n}}{n!}$
+\end_inset
+
+,
+ so the coëfficient on 
+\begin_inset Formula $\frac{x^{n}}{n!}$
+\end_inset
+
+ in 
+\begin_inset Formula $F_{x}$
+\end_inset
+
+ corresponds to 
+\begin_inset Formula $P_{r,n+1}$
+\end_inset
+
+.
+ Similar reasoning leads us to the recurrence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P_{r,n+1}(t)=(1+t+rnt)P_{r,n}(t)+rt(1-t)P_{r,n}^{\prime}(t)+r(r-2)ntP_{r,n-1}(t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally,
+ we're ready for 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Lemma
+\emph default
+.
+ 
+\begin_inset Formula $P_{r,n}$
+\end_inset
+
+ has 
+\begin_inset Formula $n$
+\end_inset
+
+ distinct real roots,
+ all negative.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By induction that 
+\begin_inset Formula $P_{r,n}$
+\end_inset
+
+ and 
+\begin_inset Formula $P_{r,n+1}$
+\end_inset
+
+ each have only negative real roots,
+ which 
+\begin_inset Quotes eld
+\end_inset
+
+interlace
+\begin_inset Quotes erd
+\end_inset
+
+:
+ if the roots of 
+\begin_inset Formula $P_{r,n}$
+\end_inset
+
+ are 
+\begin_inset Formula $(a_{i})_{i=1}^{n}$
+\end_inset
+
+ and the roots of 
+\begin_inset Formula $P_{r,n+1}$
+\end_inset
+
+ are 
+\begin_inset Formula $(b_{i})_{i=1}^{n+1}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $b_{1}<a_{1}<b_{2}<...<b_{n}<a_{n}<b_{n+1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Base.) 
+\begin_inset Formula $P_{r,0}=F(0,t)=\frac{\left(1-t\right)e^{(1+t)0}}{e^{rt0}-te^{r0}}=\frac{1-t}{1-t}=1$
+\end_inset
+
+ has no roots,
+ which vacuously interlace the one root of 
+\begin_inset Formula $P_{r,1}=(1+t+\cancel{0rt})\cancelto{1}{P_{r,0}(t)}+\cancel{rt(1-t)}\cancelto{0}{P_{r,0}^{\prime}(t)}+\cancel{0r(r-2)tP_{r,-1}(t)}=1+t$
+\end_inset
+
+,
+ which is 
+\begin_inset Formula $-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Induction.) Suppose that 
+\begin_inset Formula $P_{r,n}$
+\end_inset
+
+ (roots 
+\begin_inset Formula $(a_{i})_{i=1}^{n}$
+\end_inset
+
+) and 
+\begin_inset Formula $P_{r,n+1}$
+\end_inset
+
+ (roots 
+\begin_inset Formula $(b_{i})_{i=1}^{n+1}$
+\end_inset
+
+) have negative interlacing real roots.
+ 
+\end_layout
+
+\begin_layout Standard
+We look at 
+\begin_inset Formula $P_{r,n+2}$
+\end_inset
+
+ evaluated at 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+:
+ 
+\begin_inset Formula $P_{r,n+2}(b_{i})=\cancel{(1+b_{i}+r(n+1)b_{i})}\cancelto{0}{P_{r,n+1}(b_{i})}+rb_{i}(1-b_{i})P_{r,n+1}^{\prime}(b_{i})+r(r-2)(n+1)b_{i}P_{r,n}(b_{i})$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $rb_{i}(1-b_{i})<0$
+\end_inset
+
+:
+ positive (
+\begin_inset Formula $r$
+\end_inset
+
+) times negative (
+\begin_inset Formula $b_{i}$
+\end_inset
+
+) times positive (
+\begin_inset Formula $1-b_{i}$
+\end_inset
+
+).
+ We know that 
+\begin_inset Formula $r(r-2)(n+1)b_{i}\le0$
+\end_inset
+
+.
+ (If 
+\begin_inset Formula $r=2$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $r-2$
+\end_inset
+
+ is zero.
+ Otherwise,
+ that's positive times positive times positive times negative.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P_{r,n+1}(b_{i})$
+\end_inset
+
+ has a leading coëfficient of 
+\begin_inset Formula $1$
+\end_inset
+
+,
+ so it factors as 
+\begin_inset Formula $\prod_{i=1}^{n+1}(t-b_{i})$
+\end_inset
+
+.
+ Differentiating with the product rule produces 
+\begin_inset Formula $n+1$
+\end_inset
+
+ terms,
+ but all but one vanish when we evaluate at 
+\begin_inset Formula $t:=b_{i}$
+\end_inset
+
+:
+ 
+\begin_inset Formula $P_{r,n+1}^{\prime}(b_{i})=\prod_{j\ne i}(b_{i}-b_{j})$
+\end_inset
+
+.
+ The factor 
+\begin_inset Formula $b_{i}-b_{j}$
+\end_inset
+
+ is negative when 
+\begin_inset Formula $j>i$
+\end_inset
+
+,
+ which happens 
+\begin_inset Formula $(n+1)-i$
+\end_inset
+
+ times,
+ so 
+\begin_inset Formula $\mathrm{sign}\ P_{r,n+1}^{\prime}(b_{i})=(-1)^{n+1-i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $P_{r,n}(t)=\prod_{j=1}^{n}(t-a_{j})$
+\end_inset
+
+,
+ and we have a similar argument:
+ evaluating at 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ gives 
+\begin_inset Formula $\prod_{j=1}^{n}b_{i}-a_{j}$
+\end_inset
+
+.
+ The number of negatives in the product is the number of 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+s greater than 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+—
+which is 
+\begin_inset Formula $n-(i-1)=n+1-i$
+\end_inset
+
+.
+ (The 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+s go up to 
+\begin_inset Formula $n$
+\end_inset
+
+,
+ but the ones up to 
+\begin_inset Formula $a_{i-1}$
+\end_inset
+
+ are less than 
+\begin_inset Formula $b_{i}$
+\end_inset
+
+ and are positive.) So 
+\begin_inset Formula $\mathrm{sign}\:P_{r,n}(b_{i})=(-1)^{n+1-i}$
+\end_inset
+
+ as well.
+\end_layout
+
+\begin_layout Standard
+Putting the signs together,
+ we see that 
+\begin_inset Formula $\mathrm{sign}\ P_{r,n+2}(b_{i})=(-1)^{n+2-i}$
+\end_inset
+
+.
+ (Either both terms have that sign,
+ or the 
+\begin_inset Formula $P_{r,n+1}^{\prime}(b_{i})$
+\end_inset
+
+ term does and the other is zero.) By the intermediate value theorem,
+ each of the intervals 
+\begin_inset Formula $(-\infty,b_{1})$
+\end_inset
+
+,
+ 
+\begin_inset Formula $(b_{1},b_{2})$
+\end_inset
+
+ ...
+ 
+\begin_inset Formula $(b_{n},b_{n+1}),(b_{n+1},0)$
+\end_inset
+
+ contains exactly one root of 
+\begin_inset Formula $P_{r,n+2}$
+\end_inset
+
+.
+ which we'll call 
+\begin_inset Formula $(c_{k})_{k=1}^{n+2}$
+\end_inset
+
+,
+ which are the 
+\begin_inset Formula $n+2$
+\end_inset
+
+ roots of 
+\begin_inset Formula $P_{r,n+2}$
+\end_inset
+
+.
+ So we have interlacing 
+\begin_inset Formula $c_{1}<b_{1}<c_{2}...<c_{n+1}<b_{n+1}<c_{n+2}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+But if 
+\begin_inset Formula $P_{r,n}$
+\end_inset
+
+ has only negative real roots 
+\begin_inset Formula $(-d_{i})_{i=1}^{n}$
+\end_inset
+
+ and leading coëfficient 1,
+ then it's 
+\begin_inset Formula $\prod_{i=1}^{n}\left(t+d_{i}\right)$
+\end_inset
+
+,
+ and has positive coëfficients.
+ A well-known result of Newton's inequalities is that if the polynomial 
+\begin_inset Formula $\sum_{k=0}^{n}a_{k}t^{k}$
+\end_inset
+
+ has only real roots,
+ then 
+\begin_inset Formula $a_{k}^{2}\ge a_{k-1}a_{k+1}\left(1+\frac{1}{k}\right)\left(1+\frac{1}{n-k}\right)>a_{k-1}a_{k+1}$
+\end_inset
+
+,
+ and therefore 
+\begin_inset Formula $2\log a_{k}\ge\log(a_{k-1}a_{k+1})$
+\end_inset
+
+ and therefore 
+\begin_inset Formula $\log a_{k}\ge\frac{\log a_{k-1}+\log a_{k+1}}{2}$
+\end_inset
+
+,
+ which is to say that the Betti numbers of 
+\begin_inset Formula $A^{i}(\overline{\mathcal{L}}_{n}^{r})$
+\end_inset
+
+ form a log-concave sequence,
+ which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+ 
 \end_layout
 
 \begin_layout Section*
