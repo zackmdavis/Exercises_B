@@ -172,7 +172,7 @@ Wonderful Compactifications and Rational Curves with Cyclic Action.
 \begin_inset Quotes erd
 \end_inset
 
- This writeup represents ZMD's attempt to make sense of the model's work.
+ This writeup represents ZMD's attempt to make sense of the model's work (with extensive tutoring from other Claude instances).
 \end_layout
 
 \begin_layout Standard
@@ -462,7 +462,7 @@ P_{r,n}(t)=\sum_{\ell\ge0}\sum_{\substack{\boldsymbol{j}\in\left(\mathbb{N}_{\ge
 
 \begin_layout Standard
 At this point,
- we've construct a generating function 
+ we've constructed a generating function 
 \begin_inset Formula $P_{r,n}(t)$
 \end_inset
 
@@ -746,7 +746,7 @@ Now all three of
 \end_inset
 
 ,
- so are dependent (in the sense of a vector space with coëfficients of rational functions of 
+ so are linearly dependent (in the sense of a vector space with coëfficients of rational functions of 
 \begin_inset Formula $x$
 \end_inset
 
@@ -755,15 +755,64 @@ Now all three of
 \end_inset
 
 ),
- so there should be a relation among them.
-\end_layout
-
-\begin_layout Standard
-As it turns out,
+ so there should be a relation among them:
  
+\begin_inset Formula $\alpha D_{x}+\beta D_{t}=\gamma D$
+\end_inset
+
+ for some 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\beta$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ not all zero.
+ Matching the coëfficients of each exponential,
+ we have 
+\begin_inset Formula $\begin{cases}
+\alpha rt+\beta rx=\gamma\\
+-\alpha rt-\beta=-t\gamma
+\end{cases}$
+\end_inset
+
+.
+ Negating the second equation and substituting the first into the second,
+ we have 
+\begin_inset Formula $\alpha rt+\beta=\alpha rt^{2}+\beta trx$
+\end_inset
+
+,
+ which is 
+\begin_inset Formula $\alpha rt(1-t)=\beta(rtx-1)$
+\end_inset
+
+.
+ We can choose 
+\begin_inset Formula $\alpha:=rtx-1$
+\end_inset
+
+ to get 
+\begin_inset Formula $\beta=rt(1-t)$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\gamma=(rtx-1)rt+rt(1-t)rx=\cancel{r^{2}t^{2}x}-rt+r^{2}tx\cancel{-r^{2}t^{2}x}$
+\end_inset
+
+,
+ so we have
 \begin_inset Formula 
 \begin{equation}
--(1-rtx)D_{x}+rt(1-t)D_{t}=rt(rx-1)D
+(rtx-1)D_{x}+rt(1-t)D_{t}=rt(rx-1)D
 \end{equation}
 
 \end_inset
@@ -843,11 +892,11 @@ Dividing (4) by
 \end_inset
 
  yields 
-\begin_inset Formula $-(1-rtx)\frac{D_{x}}{D}+rt(1-t)\frac{D_{t}}{D}=rt(rx-1)$
+\begin_inset Formula $(rtx-1)\frac{D_{x}}{D}+rt(1-t)\frac{D_{t}}{D}=rt(rx-1)$
 \end_inset
 
  and substituting yields 
-\begin_inset Formula $-(1-rtx)\left(1+t-\frac{F_{x}}{F}\right)+rt(1-t)\left(-\frac{1}{1-t}+x-\frac{F_{t}}{F}\right)=rt(rx-1)$
+\begin_inset Formula $(rtx-1)\left(1+t-\frac{F_{x}}{F}\right)+rt(1-t)\left(-\frac{1}{1-t}+x-\frac{F_{t}}{F}\right)=rt(rx-1)$
 \end_inset
 
 .
@@ -1122,7 +1171,7 @@ We look at
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $P_{r,n+1}(b_{i})$
+\begin_inset Formula $P_{r,n+1}$
 \end_inset
 
  has a leading coëfficient of 
@@ -1218,7 +1267,11 @@ s go up to
 \begin_inset Formula $b_{i}$
 \end_inset
 
- and are positive.) So 
+ such that 
+\begin_inset Formula $b_{i}-a_{j}$
+\end_inset
+
+ is positive.) So 
 \begin_inset Formula $\mathrm{sign}\:P_{r,n}(b_{i})=(-1)^{n+1-i}$
 \end_inset
 
