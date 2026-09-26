@@ -4063,7 +4063,194 @@ The Dirichlet kernel is
 
 \end_inset
 
+ [
+\series bold
+TODO
+\series default
+:
+ finish derivation of sine form of Dirichlet kernel.]
+\begin_inset Newline newline
+\end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW3#1
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For all 
+\begin_inset Formula $n\in\N$
+\end_inset
+
+,
+ there exists 
+\begin_inset Formula $c\in\R$
+\end_inset
+
+ such that 
+\begin_inset Formula $\frac{1}{2\pi}\int_{0}^{2\pi}\left|D_{n}(x)\right|\,dx\ge c\sum_{k=1}^{n}\frac{1}{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Corollary
+\emph default
+.
+ The Dirichlet kernel is not a good kernel.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\frac{1}{2\pi}\int_{0}^{2\pi}\left|D_{n}(x)\right|\,dx=\frac{1}{2\pi}\int_{0}^{2\pi}\left|\sum_{k=-n}^{n}\exp(ikx)\right|\,dx\le\frac{1}{2\pi}\int_{0}^{2\pi}\sum_{k=-n}^{n}\left|\exp(ikx)\right|\,dx=\frac{1}{2\pi}\int_{0}^{2\pi}\sum_{k=-n}^{n}\left|1\right|\,dx=\cancel{\frac{1}{2\pi}\int_{0}^{2\pi}}2n+1\,\cancel{dx}=2n+1$
+\end_inset
+
+,
+ whose linear growth is much faster than the harmonic series.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW3#2
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $\sum_{k}c_{k}$
+\end_inset
+
+ Cesàro-sums to 
+\begin_inset Formula $s$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $c_{k}=o(1/k)$
+\end_inset
+
+ (which is to say,
+ 
+\begin_inset Formula $\lim_{k\to\infty}kc_{k}=0$
+\end_inset
+
+),
+ then 
+\begin_inset Formula $\sum_{k}c_{k}$
+\end_inset
+
+ sums to 
+\begin_inset Formula $s$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We know that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists an 
+\begin_inset Formula $N_{\varepsilon}$
+\end_inset
+
+ such that for 
+\begin_inset Formula $n\ge N_{\varepsilon}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|\frac{\sum_{i=1}^{n}\sum_{j=1}^{i}c_{j}}{n}-s\right|<\varepsilon$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+And we know that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists an 
+\begin_inset Formula $M_{\varepsilon}$
+\end_inset
+
+ such that for 
+\begin_inset Formula $m\ge M_{\varepsilon}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|kc_{k}\right|<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Claude Opus 5.5 corrects a couple misconceptions from a previous start and hints that we should be rewriting the double Cesàro sum as a single sum 
+\begin_inset Quotes eld
+\end_inset
+
+by asking how many times each 
+\begin_inset Formula $c_{k}$
+\end_inset
+
+ appears
+\begin_inset Quotes erd
+\end_inset
+
+ and comparing to the Cesàro average.
+\end_layout
+
+\begin_layout Standard
+We have 
+\begin_inset Formula $\sum_{i=1}^{n}\sum_{j=1}^{i}c_{j}=\sum_{k=1}^{n}\left(n-k\right)c_{k}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\left|\frac{\sum_{i=1}^{n}\sum_{j=1}^{i}c_{j}}{n}-\sum_{k=1}^{n}c_{k}\right|=\left|\frac{\sum_{k=1}^{n}\left(n-k\right)c_{k}}{n}-\sum_{k=1}^{n}c_{k}\right|=\left|\frac{\sum_{k=1}^{n}nc_{k}-\left(n-k\right)}{n}-\sum_{k=1}^{n}c_{k}\right|$
+\end_inset
+
+ [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
