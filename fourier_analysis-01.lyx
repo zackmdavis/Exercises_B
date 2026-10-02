@@ -102,7 +102,7 @@ Zack M.
 \end_layout
 
 \begin_layout Date
-August–September 2026
+August–October 2026
 \end_layout
 
 \begin_layout Abstract
@@ -4047,7 +4047,7 @@ The Dirichlet kernel is
 \begin_layout Standard
 \begin_inset Formula 
 \[
-=\frac{1-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}+e^{-i\theta}\cdot\left(-e^{i\theta}-e^{-iN\theta}+e^{-i(N-1)\theta}\right)}{1-e^{i\theta}-e^{-i\theta}+e^{\theta}}=\frac{\cancel{1}-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}\cancel{-1}-e^{-i(N+1)\theta}+e^{-iN\theta}}{1-e^{i\theta}-e^{-i\theta}+e^{\theta}}
+=\frac{1-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}+e^{-i\theta}\cdot\left(-e^{i\theta}-e^{-iN\theta}+e^{-i(N-1)\theta}\right)}{1-e^{i\theta}-e^{-i\theta}+1}=\frac{\cancel{1}-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}\cancel{-1}-e^{-i(N+1)\theta}+e^{-iN\theta}}{2-e^{i\theta}-e^{-i\theta}}
 \]
 
 \end_inset
@@ -4058,7 +4058,7 @@ The Dirichlet kernel is
 \begin_layout Standard
 \begin_inset Formula 
 \[
-=\frac{-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}-e^{-i(N+1)\theta}+e^{-iN\theta}}{1-e^{i\theta}-e^{-i\theta}+e^{\theta}}
+=\frac{-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}-e^{-i(N+1)\theta}+e^{-iN\theta}}{2-e^{i\theta}-e^{-i\theta}}
 \]
 
 \end_inset
@@ -4078,7 +4078,7 @@ TODO
 \begin_layout Standard
 
 \series bold
-HW3#1
+HW4#1
 \series default
 .
  
@@ -4132,7 +4132,7 @@ Proof
 \begin_layout Standard
 
 \series bold
-HW3#2
+HW4#2
 \series default
 .
  
@@ -4209,7 +4209,7 @@ And we know that for all
 \end_inset
 
  such that for 
-\begin_inset Formula $m\ge M_{\varepsilon}$
+\begin_inset Formula $k\ge M_{\varepsilon}$
 \end_inset
 
 ,
@@ -4234,23 +4234,422 @@ by asking how many times each
 \end_inset
 
  and comparing to the Cesàro average.
-\end_layout
-
-\begin_layout Standard
-We have 
+ That is,
+ we're working with an inequality concerning the magnitude of the difference between the average of partial sums and the partial sum itself.
+ We have 
 \begin_inset Formula $\sum_{i=1}^{n}\sum_{j=1}^{i}c_{j}=\sum_{k=1}^{n}\left(n-k\right)c_{k}$
 \end_inset
 
 .
  Then 
-\begin_inset Formula $\left|\frac{\sum_{i=1}^{n}\sum_{j=1}^{i}c_{j}}{n}-\sum_{k=1}^{n}c_{k}\right|=\left|\frac{\sum_{k=1}^{n}\left(n-k\right)c_{k}}{n}-\sum_{k=1}^{n}c_{k}\right|=\left|\frac{\sum_{k=1}^{n}nc_{k}-\left(n-k\right)}{n}-\sum_{k=1}^{n}c_{k}\right|$
+\begin_inset Formula $\left|\frac{\sum_{i=1}^{n}\sum_{j=1}^{i}c_{j}}{n}-\sum_{k=1}^{n}c_{k}\right|=\left|\frac{\sum_{k=1}^{n}\left(n-k\right)c_{k}}{n}-\sum_{k=1}^{n}c_{k}\right|=\left|\frac{\sum_{k=1}^{n}nc_{k}-kc_{k}}{n}-\sum_{k=1}^{n}c_{k}\right|=\left|\cancel{\sum_{k=1}^{n}c_{k}}-\frac{1}{n}\sum_{k=1}^{n}kc_{k}\cancel{-\sum_{k=1}^{n}c_{k}}\right|\le\frac{1}{n}\sum_{k=1}^{n}\left|kc_{k}\right|$
 \end_inset
 
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So pick 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ Then for 
+\begin_inset Formula $n\ge\max(N_{\nicefrac{\varepsilon}{2}},M_{\nicefrac{\varepsilon}{2}})$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|\sum_{k=1}^{\infty}c_{k}-s\right|\le\left|\sum_{k=1}^{\infty}c_{k}-\frac{\sum_{k=1}^{n}nc_{k}-kc_{k}}{n}\right|+\left|\frac{\sum_{k=1}^{n}nc_{k}-kc_{k}}{n}-s\right|\le\left(\frac{1}{n}\sum_{k=1}^{n}\frac{\varepsilon}{2}\right)+\frac{\varepsilon}{2}=\cancel{\frac{n}{n}}\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW4#3
+\series default
+.
  [
 \series bold
 TODO
 \series default
-]
+:
+ deriving the sine form of the Fejer kernel]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW4#4
+\series default
+.
+ Weierstrass approximation!
+ (I got some high-level guidance from ChatGPT on this the other day.)
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be a continuous function on 
+\begin_inset Formula $[a,b]\subset\R$
+\end_inset
+
+.
+ Then for all 
+\begin_inset Formula $\varepsilon>0$
+\end_inset
+
+,
+ there exists a polynomial 
+\begin_inset Formula $P$
+\end_inset
+
+ such that 
+\begin_inset Formula $\sup_{x\in[a,b]}\left|f(x)-P(x)\right|<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ We know that a set of good kernels 
+\begin_inset Formula $\left\{ K_{k}\right\} $
+\end_inset
+
+ are an 
+\begin_inset Quotes eld
+\end_inset
+
+approximation to the identity
+\begin_inset Quotes erd
+\end_inset
+
+ in the sense that if 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous at 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\lim_{k\to\infty}(f*K_{k})(x)=f(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The partial sums of the Fourier series for 
+\begin_inset Formula $f$
+\end_inset
+
+ are a convolution of 
+\begin_inset Formula $f$
+\end_inset
+
+ with the Dirichlet kernel:
+ 
+\begin_inset Formula $(f*D_{N})(x)=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)\left(\sum_{k=-N}^{N}\exp(ik(x-y))\right)\,dy=\sum_{k=-N}^{N}\underbrace{\left(\frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)\exp(-iky)\,dy\right)}_{\fhat(k)}\exp(ikx)\,$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And the average of partial sums is a convolution of 
+\begin_inset Formula $f$
+\end_inset
+
+ with the Fejér kernel:
+ 
+\begin_inset Formula $(f*F_{N})(x)=\frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)\frac{\sum_{j=1}^{N}\sum_{k=-j}^{j}\exp(ik(x-y))}{N}\,dy$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\frac{1}{N}\sum_{j=1}^{N}\sum_{k=-j}^{j}\underbrace{\left(\frac{1}{2\pi}\int_{-\pi}^{\pi}f(y)\exp(-iky)\,dy\right)}_{\fhat(k)}\exp(ikx)$
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{N}\sum_{j=1}^{N}\underbrace{\sum_{k=-j}^{j}\fhat(k)\exp(ikx)}_{j\mathrm{th\,partial\,sum}}=\sigma_{N}(f)(x)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+And the Fejér kernel is a good kernel,
+ so if 
+\begin_inset Formula $f$
+\end_inset
+
+ is continuous on the circle,
+ then the Cesàro sum (the limit of the sequence of averages of partial sums) of the Fourier series of 
+\begin_inset Formula $f$
+\end_inset
+
+ converges to 
+\begin_inset Formula $f$
+\end_inset
+
+ on the circle.
+\end_layout
+
+\begin_layout Standard
+That means:
+ for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists an 
+\begin_inset Formula $N_{\varepsilon}$
+\end_inset
+
+ such that for 
+\begin_inset Formula $n\ge N_{\varepsilon}$
+\end_inset
+
+ and all 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|f(x)-\sigma_{n}(f)(x)\right|<\varepsilon$
+\end_inset
+
+.
+ Thus 
+\begin_inset Formula $f$
+\end_inset
+
+ can be uniformly approximated by a trigonometric polynomial (which 
+\begin_inset Formula $\sigma_{n}(f)(x)$
+\end_inset
+
+ is for any given 
+\begin_inset Formula $n$
+\end_inset
+
+) on the circle.
+\end_layout
+
+\begin_layout Standard
+For Weierstrass approximation,
+ we want to work on a compact interval 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+ without assuming that 
+\begin_inset Formula $f(a)=f(b)$
+\end_inset
+
+.
+ But it's fine.
+ We can artificially extend 
+\begin_inset Formula $f$
+\end_inset
+
+ to a periodic continuous function 
+\begin_inset Formula $f_{\bullet}$
+\end_inset
+
+ on 
+\begin_inset Formula $[a-\delta,b+\delta]$
+\end_inset
+
+ where 
+\begin_inset Formula $f(a-\delta)=f(b+\delta)$
+\end_inset
+
+.
+ Since we're not 
+\emph on
+retarded
+\emph default
+,
+ we 
+\emph on
+probably
+\emph default
+ didn't just need to look up the point–slope formulation of a line,
+ 
+\begin_inset Formula $y-y_{0}=m(x-x_{0})$
+\end_inset
+
+,
+ with which we can define a suitable 
+\begin_inset Formula $f_{\bullet}(x)=\begin{cases}
+f(x) & x\in[a,b]\\
+\frac{f(a)-f(a-\delta)}{\delta}(x-a+\delta)+f(a-\delta) & x\in[a-\delta,a)\\
+\frac{f(b)-f(b+\delta)}{\delta}(x-b-\delta)+f(b+\delta) & x\in(b,b+\delta]
+\end{cases}$
+\end_inset
+
+.
+ Since 
+\begin_inset Formula $f_{\bullet}$
+\end_inset
+
+ can be uniformly approximated by a trigonometric polynomial on 
+\begin_inset Formula $[a-\delta,b+\delta]$
+\end_inset
+
+,
+ it follows that we can uniformly approximate 
+\begin_inset Formula $f$
+\end_inset
+
+ by a trigonometric polynomial by simply clipping the domain to 
+\begin_inset Formula $[a,b]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+That means,
+ for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exist coëfficients 
+\begin_inset Formula $\{c_{k}\}_{k=-n}^{n}$
+\end_inset
+
+ (for some 
+\begin_inset Formula $n$
+\end_inset
+
+) such that for all 
+\begin_inset Formula $x\in[a,b]$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\right|<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+But trigonometric polynomials can be approximated by polynomials because exponentials can be approximated by polynomials (on an interval).
+ We have the power series 
+\begin_inset Formula $\exp(x)=\sum_{k=0}^{\infty}\frac{x^{k}}{k!}$
+\end_inset
+
+.
+ We can cut if off at 
+\begin_inset Formula $n$
+\end_inset
+
+ terms with only a small error:
+ 
+\begin_inset Formula $\exp(x)-\sum_{k=1}^{n}\frac{x^{k}}{k!}=\sum_{k=n+1}^{\infty}\frac{x^{k}}{k!}$
+\end_inset
+
+.
+ We know the tail is small because the factorial in the denominator dominates the power in the numerator,
+ but I want a more explicit estimate for my epsilon management.
+ Actually,
+ the fact that the series converges itself implies that the tail is small.
+ That's the Cauchy criterion for series:
+ for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists an 
+\begin_inset Formula $N$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $m,n\ge N$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\sum_{k=m}^{n}\frac{x^{k}}{k!}<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We want to show that the distance between 
+\begin_inset Formula $f$
+\end_inset
+
+ and a polynomial is small.
+ And we know that the distance between 
+\begin_inset Formula $f$
+\end_inset
+
+ and a trig-polynomial is small,
+ and that the distance between a trig-polynomial and a polynomial is small.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\right|=\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\underbrace{+c_{k}\sum_{j=1}^{m}\frac{\left(ikx\right)^{j}}{j!}+c_{k}\sum_{j=m+1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}-c_{k}\sum_{j=1}^{m}\frac{\left(ikx\right)^{j}}{j!}-c_{k}\sum_{j=m+1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}}_{\mathrm{``fancy\,zero"}}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)+c_{k}\sum_{j=1}^{m}\frac{\left(ikx\right)^{j}}{j!}+c_{k}\sum_{j=m+1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}-c_{k}\sum_{j=1}^{m}\frac{\left(ikx\right)^{j}}{j!}-c_{k}\sum_{j=m+1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[
+\series bold
+TODO
+\series default
+:
+ finish the epsilon management;
+ we probably want to start with the polynomial and then insert the trig-polynomial as fancy zero]
 \end_layout
 
 \end_body
