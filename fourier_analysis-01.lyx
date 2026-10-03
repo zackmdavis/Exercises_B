@@ -4621,9 +4621,67 @@ We want to show that the distance between
 \end_layout
 
 \begin_layout Standard
+We probably want to start with the polynomial and then insert the trig-polynomial as fancy zero.
+ Our trig-polynomial is 
+\begin_inset Formula $\sum_{k=-n}^{n}c_{k}\exp(ikx)$
+\end_inset
+
+.
+ Because we have a power series for 
+\begin_inset Formula $\exp(ikx)$
+\end_inset
+
+,
+ the polynomial can be expressed in terms of those same coefficients.
+ The polynomial is 
+\begin_inset Formula $\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m}\frac{\left(ikx\right)^{j}}{j!}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In particular,
+ we actually want to pick 
+\begin_inset Formula $\{c_{k}\}_{k=-n}^{n}$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $x\in[a,b]$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\right|<\frac{\varepsilon}{2}$
+\end_inset
+
+,
+ and we want to choose 
+\begin_inset Formula $N$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $m\ge N$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\sum_{k=m}^{\infty}\frac{x^{k}}{k!}<\frac{\varepsilon}{2}$
+\end_inset
+
+.
+ Then for 
+\begin_inset Formula $m\ge N$
+\end_inset
+
+,
+ we have
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
-\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\right|=\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\underbrace{+c_{k}\sum_{j=1}^{m}\frac{\left(ikx\right)^{j}}{j!}+c_{k}\sum_{j=m+1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}-c_{k}\sum_{j=1}^{m}\frac{\left(ikx\right)^{j}}{j!}-c_{k}\sum_{j=m+1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}}_{\mathrm{``fancy\,zero"}}\right|
+\left|f(x)-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|=\left|f(x)-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\underbrace{+\sum_{k=-n}^{n}c_{k}\exp(ikx)-\sum_{k=-n}^{n}c_{k}\exp(ikx)}_{\mathrm{``fancy\,zero"}}\right|
 \]
 
 \end_inset
@@ -4634,7 +4692,7 @@ We want to show that the distance between
 \begin_layout Standard
 \begin_inset Formula 
 \[
-=\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)+c_{k}\sum_{j=1}^{m}\frac{\left(ikx\right)^{j}}{j!}+c_{k}\sum_{j=m+1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}-c_{k}\sum_{j=1}^{m}\frac{\left(ikx\right)^{j}}{j!}-c_{k}\sum_{j=m+1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}\right|
+=\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)+\sum_{k=-n}^{n}c_{k}\exp(ikx)-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|
 \]
 
 \end_inset
@@ -4643,13 +4701,53 @@ We want to show that the distance between
 \end_layout
 
 \begin_layout Standard
-[
-\series bold
-TODO
-\series default
-:
- finish the epsilon management;
- we probably want to start with the polynomial and then insert the trig-polynomial as fancy zero]
+\begin_inset Formula 
+\[
+\le\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\right|+\left|\sum_{k=-n}^{n}c_{k}\exp(ikx)-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\varepsilon}{2}+\left|\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|=\frac{\varepsilon}{2}+\left|\sum_{k=-n}^{n}c_{k}\sum_{j=m}^{\infty}\frac{\left(ikx\right)^{j}}{j!}\right|\le\frac{\varepsilon}{2}+\sum_{k=-n}^{n}\left|c_{k}\right|\sum_{j=m}^{\infty}\left|\frac{k^{j}x^{j}}{j!}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And now I'm frustrated because I don't know how 
+\begin_inset Formula $\sum_{k=-n}^{n}\left|c_{k}\right|\sum_{j=m}^{\infty}\left|\frac{k^{j}x^{j}}{j!}\right|$
+\end_inset
+
+ relates to 
+\begin_inset Formula $\sum_{k=m}^{\infty}\frac{x^{k}}{k!}$
+\end_inset
+
+.
+ Or rather,
+ I do know,
+ and the inequality runs in the wrong direction:
+ I need to bound 
+\begin_inset Formula $\sum_{j=m}^{\infty}\left|\frac{k^{j}x^{j}}{j!}\right|$
+\end_inset
+
+,
+ but 
+\begin_inset Formula $\sum_{j=m}^{\infty}\left|\frac{k^{j}x^{j}}{j!}\right|\ge\sum_{k=m}^{\infty}\frac{x^{k}}{k!}$
+\end_inset
+
+ (because the non-absolute polynomial terms are allowed to partially cancel).
+ I was so close to having done this whole proof with no AI assistance (I mean,
+ the details,
+ not counting the memory of the high-level direction).
 \end_layout
 
 \end_body
