@@ -4047,7 +4047,7 @@ The Dirichlet kernel is
 \begin_layout Standard
 \begin_inset Formula 
 \[
-=\frac{1-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}+e^{-i\theta}\cdot\left(-e^{i\theta}-e^{-iN\theta}+e^{-i(N-1)\theta}\right)}{1-e^{i\theta}-e^{-i\theta}+1}=\frac{\cancel{1}-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}\cancel{-1}-e^{-i(N+1)\theta}+e^{-iN\theta}}{2-e^{i\theta}-e^{-i\theta}}
+=\frac{1-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}+e^{-i\theta}\cdot\left(1-e^{i\theta}-e^{-iN\theta}+e^{-i(N-1)\theta}\right)}{1-e^{i\theta}-e^{-i\theta}+1}=\frac{\cancel{1}\cancel{-e^{-i\theta}}-e^{i(N+1)\theta}+e^{iN\theta}\cancel{+e^{-i\theta}}\cancel{-1}-e^{-i(N+1)\theta}+e^{-iN\theta}}{2-e^{i\theta}-e^{-i\theta}}
 \]
 
 \end_inset
@@ -4058,17 +4058,94 @@ The Dirichlet kernel is
 \begin_layout Standard
 \begin_inset Formula 
 \[
-=\frac{-e^{-i\theta}-e^{i(N+1)\theta}+e^{iN\theta}-e^{-i(N+1)\theta}+e^{-iN\theta}}{2-e^{i\theta}-e^{-i\theta}}
+=\frac{-e^{i(N+1)\theta}+e^{iN\theta}-e^{-i(N+1)\theta}+e^{-iN\theta}}{2-e^{i\theta}-e^{-i\theta}}
 \]
 
 \end_inset
 
- [
-\series bold
-TODO
-\series default
-:
- finish derivation of sine form of Dirichlet kernel.]
+
+\end_layout
+
+\begin_layout Standard
+At this point,
+ it looks more promising to start at the other end and try to meet in the middle.
+ We recall that 
+\begin_inset Formula $\sin x=\frac{e^{ix}-e^{-ix}}{2i}$
+\end_inset
+
+,
+ so we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\sin((N+\frac{1}{2})\theta)}{\sin(\frac{\theta}{2})}=\frac{\frac{e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}}{2i}}{\frac{e^{i\frac{\theta}{2}}-e^{-i\frac{\theta}{2}}}{2i}}=\frac{e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}}{\cancel{2i}}\frac{\cancel{2i}}{e^{i\frac{\theta}{2}}-e^{-i\frac{\theta}{2}}}=\frac{e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}}{e^{i\frac{\theta}{2}}-e^{-i\frac{\theta}{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+...
+ I'm not seeing it.
+ With some nudging from Opus 5.5:
+ 
+\begin_inset Formula $e^{i\frac{\theta}{2}}-e^{-i\frac{\theta}{2}}=2i\sin\frac{\theta}{2}$
+\end_inset
+
+,
+ and there's a half-angle formula 
+\begin_inset Formula $\sin^{2}\frac{\theta}{2}=\frac{1-\cos\theta}{2}$
+\end_inset
+
+.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\frac{e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}}{e^{i\frac{\theta}{2}}-e^{-i\frac{\theta}{2}}}=\frac{e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}}{2i\sin\frac{\theta}{2}}\cdot\underbrace{\frac{\sin\frac{\theta}{2}}{\sin\frac{\theta}{2}}}_{\mathrm{``fancy\,one"}}=\frac{\left(e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}\right)\cdot\sin\frac{\theta}{2}}{2i\sin^{2}\frac{\theta}{2}}=\frac{\left(e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}\right)\cdot\sin\frac{\theta}{2}}{\cancel{2}i\frac{\left(1-\cos\theta\right)}{\cancel{2}}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{\left(e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}\right)\cdot\sin\frac{\theta}{2}}{i\left(1-\cos\theta\right)}=\frac{\left(e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}\right)\cdot\frac{e^{i\frac{\theta}{2}}-e^{-i\frac{\theta}{2}}}{2i}}{i\left(1-\frac{e^{i\theta}+e^{-i\theta}}{2}\right)}=\frac{\left(e^{i(N+\frac{1}{2})\theta}-e^{-i(N+\frac{1}{2})\theta}\right)\left(e^{i\frac{\theta}{2}}-e^{-i\frac{\theta}{2}}\right)}{2i^{2}\left(1-\frac{e^{i\theta}+e^{-i\theta}}{2}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\frac{e^{i(N+\frac{1}{2})\theta}e^{i\frac{\theta}{2}}-e^{-i(N+\frac{1}{2})\theta}e^{i\frac{\theta}{2}}-e^{-i\frac{\theta}{2}}e^{i(N+\frac{1}{2})\theta}+e^{-i(N+\frac{1}{2})\theta}e^{-i\frac{\theta}{2}}}{-\left(2-e^{i\theta}-e^{-i\theta}\right)}=\frac{e^{i(N+1)\theta}-e^{-iN\theta}-e^{iN\theta}+e^{-i(N+1)\theta}}{-\left(2-e^{i\theta}-e^{-i\theta}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we meet in the middle.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -4123,6 +4200,77 @@ Proof
 
 ,
  whose linear growth is much faster than the harmonic series.
+\end_layout
+
+\begin_layout Standard
+Opus 5.5 points out that this is trash (my paraphrase);
+ the upper bound doesn't help us when our target inequality runs in the other direction.
+
+\series bold
+ 
+\series default
+Opus 5.5 suggests using the closed form instead,
+ and provides extensive tutoring.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{1}{2\pi}\int_{0}^{2\pi}\left|D_{n}(x)\right|\,dx=\frac{1}{2\pi}\int_{0}^{2\pi}\left|\frac{\sin((N+\frac{1}{2})\theta)}{\sin(\frac{\theta}{2})}\right|\,dx=\frac{1}{2\pi}\int_{0}^{2\pi}\frac{\left|\sin((N+\frac{1}{2})\theta)\right|}{\left|\sin(\frac{\theta}{2})\right|}\,dx$
+\end_inset
+
+.
+ By symmetry,
+ we can look at 
+\begin_inset Formula $[0,\pi]$
+\end_inset
+
+.
+ On 
+\begin_inset Formula $[0,\pi]$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|\sin(\frac{\theta}{2})\right|$
+\end_inset
+
+ is bounded above by 
+\begin_inset Formula $\frac{\theta}{2}$
+\end_inset
+
+ (because 
+\begin_inset Formula $\sin(\theta)\le\theta$
+\end_inset
+
+),
+ which implies that 
+\begin_inset Formula $\frac{1}{\left|\sin(\frac{\theta}{2})\right|}$
+\end_inset
+
+ is bounded below by 
+\begin_inset Formula $\frac{2}{\theta}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{1}{\pi}\int_{0}^{\pi}\frac{\left|\sin((N+\frac{1}{2})\theta)\right|}{\left|\sin(\frac{\theta}{2})\right|}\,dx=\sum_{k=1}^{N}\int_{0}^{\pi}\frac{\left|\sin((N+\frac{1}{2})\theta)\right|}{\left|\sin(\frac{\theta}{2})\right|}\,dx\ge\sum_{k=1}^{N}\int_{0}^{\pi}\left|\frac{2}{\theta}\right|\left|\sin((N+\frac{1}{2})\theta)\right|\,dx\ge\sum_{k=1}^{N}\frac{2N+1}{k\pi}\int_{0}^{\pi}\left|\sin((N+\frac{1}{2})\theta)\right|\,dx=\sum_{k=1}^{N}\frac{2N+1}{k\pi}\frac{1}{N+\frac{1}{2}}(-\cos\pi+\cos0)=\sum_{k=1}^{N}\frac{2N+1}{k\pi}\frac{2}{N+\frac{1}{2}}=\underbrace{\frac{4N+2}{\pi(N+\frac{1}{2})}}_{c}\sum_{k=1}^{N}\frac{1}{k}$
+\end_inset
+
+,
+ which is 
+\emph on
+quod erat demonstrandum
+\emph default
+?
+ [
+\series bold
+TODO
+\series default
+:
+ clean up quantifier order,
+ notation,
+ and integral limits]
 \begin_inset Newline newline
 \end_inset
 
@@ -4277,12 +4425,129 @@ So pick
 HW4#3
 \series default
 .
- [
-\series bold
-TODO
-\series default
-:
- deriving the sine form of the Fejer kernel]
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $F_{N}(\theta)=\frac{1}{N}\cdot\frac{\sin^{2}\frac{N\theta}{2}}{\sin^{2}\frac{\theta}{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $NF_{N}=\sum_{k=0}^{N-1}D_{k}(\theta)=\sum_{k=0}^{N-1}\sum_{j=-k}^{k}\exp(ij\theta)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Recall the geometric partial sum formula 
+\begin_inset Formula $\sum_{k=0}^{n-1}ar^{k}=a\frac{1-r^{n}}{1-r}$
+\end_inset
+
+.
+ Now 
+\begin_inset Formula $\sum_{j=-k}^{k}\exp(ij\theta)$
+\end_inset
+
+ can be reïndexed to 
+\begin_inset Formula $\sum_{j=0}^{2k}\underbrace{\exp(-ki\theta)}_{"a"}\cdot\underbrace{\exp(i\theta)^{j}}_{"r^{k}"}=\exp(-ki\theta)\cdot\frac{1-\exp(i\theta)^{2k+1}}{1-\exp(i\theta)}=\frac{\exp(-ki\theta)-\exp(-ki\theta)\exp(i(2k+1)\theta)}{1-\exp(i\theta)}$
+\end_inset
+
+.
+ So we have 
+\begin_inset Formula $\sum_{k=0}^{N-1}\frac{e^{-ki\theta}-e^{(k+1)i\theta}}{1-e^{i\theta}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Working from the other direction,
+ 
+\begin_inset Formula 
+\[
+\frac{\sin^{2}\frac{N\theta}{2}}{\sin^{2}\frac{\theta}{2}}=\frac{\left(\frac{e^{\frac{N\theta}{2}i}-e^{-\frac{N\theta}{2}i}}{2i}\right)^{2}}{\left(\frac{e^{\frac{\theta}{2}i}-e^{-\frac{\theta}{2}i}}{2i}\right)^{2}}=\frac{\left(e^{\frac{N\theta}{2}i}-e^{-\frac{N\theta}{2}i}\right)\left(e^{\frac{N\theta}{2}i}-e^{-\frac{N\theta}{2}i}\right)}{\cancel{-4}}\cdot\frac{\cancel{-4}}{\left(e^{\frac{\theta}{2}i}-e^{-\frac{\theta}{2}i}\right)\left(e^{\frac{\theta}{2}i}-e^{-\frac{\theta}{2}i}\right)}=\frac{e^{Ni\theta}-1-1+e^{-Ni\theta}}{e^{i\theta}-1-1+e^{-i\theta}}=\frac{e^{Ni\theta}+e^{-Ni\theta}-2}{e^{i\theta}+e^{-i\theta}-2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With nudging from Opus 5.5,
+ 
+\begin_inset Formula $\sum_{k=0}^{N-1}\frac{e^{-ki\theta}-e^{(k+1)i\theta}}{1-e^{i\theta}}=\frac{1}{1-e^{i\theta}}\left(\sum_{k=0}^{N-1}e^{-ki\theta}-\sum_{k=0}^{N-1}e^{(k+1)i\theta}\right)=\frac{1}{1-e^{i\theta}}\left(\frac{1-e^{-iN\theta}}{1-e^{-i\theta}}-e^{i\theta}\frac{1-e^{Ni\theta}}{1-e^{i\theta}}\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Opus has a timesaving hint about 
+\begin_inset Formula $1-e^{-i\theta}$
+\end_inset
+
+ and 
+\begin_inset Formula $1-e^{i\theta}$
+\end_inset
+
+ being secretly related by a factor,
+ which looks impossible at first (
+\begin_inset Formula $1$
+\end_inset
+
+ times non-
+\begin_inset Formula $1$
+\end_inset
+
+ equals non-
+\begin_inset Formula $1$
+\end_inset
+
+,
+ so where would the 
+\begin_inset Formula $1$
+\end_inset
+
+ come from?),
+ but indeed,
+ 
+\begin_inset Formula $-e^{-i\theta}\left(1-e^{i\theta}\right)=e^{i\theta-i\theta}-e^{-i\theta}=1-e^{-i\theta}$
+\end_inset
+
+.
+ So we have 
+\begin_inset Formula 
+\[
+\frac{1}{1-e^{i\theta}}\left(\frac{1-e^{-iN\theta}}{1-e^{-i\theta}}-e^{i\theta}\frac{1-e^{Ni\theta}}{1-e^{i\theta}}\cdot\frac{-e^{-i\theta}}{-e^{-i\theta}}\right)=\frac{1}{1-e^{i\theta}}\left(\frac{1-e^{-iN\theta}+e^{i\theta}e^{-i\theta}\cdot\left(1-e^{Ni\theta}\right)}{1-e^{-i\theta}}\right)=\frac{2-e^{-iN\theta}-e^{Ni\theta}}{1-e^{i\theta}-e^{-i\theta}+1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and we meet in the middle.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -4748,6 +5013,16 @@ And now I'm frustrated because I don't know how
  I was so close to having done this whole proof with no AI assistance (I mean,
  the details,
  not counting the memory of the high-level direction).
+ [
+\series bold
+TODO
+\series default
+:
+ correct and finish]
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_body
