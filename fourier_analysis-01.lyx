@@ -170,6 +170,30 @@ Advanced Topics in Mathematics:
 \end_layout
 
 \begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\u}{\vec{\boldsymbol{u}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\v}{\vec{\boldsymbol{v}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\w}{\vec{\boldsymbol{w}}}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Engineers get taught a version of Fourier series in which 
 \begin_inset Formula $a_{n}:=\frac{1}{L}\int_{-L}^{L}f(x)\cos\frac{n\pi x}{L}dx$
 \end_inset
@@ -5023,6 +5047,344 @@ TODO
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW5#1
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ (Considered skipping the state-the-definition prompt because it's too easy to be a 
+\begin_inset Quotes eld
+\end_inset
+
+real
+\begin_inset Quotes erd
+\end_inset
+
+ problem,
+ but people too lazy to type out the definition end up forgetting it!) An inner product space over 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+ is a vector space equipped with an inner product 
+\begin_inset Formula $\left\langle \cdot,\cdot\right\rangle $
+\end_inset
+
+ which satisfies 
+\emph on
+positive-definiteness
+\emph default
+ (
+\begin_inset Formula $\left\langle x,x\right\rangle \ge0$
+\end_inset
+
+ with equality iff 
+\begin_inset Formula $x=0$
+\end_inset
+
+) 
+\emph on
+linearity
+\emph default
+ (
+\begin_inset Formula $\left\langle ca,b\right\rangle =c\left\langle a,b\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left\langle a+b,c\right\rangle =\left\langle a,c\right\rangle +\left\langle b,c\right\rangle $
+\end_inset
+
+),
+ and 
+\emph on
+conjugate symmetry
+\emph default
+ (
+\begin_inset Formula $\left\langle a,b\right\rangle =\overline{\left\langle b,a\right\rangle }$
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+ (parallelogram identity).
+ 
+\begin_inset Formula $\left\Vert \u+\v\right\Vert ^{2}+\left\Vert \u-\v\right\Vert ^{2}=2\left(\left\Vert \u\right\Vert ^{2}+\left\Vert \v\right\Vert ^{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\left\langle \u+\v,\u+\v\right\rangle +\left\langle \u-\v,\u-\v\right\rangle =\left\langle \u,\u+\v\right\rangle +\left\langle \v,\u+\v\right\rangle +\left\langle \u,\u-\v\right\rangle +\left\langle -\v,\u-\v\right\rangle =\left\langle \u,\u\right\rangle +\left\langle \u,\v\right\rangle +\left\langle \v,\u\right\rangle +\left\langle \v,\v\right\rangle +\left\langle \u,\u\right\rangle +\left\langle \u,-\v\right\rangle +\left\langle -\v,\u\right\rangle +\left\langle -\v,-\v\right\rangle =2\left\langle \u,\u\right\rangle +2\left\langle \v,\v\right\rangle \cancel{+\left\langle \u,\v\right\rangle -\left\langle \u,\v\right\rangle }\cancel{+\left\langle \v,\u\right\rangle -\left\langle \v,\u\right\rangle }$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $C[0,1]$
+\end_inset
+
+ under the uniform norm is not an inner product space.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By counterexample.
+ Let 
+\begin_inset Formula $f:=\boldsymbol{1}_{\{\frac{1}{3}\}}$
+\end_inset
+
+ and 
+\begin_inset Formula $g:=\boldsymbol{1}_{\{\frac{2}{3}\}}$
+\end_inset
+
+.
+ (Actually,
+ Opus 5.5 points out that indicator functions aren't in 
+\begin_inset Formula $C[0,1]$
+\end_inset
+
+,
+ but you could use continuous bump functions and it would be fine.) The parallelogram identity requires 
+\begin_inset Formula $\left\Vert f+g\right\Vert ^{2}+\left\Vert f-g\right\Vert ^{2}=2\left(\left\Vert f\right\Vert ^{2}+\left\Vert g\right\Vert ^{2}\right)$
+\end_inset
+
+,
+ which is 
+\begin_inset Formula $1+1=2\left(1+1\right)=4$
+\end_inset
+
+.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW5#3
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $\{e_{k}\}_{k}$
+\end_inset
+
+ is an orthonormal set,
+ then 
+\begin_inset Formula $\left\Vert \sum_{k}a_{k}e_{k}\right\Vert ^{2}=\sum_{k}\left|a_{k}\right|^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Trying to manipulate 
+\begin_inset Formula $\left\langle \sum_{k}a_{k}e_{k},\sum_{k}a_{k}e_{k}\right\rangle $
+\end_inset
+
+ is intimidating.
+ Just write the induction!
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ By induction.
+\end_layout
+
+\begin_layout Standard
+(Base.) 
+\begin_inset Formula $\left\Vert a_{1}e_{1}\right\Vert ^{2}=\left|a_{1}\right|^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Induction.) Suppose that 
+\begin_inset Formula $\left\Vert \sum_{k=1}^{n}a_{k}e_{k}\right\Vert ^{2}=\sum_{k=1}^{n}\left|a_{k}\right|^{2}$
+\end_inset
+
+.
+ We want to show that 
+\begin_inset Formula $\left\Vert \sum_{k=1}^{n+1}a_{k}e_{k}\right\Vert ^{2}=\sum_{k=1}^{n+1}\left|a_{k}\right|^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left\Vert \sum_{k=1}^{n+1}a_{k}e_{k}\right\Vert ^{2}=\left\langle \sum_{k=1}^{n+1}a_{k}e_{k},\sum_{k=1}^{n+1}a_{k}e_{k}\right\rangle =\left\langle \sum_{k=1}^{n}a_{k}e_{k}+a_{n+1}e_{n+1},\sum_{k=1}^{n}a_{k}e_{k}+a_{n+1}e_{n+1}\right\rangle =\left\langle \sum_{k=1}^{n}a_{k}e_{k},\sum_{k=1}^{n}a_{k}e_{k}+a_{n+1}e_{n+1}\right\rangle +\left\langle a_{n+1}e_{n+1},\sum_{k=1}^{n}a_{k}e_{k}+a_{n+1}e_{n+1}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left\langle \sum_{k=1}^{n}a_{k}e_{k},\sum_{k=1}^{n}a_{k}e_{k}\right\rangle +\underbrace{\cancel{\left\langle \sum_{k=1}^{n}a_{k}e_{k},a_{n+1}e_{n+1}\right\rangle }+\cancel{\left\langle a_{n+1}e_{n+1},\sum_{k=1}^{n}a_{k}e_{k}\right\rangle }}_{\mathrm{e_{n+1}\,is\,orthogonal\,to\,all\,other\,e_{k}}}+\left\langle a_{n+1}e_{n+1},a_{n+1}e_{n+1}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left\Vert \sum_{k=1}^{n}a_{k}e_{k}\right\Vert ^{2}+\left\Vert a_{n+1}e_{n+1}\right\Vert ^{2}=\left(\sum_{k=1}^{n}\left|a_{k}\right|^{2}\right)+\left|a_{n+1}\right|^{2}$
+\end_inset
+
+,
+ which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\left\Vert f-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k}\right\Vert ^{2}=\left\Vert f\right\Vert ^{2}-\sum_{k=1}^{n}\left|\left\langle f,e_{k}\right\rangle \right|^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ 
+\begin_inset Formula $\left\langle f-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k},f-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k}\right\rangle =\left\langle f,f-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k}\right\rangle +\left\langle -\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k},f-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left\langle f,f\right\rangle +\left\langle f,-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k}\right\rangle +\left\langle -\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k},f\right\rangle +\left\langle -\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k},-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k}\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left\Vert f\right\Vert ^{2}+\left\langle f,-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k}\right\rangle +\left\langle -\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k},f\right\rangle +\left\Vert \sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k}\right\Vert ^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(With some Opus 5.5 tutoring—
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left\Vert f\right\Vert ^{2}+\overline{\left\langle -\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle e_{k},f\right\rangle }-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle \left\langle e_{k},f\right\rangle +\sum_{k=1}^{n}\left|\left\langle f,e_{k}\right\rangle \right|^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left\Vert f\right\Vert ^{2}-\sum_{k=1}^{n}\overline{\left\langle f,e_{k}\right\rangle }\overline{\left\langle e_{k},f\right\rangle }-\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle \left\langle e_{k},f\right\rangle +\sum_{k=1}^{n}\left|\left\langle f,e_{k}\right\rangle \right|^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left\Vert f\right\Vert ^{2}-\sum_{k=1}^{n}\overline{\left\langle f,e_{k}\right\rangle }\left\langle f,e_{k}\right\rangle -\sum_{k=1}^{n}\left\langle f,e_{k}\right\rangle \overline{\left\langle f,e_{k}\right\rangle }+\sum_{k=1}^{n}\left|\left\langle f,e_{k}\right\rangle \right|^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $=\left\Vert f\right\Vert ^{2}-\sum_{k=1}^{n}\left|\left\langle f,e_{k}\right\rangle \right|^{2}\cancel{-\sum_{k=1}^{n}\left|\left\langle f,e_{k}\right\rangle \right|^{2}+\sum_{k=1}^{n}\left|\left\langle f,e_{k}\right\rangle \right|^{2}}$
+\end_inset
+
+ which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
 \end_layout
 
 \end_body
