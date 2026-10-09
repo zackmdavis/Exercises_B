@@ -3933,7 +3933,7 @@ integrates to one
 \begin_layout Enumerate
 It vanishes away from the origin:
  
-\begin_inset Formula $\lim_{k\to\infty}\forall\delta\:\int_{[-\pi,-\delta]\cup[\delta,\pi]}K_{k}(\theta)\,d\theta=0$
+\begin_inset Formula $\forall\delta\:\lim_{k\to\infty}\int_{[-\pi,-\delta]\cup[\delta,\pi]}\left|K_{k}(\theta)\right|\,d\theta=0$
 \end_inset
 
 .
@@ -5052,6 +5052,301 @@ TODO
 \begin_layout Standard
 
 \series bold
+HW4#5
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ has a jump discontinuity at 
+\begin_inset Formula $\theta$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\lim_{r\to1}\sum_{k=-\infty}^{\infty}r^{\left|k\right|}\exp(ik\theta)=\frac{\lim_{h\to0}f(\theta+h)+\lim_{h\to0}f(\theta-h)}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (With intensive tutoring from Opus 5.5) A hint implores us to explain why 
+\begin_inset Formula $\frac{1}{2\pi}\int_{0}^{\pi}P_{r}(\theta)\,d\theta=\frac{1}{2\pi}\int_{0}^{\pi}\sum_{k=-\infty}^{\infty}r^{\left|k\right|}\exp(ik\theta)\,d\theta=\frac{1}{2}$
+\end_inset
+
+.
+ We know that 
+\begin_inset Formula $\frac{1}{2\pi}\int_{-\pi}^{\pi}P_{r}(\theta)\,d\theta=1$
+\end_inset
+
+ from the first good kernel condition,
+ and we know that half the integral is half the value because 
+\begin_inset Formula $P_{r}(\theta)$
+\end_inset
+
+ is even.
+ It's even because 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}r^{\left|k\right|}\exp(ik\theta)=\sum_{k=-\infty}^{\infty}r^{\left|k\right|}\exp(-ik\theta)$
+\end_inset
+
+.
+ (Swapping the labels of the positive and negative integers can't change the sum.)
+\end_layout
+
+\begin_layout Standard
+Next,
+ we're recapitulate the proof that good kernels approximate the identity at points of continuity,
+ but somehow make it be about points of discontinuity.
+ [
+\series bold
+TODO
+\series default
+:
+ continue Stein-Shakarchi p.
+ 49]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW4#6
+\series default
+.
+ Let 
+\begin_inset Formula $g:[-\pi,\pi]\to\R$
+\end_inset
+
+ be a nonnegative continuous function such that 
+\begin_inset Formula $g(-\pi)=g(\pi)=0$
+\end_inset
+
+ and 
+\begin_inset Formula $\int_{-\pi}^{\pi}g(x)\,dx=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ We are asked to write the good kernel conditions reformulated for 
+\begin_inset Formula $\varepsilon\to0$
+\end_inset
+
+ instead of 
+\begin_inset Formula $N\to\infty$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(Unit integral.) 
+\begin_inset Formula $\forall\varepsilon>0$
+\end_inset
+
+ 
+\begin_inset Formula $\int_{-\pi}^{\pi}K_{\varepsilon}(x)\,dx=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Bounded integral of absolute value.) 
+\begin_inset Formula $\exists B\,\forall\varepsilon>0$
+\end_inset
+
+ 
+\begin_inset Formula $\int_{-\pi}^{\pi}\left|K_{\varepsilon}(x)\right|dx<B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(Vanishes away from origin.) 
+\begin_inset Formula $\forall\delta$
+\end_inset
+
+ 
+\begin_inset Formula $\lim_{\varepsilon\to0}\int_{[-\pi,-\delta]\cup[\delta,\pi]}\left|K_{\varepsilon}(x)\right|dx=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $K_{\varepsilon}(x)=\frac{1}{\varepsilon}g\left(\frac{x}{\varepsilon}\right)$
+\end_inset
+
+ is a good kernel.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Unit integral.) 
+\begin_inset Formula $\int_{-\pi}^{\pi}\frac{1}{\varepsilon}g\left(\frac{x}{\varepsilon}\right)dx=\frac{1}{\varepsilon}\int_{-\pi}^{\pi}g\left(\frac{x}{\varepsilon}\right)dx$
+\end_inset
+
+.
+ Can we do the integral with substitution?
+ Let 
+\begin_inset Formula $t:=\frac{x}{\varepsilon}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $dt=\frac{1}{\varepsilon}dx$
+\end_inset
+
+.
+ Which (Opus 5.5 hastens to remind me) implies that 
+\begin_inset Formula $dx=\varepsilon\,dt$
+\end_inset
+
+.
+ (And Opus 5.5 also points out that we have to deal with the bounds,
+ but apparently there's a gap in the problem statement where 
+\begin_inset Formula $g$
+\end_inset
+
+ isn't defined outside of 
+\begin_inset Formula $[-\pi,\pi]$
+\end_inset
+
+,
+ but the intended solution clearly wants us to assume it's zero there.) Then 
+\begin_inset Formula $\int_{-\pi}^{\pi}g\left(\frac{x}{\varepsilon}\right)dx=\varepsilon\int_{-\nicefrac{\pi}{\varepsilon}}^{\nicefrac{\pi}{\varepsilon}}g\left(t\right)dt=\varepsilon\cdot1$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\int_{-\pi}^{\pi}\frac{1}{\varepsilon}g\left(\frac{x}{\varepsilon}\right)dx=\frac{1}{\varepsilon}\cdot\varepsilon=1$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Bounded integral of absolute value.) 
+\begin_inset Formula $\int_{-\pi}^{\pi}\left|\frac{1}{\varepsilon}g\left(\frac{x}{\varepsilon}\right)\right|dx=\frac{1}{\varepsilon}\int_{-\pi}^{\pi}\left|g\left(\frac{x}{\varepsilon}\right)\right|dx$
+\end_inset
+
+.
+ But we know that 
+\begin_inset Formula $g$
+\end_inset
+
+ is nonnegative,
+ so the absolute value sign is a no-op.
+ And we just established above that 
+\begin_inset Formula $\int_{-\pi}^{\pi}g\left(\frac{x}{\varepsilon}\right)dx=\varepsilon$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\int_{-\pi}^{\pi}\left|\frac{1}{\varepsilon}g\left(\frac{x}{\varepsilon}\right)\right|dx=1<+\infty$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(Vanishes away from origin.) Fix arbitrary 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ If 
+\begin_inset Formula $\varepsilon<\frac{\delta}{\pi}$
+\end_inset
+
+,
+ then for 
+\begin_inset Formula $\left|x\right|\ge\delta$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\frac{x}{\varepsilon}\ge\delta\cdot\frac{\pi}{\delta}=\pi$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $g(\frac{x}{\varepsilon})=0$
+\end_inset
+
+.
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 HW5#1
 \series default
 .
@@ -5385,6 +5680,10 @@ Proof
 quod erat demonstrandum
 \emph default
 .
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_body
