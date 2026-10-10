@@ -4777,10 +4777,14 @@ For Weierstrass approximation,
 \end_inset
 
  where 
-\begin_inset Formula $f(a-\delta)=f(b+\delta)$
+\begin_inset Formula $f_{\bullet}(a-\delta)=f_{\bullet}(b+\delta)=c$
 \end_inset
 
-.
+ for whatever arbitrary 
+\begin_inset Formula $c$
+\end_inset
+
+ we want to join the endpoints at.
  Since we're not 
 \emph on
 retarded
@@ -4799,8 +4803,8 @@ probably
  with which we can define a suitable 
 \begin_inset Formula $f_{\bullet}(x)=\begin{cases}
 f(x) & x\in[a,b]\\
-\frac{f(a)-f(a-\delta)}{\delta}(x-a+\delta)+f(a-\delta) & x\in[a-\delta,a)\\
-\frac{f(b)-f(b+\delta)}{\delta}(x-b-\delta)+f(b+\delta) & x\in(b,b+\delta]
+\frac{f(a)-c}{\delta}(x-a+\delta)+c & x\in[a-\delta,a)\\
+\frac{c-f(b)}{\delta}(x-b-\delta)+c & x\in(b,b+\delta]
 \end{cases}$
 \end_inset
 
@@ -4865,7 +4869,7 @@ But trigonometric polynomials can be approximated by polynomials because exponen
 
  terms with only a small error:
  
-\begin_inset Formula $\exp(x)-\sum_{k=1}^{n}\frac{x^{k}}{k!}=\sum_{k=n+1}^{\infty}\frac{x^{k}}{k!}$
+\begin_inset Formula $\exp(x)-\sum_{k=0}^{n}\frac{x^{k}}{k!}=\sum_{k=n+1}^{\infty}\frac{x^{k}}{k!}$
 \end_inset
 
 .
@@ -4931,7 +4935,7 @@ We probably want to start with the polynomial and then insert the trig-polynomia
 
 \begin_layout Standard
 In particular,
- we actually want to pick 
+ we want to pick 
 \begin_inset Formula $\{c_{k}\}_{k=-n}^{n}$
 \end_inset
 
@@ -4944,105 +4948,92 @@ In particular,
 \begin_inset Formula $\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\right|<\frac{\varepsilon}{2}$
 \end_inset
 
-,
- and we want to choose 
-\begin_inset Formula $N$
+ (approximating the function with a trig-polynomial),
+ and then we also want to pick how far into the tail of the power series we need to go in order to approximate the trig-polynomial with a polynomial.
+ However (Opus 5.5 explains to me after a previous attempt went awry),
+ we need to make sure it works for all 
+\begin_inset Formula $x\in[a,b]$
 \end_inset
 
- such that for all 
-\begin_inset Formula $m\ge N$
-\end_inset
-
-,
- 
-\begin_inset Formula $\sum_{k=m}^{\infty}\frac{x^{k}}{k!}<\frac{\varepsilon}{2}$
+ and all 
+\begin_inset Formula $k\in\{-n...n\}$
 \end_inset
 
 .
- Then for 
-\begin_inset Formula $m\ge N$
-\end_inset
-
-,
- we have
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\left|f(x)-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|=\left|f(x)-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\underbrace{+\sum_{k=-n}^{n}c_{k}\exp(ikx)-\sum_{k=-n}^{n}c_{k}\exp(ikx)}_{\mathrm{``fancy\,zero"}}\right|
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-=\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)+\sum_{k=-n}^{n}c_{k}\exp(ikx)-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\le\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\right|+\left|\sum_{k=-n}^{n}c_{k}\exp(ikx)-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-=\frac{\varepsilon}{2}+\left|\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{\infty}\frac{\left(ikx\right)^{j}}{j!}-\sum_{k=-n}^{n}c_{k}\sum_{j=1}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|=\frac{\varepsilon}{2}+\left|\sum_{k=-n}^{n}c_{k}\sum_{j=m}^{\infty}\frac{\left(ikx\right)^{j}}{j!}\right|\le\frac{\varepsilon}{2}+\sum_{k=-n}^{n}\left|c_{k}\right|\sum_{j=m}^{\infty}\left|\frac{k^{j}x^{j}}{j!}\right|
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-And now I'm frustrated because I don't know how 
-\begin_inset Formula $\sum_{k=-n}^{n}\left|c_{k}\right|\sum_{j=m}^{\infty}\left|\frac{k^{j}x^{j}}{j!}\right|$
-\end_inset
-
- relates to 
-\begin_inset Formula $\sum_{k=m}^{\infty}\frac{x^{k}}{k!}$
+ Let 
+\begin_inset Formula $R:=n\cdot\max_{[a,b]}\left|x\right|$
 \end_inset
 
 .
- Or rather,
- I do know,
- and the inequality runs in the wrong direction:
- I need to bound 
-\begin_inset Formula $\sum_{j=m}^{\infty}\left|\frac{k^{j}x^{j}}{j!}\right|$
+ Then choose 
+\begin_inset Formula $m$
 \end_inset
 
-,
- but 
-\begin_inset Formula $\sum_{j=m}^{\infty}\left|\frac{k^{j}x^{j}}{j!}\right|\ge\sum_{k=m}^{\infty}\frac{x^{k}}{k!}$
+ such that 
+\begin_inset Formula $\sum_{j=m}^{\infty}\frac{R^{j}}{j!}<\frac{\varepsilon}{2\sum_{k}\left|c_{k}\right|}$
 \end_inset
 
- (because the non-absolute polynomial terms are allowed to partially cancel).
- I was so close to having done this whole proof with no AI assistance (I mean,
- the details,
- not counting the memory of the high-level direction).
- [
-\series bold
-TODO
-\series default
-:
- correct and finish]
+.
+ Then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|f(x)-\sum_{k=-n}^{n}c_{k}\sum_{j=0}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|=\left|f(x)-\sum_{k=-n}^{n}c_{k}\sum_{j=0}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\underbrace{+\sum_{k=-n}^{n}c_{k}\exp(ikx)-\sum_{k=-n}^{n}c_{k}\exp(ikx)}_{\mathrm{``fancy\,zero"}}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+=\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)+\sum_{k=-n}^{n}c_{k}\exp(ikx)-\sum_{k=-n}^{n}c_{k}\sum_{j=0}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\le\left|f(x)-\sum_{k=-n}^{n}c_{k}\exp(ikx)\right|+\left|\sum_{k=-n}^{n}c_{k}\exp(ikx)-\sum_{k=-n}^{n}c_{k}\sum_{j=0}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\le\frac{\varepsilon}{2}+\left|\sum_{k=-n}^{n}c_{k}\sum_{j=0}^{\infty}\frac{\left(ikx\right)^{j}}{j!}-\sum_{k=-n}^{n}c_{k}\sum_{j=0}^{m-1}\frac{\left(ikx\right)^{j}}{j!}\right|=\frac{\varepsilon}{2}+\left|\sum_{k=-n}^{n}c_{k}\sum_{j=m}^{\infty}\frac{\left(ikx\right)^{j}}{j!}\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\le\frac{\varepsilon}{2}+\sum_{k=-n}^{n}\left|c_{k}\right|\left|\sum_{j=m}^{\infty}\frac{\left(ikx\right)^{j}}{j!}\right|\le\frac{\varepsilon}{2}+\sum_{k=-n}^{n}\left|c_{k}\right|\sum_{j=m}^{\infty}\frac{R^{j}}{j!}<\frac{\varepsilon}{2}+\cancel{\sum_{k=-n}^{n}\left|c_{k}\right|}\frac{\varepsilon}{2\cancel{\sum_{k=-n}^{n}\left|c_{k}\right|}}=\varepsilon
+\]
+
+\end_inset
+
+which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -5075,7 +5066,7 @@ Theorem
 
 ,
  then 
-\begin_inset Formula $\lim_{r\to1}\sum_{k=-\infty}^{\infty}r^{\left|k\right|}\exp(ik\theta)=\frac{\lim_{h\to0}f(\theta+h)+\lim_{h\to0}f(\theta-h)}{2}$
+\begin_inset Formula $\lim_{r\to1}\sum_{k=-\infty}^{\infty}r^{\left|k\right|}\fhat(k)\exp(ik\theta)=\frac{\lim_{h\to0}f(\theta+h)+\lim_{h\to0}f(\theta-h)}{2}$
 \end_inset
 
 .
@@ -5502,6 +5493,178 @@ Proof
 
 .
  Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW5#2
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ 
+\begin_inset Formula $\ell^{2}(\Z):=\left\{ (a_{k})_{k\in\Z}:\sum_{n\in\Z}\left|a_{k}\right|^{2}<+\infty\right\} $
+\end_inset
+
+ is complete.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Following the text's hints,
+ and Opus 5.5 correcting my confusion about what this space even is.) Completeness means every Cauchy sequence converges.
+ Suppose that 
+\begin_inset Formula $(A_{k})_{k\in\N}:=(a_{k,n})_{n\in\Z}$
+\end_inset
+
+ is Cauchy.
+ Following the hint,
+ we're going to want to show that for each 
+\begin_inset Formula $n$
+\end_inset
+
+,
+ 
+\begin_inset Formula $(a_{k,n})_{k=1}^{\infty}$
+\end_inset
+
+is a Cauchy sequence in 
+\begin_inset Formula $\C$
+\end_inset
+
+.
+ (If the sequences are rows,
+ these would be the columns.) 
+\end_layout
+
+\begin_layout Standard
+What it means for 
+\begin_inset Formula $(A_{k})$
+\end_inset
+
+ to be Cauchy (in 
+\begin_inset Formula $\ell^{2}(\Z)$
+\end_inset
+
+) is that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists an 
+\begin_inset Formula $K$
+\end_inset
+
+ such that for 
+\begin_inset Formula $k_{1},k_{2}\ge K$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left\Vert A_{k_{1}}-A_{k_{2}}\right\Vert <\varepsilon$
+\end_inset
+
+,
+ which is to say that 
+\begin_inset Formula $\sum_{n\in\Z}\left|a_{k_{1},n}-a_{k_{2},n}\right|^{2}<\varepsilon^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+And what it would mean for 
+\begin_inset Formula $(a_{k,n})_{k=1}^{\infty}$
+\end_inset
+
+ to be Cauchy (in 
+\begin_inset Formula $\C$
+\end_inset
+
+) for a given 
+\begin_inset Formula $n$
+\end_inset
+
+ is that for all 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+,
+ there exists 
+\begin_inset Formula $K$
+\end_inset
+
+ such that for all 
+\begin_inset Formula $k_{1},k_{2}\ge K$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|a_{k_{1},n}-a_{k_{2},n}\right|<\varepsilon$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fix 
+\begin_inset Formula $\varepsilon$
+\end_inset
+
+.
+ We know that there exists a 
+\begin_inset Formula $K$
+\end_inset
+
+ such that for 
+\begin_inset Formula $k_{1},k_{2}\ge K$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\sum_{n\in\Z}\left|a_{k_{1},n}-a_{k_{2},n}\right|^{2}<\varepsilon^{2}$
+\end_inset
+
+.
+ But for a given 
+\begin_inset Formula $n_{0}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left|a_{k_{1},n_{0}}-a_{k_{2},n_{0}}\right|^{2}\le\sum_{n\in\Z}\left|a_{k_{1},n}-a_{k_{2},n}\right|^{2}$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\left|a_{k_{1},n_{0}}-a_{k_{2},n_{0}}\right|^{2}<\varepsilon^{2}$
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\left|a_{k_{1},n_{0}}-a_{k_{2},n_{0}}\right|<\varepsilon$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+:
+ finish rest of proof]
 \begin_inset Newline newline
 \end_inset
 
