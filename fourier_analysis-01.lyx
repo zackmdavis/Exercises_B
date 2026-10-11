@@ -5850,16 +5850,157 @@ quod erat demonstrandum
 \end_layout
 
 \begin_layout Standard
+A few notes.
+ If 
+\begin_inset Formula $f$
+\end_inset
+
+ is integrable on the circle,
+ then it converges in the mean-square sense:
+ 
+\begin_inset Formula $\lim_{N\to\infty}\frac{1}{2\pi}\int_{0}^{2\pi}\left|f(\theta)-S_{N}f(\theta)\right|^{2}d\theta=0$
+\end_inset
+
+.
+ We have Parseval's identity 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\left|a_{k}\right|^{2}=\left\Vert f\right\Vert ^{2}$
+\end_inset
+
+ for Fourier coëfficients 
+\begin_inset Formula $a_{k}$
+\end_inset
+
+.
+ (Where we recall that 
+\begin_inset Formula $\left\Vert f\right\Vert ^{2}=\left\langle f,f\right\rangle $
+\end_inset
+
+,
+ which would be 
+\begin_inset Formula $\int_{-\pi}^{\pi}f(\theta)\overline{f(\theta)}\,d\theta=\int_{-\pi}^{\pi}\left|f\right|^{2}d\theta$
+\end_inset
+
+.) The Riemann–Lebesgue lemma says that for 
+\begin_inset Formula $f$
+\end_inset
+
+ integrable on the circle,
+ as 
+\begin_inset Formula $\left|k\right|\to\infty$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\fhat(k)\to0$
+\end_inset
+
+.
+ The mean-square convergence result doesn't by itself tell us about pointwise convergence.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 HW6#1
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\sum_{k\ge2}\frac{1}{\log k}\sin kx$
+\end_inset
+
+ converges for every 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ but is not a Fourier series.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ (Convergence.) 
+\begin_inset Formula $\frac{1}{\log k}$
+\end_inset
+
+ goes to zero monotonically.
+ For any given 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ the partial sums of 
+\begin_inset Formula $\sin kx$
+\end_inset
+
+ are bounded.
+ (It's not obvious how to make this fully rigorous,
+ but the intuition is clear:
+ as you go around the circle 
+\begin_inset Formula $x$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $2x$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $3x$
+\end_inset
+
+,
+ 
+\emph on
+&c
+\emph default
+.
+ radians,
+ the positive terms can't outrun the negative terms forever (and 
+\emph on
+vice versa
+\emph default
+);
+ you can't cheat the circle.) So the series converges by Dirichlet's test.
+ 
+\end_layout
+
+\begin_layout Standard
+(Not Fourier.) (With some relatively gentle Opus 5.5 tutoring.) If 
+\begin_inset Formula $\sum_{k\ge2}\frac{1}{\log k}\sin kx$
+\end_inset
+
+ were a Fourier series,
+ then 
+\begin_inset Formula $\sum_{k\ge2}\left|\frac{1}{\log k}\sin kx\right|^{2}$
+\end_inset
+
+ would converge.
+ But 
+\begin_inset Formula $\sum_{k\ge2}\left|\frac{1}{\log k}\right|^{2}=\sum_{k\ge2}\frac{1}{\log^{2}k}>\sum_{k\ge2}\frac{1}{k}$
+\end_inset
+
+,
+ which diverges as the harmonic series.
+ Contradiction!
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5868,11 +6009,153 @@ TODO
 HW6#2
 \series default
 .
- [
+ 
 \series bold
-TODO
+a
 \series default
-]
+.
+ Let 
+\begin_inset Formula $f(\theta):=\left|\theta\right|$
+\end_inset
+
+.
+ We recall from an earlier exercise that 
+\begin_inset Formula $\fhat(k)=\begin{cases}
+\frac{\pi}{2} & k:=0\\
+\frac{-1+(-1)^{k}}{\pi k^{2}} & k:\ne0
+\end{cases}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+We are told to use Parseval's identity to find 
+\begin_inset Formula $\sum_{k=0}^{\infty}\frac{1}{(2n+1)^{4}}$
+\end_inset
+
+.
+ The 
+\begin_inset Formula $2k+1$
+\end_inset
+
+ is a clue.
+ (That maps 
+\begin_inset Formula $\N$
+\end_inset
+
+ to the odds.) So this is
+\begin_inset Formula $\sum_{k\in\N\,\mathrm{odd}}\frac{1}{k^{4}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now we consider that 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\left|\fhat(k)\right|^{2}=\frac{\pi^{2}}{4}+\sum_{k\in\Z\backslash\{0\}}\left|\frac{-1+(-1)^{k}}{\pi k^{2}}\right|^{2}=\frac{\pi^{2}}{4}+2\sum_{k\in\N\,\mathrm{odd}}\left|\frac{-2}{\pi k^{2}}\right|^{2}=\frac{\pi^{2}}{4}+2\sum_{k\in\N\,\mathrm{odd}}\frac{4}{\pi^{2}k^{4}}$
+\end_inset
+
+.
+ But on the other side,
+ 
+\begin_inset Formula $\left\Vert \left|\theta\right|\right\Vert ^{2}=\int_{-\pi}^{\pi}\left|\theta\right|^{2}d\theta=\left.\frac{1}{3}\theta^{3}\right|_{\theta:=-\pi}^{\pi}=\frac{1}{3}\left(2\pi^{3}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+So we have 
+\begin_inset Formula $\frac{\pi^{2}}{4}+2\sum_{k\in\N\,\mathrm{odd}}\frac{4}{\pi^{2}k^{4}}=\frac{2}{3}\pi^{3}$
+\end_inset
+
+.
+ That becomes 
+\begin_inset Formula $\sum_{k\in\N\,\mathrm{odd}}\frac{4}{\pi^{2}}\cdot\frac{1}{k^{4}}=\frac{8\pi^{3}-3\pi^{2}}{24}$
+\end_inset
+
+,
+ which is 
+\begin_inset Formula $\sum_{k\in\N\,\mathrm{odd}}\frac{1}{k^{4}}=\frac{\pi^{2}\left(8\pi^{3}-3\pi^{2}\right)}{96}=\frac{8\pi^{5}-3\pi^{4}}{96}$
+\end_inset
+
+,
+ but we expected to get 
+\begin_inset Formula $\frac{\pi^{4}}{96}$
+\end_inset
+
+ ✘.
+ 
+\end_layout
+
+\begin_layout Standard
+Opus 5.5 points out that we forgot the normalization factor on the right.
+ It should have been 
+\begin_inset Formula $\frac{\pi^{2}}{4}+2\sum_{k\in\N\,\mathrm{odd}}\frac{4}{\pi^{2}k^{4}}=\frac{1}{\cancel{2}\pi}\frac{\cancel{2}}{3}\pi^{3}$
+\end_inset
+
+ yields 
+\begin_inset Formula $\sum_{k\in\N\,\mathrm{odd}}\cdot\frac{1}{k^{4}}=\frac{\pi^{2}}{4}\cdot\frac{4\pi^{2}-3\pi^{2}}{24}=\frac{\pi^{4}}{96}$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Same deal for for 
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{k^{4}}$
+\end_inset
+
+,
+ except that in the earlier exercise,
+ there was some trick about evenness:
+ 
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{k^{4}}=\sum_{k\in\N\,\mathrm{odd}}\frac{1}{k^{4}}+\sum_{k\in\N\,\mathrm{even}}\frac{1}{k^{4}}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\sum_{k\in\N\,\mathrm{even}}\frac{1}{k^{4}}$
+\end_inset
+
+ can be written as 
+\begin_inset Formula $\sum_{k\in\N}\frac{1}{(2k)^{4}}=\sum_{k\in\N}\frac{1}{16k^{4}}=\frac{1}{16}\sum_{k\in\N}\frac{1}{k^{4}}$
+\end_inset
+
+.
+ So we have 
+\begin_inset Formula $\frac{15}{16}\sum_{k=1}^{\infty}\frac{1}{k^{4}}=\sum_{k\in\N\,\mathrm{odd}}\frac{1}{k^{4}}$
+\end_inset
+
+.
+ But we just computed that 
+\begin_inset Formula $\sum_{k\in\N\,\mathrm{odd}}\frac{1}{k^{4}}=\frac{\pi^{4}}{96}$
+\end_inset
+
+,
+ so we should have 
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{k^{4}}=\frac{16}{15}\cdot\frac{\pi^{4}}{96}=\frac{\pi^{4}}{90}$
+\end_inset
+
+ 
+\begin_inset Formula $\checkmark$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5881,11 +6164,120 @@ TODO
 HW6#3
 \series default
 .
- [
+ 
 \series bold
-TODO
+a
 \series default
-]
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $\alpha\notin\Z$
+\end_inset
+
+,
+ the Fourier series of 
+\begin_inset Formula $\frac{\pi}{\sin\pi\alpha}\exp(i(\pi-x)\alpha)$
+\end_inset
+
+ on 
+\begin_inset Formula $[0,2\pi]$
+\end_inset
+
+ is 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\frac{\exp(ikx)}{k+\alpha}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ After correcting some mortifying and humiliating algebra and calculus errors pointed out by Opus 5.5,
+ we have 
+\begin_inset Formula $\frac{1}{2\pi}\int_{0}^{2\pi}\frac{\pi}{\sin\pi\alpha}e^{i(\pi-x)\alpha}e^{-ikx}\,dx=\frac{1}{2\pi}\int_{0}^{2\pi}\frac{\pi}{\sin\pi\alpha}e^{i(\alpha\pi-\alpha x-kx)}\,dx$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $i(\alpha\pi-\alpha x-kx)=i\alpha\pi-(\alpha+k)ix$
+\end_inset
+
+.
+ So
+\begin_inset Formula $\left.\frac{1}{-(\alpha+k)i}\frac{1}{2\pi}\frac{\pi}{\sin\pi\alpha}e^{i(\alpha\pi-\alpha x-kx)}\right|_{x=0}^{2\pi}=\frac{1}{-(\alpha+k)i}\frac{1}{2\pi}\frac{\pi}{\sin\pi\alpha}\left(e^{i(\alpha\pi-\alpha2\pi-2k\pi)}-e^{i(\alpha\pi\cancel{-\alpha0-k0})}\right)=\frac{1}{-(\alpha+k)i}\frac{1}{2\pi}\frac{\pi}{\sin\pi\alpha}\left(e^{i(-(\alpha+2k)\pi)}-e^{i\alpha\pi}\right)=\frac{1}{-(\alpha+k)i}\frac{1}{2\pi}\frac{\pi}{\sin\pi\alpha}\left(e^{-i\alpha\pi}-e^{i\alpha\pi}\right)$
+\end_inset
+
+
+\begin_inset Formula $=\frac{1}{\cancel{-}(\alpha+k)}\frac{1}{\cancel{\pi}}\frac{\cancel{\pi}}{\cancel{\sin\pi\alpha}}\overbrace{\frac{e^{-i\alpha\pi}-e^{i\alpha\pi}}{2i}}^{\cancel{-}\cancel{\sin\alpha\pi}}=\frac{1}{\alpha+k}$
+\end_inset
+
+,
+ which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\frac{1}{(k+\alpha)^{2}}=\frac{\pi^{2}}{\left(\sin\pi\alpha\right)^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Parseval's identity says 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\left|\fhat(k)\right|^{2}=\left\Vert f\right\Vert ^{2}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $\left\Vert f\right\Vert ^{2}=\left\langle f,f\right\rangle =\frac{1}{2\pi}\int_{0}^{2\pi}\frac{\pi^{2}}{\sin^{2}\pi\alpha}\exp(i(\pi-x)\alpha)\exp(-i(\pi-x)\alpha)=\frac{\pi^{2}}{\sin^{2}\pi\alpha}\cancel{\frac{1}{2\pi}\int_{0}^{2\pi}\exp(0)}$
+\end_inset
+
+,
+ which is 
+\emph on
+quod erat demonstrandum
+\emph default
+ (with some Opus 5.5 tutoring reminding about the normalization factor and 
+\begin_inset Formula $f\overline{f}$
+\end_inset
+
+ being different from 
+\begin_inset Formula $f^{2}$
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5894,11 +6286,140 @@ TODO
 HW6#4
 \series default
 .
- [
-\series bold
-TODO
-\series default
-]
+ 
+\emph on
+Theorem
+\emph default
+.
+ The Fourier series of a continuously differentiable function 
+\begin_inset Formula $f$
+\end_inset
+
+ on the circle is absolutely convergent.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Our textbook hint says to use Cauchy–Schwarz and Parseval's identity for 
+\begin_inset Formula $f'$
+\end_inset
+
+.
+ Opus 5.5 prioritized this exercise as 
+\begin_inset Quotes eld
+\end_inset
+
+short.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Cauchy–Schwarz says that 
+\begin_inset Formula $\left|\left\langle \u,\v\right\rangle \right|\le\left\Vert \u\right\Vert \left\Vert \v\right\Vert $
+\end_inset
+
+.
+ Parseval's identity for 
+\begin_inset Formula $f'$
+\end_inset
+
+ says that 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\left|\hat{f'}(k)\right|^{2}=\left\Vert f'\right\Vert ^{2}$
+\end_inset
+
+.
+ How does this help us?
+ We're trying to show that 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\left|\hat{f}(k)\right|$
+\end_inset
+
+ (no square,
+ no derivative) is convergent.
+ We know (Riemann–Lebesgue) that the coëfficients go to zero in both directions,
+ but absolute convergence is stronger.
+ 
+\end_layout
+
+\begin_layout Standard
+Opus 5.5 offers additional hints:
+ 
+\begin_inset Formula $\fhat(k)=\frac{1}{ik}\hat{f'}(k)$
+\end_inset
+
+ and that the relevant form of Cauchy–Schwarz is on sequences in 
+\begin_inset Formula $\ell^{2}(\Z)$
+\end_inset
+
+:
+ we can write
+\begin_inset Formula $\left|\fhat(k)\right|$
+\end_inset
+
+ as a termwise product of sequences 
+\begin_inset Formula $\left|\fhat(k)\right|=a_{k}b_{k}$
+\end_inset
+
+ (which,
+ summed,
+ is an inner product).
+\end_layout
+
+\begin_layout Standard
+So if 
+\begin_inset Formula $\fhat(k)=\frac{1}{ik}\hat{f'}(k)$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\left|\fhat(k)\right|=\left|\frac{1}{k}\right|\left|\hat{f'}(k)\right|$
+\end_inset
+
+.
+ So 
+\begin_inset Formula $\sum_{k}\left|\fhat(k)\right|=\sum_{k}\left|\frac{1}{k}\right|\left|\hat{f'}(k)\right|=\left|\left\langle \left|\frac{1}{k}\right|,\left|\hat{f'}(k)\right|\right\rangle \right|\le\left\Vert \frac{1}{k}\right\Vert \left\Vert \hat{f'}(k)\right\Vert $
+\end_inset
+
+.
+ (These are in the 2-norm.) Then
+\begin_inset Formula $\left\Vert \frac{1}{k}\right\Vert $
+\end_inset
+
+ is finite (because 
+\begin_inset Formula $\sum_{k}\frac{1}{k^{2}}$
+\end_inset
+
+ converges),
+ and 
+\begin_inset Formula $\left\Vert \hat{f'}\right\Vert $
+\end_inset
+
+ is finite because of mean-square convergence.
+ But we've just shown that 
+\begin_inset Formula $\sum_{k}\left|\fhat(k)\right|\le\left\Vert \frac{1}{k}\right\Vert \left\Vert \hat{f'}\right\Vert <+\infty$
+\end_inset
+
+,
+ which is 
+\emph on
+quod erat demonstrandum
+\emph default
+.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5911,7 +6432,7 @@ HW6#5
 \series bold
 TODO
 \series default
-]
+] 
 \end_layout
 
 \end_body
