@@ -5986,7 +5986,7 @@ vice versa
 
  were a Fourier series,
  then 
-\begin_inset Formula $\sum_{k\ge2}\left|\frac{1}{\log k}\sin kx\right|^{2}$
+\begin_inset Formula $\sum_{k\ge2}\left|\frac{1}{\log k}\right|^{2}$
 \end_inset
 
  would converge.
@@ -6152,6 +6152,254 @@ Same deal for for
 \end_inset
 
 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ We consider the 
+\begin_inset Formula $2\pi$
+\end_inset
+
+periodic odd function defined on 
+\begin_inset Formula $[0,\pi]$
+\end_inset
+
+ by 
+\begin_inset Formula $f(\theta)=\theta(\pi-\theta)$
+\end_inset
+
+.
+ We recall from an earlier exercise (Ch.
+ 2 #4) that its Fourier series is 
+\begin_inset Formula $\frac{8}{\pi}\sum_{k\in\N\,\mathrm{odd}}\frac{\sin k\theta}{k^{3}}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\sum_{k=0}^{\infty}\frac{1}{\left(2n+1\right)^{6}}=\frac{\pi^{6}}{960}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ Again,
+ 
+\begin_inset Formula $2n+1$
+\end_inset
+
+ are odd numbers.
+ This is 
+\begin_inset Formula $\sum_{k\in\N\,\mathrm{odd}}\frac{1}{k^{6}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We want to apply Parseval's identity 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\left|\fhat(k)\right|^{2}=\left\Vert f\right\Vert ^{2}$
+\end_inset
+
+ to our Fourier series.
+ Opus 5.5 points out that we can convert the sine series to the true series with 
+\begin_inset Formula $c_{\pm k}:=\pm\frac{b_{k}}{2i}$
+\end_inset
+
+ (where 
+\begin_inset Formula $b_{k}$
+\end_inset
+
+ are the sine coëfficients).
+ So 
+\begin_inset Formula $\sum_{k=-\infty}^{\infty}\left|\fhat(k)\right|=\left|\fhat(0)\right|^{2}+\sum_{k=1}^{\infty}\left|\frac{b_{k}}{2i}\right|+\sum_{k=1}^{\infty}\left|-\frac{b_{k}}{2i}\right|=\left|\fhat(0)\right|^{2}+\sum_{k=1}^{\infty}\cancel{2}\left|\frac{b_{k}}{\cancel{2}i}\right|=\left|\fhat(0)\right|^{2}+\sum_{k=1}^{\infty}\left|b_{k}\right|^{2}$
+\end_inset
+
+.
+ But 
+\begin_inset Formula $\fhat(0)=0$
+\end_inset
+
+ anyway.
+ So this is 
+\begin_inset Quotes eld
+\end_inset
+
+conveniently
+\begin_inset Quotes erd
+\end_inset
+
+ just the 
+\begin_inset Formula $\sum_{k\in\N\,\mathrm{odd}}\left|\frac{1}{k^{3}}\right|^{2}=\sum_{k\in\N\,\mathrm{odd}}\frac{1}{k^{6}}$
+\end_inset
+
+ that we want (well,
+ modulo a factor of 
+\begin_inset Formula $\frac{8}{\pi}$
+\end_inset
+
+).
+ Then 
+\begin_inset Formula $\left\Vert f\right\Vert ^{2}=\left\langle f,f\right\rangle $
+\end_inset
+
+ but here we have to exercise some care about how to integrate 
+\begin_inset Quotes eld
+\end_inset
+
+the odd function defined on.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\left\langle f,f\right\rangle =\int_{-\pi}^{\pi}f\overline{f}\,d\theta=\int_{-\pi}^{0}f\overline{f}\,d\theta+\int_{0}^{\pi}f\overline{f}\,d\theta$
+\end_inset
+
+.
+ For an odd function,
+ the integral on 
+\begin_inset Formula $[-\pi,0]$
+\end_inset
+
+ would be the additive inverse of the integral on 
+\begin_inset Formula $[0,\pi]$
+\end_inset
+
+,
+ but we're not integrating the odd function 
+\begin_inset Formula $f$
+\end_inset
+
+;
+ we're integrating 
+\begin_inset Formula $f\overline{f}$
+\end_inset
+
+.
+ But actually,
+ the other time we had trouble with 
+\begin_inset Formula $f^{2}\ne f\overline{f}$
+\end_inset
+
+,
+ it was with a complex exponential in the integrand;
+ for a real periodic function,
+ is 
+\begin_inset Formula $f\overline{f}=f^{2}$
+\end_inset
+
+ just even?
+ 
+\end_layout
+
+\begin_layout Standard
+Anyway,
+ 
+\begin_inset Formula $\int_{0}^{\pi}\theta(\pi-\theta)\,d\theta=\int_{0}^{\pi}\pi\theta-\theta^{2}\,d\theta=\left.\frac{1}{2}\pi\theta^{2}-\frac{1}{3}\theta^{3}\right|_{\theta:=0}^{\pi}=\frac{1}{2}\pi^{3}-\frac{1}{3}\pi^{3}=\frac{1}{6}\pi^{3}$
+\end_inset
+
+.
+ So if 
+\begin_inset Formula $f\overline{f}$
+\end_inset
+
+ is even,
+ we would have 
+\begin_inset Formula $\left\Vert f\right\Vert ^{2}=\frac{1}{3}\pi^{3}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+So then we would have 
+\begin_inset Formula $\frac{8}{\pi}\sum_{k\in\N\,\mathrm{odd}}\frac{1}{k^{6}}=\frac{\pi^{3}}{3}$
+\end_inset
+
+ implies 
+\begin_inset Formula $\frac{\pi^{4}}{24}$
+\end_inset
+
+,
+ which is off from our expected answer by a factor of 
+\begin_inset Formula $\frac{\pi^{2}}{40}$
+\end_inset
+
+.
+ [
+\series bold
+TODO
+\series default
+:
+ Opus 5.5 points out 
+\emph on
+four
+\emph default
+ different calculation errors here (missing squares on coefficient,
+ 
+\begin_inset Formula $\frac{8}{\pi}$
+\end_inset
+
+ constant,
+ and the integrand,
+ and the missing normalization);
+ I should die]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\sum_{k=1}^{\infty}\frac{1}{k^{6}}=\frac{\pi^{6}}{945}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
 \begin_inset Newline newline
 \end_inset
 
@@ -6428,11 +6676,52 @@ quod erat demonstrandum
 HW6#5
 \series default
 .
+ Let 
+\begin_inset Formula $f$
+\end_inset
+
+ be a 
+\begin_inset Formula $2\pi$
+\end_inset
+
+-periodic function that's Lipshitz:
+ 
+\begin_inset Formula $\left|f(x)-f(y)\right|\le K\left|x-y\right|$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+a
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ 
+\begin_inset Formula $\frac{1}{2\pi}\int_{0}^{2\pi}\left|f(x+h)-f(x-h)\right|^{2}\,dx=\sum_{k=-\infty}^{\infty}4\left|\sin kh\right|^{2}\left|\fhat(k)\right|^{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
  [
 \series bold
 TODO
 \series default
-] 
+]
 \end_layout
 
 \end_body
