@@ -6722,6 +6722,496 @@ Proof
 TODO
 \series default
 ]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+HW7#1
+\series default
+.
+ 
+\series bold
+a
+\series default
+.
+ A function 
+\begin_inset Formula $f$
+\end_inset
+
+ is (strictly if no equality) 
+\emph on
+concave
+\emph default
+ iff for 
+\begin_inset Formula $\lambda\in[0,1]$
+\end_inset
+
+,
+ 
+\begin_inset Formula $f(\lambda x_{0}+(1-\lambda)x_{1})\ge\lambda f(x_{0})+(1-\lambda)f(x_{1})$
+\end_inset
+
+.
+ (I initially wrote something here about 
+\begin_inset Formula $f(x_{1})>\frac{f(x_{0})+f(x_{2})}{2}$
+\end_inset
+
+,
+ but that only covers the midpoint.)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ For 
+\begin_inset Formula $1<p<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{1}{p}+\frac{1}{q}=1$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\left|f(x)\right|\left|g(x)\right|\le\frac{1}{p}\left|f(x)\right|^{p}+\frac{1}{q}\left|g(x)\right|^{q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ Our hint says to use the fact that 
+\begin_inset Formula $\log x$
+\end_inset
+
+ is concave.
+ How does that help us?
+ We're relating a product to a sum,
+ and the logarithm turns products into sums?
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ From the concavity of the logarithm,
+ 
+\begin_inset Formula $\log\left(\frac{1}{p}\left|f(x)\right|^{p}+\frac{1}{q}\left|g(x)\right|^{q}\right)\ge\frac{1}{p}\log\left(\left|f(x)\right|\right)+\frac{1}{q}\log\left(\left|g(x)\right|\right)$
+\end_inset
+
+.
+ Exponentiating yields 
+\begin_inset Formula $\frac{1}{p}\left|f(x)\right|^{p}+\frac{1}{q}\left|g(x)\right|^{q}\ge\exp\left(\frac{1}{p}\log\left(\left|f(x)\right|\right)\right)\exp\left(\frac{1}{q}\log\left(\left|g(x)\right|\right)\right)$
+\end_inset
+
+
+\begin_inset Formula $=\left(\cancel{\exp\log}\left|f(x)\right|^{\frac{1}{p}}\right)\left(\cancel{\exp\log}\left|g(x)\right|^{\frac{1}{q}}\right)$
+\end_inset
+
+.
+ So that gets us to 
+\begin_inset Formula $\left|f(x)\right|^{\frac{1}{p}}\left|g(x)\right|^{\frac{1}{q}}\le\frac{1}{p}\left|f(x)\right|^{p}+\frac{1}{q}\left|g(x)\right|^{q}$
+\end_inset
+
+.
+ We'd be done if we had 
+\begin_inset Formula $\left|f(x)\right|\left|g(x)\right|\le\left|f(x)\right|^{\frac{1}{p}}\left|g(x)\right|^{\frac{1}{q}}$
+\end_inset
+
+,
+ but that's not obvious,
+ and actually ...
+ looks false?
+ (If 
+\begin_inset Formula $\frac{1}{p}\le1$
+\end_inset
+
+,
+ then
+\begin_inset Formula $\left|f(x)\right|^{\frac{1}{p}}\le\left|f(x)\right|^{1}$
+\end_inset
+
+ and likewise for 
+\begin_inset Formula $g$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+.) [
+\series bold
+TODO
+\series default
+:
+ what's going on here?]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+ (Hölder's inequality).
+ For 
+\begin_inset Formula $1<p<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $\frac{1}{p}+\frac{1}{q}=1$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\int\left|f(x)g(x)\right|\,dx\le\left(\int\left|f(x)\right|^{p}\,dx\right)^{\frac{1}{p}}\left(\int\left|g(x)\right|^{q}\,dx\right)^{\frac{1}{q}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Hint
+\emph default
+.
+ We're told to consider 
+\begin_inset Formula $\left(\int\left|f\right|^{p}\right)^{\frac{1}{p}}=1$
+\end_inset
+
+ and consider 
+\begin_inset Formula $f/\left(\int\left|f\right|^{p}\right)^{\frac{1}{p}}$
+\end_inset
+
+ (without loss of generality 
+\begin_inset Formula $g$
+\end_inset
+
+ and 
+\begin_inset Formula $q$
+\end_inset
+
+) in light of the previous proposition.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+ (Hölder for sequences).
+ For 
+\begin_inset Formula $\frac{1}{p}+\frac{1}{q}=1$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\sum_{k=1}^{\infty}\left|a_{k}\right|\left|b_{k}\right|\le\left(\sum_{k=1}^{\infty}\left|a_{k}\right|^{p}\right)^{\frac{1}{p}}\left(\sum_{k=1}^{\infty}\left|b_{k}\right|^{q}\right)^{\frac{1}{q}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have some spaces 
+\begin_inset Formula $L^{p}[a,b]:=\left\{ f:\int_{a}^{b}\left|f(x)\right|^{p}\,dx<\infty\right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $\ell^{p}(\N):=\left\{ (a_{k})_{k=1}^{\infty}:\sum_{k=1}^{\infty}\left|a_{k}\right|^{p}<\infty\right\} $
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+2.
+ a
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+ (Minkowski's inequality).
+ For 
+\begin_inset Formula $f,g\in L^{p}[a,b]$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left(\int_{a}^{b}\left|f(x)+g(x)\right|^{p}\right)^{\frac{1}{p}}\le\left(\int_{a}^{b}\left|f(x)\right|^{p}\,dx\right)^{\frac{1}{p}}+\left(\int_{a}^{b}\left|g(x)\right|^{p}\,dx\right)^{\frac{1}{p}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+b
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+ (Minkowski for sequences).
+ 
+\begin_inset Formula $\left(\sum_{k=1}^{\infty}\left|a_{k}+b_{k}\right|^{p}\right)^{\frac{1}{p}}\le\left(\sum_{k=1}^{\infty}\left|f(x)\right|^{p}\,dx\right)^{\frac{1}{p}}+\left(\sum_{k=1}^{\infty}\left|g(x)\right|^{p}\,dx\right)^{\frac{1}{p}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+c
+\series default
+.
+ We are asked to explain why 
+\begin_inset Formula $\left\Vert (a_{k})\right\Vert _{p}:=\left(\sum_{k=1}^{\infty}\left|a_{k}\right|^{p}\right)^{\frac{1}{p}}$
+\end_inset
+
+ is a norm on 
+\begin_inset Formula $\ell^{p}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\ell^{p}$
+\end_inset
+
+ is a Banach space.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+d
+\series default
+.
+ 
+\emph on
+Theorem
+\emph default
+.
+ For 
+\begin_inset Formula $1\le p<q<\infty$
+\end_inset
+
+,
+ 
+\begin_inset Formula $L^{p}[a,b]\subset L^{q}[a,b]$
+\end_inset
+
+ and 
+\begin_inset Formula $\ell^{p}(\N)\subset\ell^{q}(\N)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+3
+\series default
+.
+ 
+\emph on
+Proposition
+\emph default
+.
+ Let 
+\begin_inset Formula $\{\v_{k}\}_{k=1}^{n}$
+\end_inset
+
+ span 
+\begin_inset Formula $\R^{d}$
+\end_inset
+
+.
+ (So 
+\begin_inset Formula $n\ge d$
+\end_inset
+
+.) Then there exists 
+\begin_inset Formula $A,B\ge0$
+\end_inset
+
+ such that 
+\begin_inset Formula $A\left\Vert \vec{\boldsymbol{x}}\right\Vert ^{2}\le\sum_{k=1}^{n}\left|\left\langle \vec{\boldsymbol{x}},\v_{k}\right\rangle \right|^{2}\le B\left\Vert \vec{\boldsymbol{x}}\right\Vert ^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Commentary
+\emph default
+.
+ We're told this is a 
+\emph on
+frame inequality
+\emph default
+ (similar to the proof of equivalency of finite-dimensional norms,
+ said to be a recurring motif in applied analysis).
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Proof
+\emph default
+.
+ [
+\series bold
+TODO
+\series default
+]
 \end_layout
 
 \end_body
